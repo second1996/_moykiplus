@@ -9,124 +9,257 @@
 			display: flex
 			align-items: center
 			justify-content: space-between
-			.contacts,
-			.actions
-				display: flex
+		.contacts,
+		.actions
+			display: flex
+			align-items: center
+			&-item
+				display: inline-flex
 				align-items: center
-				&-item
-					display: inline-flex
-					align-items: center
-					line-height: 1.25
-					&:not(:last-child)
-						margin-right: 40px
-					.title
-						margin-right: 6px
-					.text
-						position: relative
-						&::after
-							content: ''
-							position: absolute
-							top: 100%
-							left: 0
-							right: 0
-							border-bottom: 1px dashed #a2a2a3
-							opacity: 0
-							transition: $trs
-						&:hover
-							color: $white
-					a.text:hover::after
-						opacity: 1
-					.dropdown
-						&-toggle
-							.text
-								display: inline-block
-								margin-right: 5px
-							.icon-arrow
-								color: #a6a5a6
-								font-size: 8px
-								transform: rotate(90deg)
-							&:hover
-								.text::after
-									opacity: 1
-						&-menu
-							padding-top: 0
-							padding-bottom: 0
-			.actions
-				&-item
-					.icon
-						margin-right: 5px
+				line-height: 1.25
+				&:not(:last-child)
+					margin-right: 40px
+				.title
+					margin-right: 6px
+				.text
+					position: relative
+					&::after
+						content: ''
+						position: absolute
+						top: 100%
+						left: 0
+						right: 0
+						border-bottom: 1px dashed #a2a2a3
+						opacity: 0
+						transition: $trs
+					&:hover
 						color: $white
-						font-size: 12px
-					.icon-arrow
-						margin-right: 0
+				a.text:hover::after
+					opacity: 1
+				.dropdown
+					&-toggle
+						.text
+							display: inline-block
+							margin-right: 5px
+						.icon-arrow
+							color: #a6a5a6
+							font-size: 8px
+							transform: rotate(90deg)
+						&:hover
+							.text::after
+								opacity: 1
+					&-menu
+						padding-top: 0
+						padding-bottom: 0
+		.actions
+			&-item
+				.icon
+					margin-right: 5px
+					color: $white
+					font-size: 12px
+				.icon-arrow
+					margin-right: 0
 	&-middle
-		padding: 20px 0
+		padding: 25px 0
 		&-inner
 			display: flex
 			align-items: center
-			.logotype
-				margin-right: 42px
-				a
+		.logotype
+			margin-right: 42px
+			a
+				display: block
+			img
+				max-height: 68px
+		.phone
+			display: flex
+			align-items: center
+			&-icon
+				flex: 0 0 auto
+				display: flex
+				align-items: center
+				justify-content: center
+				width: 34px
+				height: 34px
+				border-radius: 5px
+				border: 1px solid #ededed
+				background-color: $white
+				color: $accent
+				font-size: 12px
+			&-info
+				margin-left: 10px
+				.title
 					display: block
-				img
-					max-height: 68px
-			.phone
-				display: flex
-				align-items: center
-				&-icon
-					flex: 0 0 auto
-					display: flex
-					align-items: center
-					justify-content: center
-					width: 34px
-					height: 34px
-					border-radius: 5px
-					border: 1px solid #ededed
-					background-color: $white
-					color: $accent
-					font-size: 12px
-				&-info
-					margin-left: 10px
-					.title
-						display: block
-						margin-bottom: 4px
-						line-height: 1
-					.dropdown
-						line-height: 1
-						&-toggle
+					margin-bottom: 4px
+					line-height: 1
+				.dropdown
+					line-height: 1
+					&-toggle
+						.text
+							position: relative
+							display: inline-block
+							margin-right: 5px
+							&::after
+								content: ''
+								position: absolute
+								bottom: -2px
+								left: 0
+								right: 0
+								border-bottom: 1px dashed #a2a2a3
+								opacity: 0
+								transition: $trs
+						.icon-arrow
+							color: #a6a5a6
+							font-size: 8px
+							transform: rotate(90deg)
+						&:hover
 							.text
-								position: relative
-								display: inline-block
-								margin-right: 5px
+								color: $white
 								&::after
-									content: ''
-									position: absolute
-									bottom: -2px
-									left: 0
-									right: 0
-									border-bottom: 1px dashed #a2a2a3
-									opacity: 0
-									transition: $trs
-								&:hover
-									color: $white
-									&::after
-										opacity: 1
-							.icon-arrow
-								color: #a6a5a6
-								font-size: 8px
-								transform: rotate(90deg)
-						&-menu
-							&-item
-								padding: 15px 0
-								.title
-									white-space: nowrap
-									margin-bottom: 6px
-							&-link
+									opacity: 1
+					&-menu
+						&-item
+							padding: 15px 0
+							.title
 								white-space: nowrap
-			.buttons
-				display: flex
-				flex-wrap: wrap
+								margin-bottom: 6px
+						&-link
+							white-space: nowrap
+		.buttons
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			margin-left: auto
+			> .btn:not(:first-child)
+				margin-left: 10px
+	&-bottom
+		border-top: 1px solid #4c494d
+		background-color: #312e32
+		&-inner
+			display: flex
+			align-items: center
+			height: 60px
+		.search
+			margin-left: 30px
+			&-form
+				position: relative
+				display: inline-flex
 				align-items: center
-				margin-left: auto
-				> .btn:not(:first-child)
-					margin-left: 10px
+				width: 218px
+				.form-control
+					height: 52px
+					margin-bottom: 0
+					background-color: rgba($white, 0.07)
+					color: $white
+					font-size: 13px
+					line-height: 50px
+					&::placeholder
+						color: rgba($white, 0.4)
+				&-btn
+					position: absolute
+					right: 3px
+					width: 46px
+					height: 46px
+					border-radius: 5px
+					background-color: #585658
+					color: $white
+					font-size: 18px
+					&:hover
+						background-color: $accent
+		.navigation
+			margin: 0 15px
+			width: 100%
+			&-list
+				display: flex
+				justify-content: space-between
+				> li
+					position: relative
+					line-height: 60px
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						right: 0
+						bottom: 0
+						height: 4px
+						background-color: $accent
+						opacity: 0
+						transition: $trs
+					&:hover
+						&::after
+							opacity: 1
+						> ul
+							z-index: 9
+							pointer-events: auto
+							visibility: visible
+							opacity: 1
+							transform: translate3d(0, 0, 0)
+					> a
+						position: relative
+						display: block
+						padding: 0 14px
+						color: $white
+						font-size: 13px
+						font-weight: 500
+						white-space: nowrap
+					> ul
+						pointer-events: none
+						position: absolute
+						top: 100%
+						left: 0
+						min-width: 180px
+						padding: 5px 20px
+						border-radius: 0 0 5px 5px
+						background-color: $white
+						visibility: hidden
+						opacity: 0
+						transform: translate3d(-10px, 0, 0)
+						transition: $trs
+						> li
+							line-height: 40px
+							&:not(:last-child)
+								border-bottom: 1px solid #f3f3f3
+							> a
+								display: block
+								color: $black
+								font-size: 13px
+								font-weight: 500
+								text-decoration: underline
+								&:hover
+									color: $accent
+									text-decoration: none
+		.actions
+			display: flex
+			&-item
+				border-left: 1px solid #434044
+				line-height: 45px
+				&:last-child
+					border-right: 1px solid #434044
+			&-link
+				position: relative
+				display: block
+				height: 100%
+				padding: 0 20px
+				color: $white
+				font-size: 18px
+				.icon
+					transition: $trs
+				&:hover
+					.icon
+						opacity: 0.5
+					.actions-count
+						background-color: $orange
+			&-count
+				position: absolute
+				top: 5px
+				right: 12px
+				z-index: 1
+				display: flex
+				align-items: center
+				justify-content: center
+				width: 18px
+				height: 18px
+				border-radius: 50%
+				background-color: $accent
+				font-size: 11px
+				line-height: 1
+				transition: $trs
