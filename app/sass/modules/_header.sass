@@ -138,6 +138,15 @@
 			display: flex
 			align-items: center
 			height: 60px
+		.navigation
+			position: relative
+			display: flex
+			align-items: center
+			width: 100%
+			&.search-toggled
+				.search
+					width: 100%
+					margin-right: 30px
 		.search
 			margin-left: 30px
 			&-form
@@ -145,6 +154,22 @@
 				display: inline-flex
 				align-items: center
 				width: 218px
+				&.is-active
+					z-index: 1041
+					width: 100%
+					transition: width .35s ease
+					.form-control
+						background-color: $white
+						color: $black
+						font-weight: 600
+						&::placeholder
+							color: rgba(#3a363b, 0.4)
+					.search-form-btn
+						background-color: $accent
+					.search-form-results
+						visibility: visible
+						opacity: 1
+						transition: $trs
 				.form-control
 					height: 52px
 					margin-bottom: 0
@@ -152,8 +177,11 @@
 					color: $white
 					font-size: 13px
 					line-height: 50px
+					transition: .15s ease
 					&::placeholder
 						color: rgba($white, 0.4)
+					&:focus
+						box-shadow: none
 				&-btn
 					position: absolute
 					right: 3px
@@ -165,9 +193,22 @@
 					font-size: 18px
 					&:hover
 						background-color: $accent
-		.navigation
+				&-results
+					position: absolute
+					top: 100%
+					left: 0
+					right: 0
+					margin-top: 4px
+					border-radius: 0 0 5px 5px
+					box-shadow: 0 19px 40px rgba(34, 35, 40, 0.18)
+					background-color: $white
+					visibility: hidden
+					opacity: 0
+		.menu
 			margin: 0 15px
 			width: 100%
+			&.is-hidden
+				display: none
 			&-list
 				display: flex
 				justify-content: space-between
