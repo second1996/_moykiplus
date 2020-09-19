@@ -4,7 +4,7 @@
 			<div class="header-top-inner">
 				<div class="contacts">
 					<div class="contacts-item">
-						<div class="title text-xxs w-medium">Адрес:</div>
+						<div class="title c-gray text-xxs w-medium">Адрес:</div>
 						<div class="dropdown">
 							<button type="button" id="adressLabel" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="text c-white text-xxs w-medium">Москва, ул. Дорожная 3 стр. 3А</span>
@@ -44,7 +44,7 @@
 						</div>
 					</div>
 					<div class="contacts-item">
-						<div class="title text-xxs w-medium">Режим работы:</div>
+						<div class="title c-gray text-xxs w-medium">Режим работы:</div>
 						<div class="dropdown">
 							<button type="button" id="workingHoursLabel" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span class="text c-white text-xxs w-medium">Пн-Пт с 9:00 до 18:00 (Офис)</span>
@@ -75,7 +75,7 @@
 						</div>
 					</div>
 					<div class="contacts-item">
-						<div class="title text-xxs w-medium">Email:</div>
+						<div class="title c-gray text-xxs w-medium">Email:</div>
 						<a href="mailto:info@moykiplus.ru" class="text c-white text-xxs w-medium">info@moykiplus.ru</a>
 					</div>
 				</div><!-- /.contacts -->
@@ -111,15 +111,38 @@
 		<div class="container">
 			<div class="header-middle-inner">
 				<div class="logotype">
-					<img src="images/logo.png" alt="Мойки Плюс: Интернет магазин сантехники и бытовой техники для дома">
+					<a href="index.html">
+						<img src="images/logo.png" alt="Мойки Плюс: Интернет магазин сантехники и бытовой техники для дома">
+					</a>
 				</div>
 				<div class="phone">
 					<div class="phone-icon">
 						<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
 					</div>
 					<div class="phone-info">
-						<span class="title">Телефон</span>
-						<span class="text dropdown"><a href="tel:+74956422605">+7 (495) 642-26-05</a></span>
+						<span class="title c-gray text-xxs w-medium">Телефон</span>
+						<div class="dropdown">
+							<button type="button" id="phoneListLabel" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<a href="tel:+74956422605" class="text c-white text-xxs w-medium">+7 (495) 642-26-05</a>
+								<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+							</button>
+							<div class="dropdown-menu dropdown-phone-list" aria-labelledby="phoneListLabel">
+								<ul class="dropdown-menu-list">
+									<li class="dropdown-menu-item">
+										<div class="dropdown-menu-info">
+											<span class="title c-gray text-xxs">Справочная служба:</span>
+											<a href="tel:+79850175099" class="dropdown-menu-link text text-xxs w-bold">+7 (985) 017-50-99</a>
+										</div>
+									</li>
+									<li class="dropdown-menu-item">
+										<div class="dropdown-menu-info">
+											<span class="title c-gray text-xxs">Магазин:</span>
+											<a href="tel:+74955094160" class="dropdown-menu-link text text-xxs w-bold">+7 (495) 509-41-60</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="buttons">
@@ -127,6 +150,18 @@
 						<svg class="icon icon-store"><use xlink:href="images/symbol-defs.svg#store"></use></svg>
 						<span>Магазины</span>
 					</a>
+					<a href="page-contacts.html" class="btn btn-secondary">
+						<svg class="icon icon-sale"><use xlink:href="images/symbol-defs.svg#sale"></use></svg>
+						<span>Распродажа</span>
+					</a>
+					<a href="page-contacts.html" class="btn btn-secondary">
+						<svg class="icon icon-discount"><use xlink:href="images/symbol-defs.svg#discount"></use></svg>
+						<span>Акции</span>
+					</a>
+					<button class="btn btn-primary btn-callback" data-toggle="modal" data-target="#callbackModal">
+						<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+						<span>Заказать звонок</span>
+					</button>
 				</div>
 			</div>
 		</div>

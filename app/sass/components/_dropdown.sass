@@ -24,12 +24,15 @@
 		&.show
 			transform: translate3d(0, 16px, 0) !important
 		&.dropdown-adress
-			width: 320px
+			min-width: 320px
 		&.dropdown-working-hours
 			min-width: 236px
 		&.dropdown-user-profile
 			padding-left: 25px
 			padding-right: 25px
+		&.dropdown-phone-list
+			padding: 5px 25px
+			min-width: 
 		&-list
 		&-item
 			display: flex
@@ -43,15 +46,17 @@
 			justify-content: center
 			width: 34px
 			height: 34px
+			margin-right: 12px
 			border-radius: 5px
 			border: 1px solid #ededed
+			background-color: $white
 			color: $accent
 			font-size: 14px
 		&-info
 			display: flex
 			flex-direction: column
-			margin-left: 12px
 			.title
+				display: block
 				margin-bottom: 6px
 				line-height: 1
 		&-link
