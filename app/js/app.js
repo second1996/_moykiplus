@@ -1,0 +1,5 @@
+@@include('files/modal.js')
+@@include('files/sliders.js')
+@@include('files/forms.js')
+@@include('files/functions.js')
+@@include('files/scripts.js')

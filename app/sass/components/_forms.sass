@@ -1,0 +1,43 @@
+@import '../helpers/helpers'
+
+/* ==========================================================================
+	 Base customize for forms
+	 ========================================================================== */
+.form
+	position: relative
+	&-label
+		margin-bottom: 12px
+		color: $black
+		font-size: 15px
+		cursor: pointer
+	&-control,
+	&-textarea
+		appearance: none
+		display: block
+		width: 100%
+		margin-bottom: 20px
+		color: $textcolor
+		font-size: 14px
+		font-weight: 400
+		border-radius: 6px
+		border: 0
+		background-color: #f7f7f7
+		background-clip: padding-box
+		color: $black
+		transition: border-color .3s ease-in-out, box-shadow .3s ease-in-out, background-color .3s ease-in-out
+		&:focus
+			box-shadow: 0 0 0 2px $accent
+			background-color: $white
+	&-control
+		height: 60px
+		padding: 0 32px
+		line-height: 60px
+		&--number
+			-moz-appearance: textfield
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button
+				-webkit-appearance: none
+				margin: 0
+	&-textarea
+		resize: none
+		padding: 8px 16px
