@@ -34,6 +34,7 @@ body
 	overflow-x: hidden
 	position: relative
 	min-width: 320px
+	background-color: #fafafa
 	color: $textcolor
 	font-family: $font
 	font-size: $fontsize
@@ -51,8 +52,10 @@ ul
 	padding: 0
 
 a
+	color: $black
 	transition: $trs
 	&:hover
+		color: $accent
 		text-decoration: none
 
 p
@@ -89,3 +92,17 @@ hr
 /* ==========================================================================
    Animations
    ========================================================================== */
+.animate
+	animation-duration: 0.3s
+	animation-fill-mode: both
+
+.mp-slideInUp
+	animation-name: mp-slideInUp
+
+@keyframes mp-slideInUp
+	0%
+		opacity: 0
+		transform: translate3d(0, 16px, 0)
+	100%
+		opacity: 1
+		transform: translate3d(0, 0, 0)

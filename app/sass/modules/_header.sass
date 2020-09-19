@@ -1,2 +1,63 @@
 @import '../helpers/helpers'
 
+.header
+	background-color: #3a363b
+	&-top
+		padding: 14px 0
+		border-bottom: 1px solid #4c494d
+		&-inner
+			display: flex
+			align-items: center
+			justify-content: space-between
+			.contacts,
+			.actions
+				display: flex
+				align-items: center
+				&-item
+					display: inline-flex
+					align-items: center
+					line-height: 1.25
+					&:not(:last-child)
+						margin-right: 40px
+					.title
+						margin-right: 6px
+					.text
+						position: relative
+						&::after
+							content: ''
+							position: absolute
+							top: 100%
+							left: 0
+							right: 0
+							border-bottom: 1px dashed $white
+							opacity: 0
+							transition: $trs
+						&:hover
+							color: $white
+					a.text:hover::after
+						opacity: 1
+					.dropdown
+						&-toggle
+							.text
+								display: inline-block
+								margin-right: 5px
+							.icon-arrow
+								color: #a6a5a6
+								font-size: 8px
+								transform: rotate(90deg)
+							&:hover
+								.text::after
+									opacity: 1
+						&-menu
+							padding-top: 0
+							padding-bottom: 0
+			.actions
+				&-item
+					.icon
+						margin-right: 5px
+						color: $white
+						font-size: 12px
+					.icon-arrow
+						margin-right: 0
+	&-middle
+		padding: 20px 0
