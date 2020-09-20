@@ -1,5 +1,6 @@
 @import '../helpers/helpers'
 @import 'header-search'
+@import 'header-mega-menu'
 
 .header
 	background-color: #3a363b
@@ -136,9 +137,22 @@
 		border-top: 1px solid #4c494d
 		background-color: #312e32
 		&-inner
+			position: relative
 			display: flex
 			align-items: center
 			height: 60px
+		.catalog
+			height: 100%
+			&-btn
+				width: 200px
+				height: 100%
+				border-radius: 0
+				> .icon
+					margin-right: 12px
+			// &:hover
+			// 	.mega-menu
+			// 		display: flex
+			// 		width: 100%
 		.navigation
 			position: relative
 			display: flex

@@ -1,7 +1,6 @@
-$('.dropdown-menu').click(function(e) {
-	e.stopPropagation()
-})
-
+/**
+ * Header Search form
+ */
 $('.header-bottom .navigation .search-form input').on('click', function() {
 	$(this).parents('.search-form').addClass('is-active')
 	$('.header-bottom .navigation').addClass('search-toggled')
@@ -24,4 +23,11 @@ $('.header-bottom .navigation .search-form input').on('click', function() {
 // 	} else {
 // 		console.log(false);
 // 	}
+// })
+
+/**
+ * Catalog Mega Menu
+ */
+// $('.mega-menu .dropdown').dropdown({
+// 	display: 'static',
 // })
