@@ -1,4 +1,5 @@
 @import '../helpers/helpers'
+@import 'header-search'
 
 .header
 	background-color: #3a363b
@@ -166,10 +167,15 @@
 							color: rgba(#3a363b, 0.4)
 					.search-form-btn
 						background-color: $accent
+						&:hover
+							background-color: $orange
 					.search-form-results
+						overflow: visible
+						height: auto
 						visibility: visible
 						opacity: 1
-						transition: $trs
+						transform: translate3d(0, 0, 0)
+						transition: .35s ease .25s
 				.form-control
 					height: 52px
 					margin-bottom: 0
@@ -193,17 +199,6 @@
 					font-size: 18px
 					&:hover
 						background-color: $accent
-				&-results
-					position: absolute
-					top: 100%
-					left: 0
-					right: 0
-					margin-top: 4px
-					border-radius: 0 0 5px 5px
-					box-shadow: 0 19px 40px rgba(34, 35, 40, 0.18)
-					background-color: $white
-					visibility: hidden
-					opacity: 0
 		.menu
 			margin: 0 15px
 			width: 100%
