@@ -9,7 +9,6 @@
 	"author": "Vitaliy R.",
 	"license": "ISC",
 	"devDependencies": {
-		"@popperjs/core": "^2.4.4",
 		"bootstrap": "^4.5.2",
 		"browser-sync": "^2.26.12",
 		"del": "^5.1.0",
@@ -30,6 +29,6 @@
 		"gulp-uglify-es": "^2.0.0",
 		"jquery": "^3.5.1",
 		"jquery-mask-plugin": "^1.14.16",
-		"npm-check-updates": "^8.1.1"
+		"npm-check-updates": "^8.1.1",
 	}
 }

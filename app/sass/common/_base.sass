@@ -1,19 +1,19 @@
 @import '../helpers/helpers'
 
 +media-breakpoint-up(lg)
-	*
-		scrollbar-width: thin
-		scrollbar-color: rgba($black, 0.25) $white
-	::-webkit-scrollbar
-		width: 12px
-	::-webkit-scrollbar-track
-		background-color: $white
-	::-webkit-scrollbar-thumb
-		background-color: rgba($black, 0.25)
-		border-radius: 20px
-		border: 3px solid $white
-		&:hover
-			background-color: $accent
+	.scrollbar
+		*
+			scrollbar-width: thin
+			scrollbar-color: rgba($black, 0.25) $white
+		::-webkit-scrollbar
+			width: 5px
+		::-webkit-scrollbar-track
+			background-color: $white
+		::-webkit-scrollbar-thumb
+			background-color: rgba($black, 0.25)
+			border-radius: 20px
+			&:hover
+				background-color: $accent
 
 ::placeholder
 	color: #666

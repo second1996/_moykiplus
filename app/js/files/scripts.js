@@ -16,18 +16,15 @@ $('.header-bottom .navigation .search-form input').on('click', function() {
 	}
 })
 
-// $(document).on('click', function(e) {
-// 	var el = '.search-form';
-// 	if ( $(e.target).closest(el).length) {
-// 		console.log(true);
-// 	} else {
-// 		console.log(false);
-// 	}
-// })
-
 /**
- * Catalog Mega Menu
+ * Mega menu
  */
-// $('.mega-menu .dropdown').dropdown({
-// 	display: 'static',
-// })
+$('.mega-menu-sections .nav-item .has-submenu').on('click', function(e) {
+	e.preventDefault();
+	$submenu = $(this);
+	//getting the next element
+	$content = $submenu.next();
+	//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+	$submenu.toggleClass('is-toggled');
+	$content.slideToggle(250);
+})
