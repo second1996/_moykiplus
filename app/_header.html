@@ -104,8 +104,8 @@
 						<a href="#" class="text c-white text-xxs w-medium">Что с моим заказом?</a>
 					</div>
 				</div><!-- /.actions -->
-			</div>
-		</div>
+			</div><!-- /.header-top-inner -->
+		</div><!-- /.container -->
 	</div><!-- /.header-top -->
 	<div class="header-middle">
 		<div class="container">
@@ -114,7 +114,7 @@
 					<a href="index.html">
 						<img src="images/logo.png" alt="Мойки Плюс: Интернет магазин сантехники и бытовой техники для дома">
 					</a>
-				</div>
+				</div><!-- /.logotype -->
 				<div class="phone">
 					<div class="phone-icon">
 						<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
@@ -144,7 +144,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div><!-- /.phone -->
 				<div class="buttons">
 					<a href="page-contacts.html" class="btn btn-secondary">
 						<svg class="icon icon-store"><use xlink:href="images/symbol-defs.svg#store"></use></svg>
@@ -162,9 +162,9 @@
 						<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
 						<span>Заказать звонок</span>
 					</button>
-				</div>
-			</div>
-		</div>
+				</div><!-- /.buttons -->
+			</div><!-- /.header-middle-inner -->
+		</div><!-- /.container -->
 	</div><!-- /.header-middle -->
 	<div class="header-bottom">
 		<div class="container">
@@ -321,14 +321,42 @@
 												</div><!-- /.category-wrapper .row -->
 											</div><!-- /.nav-submenu-content .category -->
 										</li>
-										<li class="nav-submenu-item"><a href="#" class="nav-submenu-link">
-											<span>Душевые системы</span>
-											<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
-										</a></li>
-										<li class="nav-submenu-item"><a href="#" class="nav-submenu-link">
-											<span>Фильтры для воды</span>
-											<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
-										</a></li>
+										<li class="nav-submenu-item">
+											<a href="#" class="nav-submenu-link">
+												<span>Душевые системы</span>
+												<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+											</a>
+										</li>
+										<li class="nav-submenu-item">
+											<a href="#" class="nav-submenu-link">
+												<span>Фильтры для воды</span>
+												<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+											</a>
+										</li>
+										<li class="nav-submenu-item">
+											<a href="#" class="nav-submenu-link">
+												<span>Краны для питьевой воды</span>
+												<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+											</a>
+										</li>
+										<li class="nav-submenu-item">
+											<a href="#" class="nav-submenu-link">
+												<span>Измельчители отходов</span>
+												<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+											</a>
+										</li>
+										<li class="nav-submenu-item">
+											<a href="#" class="nav-submenu-link">
+												<span>Комплекты</span>
+												<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+											</a>
+										</li>
+										<li class="nav-submenu-item">
+											<a href="#" class="nav-submenu-link">
+												<span>Полотенцесушители</span>
+												<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+											</a>
+										</li>
 									</ul>
 								</li>
 								<li class="nav-item">
@@ -358,7 +386,7 @@
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div><!-- /.catalog -->
 				<div class="navigation">
 					<!-- Search form -->
 					<div class="search">
@@ -459,28 +487,126 @@
 							<li><a href="#">Бренды</a></li>
 						</ul>
 					</div>
-				</div>
+				</div><!-- /.navigation -->
 				<div class="actions">
 					<div class="actions-item">
-						<a href="#" class="actions-link">
+						<a href="#" class="actions-link actions-wishlist">
 							<span class="actions-count">12</span>
 							<svg class="icon icon-heart"><use xlink:href="images/symbol-defs.svg#heart"></use></svg>
 						</a>
 					</div>
 					<div class="actions-item">
-						<a href="#" class="actions-link">
+						<a href="#" class="actions-link actions-compare">
 							<span class="actions-count">0</span>
 							<svg class="icon icon-compare"><use xlink:href="images/symbol-defs.svg#compare"></use></svg>
 						</a>
 					</div>
-					<div class="actions-item">
+					<div class="actions-item actions-cart">
 						<a href="#" class="actions-link">
 							<span class="actions-count">3</span>
 							<svg class="icon icon-shopping-cart"><use xlink:href="images/symbol-defs.svg#shopping-cart"></use></svg>
 						</a>
+						<!-- Cart Widget -->
+						<div class="cart-widget scrollbar">
+							<div class="cart-widget-wrapper">
+								<ul class="cart-widget-list">
+									<li class="cart-widget-item">
+										<a href="page-single-product.html" class="product-link"></a>
+										<div class="product-photo">
+											<img src="images/products/product-1.jpg" alt="">
+										</div>
+										<div class="product-meta">
+											<span class="title c-black text-xs w-medium">Мойка Telma Functional FU 50.10</span>
+											<div class="quantity">
+												<input type="hidden" value="1">
+												<span class="count"><em>1</em> шт.</span>
+												<button class="minus">-</button>
+												<button class="plus">+</button>
+											</div>
+											<span class="price c-black text-sm w-medium">10 999 руб.</span>
+										</div>
+										<div class="product-remove">
+											<a href="#" class="btn-close">
+												<span></span>
+												<span></span>
+											</a>
+										</div>
+									</li>
+									<li class="cart-widget-item">
+										<a href="page-single-product.html" class="product-link"></a>
+										<div class="product-photo">
+											<img src="images/products/product-3.jpg" alt="">
+										</div>
+										<div class="product-meta">
+											<span class="title c-black text-xs w-medium">Мойка Telma Cube 76.10</span>
+											<div class="quantity">
+												<input type="hidden" value="1">
+												<span class="count"><em>1</em> шт.</span>
+												<button class="minus">-</button>
+												<button class="plus">+</button>
+											</div>
+											<span class="price c-black text-sm w-medium">10 999 руб.</span>
+										</div>
+										<div class="product-remove">
+											<a href="#" class="btn-close">
+												<span></span>
+												<span></span>
+											</a>
+										</div>
+									</li>
+									<li class="cart-widget-item">
+										<a href="page-single-product.html" class="product-link"></a>
+										<div class="product-photo">
+											<img src="images/products/product-2.jpg" alt="">
+										</div>
+										<div class="product-meta">
+											<span class="title c-black text-xs w-medium">Мойка Telma Functional FU 50.10 гранит</span>
+											<div class="quantity">
+												<input type="hidden" value="1">
+												<span class="count"><em>1</em> шт.</span>
+												<button class="minus">-</button>
+												<button class="plus">+</button>
+											</div>
+											<span class="price c-black text-sm w-medium">10 999 руб.</span>
+										</div>
+										<div class="product-remove">
+											<a href="#" class="btn-close">
+												<span></span>
+												<span></span>
+											</a>
+										</div>
+									</li>
+									<li class="cart-widget-item">
+										<a href="page-single-product.html" class="product-link"></a>
+										<div class="product-photo">
+											<img src="images/products/product-3.jpg" alt="">
+										</div>
+										<div class="product-meta">
+											<span class="title c-black text-xs w-medium">Мойка Telma Cube 76.10</span>
+											<div class="quantity">
+												<input type="hidden" value="1">
+												<span class="count"><em>1</em> шт.</span>
+												<button class="minus">-</button>
+												<button class="plus">+</button>
+											</div>
+											<span class="price c-black text-sm w-medium">10 999 руб.</span>
+										</div>
+										<div class="product-remove">
+											<a href="#" class="btn-close">
+												<span></span>
+												<span></span>
+											</a>
+										</div>
+									</li>
+								</ul>
+								<div class="cart-widget-checkout">
+									<a href="#" class="btn btn-primary">Оформить заказ</a>
+								</div>
+							</div>
+						</div><!-- /.cart-widget -->
 					</div>
-				</div>
-			</div>
-		</div>
+				</div><!-- /.actions -->
+			</div><!-- /.header-bottom-inner -->
+		</div><!-- /.container -->
 	</div><!-- /.header-bottom -->
 </header>

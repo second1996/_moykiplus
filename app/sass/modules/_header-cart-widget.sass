@@ -1,0 +1,103 @@
+@import '../helpers/helpers'
+
+.cart-widget
+	position: absolute
+	top: 100%
+	right: 0
+	width: 345px
+	box-shadow: 0 19px 40px rgba(34, 35, 40, 0.18)
+	visibility: hidden
+	opacity: 0
+	transform: translate3d(0, 10px, 0)
+	transition: $trs
+	&-wrapper
+		padding: 15px
+		border-radius: 0 0 5px 5px
+		background-color: $white
+	&-list
+		display: flex
+		flex-direction: column
+		height: 235px
+		overflow-y: auto
+	&-item
+		position: relative
+		display: flex
+		&:not(:last-child)
+			margin-bottom: 15px
+		.product-link
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 1
+			&:hover
+				~ .product-photo img
+					opacity: 0.75
+				~ .product-meta
+					.title
+						color: $accent
+		.product-photo
+			flex: 0 0 auto
+			width: 110px
+			height: 110px
+			padding: 10px
+			border-radius: 5px
+			border: 1px solid rgba($accent, 0.15)
+			background-color: $white
+			img
+				width: 100%
+				height: 100%
+				object-fit: scale-down
+				transition: opacity .35s ease
+		.product-meta
+			display: flex
+			flex-direction: column
+			margin-left: 15px
+			.title
+				font-size: 16px
+				line-height: 1.2
+				transition: color .35s ease
+			.quantity
+				position: relative
+				z-index: 2
+				display: flex
+				align-items: center
+				margin-top: 15px
+				line-height: 1
+				.count
+					margin-right: 5px
+					color: $black
+					font-size: 15px
+					font-weight: 500
+					> em, > i
+						font-style: normal
+				.minus,
+				.plus
+					display: flex
+					align-items: center
+					justify-content: center
+					width: 20px
+					height: 20px
+					margin-left: 5px
+					border-radius: 4px
+					border: 1px solid $accent
+					background-color: $white
+					color: #8e8992
+					font-size: 16px
+					font-weight: 500
+					&:hover
+						background-color: $accent
+						color: $white
+			.price
+				margin-top: 15px
+				font-size: 16px
+				line-height: 1
+		.product-remove
+			position: relative
+			top: -5px
+			z-index: 2
+	&-checkout
+		margin-top: 20px
+		.btn
+			width: 100%

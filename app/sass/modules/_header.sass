@@ -1,6 +1,7 @@
 @import '../helpers/helpers'
-@import 'header-search'
 @import 'header-mega-menu'
+@import 'header-search'
+@import 'header-cart-widget'
 
 .header
 	background-color: #3a363b
@@ -134,7 +135,7 @@
 			> .btn:not(:first-child)
 				margin-left: 10px
 	&-bottom
-		border-top: 1px solid #4c494d
+		// border-top: 1px solid #4c494d
 		background-color: #312e32
 		&-inner
 			position: relative
@@ -151,8 +152,11 @@
 					margin-right: 12px
 			&:hover
 				.mega-menu
-					display: flex
-					width: 100%
+					pointer-events: auto
+					z-index: $z-index-header-mega-menu
+					visibility: visible
+					opacity: 1
+					transform: translate3d(0, 0, 0)
 		.navigation
 			position: relative
 			display: flex
@@ -170,7 +174,7 @@
 				align-items: center
 				width: 218px
 				&.is-active
-					z-index: 1041
+					z-index: $z-index-header-search
 					width: 100%
 					transition: width .35s ease
 					.form-control
@@ -299,6 +303,12 @@
 						opacity: 0.5
 					.actions-count
 						background-color: $orange
+			&-cart:hover
+				.cart-widget
+					z-index: $z-index-header-cart
+					visibility: visible
+					opacity: 1
+					transform: translate3d(0, 0, 0)
 			&-count
 				position: absolute
 				top: 5px

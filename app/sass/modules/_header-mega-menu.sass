@@ -1,13 +1,17 @@
 @import '../helpers/helpers'
 
 .mega-menu
+	pointer-events: none
 	position: absolute
 	top: 100%
 	left: 0
-	right: 0
-	display: none
+	// right: 0
+	display: flex
+	visibility: hidden
+	opacity: 0
+	transform: translate3d(0, 10px, 0)
+	transition: $trs
 	&.is-active
-		display: flex
 	// Catalog sections list
 	&-sections
 		flex: 0 0 auto
@@ -19,7 +23,7 @@
 			overflow-x: hidden
 			display: inline-block
 			height: 100%
-			height: 460px
+			max-height: 450px
 			&-item
 			&-link
 				position: relative
@@ -39,16 +43,21 @@
 				&--red
 					span
 						color: #e42f36
-						transition: color .3s ease
 					&:hover
 						span
 							color: $accent
 				.icon-arrow
+					color: #acacac
 					font-size: 10px
-					transition: transform .3s ease
+					transition: $trs
+				&:hover
+					color: $accent
+					.icon-arrow
+						color: $accent
 				&.is-toggled
 					color: $accent
 					.icon-arrow
+						color: $accent
 						transform: rotate(90deg)
 			&-submenu
 				display: none
@@ -81,6 +90,7 @@
 					font-weight: 600
 					line-height: 1.2
 					.icon-arrow
+						margin-left: 5px
 						margin-right: 1px
 						font-size: 8px
 					&:hover
@@ -92,12 +102,12 @@
 					top: 0
 					left: 200px
 					z-index: -1
-					width: calc(100% - 200px)
+					width: 970px
 					height: 100%
 					padding: 50px 70px
 					visibility: hidden
 					opacity: 0
-					transform: translate3d(0, 5px, 0)
+					// transform: translate3d(0, 5px, 0)
 					transition: $trs
 	// Mega Menu Content customize
 	.category
