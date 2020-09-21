@@ -17,6 +17,7 @@
 	.results
 		overflow: hidden
 		display: flex
+		height: 100%
 		max-height: 426px
 		&-queries
 			flex: 0 0 58%
@@ -26,18 +27,23 @@
 				display: flex
 				height: 100%
 				&.results-often
+					border-right: 1px solid $border
 					.results-queries-list
-						border-bottom: 1px solid rgba(#a2a2a2, 0.3)
+						border-bottom: 1px solid $border
+				&.results-popular
+					border-right: 1px solid $border
 			&-title
 				flex: 0 0 140px
 				margin-bottom: 20px
 				padding: 30px
 				line-height: 1.2
 			&-list
+				overflow-y: auto
+				height: 214px
 				flex: 1 1 100%
 				display: block
 				padding: 30px
-				border-left: 1px solid rgba(#a2a2a2, 0.3)
+				border-left: 1px solid $border
 				> li
 					line-height: 1.2
 					&:not(:last-child)
@@ -48,12 +54,16 @@
 						font-weight: 500
 		&-products
 			flex: 0 0 42%
+			margin-left: -1px
 			padding: 30px
-			border-left: 1px solid rgba(#a2a2a2, 0.3)
+			border-left: 1px solid $border
 			&-title
 				display: block
 				margin-bottom: 20px
 			&-list
+				overflow-y: auto
+				height: 100%
+				max-height: 330px
 			&-item
 				position: relative
 				display: flex
