@@ -16,6 +16,7 @@
 		padding-bottom: 40px
 		.nav
 			overflow-y: auto
+			overflow-x: hidden
 			display: inline-block
 			height: 100%
 			height: 460px
@@ -25,6 +26,7 @@
 				z-index: 3
 				display: inline-flex
 				align-items: center
+				justify-content: space-between
 				width: 200px
 				height: 50px
 				padding: 0 20px
@@ -33,11 +35,26 @@
 				border-top: 0
 				font-size: 12px
 				font-weight: 600
+				line-height: 1.2
+				&--red
+					span
+						color: #e42f36
+						transition: color .3s ease
+					&:hover
+						span
+							color: $accent
+				.icon-arrow
+					font-size: 10px
+					transition: transform .3s ease
+				&.is-toggled
+					color: $accent
+					.icon-arrow
+						transform: rotate(90deg)
 			&-submenu
 				display: none
 				&-item
 					&:hover
-						> a
+						.nav-submenu-link
 							background-color: $white
 							color: $accent
 						> .nav-submenu-content
@@ -47,23 +64,28 @@
 							visibility: visible
 							opacity: 1
 							transform: translate3d(0, 0, 0)
-					> a
-						position: relative
-						z-index: 3
-						display: inline-flex
-						align-items: center
-						width: 200px
-						height: 50px
-						padding: 0 20px
-						background-color: #f2f1f1
-						border: 1px solid #e8e7e7
-						border-top: 0
-						color: #303030
-						font-size: 12px
-						font-weight: 600
-						&:hover
-							background-color: $white
-							color: $accent
+				&-link
+					position: relative
+					z-index: 3
+					display: inline-flex
+					align-items: center
+					justify-content: space-between
+					width: 200px
+					height: 50px
+					padding: 0 20px
+					background-color: #f2f1f1
+					border: 1px solid #e8e7e7
+					border-top: 0
+					color: #303030
+					font-size: 12px
+					font-weight: 600
+					line-height: 1.2
+					.icon-arrow
+						margin-right: 1px
+						font-size: 8px
+					&:hover
+						background-color: $white
+						color: $accent
 				&-content
 					overflow-y: auto
 					position: absolute
