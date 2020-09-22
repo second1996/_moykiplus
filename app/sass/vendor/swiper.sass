@@ -1,0 +1,53 @@
+@import '../helpers/helpers'
+
+/* ==========================================================================
+	 Import Swiper
+	 ========================================================================== */
+@import 'node_modules/swiper/swiper-bundle.min'
+
+
+/* ==========================================================================
+	 Swiper customize
+	 ========================================================================== */
+.swiper-button-prev,
+.swiper-button-next
+	outline: none
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 36px
+	height: 36px
+	margin-top: 0
+	border: 0
+	box-shadow: 0 3px 7px rgba(127, 127, 127, 0.26)
+	background-color: $white
+	color: #8e8992
+	transform: translateY(-50%)
+	transition: $trs
+	&::before
+		content: ''
+		position: absolute
+		bottom: 100%
+		display: block
+		width: 22px
+		height: 5px
+		background: url('../../images/arrow-shadow.svg') no-repeat center/100%
+	&::after
+		font-size: 13px
+	&:hover
+		background-color: $accent
+		color: $white
+	&.swiper-button-disabled
+		pointer-events: none
+
+.swiper-button-prev
+	border-radius: 2px 5px 5px 5px
+	left: 0
+	&::before
+		left: 1px
+.swiper-button-next
+	border-radius: 5px 2px 5px 5px
+	right: 0
+	&::before
+		right: 1px
+		transform: scaleX(-1)
