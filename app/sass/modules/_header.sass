@@ -222,8 +222,6 @@
 		.menu
 			margin: 0 15px
 			width: 100%
-			&.is-hidden
-				display: none
 			&-list
 				display: flex
 				justify-content: space-between
@@ -287,10 +285,28 @@
 		.actions
 			display: flex
 			&-item
-				border-left: 1px solid #434044
-				line-height: 45px
-				&:last-child
-					border-right: 1px solid #434044
+				position: relative
+				line-height: 60px
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					bottom: 0
+					display: block
+					width: 1px
+					margin: 8px 0
+					background-color: #434044
+				&:last-child::after
+					content: ''
+					position: absolute
+					top: 0
+					right: 0
+					bottom: 0
+					display: block
+					width: 1px
+					margin: 8px 0
+					background-color: #434044
 			&-link
 				position: relative
 				display: block
@@ -307,13 +323,14 @@
 						background-color: $orange
 			&-cart:hover
 				.cart-widget
+					pointer-events: auto
 					z-index: $z-index-header-cart
 					visibility: visible
 					opacity: 1
 					transform: translate3d(0, 0, 0)
 			&-count
 				position: absolute
-				top: 5px
+				top: 12px
 				right: 12px
 				z-index: 1
 				display: flex

@@ -1,10 +1,14 @@
 @import '../helpers/helpers'
 
 .cart-widget
+	pointer-events: none
+	overflow: hidden
 	position: absolute
 	top: 100%
 	right: 0
+	z-index: -1
 	width: 345px
+	border-radius: 0 0 5px 5px
 	box-shadow: 0 19px 40px rgba(34, 35, 40, 0.18)
 	visibility: hidden
 	opacity: 0
@@ -12,7 +16,6 @@
 	transition: $trs
 	&-wrapper
 		padding: 15px
-		border-radius: 0 0 5px 5px
 		background-color: $white
 	&-list
 		display: flex
