@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/vendor/bootstrap.css">
 	<link rel="stylesheet" href="css/vendor/swiper.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/pages/home.css">
 
 </head>
 
@@ -20,12 +21,78 @@
 
 	@@include('_header.html')
 
-	<div class="container">
-		<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
-	</div>
+	<main class="site-main">
 
-	<script src="js/vendors.min.js"></script>
-	<script src="js/app.min.js"></script>
+		<!-- Section: Banner -->
+		<section class="h-banner">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="h-banner-slider swiper-large-arrows">
+							<div class="h-banner-slider-container swiper-container">
+								<div class="h-banner-wrapper swiper-wrapper">
+									<div class="h-banner-slide swiper-slide">
+										<div class="h-banner-content banner">
+											<div class="banner-meta">
+												<div class="labels">
+													<span class="label label-promo">Акция</span>
+												</div>
+												<h3 class="title">Мойка Longran Ultra ULS780.500</h3>
+												<p class="descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+												<a href="#" class="btn btn-primary">Заказать сейчас</a>
+											</div>
+											<div class="banner-photo">
+												<span class="bg-text">Longran</span>
+												<img src="images/home-banner-photo-1.png" alt="Мойка Longran Ultra ULS780.500">
+											</div>
+										</div>
+									</div><!-- /.slide-->
+									<div class="h-banner-slide swiper-slide">
+										<div class="h-banner-content banner">
+											<div class="banner-meta">
+												<div class="labels">
+													<span class="label label-promo">Акция</span>
+												</div>
+												<h3 class="title">Мойка Longran Ultra ULS780.500</h3>
+												<p class="descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+												<a href="#" class="btn btn-primary">Заказать сейчас</a>
+											</div>
+											<div class="banner-photo">
+												<span class="bg-text">Longran</span>
+												<img src="images/home-banner-photo-2.jpeg" alt="Мойка Longran Ultra ULS780.500">
+											</div>
+										</div>
+									</div><!-- /.slide-->
+									<div class="h-banner-slide swiper-slide">
+										<div class="h-banner-content banner">
+											<div class="banner-meta">
+												<div class="labels">
+													<span class="label label-promo">Акция</span>
+												</div>
+												<h3 class="title">Мойка Longran Ultra ULS780.500</h3>
+												<p class="descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+												<a href="#" class="btn btn-primary">Заказать сейчас</a>
+											</div>
+											<div class="banner-photo">
+												<span class="bg-text">Longran</span>
+												<img src="images/home-banner-photo-2.jpeg" alt="Мойка Longran Ultra ULS780.500">
+											</div>
+										</div>
+									</div><!-- /.slide-->
+								</div><!-- /.h-banner-wrapper -->
+							</div><!-- /.h-banner-slider -->
+							<div class="swiper-pagination"></div>
+							<div class="swiper-button-prev swiper-button--large"></div>
+							<div class="swiper-button-next swiper-button--large"></div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-auto">
+						2
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+			</div><!-- /.container -->
+		</section>
 
-</body>
-</html>
+	</main>
+
+	@@include('_footer.html')

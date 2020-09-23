@@ -1,0 +1,81 @@
+	<!-- Modal: Callback -->
+	<div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="callbackModalLabel">Заказать обратный звонок</h5>
+					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="POST" class="form">
+						<div class="form-group">
+							<label for="cb-name" class="form-label">Ваше имя</label>
+							<input type="text" class="form-control form-field-icon form-field-icon--user" id="cb-name" placeholder="Евгений" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="cb-phone" class="form-label">Ваш телефон</label>
+							<input type="tel" class="form-control form-field-icon form-field-icon--phone" id="cb-phone" data-mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="cb-hours" class="form-label">Удобное время для звонка</label>
+							<select class="form-select form-field-icon form-field-icon--hours" id="cb-hours" required>
+								<option value="0" selected>Как можно быстрее</option>
+								<option value="1">В любое время</option>
+								<option value="2">В любой день после обеда</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="cb-message" class="form-label">Комментарий</label>
+							<textarea class="form-textarea" id="cb-message"></textarea>
+						</div>
+						<div class="form-group form-checkbox">
+							<input type="checkbox" name="policy-agreed" id="policy-agreed" required>
+							<label for="policy-agreed" class="form-checkbox-label">Я подтверждаю, что ознакомлен и согласен с условиями предоставления даных</label>
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn btn-primary">Заказать</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal: Check order status -->
+	<div class="modal fade" id="checkOrderStatusModal" tabindex="-1" aria-labelledby="checkOrderStatusModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="checkOrderStatusModalLabel">Что с моим заказом?</h5>
+					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="POST" class="form">
+						<div class="form-group">
+							<label for="os-phone" class="form-label">Ваш телефон</label>
+							<input type="tel" class="form-control form-field-icon form-field-icon--phone" id="os-phone" data-mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="os-number" class="form-label">Номер заказа</label>
+							<input type="text" class="form-control form-field-icon form-field-icon--order" id="os-number" placeholder="4357854" required autocomplete="off">
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn btn-primary">Проверить статус заказа</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/vendors.min.js"></script>
+	<script src="js/app.min.js"></script>
+
+</body>
+</html>
