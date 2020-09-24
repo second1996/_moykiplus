@@ -21,8 +21,9 @@
 	border-radius: 5px
 	text-align: center
 	> .icon
-		margin-right: 10px
 		font-size: 16px
+		~ span
+			margin-left: 10px
 	> span
 		line-height: 1
 	&-primary
@@ -39,6 +40,13 @@
 		&:hover
 			background-color: $orange
 			color: $white
+	&-outline
+		background-color: $white
+		border: 1px solid rgba(#b9b6b9, 0.6)
+		color: rgba(#b9b6b9, 0.6)
+		&:hover
+			border-color: $accent
+			color: $accent
 	&-callback
 		> .icon
 			font-size: 12px

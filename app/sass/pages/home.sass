@@ -5,7 +5,7 @@
 	 ========================================================================== */
 .h-banner
 	&-slider
-		border-radius: 5px
+		height: 100%
 		.swiper-button-prev
 			left: -8px
 		.swiper-button-next
@@ -13,14 +13,18 @@
 		.swiper-pagination
 			left: 85px
 			bottom: 45px
-	&-container
+		&-container
+			height: 100%
+			overflow: hidden
+			border-radius: 5px
+			background-color: #e6e6e6
 	&-wrapper
 	&-slide
 	&-content
 		display: flex
 		justify-content: space-between
 		align-items: flex-end
-		background-color: #e6e6e6
+		height: 100%
 		.banner
 			&-meta
 				max-width: 330px
@@ -32,8 +36,6 @@
 				.title
 					margin-bottom: 0
 					color: $black
-					font-size: 36px
-					font-weight: 700
 					line-height: 1.2
 				.descr
 					margin-top: 16px
