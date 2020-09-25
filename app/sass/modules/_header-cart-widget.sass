@@ -27,20 +27,8 @@
 		display: flex
 		&:not(:last-child)
 			margin-bottom: 15px
-		.product-link
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			z-index: 1
-			&:hover
-				~ .product-photo img
-					opacity: 0.75
-				~ .product-meta
-					.title
-						color: $accent
 		.product-photo
+			z-index: 2
 			flex: 0 0 auto
 			width: 110px
 			height: 110px
@@ -52,7 +40,11 @@
 				width: 100%
 				height: 100%
 				object-fit: scale-down
-				transition: opacity .35s ease
+				transform: scale(1.01)
+				transition: transform .35s ease
+			&:hover
+				img
+					transform: scale(1.1)
 		.product-meta
 			display: flex
 			flex-direction: column

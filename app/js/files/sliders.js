@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			observer: true,
 			observeParents: true,
 			watchSlidesVisibility: true,
-			slidesPerView: 4,
 			loop: false,
+			slidesPerView: 4,
 			spaceBetween: 18,
 			navigation: {
 				nextEl: '.brands-slider-' + index +' .swiper-button-next',
@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	 * Home Banner slider
 	 */
 	var hBanner = new Swiper('.h-banner .h-banner-slider-container', {
-		slidesPerView:1,
 		loop: false,
+		speed: 750,
+		slidesPerView: 1,
 		spaceBetween: 10,
 		navigation: {
 			nextEl: '.h-banner-slider .swiper-button-next',

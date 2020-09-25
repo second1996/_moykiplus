@@ -29,4 +29,13 @@ jQuery(document).ready( function($) {
 		$submenu.toggleClass('is-toggled');
 		$content.slideToggle(250);
 	})
+
+	/**
+	 * Product card gallery
+	 */
+	$(document).on('mouseenter', '.card-gallery .card-gallery-item', function() {
+		$(this).siblings().removeClass("_active")
+		$(this).addClass("_active")
+	})
+
 })
