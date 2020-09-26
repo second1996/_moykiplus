@@ -15,7 +15,6 @@
 	 ========================================================================== */
 .card-product
 	display: flex
-	z-index: 999
 	flex-direction: column
 	width: 210px
 	padding: 20px 20px 25px
@@ -90,10 +89,17 @@
 				right: 0
 				bottom: 0
 				z-index: -1
-				background-image: linear-gradient(-248deg, $green 0%, #36a358 100%)
 				mask: url('../../images/product-badge.svg') no-repeat 100% 100%
 				mask-size: cover
 				transform: rotate(-45deg)
+			&--green::before
+				background-image: linear-gradient(-248deg, #29b153 0%, #36a358 100%)
+			&--orange::before
+				background-image: linear-gradient(-248deg, #f98221 0%, #e8780c 100%)
+			&--red::before
+				background-image: linear-gradient(-248deg, #e53237 0%, #df2134 100%)
+			&--blue::before
+				background-image: linear-gradient(-248deg, #00bbdf 0%, #069cb9 100%)
 	.card-gallery
 		position: relative
 		display: flex
@@ -269,7 +275,7 @@
 		top: 100%
 		left: -1px
 		right: -1px
-		z-index: 6
+		z-index: 3
 		border-radius: 0 0 5px 5px
 		border: 1px solid $accent
 		border-top: 0
