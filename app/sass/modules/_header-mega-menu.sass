@@ -5,13 +5,12 @@
 	position: absolute
 	top: 100%
 	left: 0
-	// right: 0
+	z-index: $z-index-header-mega-menu
 	display: flex
 	visibility: hidden
 	opacity: 0
 	transform: translate3d(0, 10px, 0)
 	transition: $trs
-	&.is-active
 	// Catalog sections list
 	&-sections
 		flex: 0 0 auto
@@ -54,7 +53,7 @@
 					color: $accent
 					.icon-arrow
 						color: $accent
-				&.is-toggled
+				&._toggled
 					color: $accent
 					.icon-arrow
 						color: $accent
@@ -101,7 +100,6 @@
 					position: absolute
 					top: 0
 					left: 200px
-					z-index: -1
 					width: 970px
 					height: 100%
 					padding: 50px 70px

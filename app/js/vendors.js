@@ -5,3 +5,4 @@
 @@include('../../node_modules/bootstrap/js/dist/util.js') // Bootstrap Util lib
 @@include('../../node_modules/bootstrap/js/dist/modal.js') // Bootstrap Modal
 @@include('../../node_modules/bootstrap/js/dist/dropdown.js') // Bootstrap Dropdown
+@@include('../../node_modules/bootstrap/js/dist/tab.js') // Bootstrap Dropdown

@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	 * Home Banner slider
 	 */
 	var hBanner = new Swiper('.h-banner .h-banner-slider-container', {
+		allowTouchMove: false,
 		loop: false,
 		speed: 750,
 		slidesPerView: 1,

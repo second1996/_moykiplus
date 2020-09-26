@@ -155,7 +155,6 @@
 					background-color: $orange
 				.mega-menu
 					pointer-events: auto
-					z-index: $z-index-header-mega-menu
 					visibility: visible
 					opacity: 1
 					transform: translate3d(0, 0, 0)
@@ -175,7 +174,7 @@
 				display: inline-flex
 				align-items: center
 				width: 218px
-				&.is-active
+				&._shown
 					z-index: $z-index-header-search
 					width: 100%
 					transition: width .35s ease
@@ -222,7 +221,7 @@
 		.menu
 			margin: 0 15px
 			width: 100%
-			&.is-hidden
+			&._hidden
 				display: none
 			&-list
 				display: flex
