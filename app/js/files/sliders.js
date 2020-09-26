@@ -39,4 +39,24 @@ document.addEventListener("DOMContentLoaded", function() {
 		},
 	})
 
+	/**
+	 * Product Tab slider
+	 */
+	$('.tab-slider').each(function(index, element){
+		$(element).addClass('tab-slider-' + index)
+		var mmBrands = new Swiper('.tab-slider-' + index + ' .tab-slider-container', {
+			allowTouchMove: false,
+			watchSlidesVisibility: true,
+			loop: false,
+			speed: 650,
+			slidesPerView: 5,
+			slidesPerGroup: 5,
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.tab-slider-' + index +' .swiper-button-next',
+				prevEl: '.tab-slider-' + index +' .swiper-button-prev',
+			},
+		})
+	})
+
 })

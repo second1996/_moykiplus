@@ -45,8 +45,5 @@ jQuery(document).ready( function($) {
 		e.preventDefault()
 		$(this).toggleClass("_active")
 	})
-	$('.card-product .order-btn').on('click', function() {
-		$(this).find('span').text('Товар в корзине')
-	})
 
 })
