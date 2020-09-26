@@ -33,9 +33,20 @@ jQuery(document).ready( function($) {
 	/**
 	 * Product card gallery
 	 */
-	$(document).on('mouseenter', '.card-gallery .card-gallery-item', function() {
-		$(this).siblings().removeClass("_active")
-		$(this).addClass("_active")
+	$(document).on('mouseenter', '.card-product .card-gallery-item', function() {
+		$(this).siblings().removeClass('_active')
+		$(this).addClass('_active')
+	})
+
+	/**
+	 * Product card actions
+	 */
+	$('.card-product').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
+		e.preventDefault()
+		$(this).toggleClass("_active")
+	})
+	$('.card-product .order-btn').on('click', function() {
+		$(this).find('span').text('Товар в корзине')
 	})
 
 })

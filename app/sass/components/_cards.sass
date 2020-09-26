@@ -9,15 +9,18 @@
 	transition: $trs
 
 .card-product
+	z-index: 3
 	display: flex
 	flex-direction: column
 	width: 210px
 	padding: 20px 20px 25px
-	box-shadow: 0 3px 24px 1px rgba(68, 68, 79, 0.08)
 	border-radius: 5px
 	border: 1px solid $white
+	border-bottom: 0
+	box-shadow: 0 3px 24px 1px rgba(68, 68, 79, 0.08)
 	background-color: $white
 	&:hover
+		border-radius: 5px 5px 0 0
 		border-color: $accent
 		.card-quick-view
 			visibility: visible
@@ -25,6 +28,9 @@
 		.card-gallery-item._active img,
 		.card-photo img
 			transform: scale(1.1)
+		.card-attributes
+			visibility: visible
+			opacity: 1
 	.card-quick-view
 		position: absolute
 		z-index: 3
@@ -122,8 +128,8 @@
 				max-width: 100%
 				max-height: 100%
 				object-fit: scale-down
-				transform: scale(1.01)
 				opacity: 0
+				transform: scale(1.01)
 				transition: $trs
 			&._active
 				.card-gallery-item-nav::before
@@ -217,12 +223,63 @@
 		flex-wrap: wrap
 		align-items: center
 		justify-content: space-between
+		background-color: $white
 		.btn
 			min-width: auto
-		.wishlist-btn
-			width: calc(50% - 5px)
+		.wishlist-btn,
 		.compare-btn
 			width: calc(50% - 5px)
+			.icon
+				font-size: 20px
+			&._active
+				border-color: $accent
+				background-color: $accent
+				color: $white
 		.order-btn
 			width: 100%
 			margin-top: 10px
+			.icon
+				flex: 0 0 auto
+				display: none
+				margin-right: 10px
+			span
+				margin-left: 0
+			&._active
+				background-color: $green
+				.icon
+					display: block
+	.card-attributes
+		position: absolute
+		top: 100%
+		left: -1px
+		right: -1px
+		border-radius: 0 0 5px 5px
+		border: 1px solid $accent
+		border-top: 0
+		background-color: $white
+		visibility: hidden
+		opacity: 0
+		transition: $trs
+		&-list
+			padding: 0 20px 10px
+			> li
+				display: flex
+				// flex-wrap: wrap
+				padding: 12px 0
+				color: #4b484c
+				font-size: 14px
+				line-height: 1.2
+				&:first-child
+					padding-top: 0
+				&:not(:last-child)
+					border-bottom: 1px solid #f2f2f2
+				span
+					display: inline-block
+					margin-right: 10px
+					font-weight: 500
+				b,
+				strong
+					color: $black
+					font-weight: 600
+					word-break: break-all
+					white-space: pre-wrap
