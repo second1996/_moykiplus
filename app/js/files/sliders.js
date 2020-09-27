@@ -45,8 +45,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	$('.tab-slider').each(function(index, element){
 		$(element).addClass('tab-slider-' + index)
 		var mmBrands = new Swiper('.tab-slider-' + index + ' .tab-slider-container', {
+			observer: true,
+			observeParents: true,
 			allowTouchMove: false,
-			watchSlidesVisibility: true,
 			loop: false,
 			speed: 650,
 			slidesPerView: 4,
