@@ -11,6 +11,16 @@
 		.swiper-pagination
 			left: 70px
 			bottom: 45px
+			margin-top: 0
+			text-align: left
+			&-bullet
+				width: 20px
+				height: 20px
+				&::after
+					width: 10px
+					height: 10px
+					margin-top: -5px
+					margin-left: -5px
 		&-container
 			height: 100%
 			overflow: hidden
@@ -153,8 +163,12 @@
 		position: relative
 		margin-bottom: 30px
 		border-radius: 5px
+		border: 1px solid $trsp
 		background-color: #f2f1f1
 		height: 420px
+		transition: border .3s ease
+		&:hover
+			border-color: $accent
 		&--md
 			.h-categories-head
 				.link
@@ -248,8 +262,8 @@
 			transition: transform .6s
 		img
 			position: absolute
-			right: 0
-			bottom: 0
+			right: -1px
+			bottom: -1px
 			z-index: 2
 			max-height: 255px
 			transform: scale(1.01)

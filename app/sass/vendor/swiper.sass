@@ -7,7 +7,7 @@
 
 
 /* ==========================================================================
-	 Swiper customize
+	 Swiper arrows
 	 ========================================================================== */
 .swiper-button-prev,
 .swiper-button-next
@@ -68,19 +68,49 @@
 		&::before
 			right: -1px
 
-// Swiper bullets
+
+/* ==========================================================================
+	 Swiper bullets
+	 ========================================================================== */
 .swiper-pagination
-	text-align: left
+	width: 100%
+	margin-top: 60px
 	&-bullet
-		width: 10px
-		height: 10px
-		box-sizing: content-box
-		border: 4px solid #e6e6e6
-		background-color: #827d85
+		position: relative
+		width: 18px
+		height: 18px
+		border-radius: 50%
+		background-color: $trsp
 		outline: none
 		transition: $trs
+		&::after
+			content: ''
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 8px
+			height: 8px
+			margin-top: -4px
+			margin-left: -4px
+			border-radius: 50%
+			background-color: #827d85
+			transition: $trs
+		&:not(.swiper-pagination-bullet-active)
+			opacity: 0.5
+			&:hover::after
+				background-color: $accent
 		&-active
-			background-color: $orange
-			box-shadow: 0 0 0 2px rgba($orange, 0.2)
+			box-shadow: 0 0 0 1px rgba($accent, 0.5)
+			&::after
+				background-color: $accent
 		&:not(:last-child)
 			margin-right: 6px
+	&--orange
+		.swiper-pagination-bullet
+			&:not(.swiper-pagination-bullet-active)
+				&:hover::after
+					background-color: $orange
+			&-active
+				box-shadow: 0 0 0 2px rgba($orange, 0.2)
+				&::after
+					background-color: $orange

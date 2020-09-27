@@ -49,12 +49,17 @@ document.addEventListener("DOMContentLoaded", function() {
 			watchSlidesVisibility: true,
 			loop: false,
 			speed: 650,
-			slidesPerView: 5,
-			slidesPerGroup: 5,
+			slidesPerView: 4,
+			slidesPerGroup: 4,
 			spaceBetween: 30,
 			navigation: {
 				nextEl: '.tab-slider-' + index +' .swiper-button-next',
 				prevEl: '.tab-slider-' + index +' .swiper-button-prev',
+			},
+			pagination: {
+				el: '.tab-slider-' + index +' .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
 			},
 		})
 	})
