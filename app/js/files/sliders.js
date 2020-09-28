@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	 */
 	$('.tab-slider').each(function(index, element){
 		$(element).addClass('tab-slider-' + index)
-		var mmBrands = new Swiper('.tab-slider-' + index + ' .tab-slider-container', {
+		var tabSlider = new Swiper('.tab-slider-' + index + ' .tab-slider-container', {
 			observer: true,
 			observeParents: true,
 			allowTouchMove: false,
@@ -63,6 +63,84 @@ document.addEventListener("DOMContentLoaded", function() {
 				clickable: true,
 			},
 		})
+	})
+
+	/**
+	 * Home News slider
+	 */
+	var hNewsSlider = new Swiper('.h-news-slider-container', {
+		observer: true,
+		observeParents: true,
+		allowTouchMove: false,
+		loop: false,
+		speed: 650,
+		slidesPerView: 4,
+		slidesPerGroup: 4,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: '.h-news-slider .swiper-button-next',
+			prevEl: '.h-news-slider .swiper-button-prev',
+		},
+		pagination: {
+			el: '.h-news-slider .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	})
+
+	/**
+	 * Home Articles slider
+	 */
+	var hArticlesSlider = new Swiper('.h-articles-slider-container', {
+		observer: true,
+		observeParents: true,
+		allowTouchMove: false,
+		loop: false,
+		speed: 650,
+		slidesPerView: 3,
+		slidesPerGroup: 3,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: '.h-articles-slider .swiper-button-next',
+			prevEl: '.h-articles-slider .swiper-button-prev',
+		},
+		pagination: {
+			el: '.h-articles-slider .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	})
+
+	/**
+	 * Home Testimonials slider
+	 */
+	// var hTestimonialsSlider = new Swiper('.h-testimonials-slider-container', {
+	// 	observer: true,
+	// 	observeParents: true,
+	// 	allowTouchMove: false,
+	// 	loop: false,
+	// 	speed: 650,
+	// 	slidesPerView: 3,
+	// 	spaceBetween: 30,
+	// 	navigation: {
+	// 		nextEl: '.h-testimonials-slider .swiper-button-next',
+	// 		prevEl: '.h-testimonials-slider .swiper-button-prev',
+	// 	},
+	// 	pagination: {
+	// 		el: '.h-testimonials-slider .swiper-pagination',
+	// 		type: 'bullets',
+	// 		clickable: true,
+	// 	},
+	// })
+
+	var hAboutGallerySlider = new Swiper('.h-about-gallery', {
+		loop: false,
+		speed: 650,
+		pagination: {
+			el: '.h-about-gallery .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
 	})
 
 })

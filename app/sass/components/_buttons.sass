@@ -87,3 +87,34 @@
 			span
 				background-color: $accent
 				transform: rotate(0deg)
+
+.read-more
+	display: inline-flex
+	align-items: center
+	color: $accent
+	line-height: 1
+	&:hover
+		color: $orange
+		span::after
+			background-color: $orange
+	span
+		position: relative
+		font-size: 14px
+		font-weight: 500
+		&::after
+			content: ''
+			position: absolute
+			left: 0
+			right: 0
+			bottom: -5px
+			height: 1px
+			background-color: $accent
+			transition: background-color .35s ease
+	.icon
+		margin-top: 2px
+		margin-left: 7px
+		font-size: 10px
+		transform: rotate(90deg)
+	&._toggled
+		.icon
+			transform: rotate(-90deg)

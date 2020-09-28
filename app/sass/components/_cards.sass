@@ -1,5 +1,3 @@
-@import '../helpers/helpers'
-
 /* ==========================================================================
 	 Base customize for cards
 	 ========================================================================== */
@@ -11,6 +9,7 @@
 	transition: $trs
 	&-photo
 		height: 265px
+		background-color: #c6c6c6
 		img
 			width: 100%
 			height: 100%
@@ -20,7 +19,16 @@
 			img
 				transform: scale(1.01)
 	&-meta
-		.title
+		.date
+			display: inline-block
+			margin-bottom: 20px
+			padding: 10px 20px
+			border-radius: 5px
+			background-color: rgba($accent, 0.1)
+			line-height: 1
+			white-space: nowrap
+		.title,
+		.author
 			display: block
 			line-height: 1.3
 	&:hover
@@ -334,6 +342,11 @@
 	position: relative
 	padding-bottom: 152px
 	border-radius: 5px
+	&:hover
+		.card-meta
+			transform: translate3d(0, 0, 0)
+			.descr
+				opacity: 1
 	.card-meta
 		position: absolute
 		left: 0
@@ -343,14 +356,6 @@
 		padding: 30px 20px
 		background-color: $white
 		transition: transform .35s ease
-		.date
-			display: inline-block
-			margin-bottom: 20px
-			padding: 10px 20px
-			border-radius: 5px
-			background-color: rgba($accent, 0.1)
-			line-height: 1
-			white-space: nowrap
 		.title
 			overflow: hidden
 			display: -webkit-box
@@ -372,8 +377,80 @@
 			text-overflow: ellipsis
 			opacity: 0
 			transition: opacity .3s ease
+
+
+/* ==========================================================================
+	 Articles card
+	 ========================================================================== */
+.card-article
+	overflow: hidden
+	background-color: $trsp
 	&:hover
-		.card-meta
-			transform: translate3d(0, 0, 0)
-			.descr
+		.card-photo
+			&::after,
+			.btn
 				opacity: 1
+	.card-photo
+		position: relative
+		overflow: hidden
+		margin-bottom: 30px
+		border-radius: 5px
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(#474747, 0.5)
+			opacity: 0
+			transition: opacity .35s ease
+		.btn
+			position: absolute
+			top: 50%
+			left: 50%
+			z-index: 2
+			height: 36px
+			border-radius: 5px
+			background-color: #2c6e7d
+			color: $white
+			transform: translate(-50%, -50%)
+			opacity: 0
+			&:hover
+				background-color: $orange
+	.card-meta
+		transition: transform .35s ease
+		.title
+			overflow: hidden
+			display: -webkit-box
+			height: 40px
+			-webkit-line-clamp: 2
+			-webkit-box-orient: vertical
+			text-overflow: ellipsis
+			> a:hover
+				color: #42656c
+				text-decoration: underline
+		.descr
+			display: -webkit-box
+			margin-top: 15px
+			margin-bottom: 0
+			-webkit-line-clamp: 4
+			-webkit-box-orient: vertical
+			text-overflow: ellipsis
+
+
+/* ==========================================================================
+	 Testimonial card
+	 ========================================================================== */
+.card-testimonial
+	height: auto
+	border-radius: 5px
+	box-shadow: 0 0 10px rgba(1, 74, 127, 0.1)
+	.card-meta
+		padding: 40px
+		.author
+			margin-bottom: 10px
+		.text
+			overflow: hidden
+			max-height: 112px
+			transition: height .35s ease

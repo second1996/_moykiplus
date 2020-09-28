@@ -46,4 +46,16 @@ jQuery(document).ready( function($) {
 		$(this).toggleClass("_active")
 	})
 
+	/**
+	 * Read More button for Testimonial cards
+	 */
+	$('#testimonials-tab').on('shown.bs.tab', function() {
+		$('.card-testimonial .text').readmore({
+			embedCSS: false,
+			speed: 75,
+			moreLink: '<button type="button" class="read-more"><span>Читать все</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+			lessLink: '<button type="button" class="read-more _toggled"><span>Спрятать</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+		})
+	})
+
 })
