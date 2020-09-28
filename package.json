@@ -9,6 +9,7 @@
 	"author": "Vitaliy R.",
 	"license": "ISC",
 	"devDependencies": {
+		"@fancyapps/fancybox": "^3.5.7",
 		"bootstrap": "^4.5.2",
 		"browser-sync": "^2.26.12",
 		"del": "^5.1.0",
@@ -31,5 +32,6 @@
 		"jquery-mask-plugin": "^1.14.16",
 		"npm-check-updates": "^8.1.1",
 		"swiper": "^6.2.0"
-	}
+	},
+	"dependencies": {}
 }

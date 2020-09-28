@@ -187,12 +187,13 @@
 						text-align: center
 						&:hover
 							img
-								transform: scale(1.05)
+								filter: grayscale(0)
 					img
 						width: 60%
 						height: 60%
 						object-fit: scale-down
-						transition: transform .35s ease
+						filter: grayscale(1)
+						transition: $trs
 					&.swiper-slide-visible
 						a
 							box-shadow: 0 3px 18px 1px rgba(68, 68, 79, 0.08)

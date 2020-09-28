@@ -1,0 +1,78 @@
+.footer
+	margin-top: 160px
+	// Footer top
+	&-top
+		padding: 70px 0
+		background-color: #3a363b
+	&-title
+		line-height: 1.2
+		margin-bottom: 30px
+	&-nav
+		> li
+			line-height: 1.2
+			&:not(:last-child)
+				margin-bottom: 16px
+			> a
+				color: rgba($white, 0.8)
+				&:hover
+					color: $orange
+	&-contacts
+		> li
+			&:not(:last-child)
+				margin-bottom: 20px
+			.title
+				display: block
+				color: rgba($white, 0.5)
+			.text
+				display: block
+				color: rgba($white, 0.8)
+				> a
+					color: rgba($white, 0.8)
+					text-decoration: underline
+					&:hover
+						color: $orange
+	&-socials
+		&-item
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			width: 36px
+			height: 36px
+			border-radius: 3px
+			background-color: $orange
+			color: $white
+			&:not(:last-child)
+				margin-right: 6px
+			&:hover
+				background-color: darken($orange, 7%)
+				color: $white
+			&.vkontakte
+				background-color: #547bcf
+				&:hover
+					background-color: darken(#547bcf, 7%)
+			&.facebook
+				background-color: #3b5998
+				&:hover
+					background-color: darken(#3b5998, 7%)
+			&.youtube
+				background-color: #df4b38
+				&:hover
+					background-color: darken(#df4b38, 7%)
+	&-payments
+		max-width: 250px
+	// Footer bottom
+	&-bottom
+		padding: 30px 0
+		background-color: #312e32
+		.yandex-market,
+		.made-by
+			> a
+				display: inline-flex
+				align-items: center
+				color: rgba($white, 0.8)
+				&:hover
+					color: $orange
+				img
+					margin-right: 10px
+		.made-by
+			text-align: right

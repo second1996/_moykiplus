@@ -133,6 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	// 	},
 	// })
 
+	/**
+	 * Home About Gallery slider
+	 */
 	var hAboutGallerySlider = new Swiper('.h-about-gallery', {
 		loop: false,
 		speed: 650,
@@ -140,6 +143,20 @@ document.addEventListener("DOMContentLoaded", function() {
 			el: '.h-about-gallery .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
+		},
+	})
+
+	/**
+	 * Home Manufacturers slider
+	 */
+	var hManufacturersSlider = new Swiper('.h-manufacturers-slider-container', {
+		watchSlidesVisibility: true,
+		loop: false,
+		slidesPerView: 4,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: '.h-manufacturers-slider .swiper-button-next',
+			prevEl: '.h-manufacturers-slider .swiper-button-prev',
 		},
 	})
 
