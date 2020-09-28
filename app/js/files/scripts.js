@@ -58,4 +58,16 @@ jQuery(document).ready( function($) {
 		})
 	})
 
+	/**
+	 * Stores list button
+	 */
+	$('.stores-button').on('click', function() {
+		$(document).on('click', function (e) {
+			if ($(e.target).closest('.stores-content').length === 0) {
+				$('.stores-content').removeClass('_toggled')
+			}
+		})
+		$(this).parents('.stores-content').toggleClass('_toggled')
+	})
+
 })

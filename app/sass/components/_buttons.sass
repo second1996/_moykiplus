@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Default styles for buttons
+   ========================================================================== */
 .btn, button
 	display: inline-flex
 	align-items: center
@@ -14,6 +17,10 @@
 	&:hover
 		color: inherit
 
+
+/* ==========================================================================
+   Button customize
+   ========================================================================== */
 .btn
 	min-width: 150px
 	height: 48px
@@ -88,6 +95,10 @@
 				background-color: $accent
 				transform: rotate(0deg)
 
+
+/* ==========================================================================
+   Read More button
+   ========================================================================== */
 .read-more
 	display: inline-flex
 	align-items: center
@@ -118,3 +129,84 @@
 	&._toggled
 		.icon
 			transform: rotate(-90deg)
+
+
+/* ==========================================================================
+   Stores list button
+   ========================================================================== */
+.stores
+	position: fixed
+	top: 50%
+	left: 0
+	display: flex
+	align-items: center
+	transform: translateY(-50%)
+	&-content
+		position: relative
+		will-change: transform
+		transform: translateX(-100%)
+		transition: transform .6s ease
+		&._toggled
+			transform: translateX(0)
+			.stores-button
+				transform: translate3d(0, -50%, 0)
+		&-inner
+			padding: 40px 30px
+			border-radius: 0 5px 5px 0
+			box-shadow: 0 6px 35px rgba(0, 0, 0, 0.15)
+			background-color: $white
+	&-item
+		&:not(:last-child)
+			margin-bottom: 20px
+		.title
+			display: flex
+			align-items: center
+			line-height: 1.2
+			.icon
+				flex: 0 0 auto
+				font-size: 16px
+			.icon-metro
+				fill: #ff1b1b
+			.icon-clock
+				fill: #5faed8
+			span
+				margin-left: 10px
+				color: $black
+				font-size: 14px
+		.info
+			margin-top: 5px
+			a,
+			span
+				color: $black
+				font-size: 16px
+				font-weight: 500
+			a:hover
+				color: $accent
+	&-button
+		position: absolute
+		top: 50%
+		left: 100%
+		padding: 20px
+		border-radius: 0 5px 5px 0
+		background-image: linear-gradient(-90deg, #569c3a, #408325, #476a72)
+		background-size: 400% 400%
+		animation: mp-stores-gradient 10s ease infinite
+		transform: translate3d(0, -50%, 0)
+		&:hover
+			transform: translate3d(-5px, -50%, 0)
+		&-icon
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			width: 34px
+			height: 34px
+			border-radius: 5px
+			border: 1px solid rgba($white, 0.5)
+			color: $white
+			font-size: 14px
+		&-title
+			margin-left: 10px
+			color: $white
+			font-size: 14px
+			line-height: 1.1
+			text-align: left
