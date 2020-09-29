@@ -138,18 +138,18 @@
 	position: fixed
 	top: 50%
 	left: 0
+	z-index: $z-index-stores-list
 	display: flex
 	align-items: center
-	transform: translateY(-50%)
+	transform: translate(-100%, -50%)
+	transition: transform .6s ease
+	&._toggled
+		transform: translate(0, -50%)
+		.stores-button
+			transform: translate3d(0, -50%, 0)
 	&-content
 		position: relative
 		will-change: transform
-		transform: translateX(-100%)
-		transition: transform .6s ease
-		&._toggled
-			transform: translateX(0)
-			.stores-button
-				transform: translate3d(0, -50%, 0)
 		&-inner
 			padding: 40px 30px
 			border-radius: 0 5px 5px 0

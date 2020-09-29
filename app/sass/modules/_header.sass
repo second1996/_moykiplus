@@ -4,6 +4,15 @@
 
 .header
 	background-color: #3a363b
+	&._sticky
+		padding-bottom: 60px
+		.header-bottom
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 99
+			box-shadow: 0 0 10px rgba($black, 0.5)
 	&-top
 		padding: 14px 0
 		border-bottom: 1px solid #4c494d

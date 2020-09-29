@@ -1,4 +1,20 @@
 jQuery(document).ready( function($) {
+
+	/**
+	 * Sticky header
+	 */
+	var stickyHeader = $('.header'),
+			headerOffset = $('.header .header-bottom').offset().top;
+
+	$(window).scroll(function() {
+		if ($(window).scrollTop() >= headerOffset){
+			stickyHeader.addClass('_sticky')
+		}
+		else {
+			stickyHeader.removeClass('_sticky')
+		}
+	})
+
 	/**
  * Header Search form
  */
@@ -21,13 +37,13 @@ jQuery(document).ready( function($) {
 	 * Mega menu
 	 */
 	$('.mega-menu-sections .nav-item .has-submenu').on('click', function(e) {
-		e.preventDefault();
-		$submenu = $(this);
+		e.preventDefault()
+		$submenu = $(this)
 		//getting the next element
-		$content = $submenu.next();
+		$content = $submenu.next()
 		//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
-		$submenu.toggleClass('_toggled');
-		$content.slideToggle(250);
+		$submenu.toggleClass('_toggled')
+		$content.slideToggle(250)
 	})
 
 	/**
@@ -64,10 +80,10 @@ jQuery(document).ready( function($) {
 	$('.stores-button').on('click', function() {
 		$(document).on('click', function (e) {
 			if ($(e.target).closest('.stores-content').length === 0) {
-				$('.stores-content').removeClass('_toggled')
+				$('.stores').removeClass('_toggled')
 			}
 		})
-		$(this).parents('.stores-content').toggleClass('_toggled')
+		$(this).parents('.stores').toggleClass('_toggled')
 	})
 
 })
