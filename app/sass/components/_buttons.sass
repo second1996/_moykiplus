@@ -143,6 +143,8 @@
 	align-items: center
 	transform: translate(-100%, -50%)
 	transition: transform .6s ease
+	+media-breakpoint-down(lg)
+		display: none
 	&._toggled
 		transform: translate(0, -50%)
 		.stores-button

@@ -6,11 +6,10 @@ jQuery(document).ready( function($) {
 	var stickyHeader = $('.header'),
 			headerOffset = $('.header .header-bottom').offset().top;
 
-	$(window).scroll(function() {
-		if ($(window).scrollTop() >= headerOffset){
+	$(window).on('scroll load', function() {
+		if( $(window).scrollTop() >= headerOffset ) {
 			stickyHeader.addClass('_sticky')
-		}
-		else {
+		} else {
 			stickyHeader.removeClass('_sticky')
 		}
 	})
@@ -60,18 +59,6 @@ jQuery(document).ready( function($) {
 	$('.card-product').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
 		e.preventDefault()
 		$(this).toggleClass("_active")
-	})
-
-	/**
-	 * Read More button for Testimonial cards
-	 */
-	$('#testimonials-tab').on('shown.bs.tab', function() {
-		$('.card-testimonial .text').readmore({
-			embedCSS: false,
-			speed: 75,
-			moreLink: '<button type="button" class="read-more"><span>Читать все</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
-			lessLink: '<button type="button" class="read-more _toggled"><span>Спрятать</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
-		})
 	})
 
 	/**

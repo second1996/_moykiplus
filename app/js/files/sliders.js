@@ -71,12 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	var hNewsSlider = new Swiper('.h-news-slider-container', {
 		observer: true,
 		observeParents: true,
-		allowTouchMove: false,
+		allowTouchMove: true,
 		loop: false,
 		speed: 650,
-		slidesPerView: 4,
-		slidesPerGroup: 4,
-		spaceBetween: 30,
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		spaceBetween: 10,
 		navigation: {
 			nextEl: '.h-news-slider .swiper-button-next',
 			prevEl: '.h-news-slider .swiper-button-prev',
@@ -86,6 +86,24 @@ document.addEventListener("DOMContentLoaded", function() {
 			type: 'bullets',
 			clickable: true,
 		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				spaceBetween: 20,
+			},
+			768: {
+				allowTouchMove: false,
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+				spaceBetween: 30,
+			},
+			992: {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+				spaceBetween: 30,
+			}
+		}
 	})
 
 	/**
@@ -94,12 +112,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	var hArticlesSlider = new Swiper('.h-articles-slider-container', {
 		observer: true,
 		observeParents: true,
-		allowTouchMove: false,
+		allowTouchMove: true,
 		loop: false,
 		speed: 650,
-		slidesPerView: 3,
-		slidesPerGroup: 3,
-		spaceBetween: 30,
+		slidesPerView: 1,
+		slidesPerGroup: 1,
+		spaceBetween: 10,
 		navigation: {
 			nextEl: '.h-articles-slider .swiper-button-next',
 			prevEl: '.h-articles-slider .swiper-button-prev',
@@ -109,29 +127,67 @@ document.addEventListener("DOMContentLoaded", function() {
 			type: 'bullets',
 			clickable: true,
 		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				spaceBetween: 20,
+			},
+			768: {
+				allowTouchMove: false,
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+				spaceBetween: 30,
+			}
+		}
 	})
 
 	/**
 	 * Home Testimonials slider
 	 */
-	// var hTestimonialsSlider = new Swiper('.h-testimonials-slider-container', {
-	// 	observer: true,
-	// 	observeParents: true,
-	// 	allowTouchMove: false,
-	// 	loop: false,
-	// 	speed: 650,
-	// 	slidesPerView: 3,
-	// 	spaceBetween: 30,
-	// 	navigation: {
-	// 		nextEl: '.h-testimonials-slider .swiper-button-next',
-	// 		prevEl: '.h-testimonials-slider .swiper-button-prev',
-	// 	},
-	// 	pagination: {
-	// 		el: '.h-testimonials-slider .swiper-pagination',
-	// 		type: 'bullets',
-	// 		clickable: true,
-	// 	},
-	// })
+	var hTestimonialsSlider = new Swiper('.h-testimonials-slider-container', {
+		init: false,
+		observer: true,
+		observeParents: true,
+		allowTouchMove: true,
+		loop: false,
+		speed: 650,
+		autoHeight: true,
+		slidesPerView: 1,
+		spaceBetween: 10,
+		pagination: {
+			el: '.h-testimonials-slider .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		breakpoints: {
+			992: {
+				allowTouchMove: false,
+				autoHeight: false,
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+				spaceBetween: 30,
+				pagination: false,
+			}
+		}
+	})
+	/**
+	 * Read More button for Testimonial cards
+	 */
+	$('#testimonials-tab').on('shown.bs.tab', function() {
+		hTestimonialsSlider.init()
+		setTimeout(() => {
+			$('.card-testimonial .text').readmore({
+				embedCSS: false,
+				speed: 75,
+				moreLink: '<button type="button" class="read-more"><span>Читать все</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+				lessLink: '<button type="button" class="read-more _toggled"><span>Спрятать</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+				afterToggle: function(trigger, element, expanded) {
+					hTestimonialsSlider.update()
+				}
+			})
+		}, 50);
+	})
 
 	/**
 	 * Home About Gallery slider
@@ -151,13 +207,32 @@ document.addEventListener("DOMContentLoaded", function() {
 	 */
 	var hManufacturersSlider = new Swiper('.h-manufacturers-slider-container', {
 		watchSlidesVisibility: true,
+		allowTouchMove: true,
 		loop: false,
-		slidesPerView: 4,
-		spaceBetween: 30,
+		slidesPerView: 1,
+		spaceBetween: 10,
 		navigation: {
 			nextEl: '.h-manufacturers-slider .swiper-button-next',
 			prevEl: '.h-manufacturers-slider .swiper-button-prev',
 		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				spaceBetween: 20,
+			},
+			768: {
+				allowTouchMove: true,
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+				spaceBetween: 30,
+			},
+			992: {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+				spaceBetween: 30,
+			}
+		}
 	})
 
 })
