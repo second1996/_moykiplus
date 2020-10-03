@@ -15,17 +15,37 @@ jQuery(document).ready( function($) {
 	})
 
 	/**
+	 * Mobile header actions
+	 */
+	$('.header-bottom .m-actions-item .menu-btn').on('click', function() {
+		alert('click')
+	})
+	$('.header-bottom .m-actions-item .search-btn').on('click', function() {
+		$('.header-bottom').toggleClass('search-toggled')
+		$('.header-bottom .navigation .search-form').addClass('_shown')
+		if( $('.search-backdrop').length == 0 ) {
+			$('body').append('<div class="search-backdrop"></div>')
+			$('.search-backdrop').on('click', function() {
+				$(this).remove()
+				$('.header-bottom').removeClass('search-toggled')
+				$('.header-bottom .navigation .search-form').removeClass('_shown')
+				$('.header-bottom .navigation .menu').removeClass('_hidden')
+			})
+		}
+	})
+
+	/**
  * Header Search form
  */
 	$('.header-bottom .navigation .search-form input').on('click', function() {
 		$(this).parents('.search-form').addClass('_shown')
-		$('.header-bottom .navigation').addClass('search-toggled')
+		$('.header-bottom').addClass('search-toggled')
 		$('.header-bottom .navigation .menu').addClass('_hidden')
-		if( $('.modal-backdrop').length == 0 ) {
-			$('body').append('<div class="modal-backdrop fade"></div>')
-			$('.modal-backdrop').on('click', function() {
+		if( $('.search-backdrop').length == 0 ) {
+			$('body').append('<div class="search-backdrop"></div>')
+			$('.search-backdrop').on('click', function() {
 				$(this).remove()
-				$('.header-bottom .navigation').removeClass('search-toggled')
+				$('.header-bottom').removeClass('search-toggled')
 				$('.header-bottom .navigation .search-form').removeClass('_shown')
 				$('.header-bottom .navigation .menu').removeClass('_hidden')
 			})

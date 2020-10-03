@@ -12,6 +12,11 @@
 	visibility: hidden
 	opacity: 0
 	transform: translate3d(0, 10px, 0)
+	+media-breakpoint-down(lg)
+		border-radius: 5px
+	+media-breakpoint-down(xs)
+		margin-top: 0
+		border-radius: 0
 	.results
 		overflow: hidden
 		display: flex

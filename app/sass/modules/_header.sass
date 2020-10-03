@@ -147,15 +147,61 @@
 			> .btn:not(:first-child)
 				margin-left: 10px
 	&-bottom
-		// border-top: 1px solid #4c494d
 		background-color: #312e32
+		&.search-toggled
+			.catalog,
+			.m-actions .menu-btn,
+			.logotype,
+			.actions
+				pointer-events: none
+			.navigation
+				.search
+					width: 100%
+					margin-right: 30px
+				+media-breakpoint-down(lg)
+					pointer-events: auto
+					.search
+						margin: 0
+						visibility: visible
+						opacity: 1
+						transform: translate3d(0, 0, 0)
 		&-inner
 			position: relative
 			display: flex
 			align-items: center
 			height: 60px
+			+media-breakpoint-down(lg)
+				justify-content: space-between
+
+		// Mobile navigation < 1230px
+		.m-actions
+			flex: 0 0 33.333%
+			display: inline-flex
+			align-items: center
+			+media-breakpoint-up(xl)
+				display: none
+			&-item
+				display: inline-flex
+				align-items: center
+				margin-right: 20px
+				.menu-btn,
+				.search-btn
+					color: $white
+					font-size: 18px
+		.logotype
+			flex: 0 0 33.333%
+			justify-content: center
+			text-align: center
+			+media-breakpoint-up(xl)
+				display: none
+			img
+				max-height: 48px
+
+		// Desktop navigation > 1230px
 		.catalog
 			height: 100%
+			+media-breakpoint-down(lg)
+				display: none
 			&-btn
 				width: 200px
 				height: 100%
@@ -175,133 +221,162 @@
 			display: flex
 			align-items: center
 			width: 100%
-			&.search-toggled
+			+media-breakpoint-down(lg)
+				pointer-events: none
+				position: absolute
+				top: 100%
+				margin-top: 6px
 				.search
 					width: 100%
-					margin-right: 30px
-		.search
-			margin-left: 30px
-			&-form
-				position: relative
-				display: inline-flex
-				align-items: center
-				width: 218px
-				&._shown
-					z-index: $z-index-header-search
-					width: 100%
-					transition: width .35s ease
-					.form-control
-						background-color: $white
-						color: $black
-						font-weight: 600
-						&::placeholder
-							color: rgba(#3a363b, 0.4)
-					.search-form-btn
-						background-color: $accent
-						&:hover
-							background-color: $orange
-					.search-form-results
-						overflow: visible
-						height: auto
-						visibility: visible
-						opacity: 1
-						transform: translate3d(0, 0, 0)
-						transition: .35s ease .25s
-				.form-control
-					height: 52px
-					margin-bottom: 0
-					background-color: rgba($white, 0.07)
-					color: $white
-					font-size: 13px
-					line-height: 50px
-					transition: .15s ease
-					&::placeholder
-						color: rgba($white, 0.4)
-					&:focus
-						box-shadow: none
-				&-btn
-					position: absolute
-					right: 3px
-					width: 46px
-					height: 46px
-					border-radius: 5px
-					background-color: #585658
-					color: $white
-					font-size: 18px
-					&:hover
-						background-color: $accent
-		.menu
-			margin: 0 15px
-			width: 100%
-			+media-breakpoint-down(lg)
-				display: none
-			&._hidden
-				display: none
-			&-list
-				display: flex
-				justify-content: space-between
-				> li
+					visibility: hidden
+					opacity: 0
+					transform: translate3d(0, 10px, 0)
+			+media-breakpoint-down(xs)
+				left: -15px
+				width: 100vw
+				margin-top: 0
+				.search
+					&-form
+						&._shown
+							.form-control
+								border-radius: 0
+								background-color: $accent
+								color: $white
+								font-weight: 200
+								&::placeholder
+									color: rgba($white, 0.7)
+			.search
+				margin-left: 30px
+				&-form
 					position: relative
-					line-height: 60px
-					&::after
-						content: ''
-						position: absolute
-						left: 0
-						right: 0
-						bottom: 0
-						height: 4px
-						background-color: $accent
-						opacity: 0
-						transition: $trs
-					&:hover
-						&::after
-							opacity: 1
-						> ul
-							z-index: 9
-							pointer-events: auto
+					display: inline-flex
+					align-items: center
+					width: 218px
+					&._shown
+						z-index: $z-index-header-search
+						width: 100%
+						transition: width .35s ease
+						.form-control
+							background-color: $white
+							color: $black
+							font-weight: 600
+							&::placeholder
+								color: rgba(#3a363b, 0.4)
+						.search-form-btn
+							background-color: $accent
+							&:hover
+								background-color: $orange
+						.search-form-results
+							overflow: visible
+							height: auto
 							visibility: visible
 							opacity: 1
 							transform: translate3d(0, 0, 0)
-					> a
-						position: relative
-						display: block
-						padding: 0 14px
+							transition: .35s ease .25s
+					.form-control
+						height: 52px
+						margin-bottom: 0
+						background-color: rgba($white, 0.07)
 						color: $white
 						font-size: 13px
-						font-weight: 500
-						white-space: nowrap
-					> ul
-						pointer-events: none
+						line-height: 50px
+						transition: .15s ease
+						&::placeholder
+							color: rgba($white, 0.4)
+						&:focus
+							box-shadow: none
+					&-btn
 						position: absolute
-						top: 100%
-						left: 0
-						min-width: 180px
-						padding: 5px 20px
-						border-radius: 0 0 5px 5px
-						box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1)
-						background-color: $white
-						visibility: hidden
-						opacity: 0
-						transform: translate3d(-10px, 0, 0)
-						transition: $trs
-						> li
-							line-height: 40px
-							&:not(:last-child)
-								border-bottom: 1px solid #f3f3f3
-							> a
-								display: block
-								color: $black
-								font-size: 13px
-								font-weight: 500
-								text-decoration: underline
-								&:hover
-									color: $accent
-									text-decoration: none
+						right: 3px
+						width: 46px
+						height: 46px
+						border-radius: 5px
+						background-color: #585658
+						color: $white
+						font-size: 18px
+						&:hover
+							background-color: $accent
+			.menu
+				margin: 0 15px
+				width: 100%
+				+media-breakpoint-down(lg)
+					display: none
+				&._hidden
+					display: none
+				&-list
+					display: flex
+					justify-content: space-between
+					> li
+						position: relative
+						line-height: 60px
+						&::after
+							content: ''
+							position: absolute
+							left: 0
+							right: 0
+							bottom: 0
+							height: 4px
+							background-color: $accent
+							opacity: 0
+							transition: $trs
+						&:hover
+							&::after
+								opacity: 1
+							> ul
+								z-index: 9
+								pointer-events: auto
+								visibility: visible
+								opacity: 1
+								transform: translate3d(0, 0, 0)
+						> a
+							position: relative
+							display: block
+							padding: 0 14px
+							color: $white
+							font-size: 13px
+							font-weight: 500
+							white-space: nowrap
+						> ul
+							pointer-events: none
+							position: absolute
+							top: 100%
+							left: 0
+							min-width: 180px
+							padding: 5px 20px
+							border-radius: 0 0 5px 5px
+							box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1)
+							background-color: $white
+							visibility: hidden
+							opacity: 0
+							transform: translate3d(-10px, 0, 0)
+							transition: $trs
+							> li
+								line-height: 40px
+								&:not(:last-child)
+									border-bottom: 1px solid #f3f3f3
+								> a
+									display: block
+									color: $black
+									font-size: 13px
+									font-weight: 500
+									text-decoration: underline
+									&:hover
+										color: $accent
+										text-decoration: none
 		.actions
 			display: flex
+			+media-breakpoint-down(lg)
+				flex: 0 0 33.333%
+				justify-content: flex-end
 			&-item
 				position: relative
 				line-height: 60px
+				+media-breakpoint-down(xs)
+					&:not(:first-child)
+						margin-left: 6px
+				+media-breakpoint-down(xxs)
+					&:not(:first-child)
+						margin-left: 4px
 				&::before
 					content: ''
 					position: absolute
@@ -312,6 +387,8 @@
 					width: 1px
 					margin: 8px 0
 					background-color: #434044
+					+media-breakpoint-down(lg)
+						display: none
 				&:last-child::after
 					content: ''
 					position: absolute
@@ -322,6 +399,8 @@
 					width: 1px
 					margin: 8px 0
 					background-color: #434044
+					+media-breakpoint-down(lg)
+						display: none
 			&-link
 				position: relative
 				display: block
@@ -329,6 +408,10 @@
 				padding: 0 20px
 				color: $white
 				font-size: 18px
+				+media-breakpoint-down(lg)
+					padding: 0 15px
+				+media-breakpoint-down(xs)
+					padding: 0 5px
 				.icon
 					transition: $trs
 				&:hover
@@ -336,13 +419,19 @@
 						opacity: 0.5
 					.actions-count
 						background-color: $orange
-			&-cart:hover
-				.cart-widget
-					pointer-events: auto
-					z-index: $z-index-header-cart
-					visibility: visible
-					opacity: 1
-					transform: translate3d(0, 0, 0)
+			&-cart
+				+media-breakpoint-down(lg)
+					.actions-link
+						padding-right: 12px
+					.actions-count
+						right: 2px
+				&:hover
+					.cart-widget
+						pointer-events: auto
+						z-index: $z-index-header-cart
+						visibility: visible
+						opacity: 1
+						transform: translate3d(0, 0, 0)
 			&-count
 				position: absolute
 				top: 12px
@@ -358,3 +447,13 @@
 				font-size: 11px
 				line-height: 1
 				transition: $trs
+				+media-breakpoint-down(lg)
+					right: 4px
+				+media-breakpoint-down(xs)
+					right: -6px
+				+media-breakpoint-down(xxs)
+					top: 14px
+					right: -4px
+					width: 16px
+					height: 16px
+					font-size: 10px

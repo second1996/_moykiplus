@@ -155,9 +155,6 @@
 					border-right: 1px solid $border
 					+media-breakpoint-down(md)
 						border-right: 0
-			// > .col:nth-child(2n-1),
-			// > [class*="col-"]:nth-child(2n-1)
-				// border-right: 1px solid $border
 	&-item
 		overflow: hidden
 		position: relative
@@ -167,6 +164,8 @@
 		height: 100%
 		padding: 30px
 		text-align: center
+		+media-breakpoint-down(xs)
+			padding: 20px
 		.icon
 			margin-top: 20px
 			width: 55px
@@ -181,12 +180,9 @@
 			top: 0
 			left: 0
 			right: 0
+			bottom: 0
 			z-index: 2
-			display: flex
-			align-items: center
-			justify-content: center
-			height: 100%
-			padding: 0 30px
+			padding: 15px 30px
 			background-color: $accent
 			color: $white
 			font-size: 18px
@@ -195,6 +191,15 @@
 			will-change: transform
 			transform: scale(0.25)
 			transition: opacity .3s ease, transform .5s ease
+			+media-breakpoint-down(xs)
+				padding: 15px
+				font-size: 15px
+			p
+				display: flex
+				align-items: center
+				justify-content: center
+				height: 100%
+				overflow-y: auto
 		&:hover
 			.descr
 				opacity: 1
@@ -280,7 +285,7 @@
 		+media-breakpoint-down(md)
 			padding: 30px 25px 0 30px
 		+media-breakpoint-down(xs)
-			padding: 20px 20px 0
+			padding: 10px 20px 0
 		.title
 			padding-top: 2px
 			font-size: 26px
@@ -292,6 +297,9 @@
 			+media-breakpoint-down(md)
 				padding-top: 7px
 				font-size: 20px
+			+media-breakpoint-down(xs)
+				padding-top: 9px
+				font-size: 18px
 		.link
 			flex: 0 0 auto
 			display: inline-flex
