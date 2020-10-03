@@ -49,10 +49,14 @@
 	border-bottom: 0
 	box-shadow: 0 3px 24px 1px rgba(68, 68, 79, 0.08)
 	+media-breakpoint-down(lg)
-		width: 210px
+		width: 100%
+	+media-breakpoint-down(sm)
+		border-bottom: 1px solid $white
 	&:hover
 		border-radius: 5px 5px 0 0
 		border-color: $accent
+		+media-breakpoint-down(sm)
+			border-radius: 5px
 		.card-quick-view
 			visibility: visible
 			opacity: 1
@@ -78,7 +82,7 @@
 			min-width: auto
 			width: 82px
 			height: 40px
-			padding: 10px 15px
+			padding: 0
 			border-radius: 0 0 5px 5px
 			border: 1px solid $accent
 			color: $accent
@@ -97,8 +101,6 @@
 		top: -5px
 		right: -5px
 		z-index: 2
-		+media-breakpoint-down(lg)
-			// display: none
 		.badge
 			width: 78px
 			height: 80px
@@ -221,17 +223,24 @@
 				color: #42656c
 				text-decoration: underline
 		.rating
-			display: flex
+			display: inline-flex
 			align-items: center
 			margin-bottom: 16px
 			line-height: 1
+			.ratings
+				+media-breakpoint-down(xs)
+					&-star
+						font-size: 13px
 			.comments
 				display: inline-flex
 				align-items: center
 				margin-left: 14px
 				color: #8a868b
 				font-size: 15px
+				+media-breakpoint-down(xs)
+					font-size: 13px
 				&-count
+					margin-top: 2px
 					margin-left: 5px
 		.price
 			margin-bottom: 18px
@@ -272,7 +281,10 @@
 		.compare-btn
 			width: calc(50% - 5px)
 			.icon
+				flex: 0 0 auto
 				font-size: 20px
+				+media-breakpoint-down(xs)
+					font-size: 18px
 			&._active
 				border-color: $accent
 				background-color: $accent
@@ -313,6 +325,8 @@
 		opacity: 0
 		transform: translate3d(0, -5px, 0)
 		transition: $trs
+		+media-breakpoint-down(sm)
+			display: none
 		&-list
 			padding: 0 20px 10px
 			> li

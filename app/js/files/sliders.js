@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	 * Home Banner slider
 	 */
 	var hBanner = new Swiper('.h-banner .h-banner-slider-container', {
+		autoplay: {
+			delay: 5000,
+		},
 		allowTouchMove: false,
 		loop: false,
 		speed: 750,
@@ -37,6 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			type: 'bullets',
 			clickable: true,
 		},
+		// breakpoints: {
+		// 	768: {
+		// 		autoplay: false
+		// 	}
+		// }
 	})
 
 	/**

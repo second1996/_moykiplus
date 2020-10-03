@@ -54,6 +54,8 @@
 	.nav-tabs
 		margin-left: -3px
 		margin-right: -3px
+		+media-breakpoint-down(xs)
+			justify-content: space-between
 		.nav-link
 			min-width: 190px
 			height: 42px
@@ -63,6 +65,19 @@
 			font-size: 14px
 			font-weight: 500
 			text-transform: none
+			+media-breakpoint-down(lg)
+				min-width: auto
+				padding: 0 15px
+			+media-breakpoint-down(sm)
+				min-width: 145px
+			+media-breakpoint-down(xs)
+				flex: 0 0 48%
+				justify-content: flex-start
+				min-width: auto
+			+media-breakpoint-down(xxs)
+				flex: 0 0 47%
+				font-size: 13px
+				word-break: break-word
 
 
 /* ==========================================================================

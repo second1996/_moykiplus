@@ -18,7 +18,9 @@
 			margin-top: 0
 			text-align: left
 			+media-breakpoint-down(md)
-				left: 40px
+				left: 0
+				bottom: 20px
+				text-align: center
 			&-bullet
 				width: 20px
 				height: 20px
@@ -57,16 +59,17 @@
 			&-meta
 				align-self: center
 				max-width: 330px
-				padding-top: 80px
-				padding-left: 70px
-				padding-bottom: 115px
+				padding: 80px 0 115px 70px
 				+media-breakpoint-down(lg)
 					padding-top: 40px
 				+media-breakpoint-down(md)
 					align-self: flex-start
 					max-width: 100%
-					padding-left: 40px
-					padding-bottom: 40px
+					padding: 50px 40px
+				+media-breakpoint-down(sm)
+					padding: 40px 30px
+				+media-breakpoint-down(xs)
+					padding: 30px 20px
 				.labels
 					margin-bottom: 18px
 				.title
@@ -94,6 +97,9 @@
 				+media-breakpoint-down(md)
 					width: 100%
 					padding-top: 60px
+					margin-bottom: 70px
+				+media-breakpoint-down(xs)
+					text-align: center
 				.bg-text
 					position: absolute
 					top: 10px
@@ -118,6 +124,9 @@
 					+media-breakpoint-down(md)
 						object-fit: scale-down
 						object-position: bottom center
+					+media-breakpoint-down(xs)
+						max-width: 90%
+						margin: 0 auto
 	&-product
 		width: 210px
 		+media-breakpoint-down(md)
@@ -206,33 +215,6 @@
 		transition: border .3s ease
 		&:hover
 			border-color: $accent
-		&--lg
-			height: 420px
-			+media-breakpoint-down(md)
-				height: 280px
-		&--md
-			height: 420px
-			.h-categories-head
-				.link
-					span
-						display: none
-			.h-categories-photo
-				.shadow-text
-					bottom: -15px
-				img
-					max-height: 290px
-		&--sm
-			height: 195px
-			.h-categories-head
-				.link
-					span
-						display: none
-			.h-categories-photo
-				.shadow-text
-					bottom: -30px
-				img
-					max-height: 100px
-		&:hover
 			.h-categories-head
 				.link
 					color: $accent
@@ -244,6 +226,43 @@
 			.h-categories-photo .shadow-text,
 			.h-categories-photo img
 				transform: scale(1.1)
+		// Large item
+		&--lg
+			height: 420px
+			+media-breakpoint-down(md)
+				height: 280px
+			+media-breakpoint-down(xs)
+				height: 170px
+		// Medium item
+		&--md
+			height: 420px
+			+media-breakpoint-down(xs)
+				height: 170px
+			.h-categories-head
+				.link
+					span
+						display: none
+			.h-categories-photo
+				.shadow-text
+					bottom: -15px
+				img
+					max-height: 290px
+					+media-breakpoint-down(xs)
+						max-height: 100px
+		// Small item
+		&--sm
+			height: 195px
+			+media-breakpoint-down(xs)
+				height: 170px
+			.h-categories-head
+				.link
+					span
+						display: none
+			.h-categories-photo
+				.shadow-text
+					bottom: -30px
+				img
+					max-height: 100px
 	&-link
 		position: absolute
 		top: 0
@@ -260,6 +279,8 @@
 		padding: 45px 40px 0 45px
 		+media-breakpoint-down(md)
 			padding: 30px 25px 0 30px
+		+media-breakpoint-down(xs)
+			padding: 20px 20px 0
 		.title
 			padding-top: 2px
 			font-size: 26px
@@ -312,6 +333,10 @@
 			white-space: nowrap
 			will-change: transform
 			transition: transform .6s
+			+media-breakpoint-down(xs)
+				left: -10px !important
+				bottom: -5px !important
+				font-size: 76px
 		img
 			position: absolute
 			right: -1px
@@ -322,6 +347,8 @@
 			transition: transform .6s
 			+media-breakpoint-down(md)
 				max-width: 240px
+			+media-breakpoint-down(xs)
+				max-height: 100px
 
 
 /* ==========================================================================
@@ -408,6 +435,10 @@
 				height: 360px
 				margin-bottom: 0
 				object-fit: cover
+				+media-breakpoint-down(xs)
+					height: 260px
+				+media-breakpoint-down(xxs)
+					height: 200px
 	&-video
 		overflow: hidden
 		position: relative
@@ -444,6 +475,10 @@
 			height: 360px
 			margin-bottom: 0
 			object-fit: cover
+			+media-breakpoint-down(xs)
+				height: 260px
+			+media-breakpoint-down(xxs)
+				height: 200px
 		&:hover
 			&::after
 				opacity: 0.6
