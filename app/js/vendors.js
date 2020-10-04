@@ -8,3 +8,4 @@
 @@include('libs/jquery.mask.min.js') // jQuery Mask input
 @@include('libs/readmore.min.js') // ReadMore Plugin
 @@include('../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js') // Fancybox Plugin
+@@include('../../node_modules/mmenu-light/dist/mmenu-light.js') // Mmenu Light Plugin

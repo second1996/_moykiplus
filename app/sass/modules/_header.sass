@@ -1,6 +1,7 @@
 @import 'header-mega-menu'
 @import 'header-search'
 @import 'header-cart-widget'
+@import 'mobile-menu'
 
 .header
 	background-color: #3a363b
@@ -199,6 +200,14 @@
 					font-size: 18px
 					&:hover
 						color: $orange
+				.menu-btn
+					&._toggled
+						.icon-list-menu
+							display: none
+						.icon-close
+							display: block
+					.icon-close
+						display: none
 				.search-btn
 					&._toggled
 						.icon-search

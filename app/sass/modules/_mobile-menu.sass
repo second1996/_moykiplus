@@ -1,0 +1,73 @@
+.m-menu
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: $z-index-mobile-menu
+	height: 100%
+	padding-top: 60px
+	// visibility: hidden
+	// opacity: 0
+	transition: $trs
+	+media-breakpoint-up(xl)
+		display: none
+	&.is-active
+		visibility: visible
+		opacity: 1
+	&-wrapper
+		overflow-y: scroll
+		position: relative
+		z-index: 1
+		height: 100%
+		background-color: $bodycolor
+	&-nav
+		max-width: 320px
+		ul
+			overflow: hidden
+			position: relative
+			margin-left: -25px
+			> li
+				background-color: $bodycolor
+				border-bottom: 1px solid $border
+				> span,
+				> a
+					cursor: pointer
+					display: block
+					width: 100%
+					padding: 20px 25px
+					font-size: 15px
+					font-weight: 500
+					line-height: 1
+				.icon-arrow
+					margin-left: auto
+					font-size: 13px
+				a
+					display: flex
+					align-items: center
+				&.catalog
+					background-color: $accent
+					color: $white
+					span
+						display: flex
+						align-items: center
+						font-weight: 400
+					.icon-catalog
+						margin-right: 16px
+						font-size: 13px
+				> ul,
+				> .submenu
+					position: absolute
+					top: 0
+					left: 25px
+					bottom: 0
+					width: 100%
+					background-color: $white
+					will-change: transform
+					transform: translate3d(100%, 0, 0)
+					transition: transform .45s ease
+					&._toggled
+					.back-btn
+						background-color: $accent
+					> li
+						color: $black

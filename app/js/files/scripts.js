@@ -20,7 +20,7 @@ jQuery(document).ready( function($) {
 	if( window.matchMedia('(max-width: 1299.98px)').matches ) {
 		// Mobile Menu
 		$('.header-bottom .m-actions-item .menu-btn').on('click', function() {
-			alert('click')
+			$(this).toggleClass('_toggled')
 		})
 
 		// Mobile Search
