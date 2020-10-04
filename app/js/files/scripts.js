@@ -21,7 +21,7 @@ jQuery(document).ready( function($) {
 		alert('click')
 	})
 	$('.header-bottom .m-actions-item .search-btn').on('click', function() {
-		$('.header-bottom').toggleClass('search-toggled')
+		$('.header-bottom').addClass('search-toggled')
 		$('.header-bottom .navigation .search-form').addClass('_shown')
 		if( $('.search-backdrop').length == 0 ) {
 			$('body').append('<div class="search-backdrop"></div>')

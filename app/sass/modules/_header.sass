@@ -4,6 +4,9 @@
 
 .header
 	background-color: #3a363b
+	+media-breakpoint-down(lg)
+		position: relative
+		z-index: $z-index-header-sticky
 	&._sticky
 		padding-bottom: 60px
 		.header-bottom
@@ -11,7 +14,7 @@
 			top: 0
 			left: 0
 			right: 0
-			z-index: 99
+			z-index: $z-index-header-sticky
 			box-shadow: 0 0 10px rgba($black, 0.5)
 	&-top
 		padding: 14px 0
@@ -164,7 +167,6 @@
 						margin: 0
 						visibility: visible
 						opacity: 1
-						transform: translate3d(0, 0, 0)
 		&-inner
 			position: relative
 			display: flex
@@ -230,21 +232,35 @@
 					width: 100%
 					visibility: hidden
 					opacity: 0
-					transform: translate3d(0, 10px, 0)
 			+media-breakpoint-down(xs)
 				left: -15px
 				width: 100vw
 				margin-top: 0
 				.search
 					&-form
+						padding: 0 15px
 						&._shown
+							padding-top: 9px
+							padding-bottom: 9px
+							background-color: $accent
 							.form-control
+								height: 34px
+								padding-left: 0
+								padding-right: 0
+								margin-right: 40px
 								border-radius: 0
+								border-bottom: 1px solid rgba(#f0f2f7, 0.2)
 								background-color: $accent
 								color: $white
-								font-weight: 200
+								font-weight: 400
+								line-height: 32px
 								&::placeholder
 									color: rgba($white, 0.7)
+							.search-form-btn
+								right: 15px
+								width: 34px
+								height: 34px
+								background-color: rgba($white, 0.1)
 			.search
 				margin-left: 30px
 				&-form
@@ -280,7 +296,7 @@
 						color: $white
 						font-size: 13px
 						line-height: 50px
-						transition: .15s ease
+						transition: background-color .15s ease
 						&::placeholder
 							color: rgba($white, 0.4)
 						&:focus

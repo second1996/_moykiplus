@@ -12,12 +12,12 @@
 	opacity: 0
 	transform: translate3d(0, 10px, 0)
 	transition: $trs
+	+media-breakpoint-down(xs)
+		width: 272px
 	&-wrapper
 		padding: 15px
 		background-color: $white
 	&-list
-		display: flex
-		flex-direction: column
 		height: 235px
 		overflow-y: auto
 	&-item
@@ -34,6 +34,9 @@
 			border-radius: 5px
 			border: 1px solid rgba($accent, 0.15)
 			background-color: $white
+			+media-breakpoint-down(xs)
+				width: 90px
+				height: 90px
 			img
 				width: 100%
 				height: 100%
@@ -51,6 +54,8 @@
 				font-size: 16px
 				line-height: 1.2
 				transition: color .35s ease
+				+media-breakpoint-down(xs)
+					font-size: 14px
 			.quantity
 				position: relative
 				z-index: 2
@@ -58,6 +63,8 @@
 				align-items: center
 				margin-top: 15px
 				line-height: 1
+				+media-breakpoint-down(xs)
+					margin-top: 10px
 				.count
 					margin-right: 5px
 					color: $black
@@ -86,6 +93,8 @@
 				margin-top: 15px
 				font-size: 16px
 				line-height: 1
+				+media-breakpoint-down(xs)
+					margin-top: 10px
 		.product-remove
 			position: relative
 			top: -5px
