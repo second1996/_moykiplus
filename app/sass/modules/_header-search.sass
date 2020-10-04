@@ -34,7 +34,7 @@
 		display: flex
 		height: 100%
 		max-height: 426px
-		+media-breakpoint-down(xs)
+		+media-breakpoint-down(sm)
 			overflow: auto
 			max-height: 60vh
 			flex-direction: column
@@ -46,13 +46,13 @@
 			&-tale
 				display: flex
 				height: 100%
-				+media-breakpoint-down(xs)
+				+media-breakpoint-down(sm)
 					flex-direction: column
 					padding: 30px 0
 					border-bottom: 1px solid $border
 				&.results-often
 					border-right: 1px solid $border
-					+media-breakpoint-down(xs)
+					+media-breakpoint-down(sm)
 						display: none
 					.results-queries-list
 						border-bottom: 1px solid $border
@@ -63,7 +63,7 @@
 				margin-bottom: 20px
 				padding: 30px
 				line-height: 1.2
-				+media-breakpoint-down(xs)
+				+media-breakpoint-down(sm)
 					flex: 0 0 auto
 					padding: 0 15px
 			&-list
@@ -73,9 +73,10 @@
 				display: block
 				padding: 30px
 				border-left: 1px solid $border
-				+media-breakpoint-down(xs)
+				+media-breakpoint-down(sm)
 					height: 100%
 					padding: 0 15px
+					border-left: 0
 				> li
 					line-height: 1.2
 					&:not(:last-child)
@@ -89,7 +90,7 @@
 			margin-left: -1px
 			padding: 30px
 			border-left: 1px solid $border
-			+media-breakpoint-down(xs)
+			+media-breakpoint-down(sm)
 				padding: 30px 15px 0
 			&-title
 				display: block
@@ -98,7 +99,7 @@
 				overflow-y: auto
 				height: 100%
 				max-height: 330px
-				+media-breakpoint-down(xs)
+				+media-breakpoint-down(sm)
 					max-height: 100%
 			&-item
 				position: relative
