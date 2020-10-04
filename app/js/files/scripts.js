@@ -3,16 +3,18 @@ jQuery(document).ready( function($) {
 	/**
 	 * Sticky header
 	 */
-	var stickyHeader = $('.header'),
-			headerOffset = $('.header .header-bottom').offset().top;
+	if( window.matchMedia('(min-width: 1230px)').matches ) {
+		var stickyHeader = $('.header'),
+				headerOffset = $('.header .header-bottom').offset().top;
 
-	$(window).on('scroll load', function() {
-		if( $(window).scrollTop() >= headerOffset ) {
-			stickyHeader.addClass('_sticky')
-		} else {
-			stickyHeader.removeClass('_sticky')
-		}
-	})
+		$(window).on('scroll load', function() {
+			if( $(window).scrollTop() >= headerOffset ) {
+				stickyHeader.addClass('_sticky')
+			} else {
+				stickyHeader.removeClass('_sticky')
+			}
+		})
+	}
 
 	/**
 	 * Mobile header actions
@@ -21,6 +23,14 @@ jQuery(document).ready( function($) {
 		// Mobile Menu
 		$('.header-bottom .m-actions-item .menu-btn').on('click', function() {
 			$(this).toggleClass('_toggled')
+		})
+
+		$('.m-menu-nav ul > li > a.has-submenu').on('click', function(e) {
+			e.preventDefault()
+			$(this).siblings('.submenu').addClass('_toggled')
+			$(this).siblings('.submenu').find('.back-btn').on('click', function() {
+				$(this).parents('.submenu').removeClass('_toggled')
+			})
 		})
 
 		// Mobile Search
@@ -68,7 +78,7 @@ jQuery(document).ready( function($) {
 	/**
 	 * Mega menu
 	 */
-	$('.mega-menu-sections .nav-item .has-submenu').on('click', function(e) {
+	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu').on('click', function(e) {
 		e.preventDefault()
 		$submenu = $(this)
 		//getting the next element
