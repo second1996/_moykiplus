@@ -1,12 +1,14 @@
 .m-menu
+	-webkit-overflow-scrolling:touch
+	overflow: hidden
 	position: fixed
-	top: 0
+	top: 60px
 	left: 0
 	right: 0
 	bottom: 0
 	z-index: $z-index-mobile-menu
-	height: 100vh
-	padding-top: 60px
+	max-width: 320px
+	height: calc(100vh - 60px)
 	// visibility: hidden
 	// opacity: 0
 	transition: $trs
@@ -17,13 +19,11 @@
 		opacity: 1
 	&-wrapper
 		overflow-y: scroll
-		position: relative
 		z-index: 1
-		max-width: 320px
 		height: 100%
 		background-color: $bodycolor
-		.container
-			height: 100%
+		+media-breakpoint-down(md)
+			padding-bottom: 60px
 	// Navigation
 	&-nav
 		ul
@@ -61,11 +61,14 @@
 					top: 0
 					left: 0
 					bottom: 0
+					z-index: 2
 					width: 100%
 					background-color: $bodycolor
 					will-change: transform
 					transform: translate3d(100%, 0, 0)
-					transition: transform .45s ease
+					transition: transform .4s ease
+					+media-breakpoint-down(md)
+						padding-bottom: 60px
 					&._toggled
 						transform: translate3d(0, 0, 0)
 					.back-btn
@@ -84,15 +87,17 @@
 							&.has-dropmenu
 								.icon
 									will-change: transform
-									transition: $trs
+									transition: transform .35s ease
 								&._toggled
 									color: $accent
 									.icon
-										transform: rotate(90deg)
+										transform: rotate(-90deg)
 						> .dropmenu
 							display: none
 							margin-left: 0
 							> li
+								&:last-child
+									border-bottom: 0
 								> a
 									display: flex
 									align-items: center
@@ -105,19 +110,171 @@
 									.icon
 										fill: #aeaeae
 										font-size: 12px
-										transition: fill .35s ease
+										transition: $trs
+									&._toggled
+										color: $accent
+										.icon
+											fill: $accent
+											transform: rotate(-90deg)
 									&:hover
 										color: $accent
 										.icon
 											fill: $accent
+								> .dropmenu
+									display: none
+									margin-left: 0
+									border-top: 1px solid $border
+									background-color: $white
+									> li
+										border: 0
+										background-color: $white
+										> span
+											position: relative
+											display: inline-block
+											margin: 30px 25px 20px
+											color: #2d2d2d
+											font-size: 15px
+											font-weight: 600
+											line-height: 1
+											&::after
+												content: ''
+												position: absolute
+												top: 100%
+												left: 0
+												right: 0
+												height: 1px
+												background-color: #2d2d2d
+										> a
+											display: flex
+											align-items: center
+											width: 100%
+											padding: 10px 25px
+											color: #515151
+											font-size: 14px
+											font-weight: 500
+											line-height: 1
+											&:hover
+												color: $accent
+									// Banner
+									.banner
+										display: flex
+										flex-direction: column
+										margin: 30px 25px 40px
+										padding: 25px 20px 100px
+										border-radius: 5px
+										background-color: $border
+										background-repeat: no-repeat
+										background-position: center bottom
+										&-brand
+											margin-bottom: 25px
+											img
+												max-height: 25px
+										&-meta
+											.title
+												display: block
+												margin-bottom: 6px
+												font-size: 18px
+												line-height: 1.35
+											.descr
+												display: block
+												margin-bottom: 20px
+												color: rgba($black, 0.8)
+											.btn
+												min-width: 120px
+
 	// Buttons
 	&-buttons
 		display: flex
 		flex-direction: column
-		max-width: 320px
-		padding: 30px 25px 30px
-		padding-right: 25px
-		border-bottom: 1px solid $border
+		padding: 30px 25px
 		.btn
+			width: 100%
+			&:not(:last-child)
+				margin-bottom: 15px
+
+	// Contacts
+	&-contacts
+		padding: 30px 25px
+		border-top: 1px solid $border
+		.toggle-box
+			&:not(:last-child)
+				margin-bottom: 20px
+			&-header
+				display: flex
+				align-items: start
+				margin-bottom: 10px
+				&:hover
+					cursor: pointer
+					.toggle-box-header-content
+						.icon-arrow
+							fill: $accent
+				&._toggled
+					.toggle-box-header-content
+						.icon-arrow
+							fill: $accent
+							transform: rotate(90deg)
+				&-icon
+					flex: 0 0 auto
+					display: flex
+					align-items: center
+					justify-content: center
+					width: 35px
+					height: 35px
+					border-radius: 5px
+					border: 1px solid #ededed
+					background-color: $white
+					color: $accent
+					font-size: 12px
+				&-content
+					position: relative
+					width: 100%
+					margin-top: 2px
+					margin-left: 10px
+					padding-right: 30px
+					.title
+						margin-bottom: 4px
+						line-height: 1
+					.text
+						display: block
+						color: #2d2d2d
+						line-height: 1.2
+						&:hover
+							color: $accent
+					.icon-arrow
+						position: absolute
+						top: 13px
+						right: 0
+						width: 13px
+						height: 13px
+						transition: $trs
+			&-dropdown
+				display: none
+				margin-top: 10px
+				&-list
+					padding: 5px 45px
+					border-radius: 5px
+					background-color: $white
+				&-item
+					padding: 15px 0
+					&:not(:last-child)
+						border-bottom: 1px solid rgba($black, 0.1)
+					.title
+						margin-bottom: 6px
+						line-height: 1
+					.text
+						display: block
+						color: #2d2d2d
+						line-height: 1.3
+					a.text
+						display: inline-block
+						color: #2d2d2d
+						line-height: 1.3
+						&:hover
+							color: $accent
+	&-footer
+		padding: 30px 25px
+		border-top: 1px solid $border
+		.btn
+			width: 100%
 			&:not(:last-child)
 				margin-bottom: 15px

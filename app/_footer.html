@@ -63,10 +63,10 @@
 						</ul>
 						<h5 class="mb-15 mt-30 c-white text-sm w-medium text-uppercase">Мы в соцсетях</h5>
 						<div class="footer-socials">
-							<a href="https://youtube.com" class="footer-socials-item vkontakte" target="_blank" rel="nofollow noopener">
+							<a href="https://vk.com" class="footer-socials-item vkontakte" target="_blank" rel="nofollow noopener">
 								<svg class="icon icon-vkontakte"><use xlink:href="images/symbol-defs.svg#vkontakte"></use></svg>
 							</a>
-							<a href="https://youtube.com" class="footer-socials-item facebook" target="_blank" rel="nofollow noopener">
+							<a href="https://facebook.com" class="footer-socials-item facebook" target="_blank" rel="nofollow noopener">
 								<svg class="icon icon-facebook"><use xlink:href="images/symbol-defs.svg#facebook"></use></svg>
 							</a>
 							<a href="https://youtube.com" class="footer-socials-item youtube" target="_blank" rel="nofollow noopener">
@@ -154,8 +154,84 @@
 		</div><!-- /.stores-content -->
 	</div>
 
+	<!-- Modal: Callback -->
+	<div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="callbackModalLabel">Заказать обратный звонок</h5>
+					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="POST" class="form">
+						<div class="form-group">
+							<label for="cb-name" class="form-label">Ваше имя</label>
+							<input type="text" class="form-control form-field-icon form-field-icon--user" id="cb-name" placeholder="Евгений" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="cb-phone" class="form-label">Ваш телефон</label>
+							<input type="tel" class="form-control form-field-icon form-field-icon--phone" id="cb-phone" data-mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="cb-hours" class="form-label">Удобное время для звонка</label>
+							<select class="form-select form-field-icon form-field-icon--hours" id="cb-hours" required>
+								<option value="0" selected>Как можно быстрее</option>
+								<option value="1">В любое время</option>
+								<option value="2">В любой день после обеда</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="cb-message" class="form-label">Комментарий</label>
+							<textarea class="form-textarea" id="cb-message"></textarea>
+						</div>
+						<div class="form-group form-checkbox">
+							<input type="checkbox" name="policy-agreed" id="policy-agreed" required>
+							<label for="policy-agreed" class="form-checkbox-label">Я подтверждаю, что ознакомлен и согласен с условиями предоставления даных</label>
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn btn-primary">Заказать</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal: Check order status -->
+	<div class="modal fade" id="checkOrderStatusModal" tabindex="-1" aria-labelledby="checkOrderStatusModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="checkOrderStatusModalLabel">Что с моим заказом?</h5>
+					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="POST" class="form">
+						<div class="form-group">
+							<label for="os-phone" class="form-label">Ваш телефон</label>
+							<input type="tel" class="form-control form-field-icon form-field-icon--phone" id="os-phone" data-mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="os-number" class="form-label">Номер заказа</label>
+							<input type="text" class="form-control form-field-icon form-field-icon--order" id="os-number" placeholder="4357854" required autocomplete="off">
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn btn-primary">Проверить статус заказа</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Mobile Menu -->
-	<div class="m-menu">
+	<div class="m-menu scrollbar">
 		<div class="m-menu-wrapper">
 			<nav class="m-menu-nav">
 				<ul>
@@ -177,10 +253,41 @@
 								</a>
 								<ul class="dropmenu">
 									<li>
-										<a href="#">
+										<a href="#" class="has-dropmenu">
 											<span>Смесители</span>
 											<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
 										</a>
+										<ul class="dropmenu">
+											<li><span class="title c-black text-xs w-medium">Категории</span></li>
+											<li><a href="#">Из нержавеющей стали</a></li>
+											<li><a href="#">Гранитные</a></li>
+											<li><a href="#">Из искусственного камня</a></li>
+											<li><a href="#">Керамические</a></li>
+											<li><a href="#">Кварцевые</a></li>
+											<li><a href="#">Мраморные</a></li>
+											<li><span class="title c-black text-xs w-medium">Популярная подборка</span></li>
+											<li><a href="#">Накладные</a></li>
+											<li><a href="#">Металлические</a></li>
+											<li><a href="#">Угловые</a></li>
+											<li><a href="#">Круглые</a></li>
+											<li><a href="#">Врезные</a></li>
+											<li><a href="#">В шкаф 45 см</a></li>
+											<li><a href="#">Керамические</a></li>
+											<li><a href="#">С 2 чашами</a></li>
+											<li><a href="#">Распродажа</a></li>
+											<li class="banner" style="background-image: url('../images/mega-menu-banner.png')">
+												<div class="banner-brand">
+													<a href="page-brand.html">
+														<img src="images/brands/longran.png" alt="">
+													</a>
+												</div>
+												<div class="banner-meta">
+													<span class="title c-black w-bold">Купи любой комплект мойку + смеситель</span>
+													<span class="descr text-xs w-medium">Longran из гранита и получи скидку 10%</span>
+													<a href="page-single-product.html" class="btn btn-primary">Купить</a>
+												</div>
+											</li>
+										</ul>
 									</li>
 									<li>
 										<a href="#">
@@ -288,7 +395,7 @@
 					</li>
 					<li><a href="#">Бренды</a></li>
 				</ul>
-			</nav>
+			</nav><!-- /.m-menu-nav -->
 			<div class="m-menu-buttons">
 				<a href="page-contacts.html" class="btn btn-primary">
 					<svg class="icon icon-store"><use xlink:href="images/symbol-defs.svg#store"></use></svg>
@@ -302,84 +409,100 @@
 					<svg class="icon icon-discount"><use xlink:href="images/symbol-defs.svg#discount"></use></svg>
 					<span>Акции</span>
 				</a>
-			</div>
-		</div>
-	</div>
-
-	<!-- Modal: Callback -->
-	<div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="callbackModalLabel">Заказать обратный звонок</h5>
-					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="#" method="POST" class="form">
-						<div class="form-group">
-							<label for="cb-name" class="form-label">Ваше имя</label>
-							<input type="text" class="form-control form-field-icon form-field-icon--user" id="cb-name" placeholder="Евгений" required autocomplete="off">
+			</div><!-- /.m-menu-buttons -->
+			<div class="m-menu-contacts">
+				<div class="toggle-box">
+					<div class="toggle-box-header">
+						<div class="toggle-box-header-icon">
+							<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
 						</div>
-						<div class="form-group">
-							<label for="cb-phone" class="form-label">Ваш телефон</label>
-							<input type="tel" class="form-control form-field-icon form-field-icon--phone" id="cb-phone" data-mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+						<div class="toggle-box-header-content">
+							<span class="d-block title c-gray text-xxs w-medium">Телефон:</span>
+							<a href="tel:+74956422605" class="text c-black text-xxs w-bold">+7 (495) 642-26-05</a>
+							<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
 						</div>
-						<div class="form-group">
-							<label for="cb-hours" class="form-label">Удобное время для звонка</label>
-							<select class="form-select form-field-icon form-field-icon--hours" id="cb-hours" required>
-								<option value="0" selected>Как можно быстрее</option>
-								<option value="1">В любое время</option>
-								<option value="2">В любой день после обеда</option>
-							</select>
+					</div>
+					<div class="toggle-box-dropdown">
+						<ul class="toggle-box-dropdown-list">
+							<li class="toggle-box-dropdown-item">
+								<span class="d-block title c-gray text-xxs w-medium">Справочная служба:</span>
+								<a href="tel:+79850175099" class="text text-xxs w-bold">+7 (985) 017-50-99</a>
+							</li>
+							<li class="toggle-box-dropdown-item">
+								<span class="d-block title c-gray text-xxs w-medium">Магазин:</span>
+								<a href="tel:+74955094160" class="text text-xxs w-bold">+7 (495) 509-41-60</a>
+							</li>
+						</ul>
+					</div>
+				</div><!-- /.toggle-box -->
+				<div class="toggle-box">
+					<div class="toggle-box-header">
+						<div class="toggle-box-header-icon">
+							<svg class="icon icon-mail"><use xlink:href="images/symbol-defs.svg#mail"></use></svg>
 						</div>
-						<div class="form-group">
-							<label for="cb-message" class="form-label">Комментарий</label>
-							<textarea class="form-textarea" id="cb-message"></textarea>
+						<div class="toggle-box-header-content">
+							<span class="d-block title c-gray text-xxs w-medium">E-mail:</span>
+							<a href="mailto:info@moykiplus.ru" class="text c-black text-xxs w-bold">info@moykiplus.ru</a>
 						</div>
-						<div class="form-group form-checkbox">
-							<input type="checkbox" name="policy-agreed" id="policy-agreed" required>
-							<label for="policy-agreed" class="form-checkbox-label">Я подтверждаю, что ознакомлен и согласен с условиями предоставления даных</label>
+					</div>
+				</div><!-- /.toggle-box -->
+				<div class="toggle-box">
+					<div class="toggle-box-header">
+						<div class="toggle-box-header-icon">
+							<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 						</div>
-						<div class="form-submit">
-							<button type="submit" class="btn btn-primary">Заказать</button>
+						<div class="toggle-box-header-content">
+							<span class="d-block title c-gray text-xxs w-medium">Режим работы:</span>
+							<span class="text c-black text-xxs w-bold">Пн-Пт с 9:00 до 18:00 (Офис)</span>
+							<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
 						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Modal: Check order status -->
-	<div class="modal fade" id="checkOrderStatusModal" tabindex="-1" aria-labelledby="checkOrderStatusModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="checkOrderStatusModalLabel">Что с моим заказом?</h5>
-					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true"></span>
-						<span aria-hidden="true"></span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form action="#" method="POST" class="form">
-						<div class="form-group">
-							<label for="os-phone" class="form-label">Ваш телефон</label>
-							<input type="tel" class="form-control form-field-icon form-field-icon--phone" id="os-phone" data-mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" required autocomplete="off">
+					</div>
+					<div class="toggle-box-dropdown">
+						<ul class="toggle-box-dropdown-list">
+							<li class="toggle-box-dropdown-item">
+								<span class="d-block title c-gray text-xxs w-medium">Офис:</span>
+								<span class="text text-xxs w-bold">Пн-Пт с 9:00 до 18:00 <br>Сб-Вс выходные</span>
+							</li>
+							<li class="toggle-box-dropdown-item">
+								<span class="d-block title c-gray text-xxs w-medium">Магазины:</span>
+								<span class="text text-xxs w-bold">Пн-Пт: 17:30 до 22:00 <br>Сб-Вс: 10:00 до 22:00</span>
+							</li>
+						</ul>
+					</div>
+				</div><!-- /.toggle-box -->
+				<div class="toggle-box">
+					<div class="toggle-box-header">
+						<div class="toggle-box-header-icon">
+							<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
 						</div>
-						<div class="form-group">
-							<label for="os-number" class="form-label">Номер заказа</label>
-							<input type="text" class="form-control form-field-icon form-field-icon--order" id="os-number" placeholder="4357854" required autocomplete="off">
+						<div class="toggle-box-header-content">
+							<span class="d-block title c-gray text-xxs w-medium">Адрес:</span>
+							<a href="tel:+74956422605" class="text c-black text-xxs w-bold">Москва, ул. Дорожная, 3 стр. 3А</a>
+							<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
 						</div>
-						<div class="form-submit">
-							<button type="submit" class="btn btn-primary">Проверить статус заказа</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
+					</div>
+					<div class="toggle-box-dropdown">
+						<ul class="toggle-box-dropdown-list">
+							<li class="toggle-box-dropdown-item">
+								<span class="d-block title c-gray text-xxs w-medium">Магазин м. «Домодедовская»:</span>
+								<span class="text text-xxs w-bold">ТРЦ "Вегас", "Твой дом", 25 км (МКАД внешняя сторона), вход 2</span>
+							</li>
+							<li class="toggle-box-dropdown-item">
+								<span class="d-block title c-gray text-xxs w-medium">Магазин м. «Мякинино»:</span>
+								<span class="text text-xxs w-bold">ТЦ Твой Дом 2, 66 км МКАД, 2-й этаж, Кухонные мойки</span>
+							</li>
+						</ul>
+					</div>
+				</div><!-- /.toggle-box -->
+			</div><!-- /.m-menu-contacts -->
+			<div class="m-menu-footer">
+				<a href="#" class="btn btn-success">Войти в личный кабинет</a>
+				<button class="btn btn-primary btn-callback" data-toggle="modal" data-target="#callbackModal">
+					<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+					<span>Заказать звонок</span>
+				</button>
+			</div><!-- /.m-menu-footer -->
+		</div><!-- /.m-menu-wrapper -->
 	</div>
 
 	<script src="js/vendors.min.js"></script>

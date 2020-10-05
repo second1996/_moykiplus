@@ -78,7 +78,7 @@ jQuery(document).ready( function($) {
 	/**
 	 * Mega menu
 	 */
-	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu').on('click', function(e) {
+	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, .m-menu-contacts .toggle-box-header').on('click', function(e) {
 		e.preventDefault()
 		$submenu = $(this)
 		//getting the next element
