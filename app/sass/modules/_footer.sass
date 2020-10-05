@@ -18,6 +18,15 @@
 				color: rgba($white, 0.8)
 				&:hover
 					color: $orange
+		+media-breakpoint-down(xs)
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-between
+			> li
+				flex: 0 0 45%
+		+media-breakpoint-down(xxs)
+			> li
+				flex: 0 0 100%
 	&-contacts
 		> li
 			&:not(:last-child)

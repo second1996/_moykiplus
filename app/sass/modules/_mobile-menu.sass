@@ -1,5 +1,4 @@
 .m-menu
-	-webkit-overflow-scrolling:touch
 	overflow: hidden
 	position: fixed
 	top: 60px
@@ -8,15 +7,17 @@
 	bottom: 0
 	z-index: $z-index-mobile-menu
 	max-width: 320px
-	height: calc(100vh - 60px)
-	// visibility: hidden
-	// opacity: 0
+	height: 100%
+	visibility: hidden
+	opacity: 0
+	transform: translate3d(-25px, 0, 0)
 	transition: $trs
 	+media-breakpoint-up(xl)
 		display: none
-	&.is-active
+	&._shown
 		visibility: visible
 		opacity: 1
+		transform: translate3d(0, 0, 0)
 	&-wrapper
 		overflow-y: scroll
 		z-index: 1
@@ -271,6 +272,8 @@
 						line-height: 1.3
 						&:hover
 							color: $accent
+
+	// Footer
 	&-footer
 		padding: 30px 25px
 		border-top: 1px solid $border

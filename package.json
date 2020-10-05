@@ -31,7 +31,8 @@
 		"jquery": "^3.5.1",
 		"jquery-mask-plugin": "^1.14.16",
 		"npm-check-updates": "^8.1.1",
-		"swiper": "^6.2.0"
+		"swiper": "^6.2.0",
+		"vanilla-lazyload": "^17.1.2"
 	},
 	"dependencies": {}
 }

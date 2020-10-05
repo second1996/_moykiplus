@@ -1,3 +1,4 @@
+@@include('../../node_modules/vanilla-lazyload/dist/lazyload.min.js') // LazyLoad
 @@include('../../node_modules/jquery/dist/jquery.min.js') // jQuery
 @@include('libs/popper.min.js') // Popper lib
 @@include('../../node_modules/bootstrap/js/dist/util.js') // Bootstrap Util lib

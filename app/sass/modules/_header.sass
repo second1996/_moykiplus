@@ -6,7 +6,6 @@
 .header
 	background-color: #3a363b
 	+media-breakpoint-down(lg)
-		padding-bottom: 60px
 		.header-bottom
 			position: fixed
 			top: 0
@@ -159,6 +158,12 @@
 				margin-left: 10px
 	&-bottom
 		background-color: #312e32
+		&.m-menu-toggled
+			.catalog,
+			.m-actions .search-btn,
+			.logotype,
+			.actions
+				pointer-events: none
 		&.search-toggled
 			.catalog,
 			.m-actions .menu-btn,
@@ -259,12 +264,12 @@
 					visibility: hidden
 					opacity: 0
 			+media-breakpoint-down(xs)
-				left: -15px
+				left: -25px
 				width: 100vw
 				margin-top: 0
 				.search
 					&-form
-						padding: 0 15px
+						padding: 0 25px
 						&._shown
 							padding-top: 9px
 							padding-bottom: 9px
@@ -283,7 +288,7 @@
 								&::placeholder
 									color: rgba($white, 0.7)
 							.search-form-btn
-								right: 15px
+								right: 25px
 								width: 34px
 								height: 34px
 								background-color: rgba($white, 0.1)

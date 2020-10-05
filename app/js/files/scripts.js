@@ -1,6 +1,19 @@
 jQuery(document).ready( function($) {
 
 	/**
+	 * LazyLoad init
+	 */
+	var lazyLoadInstance = new LazyLoad({
+		elements_selector: ".lazy",
+		load_delay: 250,
+		callback_loaded: function(element) {
+			// console.log("👍 LOADED", element);
+			$(element).siblings('.lazy-spin').remove();
+		},
+	})
+
+
+	/**
 	 * Sticky header
 	 */
 	if( window.matchMedia('(min-width: 1230px)').matches ) {
@@ -16,6 +29,7 @@ jQuery(document).ready( function($) {
 		})
 	}
 
+
 	/**
 	 * Mobile header actions
 	 */
@@ -23,8 +37,11 @@ jQuery(document).ready( function($) {
 		// Mobile Menu
 		$('.header-bottom .m-actions-item .menu-btn').on('click', function() {
 			$(this).toggleClass('_toggled')
+			$('.m-menu').toggleClass('_shown')
+			$('.header-bottom').toggleClass('m-menu-toggled')
 		})
 
+		// Slide submenu
 		$('.m-menu-nav ul > li > a.has-submenu').on('click', function(e) {
 			e.preventDefault()
 			$(this).siblings('.submenu').addClass('_toggled')
@@ -45,17 +62,9 @@ jQuery(document).ready( function($) {
 					$('.header-bottom .navigation .search-form').removeClass('_shown')
 				}
 			})
-			// if( $('.search-backdrop').length == 0 ) {
-			// 	$('body').append('<div class="search-backdrop"></div>')
-			// 	$('.search-backdrop').on('click', function() {
-			// 		$(this).remove()
-			// 		$('.header-bottom').removeClass('search-toggled')
-			// 		$('.header-bottom .navigation .search-form').removeClass('_shown')
-			// 		$('.header-bottom .navigation .menu').removeClass('_hidden')
-			// 	})
-			// }
 		})
 	}
+
 
 	/**
  * Header Search form
@@ -75,6 +84,7 @@ jQuery(document).ready( function($) {
 		})
 	}
 
+
 	/**
 	 * Mega menu
 	 */
@@ -88,6 +98,7 @@ jQuery(document).ready( function($) {
 		$content.slideToggle(250)
 	})
 
+
 	/**
 	 * Product card gallery
 	 */
@@ -96,6 +107,7 @@ jQuery(document).ready( function($) {
 		$(this).addClass('_active')
 	})
 
+
 	/**
 	 * Product card actions
 	 */
@@ -103,6 +115,7 @@ jQuery(document).ready( function($) {
 		e.preventDefault()
 		$(this).toggleClass("_active")
 	})
+
 
 	/**
 	 * Stores list button

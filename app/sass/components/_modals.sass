@@ -9,15 +9,27 @@
 			transform: none
 	&-dialog
 		max-width: 575px
+		+media-breakpoint-down(sm)
+			max-width: 475px
 	&-content
 		padding: 70px
 		border-radius: 5px
 		border: 0
 		box-shadow: 0 3px 46px rgba(0, 0, 0, 0.2)
+		+media-breakpoint-down(lg)
+			padding: 50px
+		+media-breakpoint-down(sm)
+			padding: 40px
+		+media-breakpoint-down(xs)
+			padding: 20px
 	&-header
 		justify-content: center
 		padding: 0 0 40px
 		border-bottom: 0
+		+media-breakpoint-down(lg)
+			padding-top: 10px
+		+media-breakpoint-down(sm)
+			padding-top: 30px
 		.btn-close
 			position: absolute
 			top: 30px
@@ -25,6 +37,9 @@
 			width: 25px
 			height: 25px
 			padding: 0
+			+media-breakpoint-down(xs)
+				top: 15px
+				right: 15px
 			span
 				height: 2px
 				border-radius: 2px
@@ -34,5 +49,10 @@
 		font-size: 24px
 		font-weight: 700
 		text-align: center
+		line-height: 1
+		+media-breakpoint-down(md)
+			font-size: 22px
+		+media-breakpoint-down(xs)
+			font-size: 18px
 	&-body
 		padding: 0

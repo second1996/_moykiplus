@@ -45,6 +45,9 @@ body
 	font-family: $font
 	font-size: $fontsize
 	line-height: 1.65
+	+media-breakpoint-down(lg)
+		// Fixed header spacing
+		padding-top: 60px
 	&.lock-scroll
 		overflow: hidden
 		height: 100%
@@ -104,6 +107,39 @@ hr
 
 
 /* ==========================================================================
+   LazyLoad
+   ========================================================================== */
+img.lazy
+	position: relative
+	border: 0
+	opacity: 0
+img.lazy:not([src])
+	visibility: hidden
+img.lazy:not(.initial)
+	transition: opacity 1s, transform 0.35s
+img.initial,
+img.loaded,
+img.error
+	opacity: 1
+
+// Lazy preloader
+.lazy-spin
+	width: 32px
+	height: 32px
+	position: absolute
+	left: 50%
+	top: 50%
+	margin-left: -16px
+	margin-top: -16px
+	box-sizing: border-box
+	border: 2px solid darken($border, 3%)
+	border-radius: 50%
+	border-top-color: transparent
+	transform-origin: 50%
+	animation: mp-preloader-spin 1s infinite linear
+
+
+/* ==========================================================================
    Animations
    ========================================================================== */
 .animate
@@ -112,6 +148,10 @@ hr
 
 .mp-slideInUp
 	animation-name: mp-slideInUp
+
+@keyframes mp-preloader-spin
+	100%
+		transform: rotate(360deg)
 
 @keyframes mp-slideInUp
 	0%
