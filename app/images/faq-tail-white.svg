@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #763a9c;
+        stroke-linejoin: round;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Фигура_1934_копия" data-name="Фигура 1934 копия" class="cls-1" d="M25.139-8.695S18.57,12.526,28.972,20.426,6.522,17.9-2.969-8.695C-4.027-11.661,25.139-8.695,25.139-8.695Z"/>
+</svg>

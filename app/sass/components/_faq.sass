@@ -1,0 +1,45 @@
+.faq
+	&-list
+		&:last-of-type
+			.faq-item:last-child
+				margin-bottom: 0
+	&-item
+		position: relative
+		padding: 30px 60px 30px 30px
+		border-radius: 5px
+		+media-breakpoint-down(sm)
+			padding: 18px 20px
+		&:nth-child(odd)
+			margin-bottom: 30px
+			background-color: $accent
+			color: $white
+			&::before
+				content: ''
+				position: absolute
+				top: 100%
+				left: 26px
+				display: block
+				width: 34px
+				height: 16px
+				background: url('../images/faq-tail.svg') no-repeat center/100%
+			p
+				font-weight: 500
+		&:nth-child(even)
+			margin-bottom: 60px
+			border: 1px solid $accent
+			box-shadow: 0px 3px 24px 2px rgba(68, 68, 79, 0.08)
+			background-color: $white
+			color: $textcolor
+			&::before
+				content: ''
+				position: absolute
+				top: 100%
+				right: 26px
+				display: block
+				width: 32px
+				height: 24px
+				background: url('../images/faq-tail-white.svg') no-repeat center/100%
+			p
+				font-weight: 500
+		p
+			margin-bottom: 0

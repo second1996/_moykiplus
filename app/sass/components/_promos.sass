@@ -1,14 +1,22 @@
+/* ==========================================================================
+	 Promo text (marquee)
+	 ========================================================================== */
 .promo
 	padding: 16px 0
 	background-color: #e3e2e3
 	&-inner
 		position: relative
+		display: flex
+		align-items: center
 		text-align: center
 	&-content
-		padding-right: 30px
-		line-height: 1.4
+		overflow: hidden
+		width: 100%
+		margin-right: 30px
+		&-marquee
+			line-height: 1
 		p
-			margin: 0
+			margin-bottom: 0
 		a
 			display: inline-block
 			color: inherit
@@ -17,7 +25,24 @@
 	&-close
 		position: absolute
 		top: 50%
-		transform: translateY(-50%)
 		right: 0
+		transform: translateY(-50%)
 		.btn-close
 			padding: 4px 0 4px 4px
+
+
+/* ==========================================================================
+	 Promo banner (slider)
+	 ========================================================================== */
+.promo-banner
+	margin-bottom: 80px
+	&-slider
+		position: relative
+		.swiper-pagination
+			bottom: 20px
+		&-container
+			border-radius: 5px
+	&-wrapper
+	&-slide
+		overflow: hidden
+		border-radius: 5px

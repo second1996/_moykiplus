@@ -1,6 +1,25 @@
 jQuery(document).ready( function($) {
 
 	/**
+	 * Back to Top button
+	 */
+	var back_to_top = $('#back-to-top');
+
+	$(window).scroll(function() {
+		if ($(window).scrollTop() > 1000) {
+			back_to_top.addClass('_shown');
+		} else {
+			back_to_top.removeClass('_shown');
+		}
+	});
+
+	back_to_top.on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({scrollTop:0}, 1000);
+	});
+
+
+	/**
 	 * LazyLoad init
 	 */
 	var lazyLoadInstance = new LazyLoad({
@@ -109,6 +128,21 @@ jQuery(document).ready( function($) {
 
 
 	/**
+ * Marquee string for background text (classname: .bg-text)
+ */
+	if( window.matchMedia('(max-width: 1299.98px)').matches ) {
+		$('.promo-content-marquee').marquee({
+			// duration: 12000,
+			delayBeforeStart: 0,
+			startVisible: true,
+			duplicated: true,
+			pauseOnHover: true,
+			gap: 350,
+		})
+	}
+
+
+	/**
 	 * Product card actions
 	 */
 	$('.card-product').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
@@ -139,22 +173,17 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Show input phone mask when checkbox is cheked
+	 * Page navigation (MenuSpy)
 	 */
-	var switch_phone_mask_checkbox = $('.switch-input-mask').find('input[type="checkbox"]'),
-			switch_phone_mask_input = switch_phone_mask_checkbox.parents('.form-group').find('input[type="tel"]');
+	var pageNav = document.querySelector('.page-navigation')
+	var pageNavMenuSpy = new MenuSpy(pageNav, {
+		activeClass: '_current',
+	})
 
-	function switch_phone_mask() {
-		if( switch_phone_mask_checkbox.is(':checked') ) {
-			switch_phone_mask_input.mask('+7 (999) 999-99-99')
-		} else {
-			switch_phone_mask_input.mask('0#')
-		}
-	}
-	switch_phone_mask()
+	$('.page-navigation-list > li > a').on('click', function() {
+		var section_id = $(this).attr('href')
 
-	switch_phone_mask_checkbox.on('input checked', function() {
-		switch_phone_mask()
+		$('html, body').stop(true).animate({scrollTop: $(section_id).offset().top - 100}, 700)
 	})
 
 })
