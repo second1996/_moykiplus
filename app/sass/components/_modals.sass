@@ -37,14 +37,17 @@
 			width: 25px
 			height: 25px
 			padding: 0
-			+media-breakpoint-down(xs)
-				top: 15px
-				right: 15px
 			span
+				width: 25px
 				height: 2px
 				border-radius: 2px
 				&:nth-child(2)
 					margin-top: -2px
+			+media-breakpoint-down(xs)
+				top: 15px
+				right: 15px
+				span
+					width: 20px
 	&-title
 		font-size: 24px
 		font-weight: 700
