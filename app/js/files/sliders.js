@@ -217,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		watchSlidesVisibility: true,
 		allowTouchMove: true,
 		loop: false,
+		speed: 650,
 		slidesPerView: 1,
 		spaceBetween: 10,
 		navigation: {
@@ -248,10 +249,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	 * FAQ Promo Banner slider
 	 */
 	var FAQPromo = new Swiper('.promo-banner .promo-banner-slider-container', {
-		// autoplay: {
-		// 	delay: 5000,
-		// },
-		// allowTouchMove: false,
+		preloadImages: false,
+		lazy: true,
+		// autoHeight: true,
 		loop: false,
 		speed: 750,
 		slidesPerView: 1,
@@ -264,12 +264,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			el: '.promo-banner-slider .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
-		},
-		// breakpoints: {
-		// 	768: {
-		// 		autoplay: false
-		// 	}
-		// }
+		}
 	})
 
 })

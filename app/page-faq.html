@@ -37,10 +37,20 @@
 					<div class="promo-banner-slider-container swiper-container">
 						<div class="promo-banner-wrapper swiper-wrapper">
 							<div class="promo-banner-slide swiper-slide">
-								<img src="images/promo-banner.jpg" alt="">
+								<picture>
+									<source media="(min-width: 576px)" data-srcset="images/promo-banner.jpg" />
+									<source media="(min-width: 320px)" data-srcset="images/promo-banner-2.jpg" />
+									<img class="lazy" data-src="images/promo-banner-2.jpg" alt="Promo Banner">
+									<div class="lazy-preloader"></div>
+								</picture>
 							</div>
 							<div class="promo-banner-slide swiper-slide">
-								<img src="images/promo-banner.jpg" alt="">
+								<picture>
+									<source media="(min-width: 576px)" data-srcset="images/promo-banner.jpg" />
+									<source media="(min-width: 320px)" data-srcset="images/promo-banner-2.jpg" />
+									<img class="lazy" data-src="images/promo-banner-2.jpg" alt="Promo Banner">
+									<div class="lazy-preloader"></div>
+								</picture>
 							</div>
 						</div>
 						<div class="swiper-pagination swiper-pagination--white"></div>

@@ -27,7 +27,7 @@ jQuery(document).ready( function($) {
 		load_delay: 250,
 		callback_loaded: function(element) {
 			// console.log("👍 LOADED", element);
-			$(element).siblings('.lazy-spin').remove();
+			$(element).siblings('.lazy-preloader').remove();
 		},
 	})
 
