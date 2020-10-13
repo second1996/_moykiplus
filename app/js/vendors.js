@@ -5,9 +5,9 @@
 @@include('../../node_modules/bootstrap/js/dist/util.js') // Bootstrap Util lib
 @@include('../../node_modules/bootstrap/js/dist/modal.js') // Bootstrap Modal
 @@include('../../node_modules/bootstrap/js/dist/dropdown.js') // Bootstrap Dropdown
-@@include('../../node_modules/bootstrap/js/dist/tab.js') // Bootstrap Dropdown
+@@include('../../node_modules/bootstrap/js/dist/tab.js') // Bootstrap Tab
+@@include('../../node_modules/bootstrap/js/dist/scrollspy.js') // Bootstrap ScrollSpy
 @@include('libs/jquery.mask.min.js') // jQuery Mask input
 @@include('libs/jquery.marquee.min.js') // Marquee Text
 @@include('libs/readmore.min.js') // ReadMore Plugin
 @@include('../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js') // Fancybox Plugin
-@@include('../../node_modules/menuspy/dist/menuspy.min.js') // MenuSpy Plugin

@@ -173,16 +173,19 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Page navigation (MenuSpy)
+	 * Page navigation (ScrollSpy)
 	 */
-	var pageNav = document.querySelector('.page-navigation')
-	var pageNavMenuSpy = new MenuSpy(pageNav, {
-		activeClass: '_current',
-	})
+	if( $('#page-navigation').length ) {
+		$('body').scrollspy({
+			target: '#page-navigation',
+			offset: 300,
+		})
+	}
 
-	$('.page-navigation-list > li > a').on('click', function() {
+	$('.page-navigation-list > li > a').on('click', function(e) {
 		var section_id = $(this).attr('href')
 
+		e.preventDefault()
 		$('html, body').stop(true).animate({scrollTop: $(section_id).offset().top - 100}, 700)
 	})
 
