@@ -1,0 +1,182 @@
+@import '../helpers/helpers'
+
+/* ==========================================================================
+	 Testimonials rating (Summary, Quality)
+	 ========================================================================== */
+.testimonials-rating
+	display: flex
+	padding: 20px
+	border-radius: 5px
+	background-color: $white
+	// Summary rating
+	.summary
+		flex: 0 0 360px
+		margin-right: 60px
+		padding: 30px
+		border-radius: 5px
+		&--green
+			background-color: rgba(#31a956, 0.1)
+			.summary-average .rating
+				background-color: #31a956
+		&--yellow
+			background-color: rgba(#ffc107, 0.1)
+			.summary-average .rating
+				background-color: #ffc107
+		&--red
+			background-color: rgba(#e01b31, 0.1)
+			.summary-average .rating
+				background-color: #e01b31
+		&-all
+			padding-bottom: 25px
+			border-bottom: 1px solid #d8e0db
+			.title
+				color: $black
+				font-size: 18px
+				font-weight: 600
+				line-height: 1.3
+				span
+					color: rgba($black, 0.6)
+					font-weight: 500
+			.ratings
+				margin-top: 10px
+				&-star
+					font-size: 18px
+					&:not(.ratings-star--filled)
+						color: rgba($black, 0.15)
+		&-average
+			padding-top: 20px
+			.title
+				color: $black
+				font-size: 16px
+				font-weight: 600
+				line-height: 1
+			.rating
+				display: inline-flex
+				align-items: center
+				justify-content: center
+				margin-top: 10px
+				width: 75px
+				height: 32px
+				border-radius: 5px
+				color: $white
+				font-size: 18px
+				font-weight: 700
+				line-height: 1
+	// Quality rating
+	.quality
+			flex: 1 1 100%
+			padding-right: 45px
+			&-title
+				color: $black
+				font-size: 20px
+				font-weight: 600
+				line-height: 1.3
+			&-list
+			&-item
+				display: flex
+				align-items: center
+				justify-content: space-between
+				width: 100%
+				padding: 16px 0
+				&:not(:last-child)
+					border-bottom: 1px solid $border
+				&--green
+					.rating-range-filled,
+					.rating-average
+						background-color: #31a956
+				&--yellow
+					.rating-range-filled,
+					.rating-average
+						background-color: #ffc107
+				&--red
+					.rating-range-filled,
+					.rating-average
+						background-color: #e01b31
+				.label
+					color: $textcolor
+					font-weight: 600
+				.rating
+					display: flex
+					align-items: center
+					&-range
+						display: flex
+						> span
+							display: inline-block
+							width: 75px
+							height: 6px
+							margin: 0 5px
+							border-radius: 3px
+							&:not(.rating-range-filled)
+								background-color: #dcdcdc
+					&-average
+						display: inline-flex
+						align-items: center
+						justify-content: center
+						width: 75px
+						height: 32px
+						margin-left: 15px
+						border-radius: 5px
+						color: $white
+						font-size: 18px
+						font-weight: 700
+						line-height: 1
+
+
+/* ==========================================================================
+	 Testimonials form
+	 ========================================================================== */
+// .testimonials-form
+
+
+/* ==========================================================================
+	 Testimonials card
+	 ========================================================================== */
+// .testimonials-list
+	
+.testimonials-card
+	position: relative
+	margin-bottom: 30px
+	padding: 30px 40px 40px
+	border-radius: 5px
+	box-shadow: 0px 3px 24px 2px rgba(68, 68, 79, 0.08)
+	background-color: $white
+	&-header
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.author
+			.name
+				margin-bottom: 4px
+			.time
+				display: flex
+				align-items: center
+				&-icon
+					margin-right: 10px
+					font-size: 12px
+		.summary
+			display: flex
+			&-item
+				position: relative
+				padding: 0 30px
+				&:not(:last-child)::after
+					content: ''
+					position: absolute
+					top: 2px
+					left: 100%
+					width: 1px
+					height: 42px
+					background-color: $border
+				.title
+					margin-bottom: 10px
+					line-height: 1
+				.ratings
+					&-star
+						font-size: 18px
+	&-body
+		margin-top: 25px
+		color: $black
+		> p:last-child
+			margin-bottom: 0
+
+
+
