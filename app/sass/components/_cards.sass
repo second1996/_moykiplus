@@ -41,6 +41,7 @@
 	 Product card
 	 ========================================================================== */
 .card-product
+	position: relative
 	display: flex
 	flex-direction: column
 	width: 210px
@@ -54,6 +55,7 @@
 	+media-breakpoint-down(sm)
 		border-bottom: 1px solid $white
 	&:hover
+		z-index: 4
 		border-radius: 5px 5px 0 0
 		border-color: $accent
 		+media-breakpoint-down(sm)

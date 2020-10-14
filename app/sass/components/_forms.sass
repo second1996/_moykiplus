@@ -42,7 +42,7 @@
 	&-control
 		height: 42px
 		padding: 0 20px
-		line-height: 42px
+		line-height: 40px
 		&--number
 			-moz-appearance: textfield
 			&::-webkit-outer-spin-button,
@@ -50,19 +50,19 @@
 				-webkit-appearance: none
 				margin: 0
 	&-select
+		cursor: pointer
+		position: relative
 		height: 42px
-		padding: 0 20px
-		line-height: 42px
-		&::after
-			content: ''
-			position: absolute
-			top: 0
-			right: 0
-			z-index: 22
-			display: block
-			width: 10px
-			height: 10px
-			background-color: red
+		padding: 0 50px 0 20px
+		line-height: 40px
+		background-image: url('../images/icons/arrow-down-accent.svg')
+		background-repeat: no-repeat
+		background-position-x: calc(100% - 20px)
+		background-position-y: 16px
+		background-size: 12px
+		option:checked
+			color: $white
+			background-color: $accent
 	&-field-icon
 		padding-left: 42px
 		padding-right: 52px
