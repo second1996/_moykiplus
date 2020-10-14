@@ -29,7 +29,7 @@
 		margin-bottom: 20px
 		border-radius: 5px
 		border: 0
-		background-color: #f7f7f7
+		background-color: #eff0f4
 		background-clip: padding-box
 		color: $black
 		font-size: 14px
@@ -133,6 +133,7 @@
 			display: block
 			margin-bottom: 10px
 			padding-left: 28px
+			color: rgba($black, 0.8)
 			font-size: 14px
 			font-weight: 400
 			line-height: 20px
@@ -162,3 +163,25 @@
 	&-submit
 		margin-top: 40px
 		text-align: center
+	&-submit-captcha
+		display: flex
+		justify-content: space-between
+		+media-breakpoint-down(xs)
+			flex-direction: column
+			align-items: center
+		.form
+			&-captcha
+				height: 50px
+				img
+					border-radius: 5px
+					max-height: 100%
+				+media-breakpoint-down(xs)
+					height: auto
+			&-submit
+				min-width: 135px
+				margin-top: 0
+				margin-left: 10px
+				+media-breakpoint-down(xs)
+					margin-top: 20px
+					margin-left: auto
+					margin-right: auto

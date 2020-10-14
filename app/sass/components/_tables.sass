@@ -1,0 +1,35 @@
+table
+	width: 100%
+	font-size: 16px
+	line-height: 1.3
+	+media-breakpoint-down(md)
+		font-size: 14px
+	+media-breakpoint-down(xs)
+		font-size: 12px
+	thead
+		th
+			padding: 30px 20px
+			background-color: #9060af
+			color: $white
+			font-weight: 500
+			+media-breakpoint-down(md)
+				padding: 20px
+			&:not(:last-child)
+				border-right: 1px solid #aa85c2
+	tbody
+		tr
+			&:nth-child(odd)
+				background-color: $white
+			&:nth-child(even)
+				background-color: #f8f6f8
+		td
+			padding: 30px 20px
+			font-weight: 500
+			+media-breakpoint-down(md)
+				padding: 20px
+			&:not(:last-child)
+				border-right: 1px solid #ecebec
+		a
+			text-decoration: underline
+			&:hover
+				text-decoration: underline

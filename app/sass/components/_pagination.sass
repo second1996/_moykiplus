@@ -1,0 +1,78 @@
+.pagination
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: center
+	padding: 12px 40px
+	border-radius: 5px
+	box-shadow: 0px 3px 24px 2px rgba(68, 68, 79, 0.08)
+	background-color: $white
+	+media-breakpoint-down(md)
+		padding: 12px 30px
+	+media-breakpoint-down(xs)
+		padding: 4px
+	&-button
+		display: inline-flex
+		align-items: center
+		color: $accent
+		font-weight: 600
+		line-height: 1
+		.icon
+			font-size: 8px
+		&:hover
+			color: $orange
+		+media-breakpoint-down(xs)
+			justify-content: center
+			width: 40px
+			height: 40px
+			border-radius: 5px
+			background-color: $accent
+			color: $white
+			.icon
+				margin: 0
+			span
+				display: none
+			&:hover
+				background-color: $orange
+				color: $white
+		&--prev
+			.icon
+				margin-right: 10px
+				transform: scaleX(-1)
+		&--next
+			.icon
+				margin-left: 10px
+		&--disabled
+			// pointer-events: none
+			// border-color: $trsp
+			// opacity: 0.5
+	&-inner
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: center
+	&-item
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 24px
+		height: 24px
+		margin: 0 2px
+		border-radius: 50%
+		color: $accent
+		font-size: 14px
+		font-weight: 600
+		line-height: 1
+		&:hover:not(.pagination-item--dots)
+			color: $orange
+		+media-breakpoint-down(xs)
+			width: 22px
+			height: 22px
+		&--current
+			pointer-events: none
+			background-color: $accent
+			color: $white
+			font-weight: 500
+		&--dots
+			+media-breakpoint-down(xs)
+				width: auto

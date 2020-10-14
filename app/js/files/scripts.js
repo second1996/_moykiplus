@@ -128,8 +128,8 @@ jQuery(document).ready( function($) {
 
 
 	/**
- * Marquee string for background text (classname: .bg-text)
- */
+	 * Marquee string for background text (classname: .bg-text)
+	 */
 	if( window.matchMedia('(max-width: 1299.98px)').matches ) {
 		$('.promo-content-marquee').marquee({
 			// duration: 12000,
@@ -173,20 +173,26 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Page navigation (ScrollSpy)
+	 * Page navigation
 	 */
 	if( $('#page-navigation').length ) {
+		/**
+		 * Init Bootstrap ScrollSpy if #page-navigation id registered on the page
+		 */
 		$('body').scrollspy({
 			target: '#page-navigation',
 			offset: 300,
 		})
+		
+		/**
+		 * Animated scroll
+		 */
+		$('.page-navigation-list > li > a').on('click', function(e) {
+			var section_id = $(this).attr('href')
+	
+			e.preventDefault()
+			$('html, body').stop(true).animate({scrollTop: $(section_id).offset().top - 100}, 700)
+		})
 	}
-
-	$('.page-navigation-list > li > a').on('click', function(e) {
-		var section_id = $(this).attr('href')
-
-		e.preventDefault()
-		$('html, body').stop(true).animate({scrollTop: $(section_id).offset().top - 100}, 700)
-	})
 
 })
