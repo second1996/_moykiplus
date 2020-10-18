@@ -1,19 +1,19 @@
 article,
 .article
 	color: $black
-	
+
+	blockquote, img, ul, ol, p, table
+		margin-bottom: 32px
+		+media-breakpoint-down(sm)
+			margin-bottom: 20px
+
 	h1, h2, h3, h4, h5, h6
 		margin-bottom: 20px
 		font-weight: 500
 		&:not(:first-of-type)
 			margin-top: 40px
-
-	p,
-	img,
-	ul,
-	ol,
-	blockquote, table
-		margin-bottom: 10px
+			+media-breakpoint-down(sm)
+				margin-top: 30px
 
 	b,
 	strong

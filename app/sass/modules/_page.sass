@@ -30,6 +30,44 @@
 
 
 /* ==========================================================================
+	 Page image
+	 ========================================================================== */
+.page-image
+	position: relative
+	height: 290px
+	+media-breakpoint-down(sm)
+		height: 265px
+	+media-breakpoint-down(xs)
+		height: 225px
+	img
+		width: 100%
+		height: 100%
+		border-radius: 5px
+		object-fit: cover
+
+
+/* ==========================================================================
+	 Page published
+	 ========================================================================== */
+.page-published
+	margin-top: 30px
+	+media-breakpoint-down(sm)
+		margin-top: 20px
+	.date
+		display: inline-flex
+		align-items: center
+		padding: 10px 20px
+		border-radius: 5px
+		background-color: #ede6f0
+		color: $accent
+		line-height: 1
+		font-weight: 500
+		white-space: nowrap
+		.icon
+			margin-right: 8px
+
+
+/* ==========================================================================
 	 Page navigation (MenuSpy etc.)
 	 ========================================================================== */
 .page-navigation
@@ -51,6 +89,8 @@
 			background-color: #f5f5f5
 			&:not(:last-child)
 				border-bottom: 1px solid $border
+				+media-breakpoint-down(sm)
+					border-bottom: 0
 			+media-breakpoint-down(sm)
 				background-color: $trsp
 				&:not(:last-child)
@@ -92,6 +132,8 @@
 .page-section
 	&:not(:first-child)
 		margin-top: 50px
+		+media-breakpoint-down(sm)
+			margin-top: 40px
 	&-head
 		display: flex
 		margin-bottom: 30px
@@ -126,6 +168,46 @@
 			height: 2px
 			margin: 0 auto
 			background-color: $accent
+
+
+/* ==========================================================================
+	 Post navigation (Prev/Next article)
+	 ========================================================================== */
+.post-navigation
+	display: flex
+	margin-top: 45px
+	+media-breakpoint-down(sm)
+		margin-top: 30px
+	&-prev,
+	&-next
+		flex: 0 1 50%
+		.btn
+			display: inline-flex
+			align-items: center
+			box-shadow: 0px 3px 24px 2px rgba(68, 68, 79, 0.08)
+			.icon
+				font-size: 8px
+			+media-breakpoint-down(sm)
+				width: 48px
+				min-width: auto
+				height: 48px
+				padding: 0
+				background-color: $accent
+				color: $white
+				&:hover
+					background-color: $orange
+				span
+					display: none
+	&-prev
+		.btn
+			.icon
+				transform: scaleX(-1)
+	&-archive
+	&-next
+		text-align: right
+		.btn
+			span
+				margin-right: 10px
 
 
 /* ==========================================================================

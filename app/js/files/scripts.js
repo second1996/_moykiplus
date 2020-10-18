@@ -128,18 +128,16 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Marquee string for background text (classname: .bg-text)
+	 * Marquee string
 	 */
-	if( window.matchMedia('(max-width: 1299.98px)').matches ) {
-		$('.promo-content-marquee').marquee({
-			// duration: 12000,
-			delayBeforeStart: 0,
-			startVisible: true,
-			duplicated: true,
-			pauseOnHover: true,
-			gap: 350,
-		})
-	}
+	$('.promo-content-marquee').marquee({
+		// duration: 12000,
+		delayBeforeStart: 0,
+		startVisible: true,
+		duplicated: true,
+		pauseOnHover: true,
+		gap: 350,
+	})
 
 
 	/**
