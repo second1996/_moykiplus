@@ -30,9 +30,9 @@
 
 
 /* ==========================================================================
-	 Page image
+	 Post image
 	 ========================================================================== */
-.page-image
+.post-image
 	position: relative
 	height: 290px
 	+media-breakpoint-down(sm)
@@ -47,9 +47,9 @@
 
 
 /* ==========================================================================
-	 Page published
+	 Post published
 	 ========================================================================== */
-.page-published
+.post-published
 	margin-top: 30px
 	+media-breakpoint-down(sm)
 		margin-top: 20px
@@ -127,13 +127,11 @@
 
 
 /* ==========================================================================
-	 Page section
+	 Post section
 	 ========================================================================== */
-.page-section
-	&:not(:first-child)
-		margin-top: 50px
-		+media-breakpoint-down(sm)
-			margin-top: 40px
+.post-section
+	&:not(:last-child)
+		margin-bottom: 20px
 	&-head
 		display: flex
 		margin-bottom: 30px
