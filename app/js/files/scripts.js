@@ -195,4 +195,18 @@ jQuery(document).ready( function($) {
 		})
 	}
 
+
+	/**
+	 * Read more button on mobile (xxs, xs, sm)
+	 */
+	if( window.matchMedia('(max-width: 767.98px)').matches ) {
+		$('[data-readmore]').readmore({
+			embedCSS: false,
+			collapsedHeight: 205,
+			speed: 75,
+			moreLink: '<button type="button" class="read-more"><span>Читать все</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+			lessLink: '<button type="button" class="read-more _toggled"><span>Спрятать</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+		})
+	}
+
 })

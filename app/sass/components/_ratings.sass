@@ -8,3 +8,40 @@
 			margin-right: 3px
 		&--filled
 			color: #ffc200
+
+.star-rating
+	display: flex
+	> fieldset
+		position: relative
+		display: inline-block
+		margin-left: -2px
+		border: none
+		&:not(:checked)
+			> label
+				float: right
+				padding: 0 2px
+				overflow: hidden
+				white-space: nowrap
+				cursor: pointer
+				font-size: 0
+				&::before
+					content: ''
+					display: inline-block
+					width: 18px
+					height: 18px
+					background-image: url('../images/icons/star.svg')
+					background-size: cover
+					background-position: center center
+				&:hover:before,
+				&:hover ~ label:before
+					background-image: url('../images/icons/star-filled.svg')
+			> input
+				position: absolute
+				top: 0
+				left: 0
+				opacity: 0
+				clip: rect(0,0,0,0)
+		> label
+			margin-bottom: 0
+		input:checked ~ label:before
+			background-image: url('../images/icons/star-filled.svg')

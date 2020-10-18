@@ -66,6 +66,7 @@
 
 			<!-- Testimonials -->
 			<div class="testimonials">
+
 				<div class="testimonials-rating">
 					<div class="summary summary--green">
 						<div class="summary-all">
@@ -140,25 +141,99 @@
 				</div><!-- /.testimonials-rating -->
 			
 				<!-- Testimonials Form -->
-				<section class="page-form mt-60 mb-60">
+				<section class="testimonials-form page-form mt-60 mb-60">
 					<h2 class="page-form-title text-xl w-semibold">Оставить отзыв</h2>
 					<form action="#" method="POST" class="form form-light">
 						<div class="row">
-							<div class="col-lg-4">
-								<input type="text" name="question-name" class="form-control" placeholder="Укажите Ваше имя" required>
-							</div>
-							<div class="col-lg-4">
-								<input type="email" name="question-email" class="form-control" placeholder="Укажите Ваш email" required>
-							</div>
-							<div class="col-lg-4">
-								<input type="tel" name="question-phone" class="form-control" data-mask="+7 (000) 000-00-00" placeholder="Укажите Ваш номер телефона" required>
-							</div>
-							<div class="col-12">
-								<textarea name="question-message" class="form-textarea" placeholder="Текст отзыва" rows="5" required></textarea>
-							</div>
-						</div>
+							<div class="col-xl">
+								<div class="row">
+									<div class="col-lg-4">
+										<input type="text" name="question-name" class="form-control" placeholder="Укажите Ваше имя" required>
+									</div>
+									<div class="col-lg-4">
+										<input type="email" name="question-email" class="form-control" placeholder="Укажите Ваш email" required>
+									</div>
+									<div class="col-lg-4">
+										<input type="tel" name="question-phone" class="form-control" data-mask="+7 (000) 000-00-00" placeholder="Укажите Ваш номер телефона" required>
+									</div>
+									<div class="col-12">
+										<textarea name="question-message" class="form-textarea" placeholder="Текст отзыва" rows="5" required></textarea>
+									</div>
+								</div>
+							</div><!-- /.col -->
+							<div class="col-xl-auto testimonials-form-rating">
+								<div class="form-group">
+									<label for="testimonials-summary-0" class="form-label">Общая оценка:</label>
+									<div class="star-rating">
+										<fieldset>
+												<input id="testimonials-summary-0" value="5" type="radio" name="testimonials-summary[]">
+												<label for="testimonials-summary-0"></label>
+												<input id="testimonials-summary-1" value="4" type="radio" name="testimonials-summary[]">
+												<label for="testimonials-summary-1"></label>
+												<input id="testimonials-summary-2" value="3" type="radio" name="testimonials-summary[]">
+												<label for="testimonials-summary-2"></label>
+												<input id="testimonials-summary-3" value="2" type="radio" name="testimonials-summary[]">
+												<label for="testimonials-summary-3"></label>
+												<input id="testimonials-summary-4" value="1" type="radio" name="testimonials-summary[]">
+												<label for="testimonials-summary-4"></label>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="testimonials-product-0" class="form-label">Качество Товара:</label>
+									<div class="star-rating">
+										<fieldset>
+												<input id="testimonials-product-0" value="5" type="radio" name="testimonials-product[]">
+												<label for="testimonials-product-0"></label>
+												<input id="testimonials-product-1" value="4" type="radio" name="testimonials-product[]">
+												<label for="testimonials-product-1"></label>
+												<input id="testimonials-product-2" value="3" type="radio" name="testimonials-product[]">
+												<label for="testimonials-product-2"></label>
+												<input id="testimonials-product-3" value="2" type="radio" name="testimonials-product[]">
+												<label for="testimonials-product-3"></label>
+												<input id="testimonials-product-4" value="1" type="radio" name="testimonials-product[]">
+												<label for="testimonials-product-4"></label>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="testimonials-communications-0" class="form-label">Качество Общения:</label>
+									<div class="star-rating">
+										<fieldset>
+												<input id="testimonials-communications-0" value="5" type="radio" name="testimonials-communications[]">
+												<label for="testimonials-communications-0"></label>
+												<input id="testimonials-communications-1" value="4" type="radio" name="testimonials-communications[]">
+												<label for="testimonials-communications-1"></label>
+												<input id="testimonials-communications-2" value="3" type="radio" name="testimonials-communications[]">
+												<label for="testimonials-communications-2"></label>
+												<input id="testimonials-communications-3" value="2" type="radio" name="testimonials-communications[]">
+												<label for="testimonials-communications-3"></label>
+												<input id="testimonials-communications-4" value="1" type="radio" name="testimonials-communications[]">
+												<label for="testimonials-communications-4"></label>
+										</fieldset>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="testimonials-shipping-0" class="form-label">Качество Доставки:</label>
+									<div class="star-rating">
+										<fieldset>
+												<input id="testimonials-shipping-0" value="5" type="radio" name="testimonials-shipping[]">
+												<label for="testimonials-shipping-0"></label>
+												<input id="testimonials-shipping-1" value="4" type="radio" name="testimonials-shipping[]">
+												<label for="testimonials-shipping-1"></label>
+												<input id="testimonials-shipping-2" value="3" type="radio" name="testimonials-shipping[]">
+												<label for="testimonials-shipping-2"></label>
+												<input id="testimonials-shipping-3" value="2" type="radio" name="testimonials-shipping[]">
+												<label for="testimonials-shipping-3"></label>
+												<input id="testimonials-shipping-4" value="1" type="radio" name="testimonials-shipping[]">
+												<label for="testimonials-shipping-4"></label>
+										</fieldset>
+									</div>
+								</div>
+							</div><!-- ./col -->
+						</div><!-- /.row -->
 						<div class="page-form-bottom row">
-							<div class="col-auto mt-30">
+							<div class="col mt-30">
 								<div class="form-checkbox">
 									<input type="checkbox" name="question-policy" id="question-policy" required>
 									<label for="question-policy" class="form-checkbox-label">Даю свое согласие на обработку персональных данных</label>
@@ -183,8 +258,8 @@
 						<div class="testimonials-card-header">
 							<div class="author">
 								<div class="name text-sm c-black w-semibold">Мария Зайцева</div>
-								<div class="time">
-									<div class="time-icon icon-border">
+								<div class="date">
+									<div class="date-icon icon-border">
 										<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 									</div>
 									<span class="text-sm w-medium">08.07.2020</span>
@@ -273,7 +348,7 @@
 								</div><!-- /.summary-item -->
 							</div><!-- /.summary -->
 						</div>
-						<div class="testimonials-card-body">
+						<div class="testimonials-card-body" data-readmore data-readmore>
 							<p>Прямоугольная кухонная мойка Longran имеет стильный характер, она проста и элегантна, отвечает современной потребностив сочетании красоты и функциональности. Времена, когда в каждом доме была одинаковая типовая кухонная раковина давно прошли, сейчас прослеживается тенденция создавать необычный дизайн кухонного пространства, сочетая разные формы, цвета, материалы и фактуры. Кухонная мойка Longran помогает оформить кухню стильно, уютно и современно. Абсолютно безопасена для пищевых продуктов. Длительный срок эксплуатации. Не меняет цвет при контакте с красящими веществами. Устойчива к воздействию высоких температур. В эксплуатации она будет удобна и будет идеально сочетаться с кухонной мебелью.</p>
 						</div>
 					</div>
@@ -281,8 +356,8 @@
 						<div class="testimonials-card-header">
 							<div class="author">
 								<div class="name text-sm c-black w-semibold">Мария Зайцева</div>
-								<div class="time">
-									<div class="time-icon icon-border">
+								<div class="date">
+									<div class="date-icon icon-border">
 										<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 									</div>
 									<span class="text-sm w-medium">08.07.2020</span>
@@ -371,7 +446,7 @@
 								</div><!-- /.summary-item -->
 							</div><!-- /.summary -->
 						</div>
-						<div class="testimonials-card-body">
+						<div class="testimonials-card-body" data-readmore>
 							<p>Прямоугольная кухонная мойка Longran имеет стильный характер, она проста и элегантна, отвечает современной потребностив сочетании красоты и функциональности. Времена, когда в каждом доме была одинаковая типовая кухонная раковина давно прошли, сейчас прослеживается тенденция создавать необычный дизайн кухонного пространства, сочетая разные формы, цвета, материалы и фактуры. Кухонная мойка Longran помогает оформить кухню стильно, уютно и современно. Абсолютно безопасена для пищевых продуктов. Длительный срок эксплуатации. Не меняет цвет при контакте с красящими веществами. Устойчива к воздействию высоких температур. В эксплуатации она будет удобна и будет идеально сочетаться с кухонной мебелью.</p>
 						</div>
 					</div>
@@ -379,8 +454,8 @@
 						<div class="testimonials-card-header">
 							<div class="author">
 								<div class="name text-sm c-black w-semibold">Мария Зайцева</div>
-								<div class="time">
-									<div class="time-icon icon-border">
+								<div class="date">
+									<div class="date-icon icon-border">
 										<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 									</div>
 									<span class="text-sm w-medium">08.07.2020</span>
@@ -469,7 +544,7 @@
 								</div><!-- /.summary-item -->
 							</div><!-- /.summary -->
 						</div>
-						<div class="testimonials-card-body">
+						<div class="testimonials-card-body" data-readmore>
 							<p>Прямоугольная кухонная мойка Longran имеет стильный характер, она проста и элегантна, отвечает современной потребностив сочетании красоты и функциональности. Времена, когда в каждом доме была одинаковая типовая кухонная раковина давно прошли, сейчас прослеживается тенденция создавать необычный дизайн кухонного пространства, сочетая разные формы, цвета, материалы и фактуры. Кухонная мойка Longran помогает оформить кухню стильно, уютно и современно. Абсолютно безопасена для пищевых продуктов. Длительный срок эксплуатации. Не меняет цвет при контакте с красящими веществами. Устойчива к воздействию высоких температур. В эксплуатации она будет удобна и будет идеально сочетаться с кухонной мебелью.</p>
 						</div>
 					</div>
@@ -477,8 +552,8 @@
 						<div class="testimonials-card-header">
 							<div class="author">
 								<div class="name text-sm c-black w-semibold">Мария Зайцева</div>
-								<div class="time">
-									<div class="time-icon icon-border">
+								<div class="date">
+									<div class="date-icon icon-border">
 										<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 									</div>
 									<span class="text-sm w-medium">08.07.2020</span>
@@ -567,7 +642,7 @@
 								</div><!-- /.summary-item -->
 							</div><!-- /.summary -->
 						</div>
-						<div class="testimonials-card-body">
+						<div class="testimonials-card-body" data-readmore>
 							<p>Прямоугольная кухонная мойка Longran имеет стильный характер, она проста и элегантна, отвечает современной потребностив сочетании красоты и функциональности. Времена, когда в каждом доме была одинаковая типовая кухонная раковина давно прошли, сейчас прослеживается тенденция создавать необычный дизайн кухонного пространства, сочетая разные формы, цвета, материалы и фактуры. Кухонная мойка Longran помогает оформить кухню стильно, уютно и современно. Абсолютно безопасена для пищевых продуктов. Длительный срок эксплуатации. Не меняет цвет при контакте с красящими веществами. Устойчива к воздействию высоких температур. В эксплуатации она будет удобна и будет идеально сочетаться с кухонной мебелью.</p>
 						</div>
 					</div>
@@ -575,8 +650,8 @@
 						<div class="testimonials-card-header">
 							<div class="author">
 								<div class="name text-sm c-black w-semibold">Мария Зайцева</div>
-								<div class="time">
-									<div class="time-icon icon-border">
+								<div class="date">
+									<div class="date-icon icon-border">
 										<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 									</div>
 									<span class="text-sm w-medium">08.07.2020</span>
@@ -665,36 +740,238 @@
 								</div><!-- /.summary-item -->
 							</div><!-- /.summary -->
 						</div>
-						<div class="testimonials-card-body">
+						<div class="testimonials-card-body" data-readmore>
 							<p>Прямоугольная кухонная мойка Longran имеет стильный характер, она проста и элегантна, отвечает современной потребностив сочетании красоты и функциональности. Времена, когда в каждом доме была одинаковая типовая кухонная раковина давно прошли, сейчас прослеживается тенденция создавать необычный дизайн кухонного пространства, сочетая разные формы, цвета, материалы и фактуры. Кухонная мойка Longran помогает оформить кухню стильно, уютно и современно. Абсолютно безопасена для пищевых продуктов. Длительный срок эксплуатации. Не меняет цвет при контакте с красящими веществами. Устойчива к воздействию высоких температур. В эксплуатации она будет удобна и будет идеально сочетаться с кухонной мебелью.</p>
 						</div>
 					</div>
 				</section>
-			
-			</div>
 
-			<!-- Pagination -->
-			<div class="pagination">
-				<a class="pagination-button pagination-button--prev pagination-button--disabled" href="#">
-					<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
-					<span>Предыдущая</span>
-				</a>
-				<div class="pagination-inner">
-					<a class="pagination-item" href="#">1</a>
-					<span class="pagination-item pagination-item--dots">...</span>
-					<a class="pagination-item" href="#">4</a>
-					<span aria-current="page" class="pagination-item pagination-item--current">5</span>
-					<a class="pagination-item" href="#">6</a>
-					<span class="pagination-item pagination-item--dots">...</span>
-					<a class="pagination-item" href="#">32</a>
+				<!-- Pagination -->
+				<div class="pagination">
+					<a class="pagination-button pagination-button--prev pagination-button--disabled" href="#">
+						<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+						<span>Предыдущая</span>
+					</a>
+					<div class="pagination-inner">
+						<a class="pagination-item" href="#">1</a>
+						<span class="pagination-item pagination-item--dots">...</span>
+						<a class="pagination-item" href="#">4</a>
+						<span aria-current="page" class="pagination-item pagination-item--current">5</span>
+						<a class="pagination-item" href="#">6</a>
+						<span class="pagination-item pagination-item--dots">...</span>
+						<a class="pagination-item" href="#">32</a>
+					</div>
+					<a class="pagination-button pagination-button--next" href="#">
+						<span>Следующая</span>
+						<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+					</a>
 				</div>
-				<a class="pagination-button pagination-button--next" href="#">
-					<span>Следующая</span>
-					<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
-				</a>
+
 			</div>
 
 		</div><!-- /.container -->
+
+		<!-- Section: Sale products -->
+		<section class="section section-sale-products">
+			<div class="container">
+				<h2 class="section-title">Распродажа</h2>
+				<nav class="product-tabs-nav tabs">
+					<div class="nav nav-tabs" role="tablist">
+						<a class="nav-link active" id="sale-products-tab-1" data-toggle="tab" href="#sale-products-nav-1" role="tab" aria-controls="sale-products-nav-1" aria-selected="true">
+							<svg class="icon icon-catalog"><use xlink:href="images/symbol-defs.svg#catalog"></use></svg>
+							<span>Все товары</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-2" data-toggle="tab" href="#sale-products-nav-2" role="tab" aria-controls="sale-products-nav-2" aria-selected="false">
+							<svg class="icon icon-sink"><use xlink:href="images/symbol-defs.svg#sink"></use></svg>
+							<span>Мойки для кухни</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-3" data-toggle="tab" href="#sale-products-nav-3" role="tab" aria-controls="sale-products-nav-3" aria-selected="false">
+							<svg class="icon icon-freezer"><use xlink:href="images/symbol-defs.svg#freezer"></use></svg>
+							<span>Выдвижные системы</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-4" data-toggle="tab" href="#sale-products-nav-4" role="tab" aria-controls="sale-products-nav-4" aria-selected="true">
+							<svg class="icon icon-faucet"><use xlink:href="images/symbol-defs.svg#faucet"></use></svg>
+							<span>Смесители</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-5" data-toggle="tab" href="#sale-products-nav-5" role="tab" aria-controls="sale-products-nav-5" aria-selected="false">
+							<svg class="icon icon-water-filter"><use xlink:href="images/symbol-defs.svg#water-filter"></use></svg>
+							<span>Фильтры для воды</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-6" data-toggle="tab" href="#sale-products-nav-6" role="tab" aria-controls="sale-products-nav-6" aria-selected="false">
+							<svg class="icon icon-soap"><use xlink:href="images/symbol-defs.svg#soap"></use></svg>
+							<span>Дозаторы</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-7" data-toggle="tab" href="#sale-products-nav-7" role="tab" aria-controls="sale-products-nav-7" aria-selected="false">
+							<svg class="icon icon-oven"><use xlink:href="images/symbol-defs.svg#oven"></use></svg>
+							<span>Духовые шкафы</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-8" data-toggle="tab" href="#sale-products-nav-8" role="tab" aria-controls="sale-products-nav-8" aria-selected="false">
+							<svg class="icon icon-kitchen"><use xlink:href="images/symbol-defs.svg#kitchen"></use></svg>
+							<span>Вытяжки</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-9" data-toggle="tab" href="#sale-products-nav-9" role="tab" aria-controls="sale-products-nav-9" aria-selected="false">
+							<svg class="icon icon-stove"><use xlink:href="images/symbol-defs.svg#stove"></use></svg>
+							<span>Варочные панели</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-10" data-toggle="tab" href="#sale-products-nav-10" role="tab" aria-controls="sale-products-nav-10" aria-selected="false">
+							<svg class="icon icon-no-plug"><use xlink:href="images/symbol-defs.svg#no-plug"></use></svg>
+							<span>Встраиваемые розетки</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-11" data-toggle="tab" href="#sale-products-nav-11" role="tab" aria-controls="sale-products-nav-11" aria-selected="false">
+							<svg class="icon icon-bin"><use xlink:href="images/symbol-defs.svg#bin"></use></svg>
+							<span>Мусорные ведра</span>
+						</a>
+						<a class="nav-link" id="sale-products-tab-12" data-toggle="tab" href="#sale-products-nav-12" role="tab" aria-controls="sale-products-nav-12" aria-selected="false">
+							<svg class="icon icon-shredder"><use xlink:href="images/symbol-defs.svg#shredder"></use></svg>
+							<span>Измельчители отходов</span>
+						</a>
+					</div>
+				</nav><!-- /.product-tabs-nav -->
+				<div class="product-tabs-content tab-content">
+					<div class="tab-pane fade show active" id="sale-products-nav-1" role="tabpanel" aria-labelledby="sale-products-tab-1">
+						@@include('_sale-products.html')
+					</div><!-- /.tab-pane -->
+					<div class="tab-pane fade" id="sale-products-nav-2" role="tabpanel" aria-labelledby="sale-products-tab-2">
+						@@include('_sale-products.html')
+					</div><!-- /.tab-pane -->
+				</div><!-- /.product-tabs-content -->
+			</div><!-- /.container -->
+		</section>
+
+		<!-- Section: Discount products -->
+		<section class="h-discount-products section">
+			<div class="container">
+				<h2 class="section-title">Скидки</h2>
+				<nav class="product-tabs-nav tabs">
+					<div class="nav nav-tabs" role="tablist">
+						<a class="nav-link active" id="discount-products-tab-1" data-toggle="tab" href="#discount-products-nav-1" role="tab" aria-controls="discount-products-nav-1" aria-selected="true">
+							<svg class="icon icon-catalog"><use xlink:href="images/symbol-defs.svg#catalog"></use></svg>
+							<span>Все товары</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-2" data-toggle="tab" href="#discount-products-nav-2" role="tab" aria-controls="discount-products-nav-2" aria-selected="false">
+							<svg class="icon icon-sink"><use xlink:href="images/symbol-defs.svg#sink"></use></svg>
+							<span>Мойки для кухни</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-3" data-toggle="tab" href="#discount-products-nav-3" role="tab" aria-controls="discount-products-nav-3" aria-selected="false">
+							<svg class="icon icon-freezer"><use xlink:href="images/symbol-defs.svg#freezer"></use></svg>
+							<span>Выдвижные системы</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-4" data-toggle="tab" href="#discount-products-nav-4" role="tab" aria-controls="discount-products-nav-4" aria-selected="true">
+							<svg class="icon icon-faucet"><use xlink:href="images/symbol-defs.svg#faucet"></use></svg>
+							<span>Смесители</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-5" data-toggle="tab" href="#discount-products-nav-5" role="tab" aria-controls="discount-products-nav-5" aria-selected="false">
+							<svg class="icon icon-water-filter"><use xlink:href="images/symbol-defs.svg#water-filter"></use></svg>
+							<span>Фильтры для воды</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-6" data-toggle="tab" href="#discount-products-nav-6" role="tab" aria-controls="discount-products-nav-6" aria-selected="false">
+							<svg class="icon icon-soap"><use xlink:href="images/symbol-defs.svg#soap"></use></svg>
+							<span>Дозаторы</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-7" data-toggle="tab" href="#discount-products-nav-7" role="tab" aria-controls="discount-products-nav-7" aria-selected="false">
+							<svg class="icon icon-oven"><use xlink:href="images/symbol-defs.svg#oven"></use></svg>
+							<span>Духовые шкафы</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-8" data-toggle="tab" href="#discount-products-nav-8" role="tab" aria-controls="discount-products-nav-8" aria-selected="false">
+							<svg class="icon icon-kitchen"><use xlink:href="images/symbol-defs.svg#kitchen"></use></svg>
+							<span>Вытяжки</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-9" data-toggle="tab" href="#discount-products-nav-9" role="tab" aria-controls="discount-products-nav-9" aria-selected="false">
+							<svg class="icon icon-stove"><use xlink:href="images/symbol-defs.svg#stove"></use></svg>
+							<span>Варочные панели</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-10" data-toggle="tab" href="#discount-products-nav-10" role="tab" aria-controls="discount-products-nav-10" aria-selected="false">
+							<svg class="icon icon-no-plug"><use xlink:href="images/symbol-defs.svg#no-plug"></use></svg>
+							<span>Встраиваемые розетки</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-11" data-toggle="tab" href="#discount-products-nav-11" role="tab" aria-controls="discount-products-nav-11" aria-selected="false">
+							<svg class="icon icon-bin"><use xlink:href="images/symbol-defs.svg#bin"></use></svg>
+							<span>Мусорные ведра</span>
+						</a>
+						<a class="nav-link" id="discount-products-tab-12" data-toggle="tab" href="#discount-products-nav-12" role="tab" aria-controls="discount-products-nav-12" aria-selected="false">
+							<svg class="icon icon-shredder"><use xlink:href="images/symbol-defs.svg#shredder"></use></svg>
+							<span>Измельчители отходов</span>
+						</a>
+					</div>
+				</nav><!-- /.product-tabs-nav -->
+				<div class="product-tabs-content tab-content">
+					<div class="tab-pane fade show active" id="discount-products-nav-1" role="tabpanel" aria-labelledby="discount-products-tab-1">
+						@@include('_discount-products.html')
+					</div><!-- /.tab-pane -->
+					<div class="tab-pane fade" id="discount-products-nav-2" role="tabpanel" aria-labelledby="discount-products-tab-2">
+						@@include('_discount-products.html')
+					</div><!-- /.tab-pane -->
+				</div><!-- /.product-tabs-content -->
+			</div><!-- /.container -->
+		</section>
+
+		<!-- Section: Promo products -->
+		<section class="h-promo-products section">
+			<div class="container">
+				<h2 class="section-title">Уцененные товары</h2>
+				<nav class="product-tabs-nav tabs">
+					<div class="nav nav-tabs" role="tablist">
+						<a class="nav-link active" id="promo-products-tab-1" data-toggle="tab" href="#promo-products-nav-1" role="tab" aria-controls="promo-products-nav-1" aria-selected="true">
+							<svg class="icon icon-catalog"><use xlink:href="images/symbol-defs.svg#catalog"></use></svg>
+							<span>Все товары</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-2" data-toggle="tab" href="#promo-products-nav-2" role="tab" aria-controls="promo-products-nav-2" aria-selected="false">
+							<svg class="icon icon-sink"><use xlink:href="images/symbol-defs.svg#sink"></use></svg>
+							<span>Мойки для кухни</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-3" data-toggle="tab" href="#promo-products-nav-3" role="tab" aria-controls="promo-products-nav-3" aria-selected="false">
+							<svg class="icon icon-freezer"><use xlink:href="images/symbol-defs.svg#freezer"></use></svg>
+							<span>Выдвижные системы</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-4" data-toggle="tab" href="#promo-products-nav-4" role="tab" aria-controls="promo-products-nav-4" aria-selected="true">
+							<svg class="icon icon-faucet"><use xlink:href="images/symbol-defs.svg#faucet"></use></svg>
+							<span>Смесители</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-5" data-toggle="tab" href="#promo-products-nav-5" role="tab" aria-controls="promo-products-nav-5" aria-selected="false">
+							<svg class="icon icon-water-filter"><use xlink:href="images/symbol-defs.svg#water-filter"></use></svg>
+							<span>Фильтры для воды</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-6" data-toggle="tab" href="#promo-products-nav-6" role="tab" aria-controls="promo-products-nav-6" aria-selected="false">
+							<svg class="icon icon-soap"><use xlink:href="images/symbol-defs.svg#soap"></use></svg>
+							<span>Дозаторы</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-7" data-toggle="tab" href="#promo-products-nav-7" role="tab" aria-controls="promo-products-nav-7" aria-selected="false">
+							<svg class="icon icon-oven"><use xlink:href="images/symbol-defs.svg#oven"></use></svg>
+							<span>Духовые шкафы</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-8" data-toggle="tab" href="#promo-products-nav-8" role="tab" aria-controls="promo-products-nav-8" aria-selected="false">
+							<svg class="icon icon-kitchen"><use xlink:href="images/symbol-defs.svg#kitchen"></use></svg>
+							<span>Вытяжки</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-9" data-toggle="tab" href="#promo-products-nav-9" role="tab" aria-controls="promo-products-nav-9" aria-selected="false">
+							<svg class="icon icon-stove"><use xlink:href="images/symbol-defs.svg#stove"></use></svg>
+							<span>Варочные панели</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-10" data-toggle="tab" href="#promo-products-nav-10" role="tab" aria-controls="promo-products-nav-10" aria-selected="false">
+							<svg class="icon icon-no-plug"><use xlink:href="images/symbol-defs.svg#no-plug"></use></svg>
+							<span>Встраиваемые розетки</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-11" data-toggle="tab" href="#promo-products-nav-11" role="tab" aria-controls="promo-products-nav-11" aria-selected="false">
+							<svg class="icon icon-bin"><use xlink:href="images/symbol-defs.svg#bin"></use></svg>
+							<span>Мусорные ведра</span>
+						</a>
+						<a class="nav-link" id="promo-products-tab-12" data-toggle="tab" href="#promo-products-nav-12" role="tab" aria-controls="promo-products-nav-12" aria-selected="false">
+							<svg class="icon icon-shredder"><use xlink:href="images/symbol-defs.svg#shredder"></use></svg>
+							<span>Измельчители отходов</span>
+						</a>
+					</div>
+				</nav><!-- /.product-tabs-nav -->
+				<div class="product-tabs-content tab-content">
+					<div class="tab-pane fade show active" id="promo-products-nav-1" role="tabpanel" aria-labelledby="promo-products-tab-1">
+						@@include('_promo-products.html')
+					</div><!-- /.tab-pane -->
+					<div class="tab-pane fade" id="promo-products-nav-2" role="tabpanel" aria-labelledby="promo-products-tab-2">
+						@@include('_promo-products.html')
+					</div><!-- /.tab-pane -->
+				</div><!-- /.product-tabs-content -->
+			</div><!-- /.container -->
+		</section>
+
 	</main>
 
 	@@include('_footer.html')
