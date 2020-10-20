@@ -36,17 +36,27 @@
 			background-color: #e6e6e6
 	&-wrapper
 	&-slide
+		&.swiper-slide
+			.h-banner-content
+				.banner-meta
+					.labels,
+					.title,
+					.descr,
+					.btn
+						opacity: 0
+				.banner-photo
+					opacity: 0
 		&.swiper-slide-active
 			.h-banner-content
 				.banner-meta
 					.labels
-						animation: mp-slideFromLeft 1.5s 0.3s both
+						animation: mp-slideFromLeft 1.5s both
 					.title
-						animation: mp-slideFromLeft 1.5s 0.45s both
+						animation: mp-slideFromLeft 1.5s 0.3s both
 					.descr
-						animation: mp-slideFromLeft 1.5s 0.6s both
+						animation: mp-slideFromLeft 1.5s 0.45s both
 					.btn
-						animation: mp-slideFromLeft 1.8s 0.75s both
+						animation: mp-slideFromLeft 1.8s 0.6s both
 				.banner-photo
 					animation: mp-slideFromRight 1.8s 0.75s both
 	&-content
@@ -201,6 +211,7 @@
 				height: 100%
 				overflow-y: auto
 		&:hover
+			cursor: help
 			.descr
 				opacity: 1
 				transform: none

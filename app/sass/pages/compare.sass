@@ -7,3 +7,47 @@
 			flex: 0 0 328px
 		&-products
 			flex: 1 1 auto
+			.swiper-slide
+				width: auto !important
+			.card-product
+				border-bottom: 1px solid $trsp
+				&:hover
+					border-radius: 5px
+					border-bottom-color: $accent
+				.card-actions
+					flex-wrap: nowrap
+					.order-btn
+						width: 106px
+						margin-top: 0
+						&._active
+							flex-direction: column
+							.icon
+								margin-right: 0
+								margin-bottom: 4px
+							span
+								font-weight: 400
+					.wishlist-btn
+						width: 48px
+						height: 48px
+						margin-bottom: 0
+	&-table
+		margin-top: 20px
+		&-row
+			display: flex
+			&:nth-child(odd)
+				background-color: $white
+			&:nth-child(even)
+				background-color: #f8f6f8
+		&-key
+			flex: 0 0 328px
+			padding: 26px 20px
+			color: $black
+			font-weight: 500
+			line-height: 1.2
+		&-value
+			flex: 0 0 210px
+			padding: 26px 18px
+			border-left: 1px solid $border
+			color: $black
+			font-weight: 500
+			line-height: 1.2

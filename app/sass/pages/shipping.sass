@@ -1,0 +1,50 @@
+@import '../helpers/helpers'
+
+.shipping-calc
+	&-form
+		margin: 20px 0
+		padding: 40px
+		border-radius: 5px
+		box-shadow: 0px 3px 24px 2px rgba(68, 68, 79, 0.08)
+		background-color: $white
+		+media-breakpoint-down(xs)
+			padding: 40px 20px
+			.form-group
+				margin-bottom: 15px
+			.row
+				margin: 0 -8px
+			[class*="col"]
+				padding: 0 8px
+		+media-breakpoint-down(xxs)
+			.form-group-row-checkbox
+				flex-wrap: wrap
+				.form-checkbox
+					margin-top: 10px
+					margin-left: 0
+		.form-control
+			border: 1px solid $accent
+			+media-breakpoint-down(xs)
+				padding: 0 10px
+			&:focus
+				border-color: $trsp
+		.form-group-row
+			.form-checkbox
+				margin-left: 25px
+				white-space: nowrap
+				&-label
+					margin-bottom: 0
+		.form-submit
+			margin-top: 30px
+			text-align: center
+	&-logo
+		max-width: 85%
+		height: 62px
+		margin: 0 auto 20px
+		text-align: center
+		+media-breakpoint-down(xs)
+			height: 36px
+		img
+			width: 100%
+			height: 100%
+			margin-bottom: 0
+			object-fit: scale-down

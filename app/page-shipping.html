@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/vendor/bootstrap.css">
 	<link rel="stylesheet" href="css/vendor/swiper.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/pages/shipping.css">
 
 </head>
 
@@ -65,7 +66,7 @@
 
 			<!-- Page content -->
 			<div class="row">
-				<div class="col-12 col-md-auto">
+				<div class="col-12 col-md-auto order-1 order-md-0">
 					<div class="page-navigation">
 						<ul class="page-navigation-list list-group" id="page-navigation">
 							<li><a class="list-group-item" href="#shipping-section-1">Стоимость доставки по Москве</a></li>
@@ -77,9 +78,9 @@
 						</ul>
 					</div>
 				</div><!-- /.col -->
-				<div class="col-12 col-md">
-					<section class="page-section article" id="shipping-section-1">
-						<div class="page-section-head">
+				<div class="col-12 col-md order-0 order-md-1">
+					<section class="post-section article" id="shipping-section-1">
+						<div class="post-section-head">
 							<div class="head-icon">
 								<svg class="icon icon-truck-2"><use xlink:href="images/symbol-defs.svg#truck-2"></use></svg>
 							</div>
@@ -91,8 +92,8 @@
 							<li>Стоимость доставки за пределами МКАД – 500 рублей + 30 рублей за каждый километр за пределами МКАД.</li>
 						</ul>
 					</section>
-					<section class="page-section article" id="shipping-section-2">
-						<div class="page-section-head">
+					<section class="post-section article" id="shipping-section-2">
+						<div class="post-section-head">
 							<div class="head-icon">
 								<svg class="icon icon-wallet"><use xlink:href="images/symbol-defs.svg#wallet"></use></svg>
 							</div>
@@ -105,8 +106,8 @@
 							<li>Онлайн платеж, включая банковские карты, Яндекс-деньги, точки приема платежей и др.</li>
 						</ol>
 					</section>
-					<section class="page-section article" id="shipping-section-3">
-						<div class="page-section-head">
+					<section class="post-section article" id="shipping-section-3">
+						<div class="post-section-head">
 							<div class="head-icon">
 								<svg class="icon icon-box"><use xlink:href="images/symbol-defs.svg#box"></use></svg>
 							</div>
@@ -127,12 +128,102 @@
 								</ul>
 							</li>
 						</ul>
-						<div class="shipping-calc">
-							<h2 class="mt-50 text-xl">Калькулятор доставки</h2>
+						<div class="shipping-calc row">
+							<div class="col-xl-6">
+								<form action="#" method="POST" id="shipping-calc-form-1" class="shipping-calc-form">
+									<div class="shipping-calc-logo">
+										<img class="lazy" data-src="images/shipping-method-logo-1.png" alt="ПЭК Доставляем сборный груз">
+									</div>
+									<div class="form-group">
+										<label for="sc1-city-from" class="form-label">Город отправления</label>
+										<input type="text" name="sc1-city-from" id="sc1-city-from" class="form-control" placeholder="Город отправления" required>
+									</div>
+									<div class="form-group">
+										<label for="ssc1c-city-to" class="form-label">Город получения</label>
+										<input type="text" name="sc1-city-to" id="sc1-city-to" class="form-control" placeholder="Город получения" required>
+									</div>
+									<div class="form-group">
+										<label for="sc1-dimension-length" class="form-label">Габариты груза, м:</label>
+										<div class="form-group-row">
+											<input type="number" min="0" name="sc1-dimension-length" id="sc1-dimension-length" class="form-control" placeholder="Длина" required>
+											<div class="icon-border">&times;</div>
+											<input type="number" min="0" name="sc1-dimension-height" id="sc1-dimension-height" class="form-control" placeholder="Высота" required>
+											<div class="icon-border">&times;</div>
+											<input type="number" min="0" name="sc1-dimension-width" id="sc1-dimension-width" class="form-control" placeholder="Ширина" required>
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-6">
+											<label for="sc1-volume" class="form-label">Объем груза, м³:</label>
+											<input type="number" min="0" name="sc1-volume" id="sc1-volume" class="form-control" placeholder="Объем, м³" required>
+										</div>
+										<div class="col-6">
+											<label for="sc1-weight" class="form-label">Вес груза, кг:</label>
+											<input type="number" min="0" name="sc1-weight" id="sc1-weight" class="form-control" placeholder="Вес, кг" required>
+										</div>
+									</div>
+									<div class="form-submit">
+										<button type="submit" class="btn btn-primary">Отправить</button>
+									</div>
+								</form>
+							</div>
+							<div class="col-xl-6">
+								<form action="#" method="POST" id="shipping-calc-form-2" class="shipping-calc-form">
+									<div class="shipping-calc-logo">
+										<img class="lazy" data-src="images/shipping-method-logo-2.png" alt="Деловые линии">
+									</div>
+									<div class="form-group">
+										<label for="sc2-city-from" class="form-label">Город отправления</label>
+										<div class="form-group-row form-group-row-checkbox">
+											<input type="text" name="sc2-city-from" id="sc2-city-from" class="form-control" placeholder="Город отправления" required>
+											<div class="form-checkbox">
+												<input type="checkbox" name="sc2-city-from-checkbox" id="sc2-city-from-checkbox">
+												<label for="sc2-city-from-checkbox" class="form-checkbox-label">От адреса</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="sc2-city-to" class="form-label">Город получения</label>
+										<div class="form-group-row form-group-row-checkbox">
+											<input type="text" name="sc2-city-to" id="sc2-city-to" class="form-control" placeholder="Город получения" required>
+											<div class="form-checkbox">
+												<input type="checkbox" name="sc2-city-to-checkbox" id="sc2-city-to-checkbox">
+												<label for="sc2-city-to-checkbox" class="form-checkbox-label">До адреса</label>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6">
+											<label for="sc2-weight" class="form-label">Вес, кг:</label>
+											<input type="number" min="0" name="sc2-weight" id="sc2-weight" class="form-control" placeholder="Вес, кг" required>
+										</div>
+										<div class="col-6">
+											<label for="sc2-volume" class="form-label">Объем, м³:</label>
+											<input type="number" min="0" name="sc2-volume" id="sc2-volume" class="form-control" placeholder="Объем, м³" required>
+										</div>
+									</div>
+									<div class="form-note">
+										<div class="c-accent w-medium">Есть негабаритные места</div>
+										<div class="mt-10 text-xxs">Место считается негабаритным, если вес места более 100 кг или одно из измерений равно или более 3 метров.</div>
+									</div>
+									<h5 class="text-xs c-black w-medium">Страхование</h5>
+									<div class="form-group">
+										<label for="sc2-declarate-value" class="form-label">Объявленная стоимость, руб.</label>
+										<input type="number" min="0" name="sc2-declarate-value" id="sc2-declarate-value" class="form-control" placeholder="0" required>
+									</div>
+									<div class="form-group">
+										<label for="sc2-boxing" class="form-label">Упаковка</label>
+										<input type="text" name="sc2-boxing" id="sc2-boxing" class="form-control" placeholder="Деревянная обрешетка" required>
+									</div>
+									<div class="form-submit">
+										<button type="submit" class="btn btn-primary">Отправить</button>
+									</div>
+								</form>
+							</div>
 						</div>
 					</section>
-					<section class="page-section article" id="shipping-section-4">
-						<div class="page-section-head">
+					<section class="post-section article" id="shipping-section-4">
+						<div class="post-section-head">
 							<div class="head-icon">
 								<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
 							</div>
@@ -151,8 +242,8 @@
 							</li>
 						</ul>
 					</section>
-					<section class="page-section article" id="shipping-section-5">
-						<div class="page-section-head">
+					<section class="post-section article" id="shipping-section-5">
+						<div class="post-section-head">
 							<div class="head-icon">
 								<svg class="icon icon-location"><use xlink:href="images/symbol-defs.svg#location"></use></svg>
 							</div>
@@ -164,8 +255,8 @@
 							<li>Доставка после Малого Московского Кольца (А-107) – по согласованию с менеджером.</li>
 						</ul>
 					</section>
-					<section class="page-section article" id="shipping-section-6">
-						<div class="page-section-head">
+					<section class="post-section article" id="shipping-section-6">
+						<div class="post-section-head">
 							<div class="head-icon">
 								<svg class="icon icon-docs"><use xlink:href="images/symbol-defs.svg#docs"></use></svg>
 							</div>
@@ -184,7 +275,7 @@
 							<li>При не заявлении Вами претензий по поводу механических повреждений при получении товара, в дальнейшем подобные претензии не рассматриваются.</li>
 						</ul>
 					</section>
-					<section class="page-section article">
+					<section class="post-section article">
 						<p>В случае вопросов, пожеланий и претензий обращайтесь к нам по следующим координатам:</p>
 						<ul class="ul-contacts">
 							<li class="phone"><b>Служба доставки: <a href="tel:84952583725">8 (495) 258-37-25</a> (многоканальный)</b></li>
@@ -240,8 +331,8 @@
 			</section>
 
 			<!-- FAQ List -->
-			<section class="page-section faq">
-				<h2 class="page-section-title text-lg w-semibold text-center">Часто задаваемые вопросы</h2>
+			<section class="post-section faq">
+				<h2 class="post-section-title text-lg w-semibold text-center">Часто задаваемые вопросы</h2>
 				<ul class="faq-list">
 					<li class="faq-item">
 						<p>Какие основные преимущества для покупателя?</p>

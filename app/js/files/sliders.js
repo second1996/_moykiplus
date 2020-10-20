@@ -27,6 +27,11 @@ jQuery(document).ready( function($) {
 		// 	delay: 5000,
 		// },
 		// allowTouchMove: false,
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+		grabCursor: true,
 		loop: false,
 		speed: 750,
 		slidesPerView: 1,
@@ -266,5 +271,17 @@ jQuery(document).ready( function($) {
 			clickable: true,
 		}
 	})
+
+
+	/**
+	 * Compare products slider
+	 */
+	var compareSlider = new Swiper('.compare .compare-slider-container', {
+		loop: false,
+		slidesPerView: 4,
+		speed: 650,
+	})
+
+
 
 })

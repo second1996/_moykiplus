@@ -177,19 +177,21 @@ jQuery(document).ready( function($) {
 		/**
 		 * Init Bootstrap ScrollSpy if #page-navigation id registered on the page
 		 */
-		$('body').scrollspy({
-			target: '#page-navigation',
-			offset: 300,
-		})
-		
+		if( window.matchMedia('(min-width: 768px)').matches ) {
+			$('body').scrollspy({
+				target: '#page-navigation',
+				offset: 300,
+			})
+		}
+
 		/**
 		 * Animated scroll
 		 */
 		$('.page-navigation-list > li > a').on('click', function(e) {
 			var section_id = $(this).attr('href')
-	
+
 			e.preventDefault()
-			$('html, body').stop(true).animate({scrollTop: $(section_id).offset().top - 100}, 700)
+			$('html, body').stop(true).animate({scrollTop: $(section_id).offset().top - 100}, 600)
 		})
 	}
 
