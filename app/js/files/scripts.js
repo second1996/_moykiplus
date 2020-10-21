@@ -209,4 +209,53 @@ jQuery(document).ready( function($) {
 		})
 	}
 
+
+	/**
+	 * Compare products
+	 */
+	$('#compare-differences').on('click', function (e) {
+		e.preventDefault();
+		$('#compare-differences').addClass('_active')
+
+		$('.compare-table-key').each(function(index, el){
+			var rowValues = [];
+	
+			$('.compare-table-slide').each(function() {
+				rowValues.push($(this).find('.compare-table-value').eq(index).text())
+			})
+	
+			var toHide = isStringArrayEqual(rowValues);
+	
+			if( toHide ) {
+				$(this).addClass('d-none')
+				$('.compare-table-slide').each(function() {
+					$(this).find('.compare-table-value').eq(index).addClass('d-none')
+				})
+			}
+		})
+	
+		function isStringArrayEqual(stringArr) {
+			var outArr = true, i = 0;
+	
+			while (++i < stringArr.length) {
+				outArr = outArr && (stringArr[i-1] === stringArr[i]);
+			}
+			return outArr;
+		}
+
+		// $('.repeating').hide()
+		$('#compare-all').removeClass('_active')
+	})
+
+	$('#compare-all').on('click', function (e) {
+		e.preventDefault()
+		$('#compare-all').addClass('_active')
+		$('.compare-table-key, .compare-table-value').each(function() {
+			if( $(this).hasClass('d-none') ) {
+				$(this).removeClass('d-none')
+			}
+		})
+		$('#compare-differences').removeClass('_active')
+	})
+
 })

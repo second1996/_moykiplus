@@ -276,12 +276,45 @@ jQuery(document).ready( function($) {
 	/**
 	 * Compare products slider
 	 */
-	var compareSlider = new Swiper('.compare .compare-slider-container', {
+	var compareProductsSlider = new Swiper('.compare .products-slider-container', {
+		allowTouchMove: false,
+		mousewheel: {
+			invert: true,
+		},
+		keyboard: {
+			enabled: true,
+			onlyInViewport: false,
+		},
 		loop: false,
 		slidesPerView: 4,
-		speed: 650,
+		speed: 250,
+		navigation: {
+			nextEl: '.compare .products-slider .swiper-button-next',
+			prevEl: '.compare .products-slider .swiper-button-prev',
+		},
+	})
+	var compareTableSlider = new Swiper('.compare .compare-table-values', {
+		allowTouchMove: false,
+		mousewheel: {
+			invert: true,
+		},
+		keyboard: {
+			enabled: true,
+			onlyInViewport: false,
+		},
+		loop: false,
+		slidesPerView: 4,
+		speed: 250,
+		scrollbar: {
+			el: '.compare .swiper-scrollbar',
+			draggable: true,
+		},
 	})
 
-
+	/**
+	 * Swiper sync control sliders
+	 */
+	compareProductsSlider.controller.control = compareTableSlider
+	compareTableSlider.controller.control = compareProductsSlider
 
 })

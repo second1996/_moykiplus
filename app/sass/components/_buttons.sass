@@ -40,6 +40,18 @@
 		&:hover
 			background-color: $green
 			color: $white
+		&:active
+			background-color: darken($green, 5%)
+	&-primary-outline
+		border: 1px solid $accent
+		background-color: $trsp
+		color: $accent
+		font-weight: 500
+		&:hover
+			background-color: $accent
+			color: $white
+		&:active
+			background-color: darken($accent, 5%)
 	&-secondary
 		background-color: $white
 		color: $accent
@@ -47,6 +59,8 @@
 		&:hover
 			background-color: $orange
 			color: $white
+		&:active
+			background-color: darken($orange, 5%)
 	&-orange
 		background-color: $orange
 		color: $white
@@ -54,6 +68,8 @@
 		&:hover
 			background-color: darken($orange, 10%)
 			color: $white
+		&:active
+			background-color: darken($orange, 15%)
 	&-success
 		background-color: $green
 		color: $white
@@ -61,6 +77,27 @@
 		&:hover
 			background-color: darken($green, 8%)
 			color: $white
+		&:active
+			background-color: darken($green, 12%)
+	&-info
+		background-color: #4a7c86
+		color: $white
+		font-weight: 500
+		&:hover
+			background-color: darken(#4a7c86, 10%)
+			color: $white
+		&:active
+			background-color: darken(#4a7c86, 15%)
+	&-remove
+		border: 1px solid #e71836
+		background-color: $trsp
+		color: #e71836
+		font-weight: 500
+		&:hover
+			background-color: #e71836
+			color: $white
+		&:active
+			background-color: darken(#e71836, 5%)
 	&-outline
 		background-color: $white
 		border: 1px solid rgba(#b9b6b9, 0.6)
