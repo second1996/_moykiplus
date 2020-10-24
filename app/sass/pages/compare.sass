@@ -6,13 +6,20 @@ $container-width: 1270px
 	&-header
 		display: flex
 		flex-wrap: nowrap
+		+media-breakpoint-down(xs)
+			display: block
 		&-actions
 			width: 328px
 			display: flex
 			flex-direction: column
 			justify-content: space-between
+			+media-breakpoint-down(xs)
+				width: 100%
+				margin-bottom: 40px
 			.btn
 				width: 230px
+				+media-breakpoint-down(xs)
+					width: 100%
 			.compare-categories
 				.form-select
 					width: 230px
@@ -21,29 +28,58 @@ $container-width: 1270px
 					background-color: $white
 					background-position-y: 18px
 					line-height: 46px
+					+media-breakpoint-down(xs)
+						width: 100%
 		&-products
-			flex: 0 1 auto
+			flex: 0 0 auto
+			+media-breakpoint-down(xs)
+				max-width: 290px
+				margin-left: auto
+				margin-right: auto
 			.products-slider
 				position: relative
-				width: 841px
+				width: 842px
+				+media-breakpoint-down(lg)
+					width: 632px
+				+media-breakpoint-down(md)
+					width: 432px
+				+media-breakpoint-down(sm)
+					width: 232px
+				+media-breakpoint-down(xs)
+					width: 100%
 				&-container
 					margin-top: -10px
 					padding-top: 10px
+					+media-breakpoint-down(sm)
+						padding-right: 6px
+						margin-right: -6px
 				.swiper-button-prev
 					left: -22px
 				.swiper-button-next
 					right: -22px
 			.swiper-slide
-				width: 210px !important
 				&:first-child
-					padding-left: 1px
 					.card-product
 						border-left: 1px solid $border
+				&:not(.swiper-slide-visible)
+					+media-breakpoint-up(md)
+						.card-product
+							.card-badge
+								visibility: hidden
+								opacity: 0
+								transition: $trs
+					+media-breakpoint-down(sm)
+						.card-product
+							visibility: hidden
+							opacity: 0
 			.card-product
+				width: auto
 				border-radius: 0
 				border: 1px solid $border
 				border-left: 0
 				box-shadow: none
+				+media-breakpoint-down(sm)
+					border-left: 1px solid $border
 				&:hover
 					z-index: 1
 				.card-actions
@@ -66,8 +102,12 @@ $container-width: 1270px
 	&-table
 		display: flex
 		margin-top: 20px
+		+media-breakpoint-down(xs)
+			display: block
 		&-keys
 			width: 328px
+			+media-breakpoint-down(xs)
+				display: none
 		&-key
 			display: flex
 			align-items: center
@@ -81,18 +121,31 @@ $container-width: 1270px
 			&:nth-child(even)
 				background-color: #f8f6f8
 		&-values
+			flex: 0 0 auto
 			position: relative
-			width: 841px
+			width: 842px
 			margin-bottom: -30px
 			padding-bottom: 30px
-			.swiper-slide
-				width: 210px !important
+			+media-breakpoint-down(lg)
+				width: 632px
+			+media-breakpoint-down(md)
+				width: 432px
+			+media-breakpoint-down(sm)
+				width: 232px
+			+media-breakpoint-down(xs)
+				width: auto
+				border-top: 1px solid $border
+			.swiper-slide-active
+				+media-breakpoint-down(sm)
+					.compare-table-value
+						border-right: 1px solid $border
 			.swiper-scrollbar
 				left: 0
 				bottom: 0
 				width: 100%
 		&-value
 			overflow: hidden
+			position: relative
 			display: flex
 			align-items: center
 			height: 68px
@@ -105,3 +158,18 @@ $container-width: 1270px
 				background-color: $white
 			&:nth-child(even)
 				background-color: #f8f6f8
+			+media-breakpoint-down(xs)
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				height: auto
+				padding-top: 18px
+				padding-bottom: 18px
+				&:last-child
+					border-bottom: 1px solid $border
+				&::before
+					content: attr(data-compare-title)
+					display: block
+					margin-bottom: 5px
+					color: rgba($black, 0.5)
+					font-size: 14px

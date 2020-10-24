@@ -215,6 +215,7 @@ jQuery(document).ready( function($) {
 	 */
 	$('#compare-differences').on('click', function (e) {
 		e.preventDefault();
+
 		$('#compare-differences').addClass('_active')
 
 		$('.compare-table-key').each(function(index, el){
@@ -236,14 +237,14 @@ jQuery(document).ready( function($) {
 	
 		function isStringArrayEqual(stringArr) {
 			var outArr = true, i = 0;
-	
+
 			while (++i < stringArr.length) {
 				outArr = outArr && (stringArr[i-1] === stringArr[i]);
 			}
+
 			return outArr;
 		}
 
-		// $('.repeating').hide()
 		$('#compare-all').removeClass('_active')
 	})
 

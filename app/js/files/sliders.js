@@ -251,9 +251,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * FAQ Promo Banner slider
+	 * Promo Banner slider
 	 */
-	var FAQPromo = new Swiper('.promo-banner .promo-banner-slider-container', {
+	var promoBanner = new Swiper('.promo-banner .promo-banner-slider-container', {
 		preloadImages: false,
 		lazy: true,
 		// autoHeight: true,
@@ -277,7 +277,8 @@ jQuery(document).ready( function($) {
 	 * Compare products slider
 	 */
 	var compareProductsSlider = new Swiper('.compare .products-slider-container', {
-		allowTouchMove: false,
+		watchSlidesVisibility: true,
+		allowTouchMove: true,
 		mousewheel: {
 			invert: true,
 		},
@@ -286,15 +287,27 @@ jQuery(document).ready( function($) {
 			onlyInViewport: false,
 		},
 		loop: false,
-		slidesPerView: 4,
+		slidesPerView: 1,
 		speed: 250,
 		navigation: {
 			nextEl: '.compare .products-slider .swiper-button-next',
 			prevEl: '.compare .products-slider .swiper-button-prev',
 		},
+		breakpoints: {
+			768: {
+				allowTouchMove: false,
+				slidesPerView: 2
+			},
+			992: {
+				slidesPerView: 3
+			},
+			1230: {
+				slidesPerView: 4
+			}
+		}
 	})
 	var compareTableSlider = new Swiper('.compare .compare-table-values', {
-		allowTouchMove: false,
+		allowTouchMove: true,
 		mousewheel: {
 			invert: true,
 		},
@@ -303,12 +316,24 @@ jQuery(document).ready( function($) {
 			onlyInViewport: false,
 		},
 		loop: false,
-		slidesPerView: 4,
+		slidesPerView: 1,
 		speed: 250,
 		scrollbar: {
 			el: '.compare .swiper-scrollbar',
 			draggable: true,
 		},
+		breakpoints: {
+			768: {
+				allowTouchMove: false,
+				slidesPerView: 2
+			},
+			992: {
+				slidesPerView: 3
+			},
+			1230: {
+				slidesPerView: 4
+			}
+		}
 	})
 
 	/**
