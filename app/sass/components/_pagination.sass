@@ -1,3 +1,10 @@
+.show-more
+	margin-top: 50px
+	.btn
+		width: 100%
+	~ .pagination
+		margin-top: 30px
+
 .pagination
 	display: flex
 	flex-wrap: wrap
@@ -37,16 +44,18 @@
 			&:hover
 				background-color: $orange
 				color: $white
-		&--prev
+		&-prev
 			.icon
 				margin-right: 10px
 				transform: scaleX(-1)
-		&--next
+		&-next
 			.icon
 				margin-left: 10px
 		&--disabled
-			pointer-events: none
+			cursor: not-allowed
 			opacity: 0.2
+			&:hover
+				color: inherit
 	&-inner
 		display: flex
 		flex-wrap: wrap

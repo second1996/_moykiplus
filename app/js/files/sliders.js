@@ -339,7 +339,10 @@ jQuery(document).ready( function($) {
 	/**
 	 * Swiper sync control sliders
 	 */
-	compareProductsSlider.controller.control = compareTableSlider
-	compareTableSlider.controller.control = compareProductsSlider
+	if( $('.compare .products-slider-container, .compare .compare-table-values').length ) {
+		compareProductsSlider.controller.control = compareTableSlider
+		compareTableSlider.controller.control = compareProductsSlider
+	}
+
 
 })

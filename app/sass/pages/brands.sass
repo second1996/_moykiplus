@@ -1,0 +1,274 @@
+@import '../helpers/helpers'
+
+.brands
+	
+	// Alphabet
+	&-alphabet
+		&-list
+			padding: 18px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(sm)
+				padding-left: 16px
+				padding-right: 16px
+				&--english
+					display: block
+				&--russian
+					display: block
+					margin-top: 15px
+		&-item
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			width: 34px
+			height: 34px
+			margin: 7px 4px
+			border-radius: 5px
+			border: 1px solid $border
+			color: #a3a1a5
+			font-size: 14px
+			font-weight: 500
+			line-height: 1
+			+media-breakpoint-down(lg)
+				width: 33px
+				height: 33px
+			+media-breakpoint-down(md)
+				width: 32px
+				height: 32px
+				font-size: 13px
+			+media-breakpoint-down(sm)
+				width: 34px
+				height: 34px
+				margin: 6px 5px
+			+media-breakpoint-down(xs)
+				margin: 5px
+			&:hover
+				border-color: $accent
+			&:active,
+			&:focus
+				border-color: $accent
+				background-color: $accent
+				color: $white
+
+	// Countries
+	&-countries
+		&-wrapper
+		&-button
+			position: relative
+			z-index: 1
+			width: 100%
+			justify-content: space-between
+			+media-breakpoint-up(md)
+				display: none
+			.icon
+				font-size: 12px
+				transform: rotate(90deg)
+			&._toggled
+				.icon
+					transform: rotate(-90deg)
+		&-list
+			padding: 20px 16px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(sm)
+				overflow-y: auto
+				display: none
+				max-height: 305px
+				padding: 0
+				padding-top: 4px
+				border-radius: 0 0 5px 5px
+				border: 1px solid $accent
+				transform: translateY(-4px)
+		&-item
+			display: inline-flex
+			align-items: center
+			width: 170px
+			height: 44px
+			margin: 5px 8px
+			padding-left: 15px
+			padding-right: 15px
+			border-radius: 5px
+			border: 1px solid $border
+			color: rgba($black, 0.7)
+			line-height: 1
+			+media-breakpoint-down(lg)
+				width: 160px
+			+media-breakpoint-down(sm)
+				width: 100%
+				margin: 0
+				padding: 25px 30px
+				border-radius: 0
+				border: 0
+				&:not(:last-child)
+					border-bottom: 1px solid $border
+			img
+				width: 25px
+				height: 25px
+				margin-right: 10px
+			span
+				font-size: 14px
+			&:hover,
+			&:active,
+			&:focus
+				border-color: $accent
+				color: $accent
+
+	// Brand Card
+	&-card
+		display: flex
+		padding: 40px
+		border-radius: 5px
+		box-shadow: $box-shadow
+		background-color: $white
+		&:not(:last-child)
+			margin-bottom: 50px
+		+media-breakpoint-down(lg)
+			padding: 30px
+		+media-breakpoint-down(md)
+			flex-direction: column
+			&:not(:last-child)
+				margin-bottom: 40px
+		&-photo
+			position: relative
+			flex: 0 0 230px
+			height: 270px
+			margin-right: 40px
+			border-radius: 5px
+			border: 1px solid $border
+			transition: border .35s ease
+			+media-breakpoint-down(lg)
+				margin-right: 30px
+				flex: 0 0 200px
+				height: 240px
+			+media-breakpoint-down(md)
+				flex: 0 0 auto
+				width: 100%
+				max-width: 230px
+				height: 160px
+				margin-bottom: 30px
+			&:hover
+				border-color: $accent
+			a
+				display: flex
+				align-items: center
+				justify-content: center
+				width: 100%
+				height: 100%
+			img
+				padding-left: 50px
+				padding-right: 50px
+		&-body
+			.brand-head
+				display: flex
+				align-items: center
+				justify-content: space-between
+				margin-bottom: 20px
+				.title
+					line-height: 1.2
+				+media-breakpoint-down(xs)
+					flex-direction: column
+					align-items: flex-start
+					.counter
+						margin-top: 8px
+						font-size: 13px
+			.brand-categories
+				overflow: hidden
+				max-height: 54px
+				margin-left: -10px
+				margin-right: -10px
+				transition: height .35s ease
+				+media-breakpoint-down(sm)
+					max-height: 90px
+				~ .read-more
+					margin-top: 6px
+				> li
+					position: relative
+					display: inline-block
+					width: 32.5%
+					margin-bottom: 10px
+					padding: 0 10px 0 22px
+					line-height: 1.35
+					+media-breakpoint-down(xs)
+						width: 100%
+					&::before
+						content: ''
+						position: absolute
+						top: 8px
+						left: 10px
+						width: 4px
+						height: 4px
+						border-radius: 50%
+						background-color: $accent
+			.brand-footer
+				margin-top: 20px
+				padding-top: 30px
+				border-top: 1px solid $border
+				+media-breakpoint-down(xs)
+					margin-top: 30px
+				.brand-products
+					display: flex
+					+media-breakpoint-down(sm)
+						flex-wrap: wrap
+					.brand-product
+						display: flex
+						padding: 20px
+						border-radius: 5px
+						box-shadow: $box-shadow
+						border: 1px solid $trsp
+						background-color: $white
+						&:not(:last-child)
+							margin-right: 12px
+						+media-breakpoint-down(lg)
+							padding: 15px
+						+media-breakpoint-down(sm)
+							width: 100%
+							&:not(:last-child)
+								margin-right: 0
+								margin-bottom: 12px
+						&:hover
+							border-color: $accent
+						&-photo
+							position: relative
+							flex: 0 0 auto
+							width: 76px
+							height: 76px
+							margin-right: 12px
+							padding: 6px
+							border-radius: 5px
+							border: 1px solid $border
+							+media-breakpoint-down(lg)
+								width: 56px
+								height: 56px
+							img
+								width: 100%
+								height: 100%
+								object-fit: scale-down
+						&-meta
+							.manufacturer
+								line-height: 1
+							.title
+								margin-top: 8px
+								color: rgba($black, 0.7)
+								line-height: 1.2
+							.price
+								margin-top: 8px
+								&-wrapper
+									display: flex
+									flex-wrap: wrap
+									align-items: flex-end
+									line-height: 1
+									> ins
+										margin-right: 5px
+										color: $black
+										font-size: 14px
+										font-weight: 600
+										white-space: nowrap
+										text-decoration: none
+									> del
+										margin-top: 2px
+										color: #4b484c
+										font-size: 13px
+										font-weight: 400
+										white-space: nowrap

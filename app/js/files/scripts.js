@@ -208,6 +208,12 @@ jQuery(document).ready( function($) {
 			lessLink: '<button type="button" class="read-more _toggled"><span>Спрятать</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
 		})
 	}
+	$('.brands-card .brand-categories').readmore({
+		embedCSS: false,
+		speed: 75,
+		moreLink: '<button type="button" class="read-more"><span>Показать все</span></button>',
+		lessLink: '<button type="button" class="read-more _toggled"><span>Скрыть</span></button>',
+	})
 
 
 	/**
@@ -257,6 +263,15 @@ jQuery(document).ready( function($) {
 			}
 		})
 		$('#compare-differences').removeClass('_active')
+	})
+
+
+	/**
+	 * Choose Brand coutries
+	 */
+	$('#brands-countries-choose').on('click', function () {
+		$(this).toggleClass('_toggled')
+		$(this).next().slideToggle(250)
 	})
 
 })
