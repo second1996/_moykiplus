@@ -1,6 +1,9 @@
 /* ==========================================================================
 	 Base customize for forms
 	 ========================================================================== */
+::placeholder
+	color: rgba($black, 0.6)
+
 .form
 	position: relative
 	&-light
@@ -26,13 +29,14 @@
 			+media-breakpoint-down(xs)
 				width: auto
 				border: 0
+	label
+		cursor: pointer
 	&-label
 		margin-bottom: 10px
 		color: #a9a7a9
 		font-size: 13px
 		font-weight: 500
 		line-height: 1.2
-		cursor: pointer
 	&-control,
 	&-textarea,
 	&-select
