@@ -36,38 +36,47 @@
 
 			<!-- Wishlist -->
 			<div class="wishlist">
+
+				<!-- Page Settings -->
 				<div class="wishlist-settings page-settings">
-					<div class="shop-per-page">
-						<form action="#" method="GET" class="shop-per-page-form form">
-							<div class="form-group">
-								<label for="per-page" class="c-black w-semibold">Список товаров:</label>
-								<select class="form-select" name="per-page" id="per-page">
-									<option value="all">Все (5)</option>
-									<option value="10">10</option>
-									<option value="15">15</option>
-									<option value="20">20</option>
-									<option value="25">25</option>
-									<option value="30">30</option>
-								</select>
-							</div>
-						</form>
+					<div class="page-settings-wrapper">
+						<div class="page-settings-row">
+							<div class="shop-per-page">
+								<form action="#" method="GET" class="shop-per-page-form form">
+									<div class="form-group">
+										<label for="per-page" class="c-black w-semibold">Список товаров:</label>
+										<select class="form-select" name="per-page" id="per-page">
+											<option value="all">Все (5)</option>
+											<option value="10">10</option>
+											<option value="15">15</option>
+											<option value="20">20</option>
+											<option value="25">25</option>
+											<option value="30">30</option>
+										</select>
+									</div>
+								</form>
+							</div><!-- /.shop-per-page -->
+							<div class="shop-view">
+								<span class="shop-view-label c-black w-semibold">Показывать:</span>
+								<div class="shop-view-select">
+									<a rel="nofollow" href="#" class="shop-view-button shop-view-button--selected">
+										<svg class="icon icon-view-more"><use xlink:href="images/symbol-defs.svg#view-grid"></use></svg>
+									</a>
+									<a rel="nofollow" href="#" class="shop-view-button">
+										<svg class="icon icon-view-row"><use xlink:href="images/symbol-defs.svg#view-row"></use></svg>
+									</a>
+								</div>
+							</div><!-- /.shop-view -->
+						</div><!-- /.page-settings-row -->
 					</div>
-					<div class="shop-view">
-						<span class="shop-view-label c-black w-semibold">Показывать:</span>
-						<div class="shop-view-select">
-							<a href="page-wishlist.html?per-row=5&view=more" class="shop-view-button shop-view-button--selected">
-								<svg class="icon icon-view-more"><use xlink:href="images/symbol-defs.svg#view-more"></use></svg>
-							</a>
-							<a href="page-wishlist.html?per-row=1&view=row" class="shop-view-button">
-								<svg class="icon icon-view-row"><use xlink:href="images/symbol-defs.svg#view-row"></use></svg>
-							</a>
-						</div>
-					</div>
-				</div>
+				</div><!-- /.wishlist-settings -->
+
+				<!-- Wishlist items -->
 				<div class="wishlist-items">
 					@@include('_discount-products.html')
 				</div>
-			</div>
+
+			</div><!-- /.wishlist -->
 
 		</div><!-- /.container -->
 	</main>

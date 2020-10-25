@@ -283,19 +283,52 @@
 	 Page Settings (Sorting, products display etc.)
 	 ========================================================================== */
 .page-settings
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
-	align-items: center
 	margin-bottom: 40px
-	padding: 20px 20px 0
-	border-radius: 5px
-	box-shadow: $box-shadow
-	background-color: $white
+	&-wrapper
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		padding: 20px 20px 0
+		border-radius: 5px
+		box-shadow: $box-shadow
+		background-color: $white
+	&-row
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		+media-breakpoint-down(sm)
+			flex-wrap: wrap
+		&:not(:last-child)
+			margin-bottom: 20px
+			border-bottom: 1px solid $border
+		> *
+			padding-left: 10px
+			padding-right: 10px
+			padding-bottom: 20px
+
+	// Tool: Sort by
+	.shop-sort
+		display: inline-flex
+		+media-breakpoint-down(xs)
+			flex-wrap: wrap
+		&-label
+			flex: 0 0 auto
+			margin-right: 15px
+		&-list
+			display: inline-flex
+			flex-wrap: wrap
+			> a
+				color: rgba($black, 0.8)
+				font-weight: 500
+				&:not(:last-child)
+					margin-right: 15px
+				&:hover
+					color: $orange
 	
 	// Tool: Per page
 	.shop-per-page
-		padding-bottom: 20px
 		+media-breakpoint-down(xs)
 			width: 100%
 		&-form
@@ -324,12 +357,18 @@
 
 	// Tool: View
 	.shop-view
+		position: relative
+		top: -5px
 		display: flex
 		align-items: center
-		padding-bottom: 20px
+		margin-bottom: -10px
+		+media-breakpoint-down(xs)
+			display: none
 		&-label
 			flex: 0 0 auto
 			margin-right: 15px
+			+media-breakpoint-down(xxs)
+				display: none
 		&-select
 			display: flex
 			padding: 5px
@@ -353,6 +392,43 @@
 			&--selected
 				background-color: $accent
 				color: $white
+
+	// Found products
+	.shop-found
+		display: inline-flex
+		&-label
+			margin-right: 15px
+
+	// Show products
+	.shop-show
+		display: inline-flex
+		&-label
+			margin-right: 15px
+		&-list
+			display: inline-flex
+			align-items: center
+		&-item
+			padding: 0 12px
+			border-right: 1px solid $border
+			color: rgba($black, 0.8)
+			font-weight: 500
+			line-height: 1
+			&:last-child
+				padding-right: 0
+				border-right: 0
+			&:hover
+				color: $orange
+			&--selected
+				pointer-events: none
+				color: $accent
+	
+	// View all button
+	&-view-all
+		margin-top: 20px
+		text-align: right
+		+media-breakpoint-down(sm)
+			display: none
+
 
 
 /* ==========================================================================

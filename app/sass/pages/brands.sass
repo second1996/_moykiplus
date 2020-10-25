@@ -1,7 +1,9 @@
 @import '../helpers/helpers'
 
+/* ==========================================================================
+	 Brands page
+	 ========================================================================== */
 .brands
-	
 	// Alphabet
 	&-alphabet
 		&-list
@@ -272,3 +274,133 @@
 										font-size: 13px
 										font-weight: 400
 										white-space: nowrap
+
+
+/* ==========================================================================
+	 Brands [Single page]
+	 ========================================================================== */
+
+// Pagination
+.show-more
+	margin-top: 15px
+
+.brand-single
+	// Brabd info (Photo, Site, Country, Description)
+	.brand-info
+		&-photo
+			position: relative
+			width: 100%
+			height: 200px
+			margin-bottom: 30px
+			padding: 60px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(lg)
+				padding: 30px
+			+media-breakpoint-down(sm)
+				padding: 60px
+			img
+				width: 100%
+				height: 100%
+				object-fit: scale-down
+		&-site
+			margin-bottom: 15px
+			line-height: 1.3
+			a
+				color: $accent
+				font-weight: 500
+				&:hover
+					color: $orange
+		&-country
+			line-height: 1.3
+		&-descr
+			padding-left: 80px
+			+media-breakpoint-down(lg)
+				padding-left: 40px
+			+media-breakpoint-down(md)
+				padding-left: 10px
+			+media-breakpoint-down(sm)
+				margin-top: 40px
+				padding-left: 0
+			article
+				max-height: 240px
+				p
+					margin-bottom: 15px
+					line-height: 1.75
+				p:last-child
+					margin-bottom: 0
+
+	// Brand Categories & Collections
+	.brand-categories,
+	.brand-collections
+		&-list
+			position: relative
+			max-height: 160px
+			margin-left: -10px
+			margin-right: -10px
+			display: flex
+			flex-wrap: wrap
+			+media-breakpoint-down(sm)
+				max-height: 140px
+			&::after
+				content: ''
+				position: absolute
+				user-select: none
+				pointer-events: none
+				left: 0
+				right: 0
+				z-index: 10
+				bottom: 0
+				height: 20px
+				background-image: linear-gradient(to top, rgba($bodycolor, 1) 0%, rgba($bodycolor, 0.25) 100%)
+			> li
+				position: relative
+				flex: 0 0 20%
+				margin-bottom: 15px
+				padding: 0 10px 0 22px
+				line-height: 1.2
+				+media-breakpoint-down(md)
+					flex: 0 0 25%
+				&::before
+					content: ''
+					position: absolute
+					top: 8px
+					left: 10px
+					width: 4px
+					height: 4px
+					border-radius: 50%
+					background-color: $accent
+				> a
+					border-bottom: 1px solid $black
+					font-weight: 500
+				&:hover
+					> a
+						border-bottom-color: $accent
+		.btn-more
+			display: block
+			margin-left: auto
+			margin-right: auto
+
+	.brand-categories
+		&-list
+			> li
+				+media-breakpoint-down(xs)
+					flex: 0 0 50%
+				+media-breakpoint-down(xxs)
+					flex: 0 0 100%
+	.brand-collections
+		&-list
+			> li
+				+media-breakpoint-down(xs)
+					flex: 0 0 50%
+
+	// Brabd products
+	.products-list
+		.card-product
+			width: 100%
+			.card-photo,
+			.card-gallery-item
+				height: 215px
+				+media-breakpoint-down(lg)
+					height: 160px
