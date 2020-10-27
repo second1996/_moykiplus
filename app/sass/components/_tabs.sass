@@ -23,8 +23,11 @@
 			background-color: $white
 			color: $accent
 			font-size: 12px
-			font-weight: 600
-			text-transform: uppercase
+			font-weight: 500
+			+media-breakpoint-down(xs)
+				width: 100%
+				margin-left: 0
+				margin-right: 0
 			span
 				position: relative
 				top: 0.5px
@@ -63,8 +66,6 @@
 			padding: 0 5px
 			color: #716d73
 			font-size: 14px
-			font-weight: 500
-			text-transform: none
 			+media-breakpoint-down(lg)
 				min-width: auto
 				padding: 0 15px

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<title>Мойки Плюс: Интернет магазин сантехники и бытовой техники для дома</title>
+	<meta name="description" content="➢ Большой ассортимент сантехники и бытовой техники для дома в Москве в интернет-магазине MoykiPlus ➢ Заказать по ☎ 8-(495)-642-26-05.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dest/preview.jpg">
+
+	<!-- Load CSS -->
+	<link rel="stylesheet" href="css/vendor/bootstrap.css">
+	<link rel="stylesheet" href="css/vendor/swiper.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/pages/pickup.css">
+
+</head>
+
+<body>
+
+	@@include('_header.html')
+
+	<main class="site-main">
+		<div class="container">
+
+			<!-- Breadcrumbs -->
+			<div class="breadcrumbs">
+				<ul class="breadcrumbs-list">
+					<li><a href="page-home.html">Главная</a></li>
+					<li><span>Самовывоз</span></li>
+				</ul>
+			</div>
+
+			<!-- Promo banner -->
+			<div class="promo-banner">
+				<div class="promo-banner-slider swiper-large-arrows">
+					<div class="promo-banner-slider-container swiper-container">
+						<div class="promo-banner-wrapper swiper-wrapper">
+							<div class="promo-banner-slide swiper-slide">
+								<picture>
+									<source media="(min-width: 576px)" data-srcset="images/promo-banner.jpg" />
+									<source media="(min-width: 320px)" data-srcset="images/promo-banner-2.jpg" />
+									<img class="lazy" data-src="images/promo-banner-2.jpg" alt="Promo Banner">
+									<div class="lazy-preloader"></div>
+								</picture>
+							</div>
+							<div class="promo-banner-slide swiper-slide">
+								<picture>
+									<source media="(min-width: 576px)" data-srcset="images/promo-banner.jpg" />
+									<source media="(min-width: 320px)" data-srcset="images/promo-banner-2.jpg" />
+									<img class="lazy" data-src="images/promo-banner-2.jpg" alt="Promo Banner">
+									<div class="lazy-preloader"></div>
+								</picture>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination--white"></div>
+					</div>
+					<div class="swiper-button-prev swiper-button--large"></div>
+					<div class="swiper-button-next swiper-button--large"></div>
+				</div>
+			</div>
+
+			<!-- Page title -->
+			<h1 class="page-title text-xl w-bold text-center">Самовывоз</h1>
+
+			<!-- Pickup content -->
+			<div class="pickup">
+				<nav class="tabs">
+					<div class="nav nav-tabs" role="tablist">
+						<a class="nav-link active" id="pickup-tab-1" data-toggle="tab" href="#pickup-content-1" role="tab" aria-controls="pickup-content" aria-selected="true">Склад</a>
+						<a class="nav-link" id="pickup-tab-2" data-toggle="tab" href="#pickup-content-2" role="tab" aria-controls="pickup-content-2" aria-selected="false">Магазин на Домодедовской</a>
+					</div>
+				</nav><!-- /.tabs-nav -->
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="pickup-content-1" role="tabpanel" aria-labelledby="pickup-tab-1">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="row">
+									<div class="col-12 col-sm-6 col-md-12">
+										<div class="pickup-photo">
+											<img class="lazy" data-src="images/pickup-2.jpg" alt="">
+											<div class="lazy-preloader"></div>
+										</div>
+									</div>
+									<div class="col-12 col-sm-6 col-md-12">
+										<div class="pickup-photo">
+											<img class="lazy" data-src="images/pickup-1.jpg" alt="">
+											<div class="lazy-preloader"></div>
+										</div>
+									</div>
+								</div>
+							</div><!-- /.col -->
+							<div class="col-md-8">
+								<article class="pickup-content">
+									<p>Самовывоз осуществляется бесплатно по предварительному заказу товара и оговорённому времени по следующим адресам:</p>
+									<!-- Contacts -->
+									<div class="pickup-contacts">
+										<div class="pickup-contacts-item">
+											<div class="pickup-contacts-icon icon-border">
+												<svg class="icon icon-home"><use xlink:href="images/symbol-defs.svg#home"></use></svg>
+											</div>
+											<div class="pickup-contacts-content">
+												<span class="title c-gray text-xxs">Самовывоз-склад-офис</span>
+												<span class="text c-black text-xxs w-medium">м. Южная (ул. Дорожная 3 стр. 3А)</span>
+											</div>
+										</div><!-- /.pickup-contacts-item -->
+										<div class="pickup-contacts-item">
+											<div class="pickup-contacts-icon icon-border">
+												<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
+											</div>
+											<div class="pickup-contacts-content">
+												<span class="title c-gray text-xxs">Режим работы</span>
+												<span class="text c-black text-xxs w-medium">Пн-Пт с 9:00 до 17:30<br> Сб-Вс выходные</span>
+											</div>
+										</div><!-- /.pickup-contacts-item -->
+										<div class="pickup-contacts-item">
+											<div class="pickup-contacts-icon icon-border">
+												<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+											</div>
+											<div class="pickup-contacts-content">
+												<span class="title c-gray text-xxs">Телефон</span>
+												<a href="tel:+74956422605" class="text c-black text-xxs w-medium">+7 (495) 642-26-05</a>
+											</div>
+										</div><!-- /.pickup-contacts-item -->
+									</div><!-- /.pickup-contacts -->
+									<p>Уважаемые покупатели в нашем выставочном зале демонстрируется далеко не весь товар который Вы можете найти на нашем сайте. Товар на складе находится в упаковке, ктоторую можно вскрыть только прри покупке товара для проверки его целостности и комплектности.</p>
+									<p>Уважаемые покупатели в нашем выставочном зале демонстрируется далеко не весь товар который Вы можете найти на нашем сайте. Товар на складе находится в упаковке, ктоторую можно вскрыть только прри покупке товара для проверки его целостности и комплектности.</p>
+								</article><!-- /.pickup-content -->
+							</div><!-- /.col -->
+							<div class="col-12">
+								<div class="pickup-map">
+									<iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CCQ~bGF~dA" frameborder="0"></iframe>
+									<div class="lazy-preloader"></div>
+								</div>
+							</div><!-- /.col -->
+							<div class="col-12">
+								<h3 class="mb-30 text-sm w-semibold">Схема проезда на склад</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="pickup-plan">
+											<img class="lazy" data-src="images/pickup-plan.jpg" alt="Схема проезда на склад">
+										</div>
+									</div><!-- /.col -->
+									<div class="col-md-6">
+										<div class="pickup-gallery">
+											<div class="pickup-gallery-slider swiper-container">
+												<div class="swiper-wrapper">
+													<div class="pickup-gallery-slide swiper-slide">
+														<a href="https://mo.fishretail.ru/data/tradeboard/3353/tradeboardApZOOc_img.jpg" data-fancybox="pickup-gallery-1">
+															<img class="lazy" data-src="https://mo.fishretail.ru/data/tradeboard/3353/tradeboardApZOOc_img.jpg" alt="">
+															<div class="lazy-preloader"></div>
+														</a>
+													</div>
+													<div class="pickup-gallery-slide swiper-slide">
+														<a href="https://alians-kirov.ru/statics/project_photos/489/57921c9c91607.jpg" data-fancybox="pickup-gallery-1">
+															<img class="lazy" data-src="https://alians-kirov.ru/statics/project_photos/489/57921c9c91607.jpg" alt="">
+														</a>
+													</div>
+												</div>
+											</div><!-- /.swiper-wrapper -->
+											<div class="swiper-pagination"></div>
+											<div class="d-none d-md-flex swiper-button-prev swiper-button--large"></div>
+											<div class="d-none d-md-flex swiper-button-next swiper-button--large"></div>
+										</div>
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.tab-pane -->
+					<div class="tab-pane fade" id="pickup-content-2" role="tabpanel" aria-labelledby="pickup-tab-2">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="row">
+									<div class="col-12 col-sm-6 col-md-12">
+										<div class="pickup-photo">
+											<img class="lazy" data-src="images/pickup-1.jpg" alt="">
+											<div class="lazy-preloader"></div>
+										</div>
+									</div>
+									<div class="col-12 col-sm-6 col-md-12">
+										<div class="pickup-photo">
+											<img class="lazy" data-src="images/pickup-2.jpg" alt="">
+											<div class="lazy-preloader"></div>
+										</div>
+									</div>
+								</div>
+							</div><!-- /.col -->
+							<div class="col-md-8">
+								<article class="pickup-content">
+									<p>Самовывоз из магазина на Домодедовской осуществляется бесплатно по предварительному заказу товара и оговорённому времени по следующим адресам:</p>
+									<!-- Contacts -->
+									<div class="pickup-contacts">
+										<div class="pickup-contacts-item">
+											<div class="pickup-contacts-icon icon-border">
+												<svg class="icon icon-home"><use xlink:href="images/symbol-defs.svg#home"></use></svg>
+											</div>
+											<div class="pickup-contacts-content">
+												<span class="title c-gray text-xxs">Магазин на Домодедовской</span>
+												<span class="text c-black text-xxs w-medium">м. Южная (ул. Дорожная 3 стр. 3А)</span>
+											</div>
+										</div><!-- /.pickup-contacts-item -->
+										<div class="pickup-contacts-item">
+											<div class="pickup-contacts-icon icon-border">
+												<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
+											</div>
+											<div class="pickup-contacts-content">
+												<span class="title c-gray text-xxs">Режим работы</span>
+												<span class="text c-black text-xxs w-medium">Пн-Пт с 9:00 до 17:30<br> Сб-Вс выходные</span>
+											</div>
+										</div><!-- /.pickup-contacts-item -->
+										<div class="pickup-contacts-item">
+											<div class="pickup-contacts-icon icon-border">
+												<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+											</div>
+											<div class="pickup-contacts-content">
+												<span class="title c-gray text-xxs">Телефон</span>
+												<a href="tel:+74956422605" class="text c-black text-xxs w-medium">+7 (495) 642-26-05</a>
+											</div>
+										</div><!-- /.pickup-contacts-item -->
+									</div><!-- /.pickup-contacts -->
+									<p>Уважаемые покупатели в нашем выставочном зале демонстрируется далеко не весь товар который Вы можете найти на нашем сайте. Товар на складе находится в упаковке, ктоторую можно вскрыть только прри покупке товара для проверки его целостности и комплектности.</p>
+									<p>Уважаемые покупатели в нашем выставочном зале демонстрируется далеко не весь товар который Вы можете найти на нашем сайте. Товар на складе находится в упаковке, ктоторую можно вскрыть только прри покупке товара для проверки его целостности и комплектности.</p>
+								</article><!-- /.pickup-content -->
+							</div><!-- /.col -->
+							<div class="col-12">
+								<div class="pickup-map">
+									<iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CCQ~bGF~dA" frameborder="0"></iframe>
+									<div class="lazy-preloader"></div>
+								</div>
+							</div><!-- /.col -->
+							<div class="col-12">
+								<h3 class="mb-30 text-sm w-semibold">Схема проезда на склад</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="pickup-plan">
+											<img class="lazy" data-src="images/pickup-plan.jpg" alt="Схема проезда на склад">
+										</div>
+									</div><!-- /.col -->
+									<div class="col-md-6">
+										<div class="pickup-gallery">
+											<div class="pickup-gallery-slider swiper-container">
+												<div class="swiper-wrapper">
+													<div class="pickup-gallery-slide swiper-slide">
+														<a href="https://mo.fishretail.ru/data/tradeboard/3353/tradeboardApZOOc_img.jpg" data-fancybox="pickup-gallery-2">
+															<img class="lazy" data-src="https://mo.fishretail.ru/data/tradeboard/3353/tradeboardApZOOc_img.jpg" alt="">
+															<div class="lazy-preloader"></div>
+														</a>
+													</div>
+													<div class="pickup-gallery-slide swiper-slide">
+														<a href="https://alians-kirov.ru/statics/project_photos/489/57921c9c91607.jpg" data-fancybox="pickup-gallery-2">
+															<img class="lazy" data-src="https://alians-kirov.ru/statics/project_photos/489/57921c9c91607.jpg" alt="">
+														</a>
+													</div>
+												</div>
+											</div><!-- /.swiper-wrapper -->
+											<div class="swiper-pagination"></div>
+											<div class="d-none d-md-flex swiper-button-prev swiper-button--large"></div>
+											<div class="d-none d-md-flex swiper-button-next swiper-button--large"></div>
+										</div>
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.tab-pane -->
+				</div><!-- /.tab-content -->
+			</div>
+
+			<!-- Question Form -->
+			<section class="page-form mt-80 mb-80">
+				<h2 class="page-form-title text-xl w-semibold">Задать вопрос</h2>
+				<form action="#" method="POST" class="form form-light">
+					<div class="row">
+						<div class="col-lg-4">
+							<input type="text" name="question-name" class="form-control" placeholder="Укажите Ваше имя" required>
+						</div>
+						<div class="col-lg-4">
+							<input type="email" name="question-email" class="form-control" placeholder="Укажите Ваш email" required>
+						</div>
+						<div class="col-lg-4">
+							<input type="tel" name="question-phone" class="form-control" data-mask="+7 (000) 000-00-00" placeholder="Укажите Ваш номер телефона" required>
+						</div>
+						<div class="col-12">
+							<textarea name="question-message" class="form-textarea" placeholder="Задать вопрос" rows="5" required></textarea>
+						</div>
+					</div>
+					<div class="page-form-bottom row">
+						<div class="col-auto mt-30">
+							<div class="form-checkbox">
+								<input type="checkbox" name="question-policy" id="question-policy" required>
+								<label for="question-policy" class="form-checkbox-label">Даю свое согласие на обработку персональных данных</label>
+							</div>
+						</div>
+						<div class="col-auto mt-30">
+							<div class="page-form-bottom-submit">
+								<div class="form-captcha">
+									<img class="lazy" data-src="../images/google-recaptcha.png" alt="Google Recaptcha">
+								</div>
+								<button type="submit" class="form-submit btn btn-orange">Отправить</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+
+			<!-- FAQ List -->
+			<section class="post-section faq">
+				<h2 class="post-section-title text-lg w-semibold text-center">Часто задаваемые вопросы</h2>
+				<ul class="faq-list">
+					<li class="faq-item">
+						<p>Какие основные преимущества для покупателя?</p>
+					</li>
+					<li class="faq-item">
+						<p>В актуальном списке предложений — сотни моек и смесителей известных отечественных и зарубежных производителей.</p>
+						<p>Это разнообразие позволяет в точности выполнять определенные эстетические и технические требования. Кроме отмеченных выше приоритетных направлений, мы включили в ассортимент дренажную арматуру и крепления, измельчители отходов и фильтры водоподготовки. Каждая позиция в каталоге представлена с точным описанием.</p>
+					</li>
+					<li class="faq-item">
+						<p>Какие основные преимущества для покупателя?</p>
+					</li>
+					<li class="faq-item">
+						<p>В актуальном списке предложений — сотни моек и смесителей известных отечественных и зарубежных производителей.</p>
+						<p>Это разнообразие позволяет в точности выполнять определенные эстетические и технические требования. Кроме отмеченных выше приоритетных направлений, мы включили в ассортимент дренажную арматуру и крепления, измельчители отходов и фильтры водоподготовки. Каждая позиция в каталоге представлена с точным описанием.</p>
+					</li>
+					<li class="faq-item">
+						<p>Какие основные преимущества для покупателя?</p>
+					</li>
+					<li class="faq-item">
+						<p>В актуальном списке предложений — сотни моек и смесителей известных отечественных и зарубежных производителей.</p>
+						<p>Это разнообразие позволяет в точности выполнять определенные эстетические и технические требования. Кроме отмеченных выше приоритетных направлений, мы включили в ассортимент дренажную арматуру и крепления, измельчители отходов и фильтры водоподготовки. Каждая позиция в каталоге представлена с точным описанием.</p>
+					</li>
+				</ul>
+			</section>
+
+		</div><!-- /.container -->
+	</main>
+
+	@@include('_footer.html')

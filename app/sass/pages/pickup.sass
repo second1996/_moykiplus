@@ -1,0 +1,87 @@
+@import '../helpers/helpers'
+
+.pickup
+	.nav-tabs
+		.nav-link
+			flex-basis: 300px
+	.tab-content
+		+media-breakpoint-down(sm)
+			margin-top: 30px
+	&-photo
+		position: relative
+		height: 245px
+		margin-bottom: 30px
+		border-radius: 5px
+		background-color: rgba($border, 0.35)
+		+media-breakpoint-down(sm)
+			margin-bottom: 20px
+		img
+			width: 100%
+			height: 100%
+			border-radius: 5px
+			object-fit: cover
+	&-content
+	&-contacts
+		&-item
+			display: flex
+			margin-bottom: 30px
+			+media-breakpoint-down(sm)
+				margin-bottom: 20px
+		&-icon
+			flex: 0 0 auto
+			margin-right: 12px
+		&-content
+			.title
+				display: block
+				margin-bottom: 8px
+				line-height: 1
+			.text
+				display: block
+				line-height: 1.2
+	// Iframe Map
+	&-map
+		margin-bottom: 30px
+		border-radius: 5px
+		border: 1px solid #d1d1d1
+		background-color: rgba($border, 0.35)
+		+media-breakpoint-down(sm)
+			margin-top: 15px
+		iframe
+			display: block
+			width: 100%
+			height: 460px
+			+media-breakpoint-down(md)
+				height: 380px
+			+media-breakpoint-down(xs)
+				height: 300px
+	// Plan
+	&-plan
+		position: relative
+		height: 300px
+		img
+			width: 100%
+			height: 100%
+			object-fit: scale-down
+			object-position: left center
+		+media-breakpoint-down(sm)
+			height: 100%
+			img
+				object-position: center top
+	// Gallery slider
+	&-gallery
+		position: relative
+		+media-breakpoint-down(sm)
+			margin-top: 30px
+		.swiper-pagination
+			margin-top: 20px
+		&-slider
+			background-color: rgba($border, 0.35)
+		&-slide
+			height: 300px
+			+media-breakpoint-down(xs)
+				height: 260px
+			img
+				width: 100%
+				height: 100%
+				border-radius: 5px
+				object-fit: cover

@@ -345,4 +345,33 @@ jQuery(document).ready( function($) {
 	}
 
 
+	/**
+	 * Pickup Page slider
+	 */
+	$('.pickup-gallery').each(function(index, element){
+		$(element).addClass('pickup-gallery-' + index)
+		var pickupSlider = new Swiper('.pickup-gallery-' + index + ' .pickup-gallery-slider', {
+			observer: true,
+			observeParents: true,
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
+			grabCursor: true,
+			loop: false,
+			speed: 750,
+			slidesPerView: 1,
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.pickup-gallery-' + index +' .swiper-button-next',
+				prevEl: '.pickup-gallery-' + index +' .swiper-button-prev',
+			},
+			pagination: {
+				el: '.pickup-gallery-' + index +' .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+		})
+	})
+
 })
