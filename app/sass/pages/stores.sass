@@ -1,0 +1,182 @@
+@import '../helpers/helpers'
+
+.stores
+	.nav-tabs
+		.nav-link
+			flex-basis: 300px
+	.tab-content
+		+media-breakpoint-down(sm)
+			margin-top: 30px
+	// Iframe map
+	&-map
+		position: relative
+		margin-bottom: 60px
+		border-radius: 5px
+		border: 1px solid #d1d1d1
+		background-color: rgba($border, 0.35)
+		+media-breakpoint-down(sm)
+			margin-top: 15px
+		iframe
+			display: block
+			width: 100%
+			height: 560px
+			+media-breakpoint-down(lg)
+				height: 420px
+			+media-breakpoint-down(md)
+				height: 360px
+			+media-breakpoint-down(xs)
+				height: 300px
+	// Contacts items
+	&-contacts
+		display: flex
+		flex-direction: column
+		margin-bottom: 60px
+		padding: 50px
+		border-radius: 5px
+		box-shadow: $box-shadow
+		background-color: $white
+		+media-breakpoint-down(lg)
+			padding: 40px
+		+media-breakpoint-down(md)
+			padding: 30px
+		+media-breakpoint-down(xs)
+			padding: 30px 20px
+		&-item
+			display: flex
+			justify-content: space-between
+			+media-breakpoint-down(sm)
+				flex-wrap: wrap
+			&:not(:first-child)
+				margin-top: 30px
+		&-inner
+			display: flex
+			+media-breakpoint-down(sm)
+				margin-bottom: 15px
+		&-adress
+			justify-content: flex-start
+			flex: 0 0 25%
+			max-width: 25%
+			+media-breakpoint-down(lg)
+				flex: 0 0 30%
+				max-width: 30%
+			+media-breakpoint-down(md)
+				flex: 0 0 38%
+				max-width: 38%
+			+media-breakpoint-down(sm)
+				flex: 0 0 60%
+				max-width: 60%
+			+media-breakpoint-down(xs)
+				flex: 0 0 100%
+				max-width: 100%
+		&-phone
+			justify-content: center
+			flex: 0 0 30%
+			max-width: 30%
+			+media-breakpoint-down(lg)
+				flex: 0 0 28%
+				max-width: 28%
+			+media-breakpoint-down(sm)
+				justify-content: flex-start
+				flex: 0 0 40%
+				max-width: 40%
+			+media-breakpoint-down(xs)
+				flex: 0 0 100%
+				max-width: 100%
+		&-hours
+			justify-content: flex-start
+			flex: 0 0 250px
+			width: auto
+			max-width: 100%
+			+media-breakpoint-down(lg)
+				flex: 0 0 200px
+			+media-breakpoint-down(md)
+				flex: 0 0 180px
+			+media-breakpoint-down(sm)
+				flex: 0 0 50%
+				max-width: 50%
+				margin-bottom: 0
+			+media-breakpoint-down(xs)
+				flex: 0 0 100%
+				max-width: 100%
+		&-icon
+			flex: 0 0 auto
+			margin-right: 12px
+		&-content
+			.title
+				display: block
+				margin-bottom: 8px
+				line-height: 1
+			.text
+				display: block
+				line-height: 1.2
+	// Content (article)
+	&-descr
+		margin-bottom: 30px
+		article
+			p
+				margin-bottom: 15px
+			~ .read-more
+				position: relative
+				bottom: 10px
+				margin-top: 0
+				+media-breakpoint-down(lg)
+					position: static
+					margin-top: 15px
+	// Gallery
+	&-gallery
+		&-list
+			display: flex
+			flex-wrap: wrap
+			margin: -16px
+			+media-breakpoint-down(md)
+				margin: -10px
+		&-item
+			flex: 33.33333%
+			max-width: 33.33333%
+			padding: 16px
+			+media-breakpoint-down(md)
+				padding: 10px
+			+media-breakpoint-down(xs)
+				flex: 0 0 100%
+				max-width: 100%
+				&:not(:first-child)
+					display: none
+			> a
+				position: relative
+				display: block
+				height: 300px
+				+media-breakpoint-down(lg)
+					height: 260px
+				+media-breakpoint-down(md)
+					height: 200px
+				+media-breakpoint-down(sm)
+					height: 160px
+				+media-breakpoint-down(xs)
+					height: 275px
+				&::after
+					content: '+'
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					display: flex
+					align-items: center
+					justify-content: center
+					border-radius: 5px
+					background-color: rgba($black, 0.7)
+					color: $white
+					font-size: 32px
+					font-weight: 400
+					visibility: hidden
+					opacity: 0
+					transition: $trs
+				&:hover
+					&::after
+						visibility: visible
+						opacity: 1
+				> img
+					width: 100%
+					height: 100%
+					border-radius: 5px
+					object-fit: cover

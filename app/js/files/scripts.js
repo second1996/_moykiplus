@@ -150,15 +150,15 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Stores list button
+	 * Stores contacts button
 	 */
-	$('.stores-button').on('click', function() {
+	$('.btn-stores-button').on('click', function() {
 		$(document).on('click', function (e) {
-			if ($(e.target).closest('.stores-content').length === 0) {
-				$('.stores').removeClass('_toggled')
+			if ($(e.target).closest('.btn-stores-content').length === 0) {
+				$('.btn-stores').removeClass('_toggled')
 			}
 		})
-		$(this).parents('.stores').toggleClass('_toggled')
+		$(this).parents('.btn-stores').toggleClass('_toggled')
 	})
 
 
