@@ -27,7 +27,7 @@
 			<div class="breadcrumbs">
 				<ul class="breadcrumbs-list">
 					<li><a href="page-home.html">Главная</a></li>
-					<li><span>Статьи</span></li>
+					<li><span>FAQ</span></li>
 				</ul>
 			</div>
 
@@ -148,6 +148,43 @@
 					</div>
 				</div><!-- /.col -->
 			</div><!-- /.row -->
+
+			<!-- Question Form -->
+			<section class="page-form mt-80 mb-80">
+				<h2 class="page-form-title text-xl w-semibold">Задать вопрос</h2>
+				<form action="#" method="POST" class="form form-light">
+					<div class="row">
+						<div class="col-lg-4">
+							<input type="text" name="question-name" class="form-control" placeholder="Укажите Ваше имя" required>
+						</div>
+						<div class="col-lg-4">
+							<input type="email" name="question-email" class="form-control" placeholder="Укажите Ваш email" required>
+						</div>
+						<div class="col-lg-4">
+							<input type="tel" name="question-phone" class="form-control" data-mask="+7 (000) 000-00-00" placeholder="Укажите Ваш номер телефона" required>
+						</div>
+						<div class="col-12">
+							<textarea name="question-message" class="form-textarea" placeholder="Задать вопрос" rows="5" required></textarea>
+						</div>
+					</div>
+					<div class="page-form-bottom row">
+						<div class="col-auto mt-30">
+							<div class="form-checkbox">
+								<input type="checkbox" name="question-policy" id="question-policy" required>
+								<label for="question-policy" class="form-checkbox-label">Даю свое согласие на обработку персональных данных</label>
+							</div>
+						</div>
+						<div class="col-auto mt-30">
+							<div class="page-form-bottom-submit">
+								<div class="form-captcha">
+									<img class="lazy" data-src="images/google-recaptcha.png" alt="Google Recaptcha">
+								</div>
+								<button type="submit" class="form-submit btn btn-orange">Отправить</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
 
 		</div><!-- /.container -->
 	</main>
