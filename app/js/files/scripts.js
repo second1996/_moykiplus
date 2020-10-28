@@ -1,3 +1,23 @@
+/**
+ * Run scripts before loaded page
+ */
+// Hide Promo string & setup «key -> hide-promo-string» into sessionStorage
+$('.promo .btn-close').on('click', function () {
+	$('.promo').hide()
+	sessionStorage.setItem('promo-string', 'hide')
+})
+// Check if «hide-promo-string» set «true» in sessionStorage...
+if( sessionStorage.getItem('promo-string') == 'hide' ) {
+	// ... and then hide this.
+	$('.promo').hide()
+} else {
+	$('.promo').removeClass('d-none')
+}
+
+
+/**
+ * Run scripts when loaded page
+ */
 jQuery(document).ready( function($) {
 
 	/**
@@ -128,7 +148,7 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Marquee string
+	 * Marquee Promo string
 	 */
 	$('.promo-content-marquee').marquee({
 		// duration: 12000,
