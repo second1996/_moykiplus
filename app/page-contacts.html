@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<title>Мойки Плюс: Интернет магазин сантехники и бытовой техники для дома</title>
+	<meta name="description" content="➢ Большой ассортимент сантехники и бытовой техники для дома в Москве в интернет-магазине MoykiPlus ➢ Заказать по ☎ 8-(495)-642-26-05.">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="images/favicon.png">
+	<meta property="og:image" content="images/dest/preview.jpg">
+
+	<!-- Load CSS -->
+	<link rel="stylesheet" href="css/vendor/bootstrap.css">
+	<link rel="stylesheet" href="css/vendor/swiper.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/pages/contacts.css">
+
+</head>
+
+<body>
+
+	@@include('_header.html')
+
+	<main class="site-main">
+		<div class="container">
+
+			<!-- Breadcrumbs -->
+			<div class="breadcrumbs">
+				<ul class="breadcrumbs-list">
+					<li><a href="page-home.html">Главная</a></li>
+					<li><span>Контакты</span></li>
+				</ul>
+			</div>
+
+			<!-- Promo banner -->
+			<div class="promo-banner">
+				<div class="promo-banner-slider swiper-large-arrows">
+					<div class="promo-banner-slider-container swiper-container">
+						<div class="promo-banner-wrapper swiper-wrapper">
+							<div class="promo-banner-slide swiper-slide">
+								<picture>
+									<source media="(min-width: 576px)" data-srcset="images/promo-banner.jpg" />
+									<source media="(min-width: 320px)" data-srcset="images/promo-banner-2.jpg" />
+									<img class="lazy" data-src="images/promo-banner-2.jpg" alt="Promo Banner">
+									<div class="lazy-preloader"></div>
+								</picture>
+							</div>
+							<div class="promo-banner-slide swiper-slide">
+								<picture>
+									<source media="(min-width: 576px)" data-srcset="images/promo-banner.jpg" />
+									<source media="(min-width: 320px)" data-srcset="images/promo-banner-2.jpg" />
+									<img class="lazy" data-src="images/promo-banner-2.jpg" alt="Promo Banner">
+									<div class="lazy-preloader"></div>
+								</picture>
+							</div>
+						</div>
+						<div class="swiper-pagination swiper-pagination--white"></div>
+					</div>
+					<div class="swiper-button-prev swiper-button--large"></div>
+					<div class="swiper-button-next swiper-button--large"></div>
+				</div>
+			</div>
+
+			<!-- Page title -->
+			<h1 class="page-title text-xl w-bold text-center">Контакты</h1>
+
+			<!-- Contacts content -->
+			<div class="contacts">
+
+				<!-- Iframe map -->
+				<div class="contacts-map">
+					<iframe class="lazy" data-src="https://yandex.ru/map-widget/v1/-/CCQ~bGF~dA" frameborder="0"></iframe>
+					<div class="lazy-preloader"></div>
+				</div>
+
+				<!-- Contacts -->
+				<div class="contacts-info">
+					<div class="row">
+						<div class="col-lg contacts-info-item">
+							<h4 class="contacts-info-title w-semibold">Магазин Домодедовская</h4>
+							<!-- Телефон -->
+							<div class="contacts-info-inner contacts-info-phone">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs w-medium">Телефон</span>
+									<div class="dropdown">
+										<button type="button" id="phoneListLabel" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<a href="tel:+74956422605" class="c-black text-xxs w-medium">+7 (495) 642-26-05</a>
+											<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+										</button>
+										<div class="dropdown-menu dropdown-phone-list" aria-labelledby="phoneListLabel">
+											<ul class="dropdown-menu-list">
+												<li class="dropdown-menu-item">
+													<div class="dropdown-menu-info">
+														<span class="title c-gray text-xxs">Справочная служба:</span>
+														<a href="tel:+79850175099" class="dropdown-menu-link text text-xxs w-bold">+7 (985) 017-50-99</a>
+													</div>
+												</li>
+												<li class="dropdown-menu-item">
+													<div class="dropdown-menu-info">
+														<span class="title c-gray text-xxs">Магазин:</span>
+														<a href="tel:+74955094160" class="dropdown-menu-link text text-xxs w-bold">+7 (495) 509-41-60</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Режим работы -->
+							<div class="contacts-info-inner contacts-info-hours">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs">Режим работы</span>
+									<span class="text c-black text-xxs w-medium">Пн-Пт: 17:30 до 22:00<br> Сб-Вс: 10:00 до 22:00</span>
+								</div>
+							</div>
+							<!-- Адрес -->
+							<div class="contacts-info-inner contacts-info-adress">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-home"><use xlink:href="images/symbol-defs.svg#home"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs">Адрес</span>
+									<span class="text c-black text-xxs w-medium">ТРЦ "Вегас", "Твой дом", 25 км (МКАД внешняя сторона), вход 2</span>
+								</div>
+							</div>
+							<!-- E-mail -->
+							<div class="contacts-info-inner contacts-info-email">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-mail"><use xlink:href="images/symbol-defs.svg#mail"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs">E-mail</span>
+									<a href="mailto:info@moykiplus.ru" class="text c-black text-xxs w-medium">info@moykiplus.ru</a>
+								</div>
+							</div>
+						</div><!-- /.col -->
+						<div class="col-lg contacts-info-item">
+							<h4 class="contacts-info-title w-semibold">Офис-самовывоз</h4>
+							<!-- Телефон -->
+							<div class="contacts-info-inner contacts-info-phone">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs w-medium">Телефон</span>
+									<div class="dropdown">
+										<button type="button" id="phoneListLabel" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<a href="tel:+74956422605" class="c-black text-xxs w-medium">+7 (495) 642-26-05</a>
+											<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+										</button>
+										<div class="dropdown-menu dropdown-phone-list" aria-labelledby="phoneListLabel">
+											<ul class="dropdown-menu-list">
+												<li class="dropdown-menu-item">
+													<div class="dropdown-menu-info">
+														<span class="title c-gray text-xxs">Справочная служба:</span>
+														<a href="tel:+79850175099" class="dropdown-menu-link text text-xxs w-bold">+7 (985) 017-50-99</a>
+													</div>
+												</li>
+												<li class="dropdown-menu-item">
+													<div class="dropdown-menu-info">
+														<span class="title c-gray text-xxs">Магазин:</span>
+														<a href="tel:+74955094160" class="dropdown-menu-link text text-xxs w-bold">+7 (495) 509-41-60</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Режим работы -->
+							<div class="contacts-info-inner contacts-info-hours">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-clock"><use xlink:href="images/symbol-defs.svg#clock"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs">Режим работы</span>
+									<span class="text c-black text-xxs w-medium">Пн-Пт с 9:00 до 18:00<br> Сб-Вс выходные</span>
+								</div>
+							</div>
+							<!-- Адрес -->
+							<div class="contacts-info-inner contacts-info-adress">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-home"><use xlink:href="images/symbol-defs.svg#home"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs">Адрес</span>
+									<span class="text c-black text-xxs w-medium">117405, Москва, ул. Дорожная 3, стр. 3А</span>
+								</div>
+							</div>
+							<!-- E-mail -->
+							<div class="contacts-info-inner contacts-info-email">
+								<div class="contacts-info-icon icon-border">
+									<svg class="icon icon-mail"><use xlink:href="images/symbol-defs.svg#mail"></use></svg>
+								</div>
+								<div class="contacts-info-content">
+									<span class="title c-gray text-xxs">E-mail</span>
+									<a href="mailto:info@moykiplus.ru" class="text c-black text-xxs w-medium">info@moykiplus.ru</a>
+								</div>
+							</div>
+						</div><!-- /.col -->
+					</div><!-- /.row -->
+				</div><!-- /.contacts-info -->
+
+				<!-- Navigation (How to get) -->
+				<div class="contacts-navigation">
+					<h2 class="section-title">Как добраться</h2>
+					<div class="contacts-navigation-wrapper">
+						<div class="contacts-navigation-item">
+							<div class="icon-border">
+								<svg class="icon icon-steps"><use xlink:href="images/symbol-defs.svg#steps"></use></svg>
+							</div>
+							<div class="content">
+								<span class="title c-black w-medium">Пешком</span>
+								<span class="text text-xxs">Автобус № 177, марш. такси № - 535 , 51, 72, 71, Остановка: "метро Жулебино. Метро "Жулебино", последний вагон из центра, налево и налево. На улице пройти прямо к дому, вход со двора.</span>
+							</div>
+						</div>
+						<div class="contacts-navigation-item">
+							<div class="icon-border">
+								<svg class="icon icon-car"><use xlink:href="images/symbol-defs.svg#car"></use></svg>
+							</div>
+							<div class="content">
+								<span class="title c-black w-medium">Авто</span>
+								<span class="text text-xxs">С МКАД съезд на улицу Поляны (р-н Северное Бутово). Далее прямо до улицы  Бартеневская, первый поворот на лево. Вниз по улице Пушкина, до конца, номер дома 162, заезд со двора дома.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Gallery -->
+				<div class="row">
+					<div class="col-md-6">
+						<div class="contacts-gallery swiper-container swiper-pagination--white">
+							<div class="contacts-gallery-wrapper swiper-wrapper">
+								<div class="contacts-gallery-slide swiper-slide">
+									<a href="images/about-photo-1.jpg" data-fancybox="contacts-gallery">
+										<img class="lazy" data-src="images/about-photo-1.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</a>
+								</div>
+								<div class="contacts-gallery-slide swiper-slide">
+									<a href="images/about-photo-1.jpg" data-fancybox="contacts-gallery">
+										<img class="lazy" data-src="images/about-photo-1.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div><!-- /.col -->
+					<div class="col-md-6">
+						<div class="contacts-video">
+							<a href="https://youtu.be/607Ugh5hhdc" class="contacts-video-play" data-fancybox>
+								<svg class="icon icon-play"><use xlink:href="images/symbol-defs.svg#play"></use></svg>
+							</a>
+							<img class="contacts-video-preview lazy" data-src="images/about-video-preview.jpg" alt="Видеоролик о компании">
+						</div>
+					</div><!-- /.col -->
+				</div><!-- /.row -->
+
+				<!-- Description -->
+				<div class="contacts-descr">
+					<article>
+						<h3 class="text-md w-semibold">О нас</h3>
+						<p>Раковины должны быть не только функциональными, но и эстетичными. Мойка Longran Ultra Uls 780.500 воплощает все лучшие качества, которыми должна обладать современная сантехника. Изделие производится на крупнейшем европейском заводе, который соответствует всем международным требованиям.</p>
+						<p>Минималистичный дизайн в сочетании со стилем хай-тек позволяет подчеркнуть все достоинства интерьера кухни. Кроме того, линейка включает модели, выполненные в деревенских традициях или других стилистических направлениях. Раковина стойко выдерживает высокие температуры и механические воздействия.</p>
+					</article><!-- /.contacts-content -->
+				</div>
+
+				<!-- Requisites -->
+				<div class="contacts-requisites">
+					<h3 class="text-md w-semibold">Наши реквизиты:</h3>
+					<ul>
+						<li>Индивидуальный предприниматель Перепелица А.В.</li>
+						<li>ИНН 772600560273</li>
+						<li>ОКПО 0080063284</li>
+						<li>ОГРН 304770000141991</li>
+						<li>р/счет 40802810438060072453 в ПАО «Сбербанк России» г. Москва</li>
+						<li>корр/счет 30101810400000000225</li>
+						<li>БИК 044525225</li>
+					</ul>
+				</div>
+
+			</div><!-- /.contacts -->
+
+			<!-- Question Form -->
+			<section class="page-form mt-80 mb-80">
+				<h2 class="page-form-title text-xl w-semibold">Задать вопрос</h2>
+				<form action="#" method="POST" class="form form-light">
+					<div class="row">
+						<div class="col-lg-4">
+							<input type="text" name="question-name" class="form-control" placeholder="Укажите Ваше имя" required>
+						</div>
+						<div class="col-lg-4">
+							<input type="email" name="question-email" class="form-control" placeholder="Укажите Ваш email" required>
+						</div>
+						<div class="col-lg-4">
+							<input type="tel" name="question-phone" class="form-control" data-mask="+7 (000) 000-00-00" placeholder="Укажите Ваш номер телефона" required>
+						</div>
+						<div class="col-12">
+							<textarea name="question-message" class="form-textarea" placeholder="Задать вопрос" rows="5" required></textarea>
+						</div>
+					</div>
+					<div class="page-form-bottom row">
+						<div class="col-auto mt-30">
+							<div class="form-checkbox">
+								<input type="checkbox" name="question-policy" id="question-policy" required>
+								<label for="question-policy" class="form-checkbox-label">Даю свое согласие на обработку персональных данных</label>
+							</div>
+						</div>
+						<div class="col-auto mt-30">
+							<div class="page-form-bottom-submit">
+								<div class="form-captcha">
+									<img class="lazy" data-src="images/google-recaptcha.png" alt="Google Recaptcha">
+								</div>
+								<button type="submit" class="form-submit btn btn-orange">Отправить</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+
+			<!-- FAQ List -->
+			<section class="post-section faq">
+				<h2 class="post-section-title text-lg w-semibold text-center">Часто задаваемые вопросы</h2>
+				<ul class="faq-list">
+					<li class="faq-item">
+						<p>Какие основные преимущества для покупателя?</p>
+					</li>
+					<li class="faq-item">
+						<p>В актуальном списке предложений — сотни моек и смесителей известных отечественных и зарубежных производителей.</p>
+						<p>Это разнообразие позволяет в точности выполнять определенные эстетические и технические требования. Кроме отмеченных выше приоритетных направлений, мы включили в ассортимент дренажную арматуру и крепления, измельчители отходов и фильтры водоподготовки. Каждая позиция в каталоге представлена с точным описанием.</p>
+					</li>
+					<li class="faq-item">
+						<p>Какие основные преимущества для покупателя?</p>
+					</li>
+					<li class="faq-item">
+						<p>В актуальном списке предложений — сотни моек и смесителей известных отечественных и зарубежных производителей.</p>
+						<p>Это разнообразие позволяет в точности выполнять определенные эстетические и технические требования. Кроме отмеченных выше приоритетных направлений, мы включили в ассортимент дренажную арматуру и крепления, измельчители отходов и фильтры водоподготовки. Каждая позиция в каталоге представлена с точным описанием.</p>
+					</li>
+					<li class="faq-item">
+						<p>Какие основные преимущества для покупателя?</p>
+					</li>
+					<li class="faq-item">
+						<p>В актуальном списке предложений — сотни моек и смесителей известных отечественных и зарубежных производителей.</p>
+						<p>Это разнообразие позволяет в точности выполнять определенные эстетические и технические требования. Кроме отмеченных выше приоритетных направлений, мы включили в ассортимент дренажную арматуру и крепления, измельчители отходов и фильтры водоподготовки. Каждая позиция в каталоге представлена с точным описанием.</p>
+					</li>
+				</ul>
+			</section>
+
+		</div><!-- /.container -->
+	</main>
+
+	@@include('_footer.html')

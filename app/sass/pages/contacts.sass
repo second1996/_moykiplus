@@ -1,0 +1,264 @@
+@import '../helpers/helpers'
+
+.contacts
+	.nav-tabs
+		.nav-link
+			flex-basis: 300px
+	.tab-content
+		+media-breakpoint-down(sm)
+			margin-top: 30px
+
+	// Iframe map
+	&-map
+		position: relative
+		margin-bottom: 60px
+		border-radius: 5px
+		border: 1px solid #d1d1d1
+		background-color: rgba($border, 0.35)
+		+media-breakpoint-down(sm)
+			margin-top: 15px
+			margin-bottom: 40px
+		iframe
+			display: block
+			width: 100%
+			height: 560px
+			+media-breakpoint-down(lg)
+				height: 420px
+			+media-breakpoint-down(md)
+				height: 360px
+			+media-breakpoint-down(xs)
+				height: 300px
+
+	// Contacts items
+	&-info
+		display: flex
+		flex-direction: column
+		margin-bottom: 60px
+		padding: 50px
+		border-radius: 5px
+		box-shadow: $box-shadow
+		background-color: $white
+		+media-breakpoint-down(lg)
+			padding: 40px
+		+media-breakpoint-down(md)
+			padding: 10px 30px
+		+media-breakpoint-down(xs)
+			padding: 10px 20px
+		> .row
+			margin-left: 0
+			margin-right: 0
+		&-item
+			position: relative
+			padding: 0 75px
+			+media-breakpoint-down(lg)
+				padding: 0 50px
+			+media-breakpoint-down(md)
+				padding: 20px 0
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 100%
+				bottom: 0
+				border-right: 1px solid $border
+				+media-breakpoint-down(md)
+					top: 100%
+					left: 0
+					right: 0
+					border-right: 0
+					border-bottom: 1px solid $border
+			&:first-child
+				padding-left: 0
+			&:last-child
+				padding-right: 0
+				&::after
+					display: none
+		&-title
+			margin-bottom: 30px
+			font-size: 18px
+			line-height: 1.2
+			+media-breakpoint-down(sm)
+				margin-bottom: 25px
+			+media-breakpoint-down(xs)
+				font-size: 16px
+		&-inner
+			display: flex
+			&:not(:last-child)
+				margin-bottom: 24px
+		&-phone
+			.dropdown
+				line-height: 1
+			.dropdown-toggle
+				display: inline-flex
+				line-height: 1.2
+				.title
+					margin-bottom: 0
+				.icon-arrow
+					margin-left: 5px
+					color: $accent
+					font-size: 8px
+					transform: rotate(90deg)
+					transition: transform .35s ease
+				&[aria-expanded="true"]
+					.icon-arrow
+						transform: rotate(-90deg)
+			.dropdown-menu
+				min-width: 190px
+		&-icon
+			flex: 0 0 auto
+			margin-right: 12px
+		&-content
+			.title
+				display: block
+				margin-bottom: 8px
+				line-height: 1
+			.text
+				display: block
+				line-height: 1.2
+
+	// Navigation (How to Get)
+	&-navigation
+		margin-bottom: 30px
+		.section-title
+			margin-bottom: 30px
+			+media-breakpoint-down(xs)
+				margin-bottom: 20px
+		&-wrapper
+			display: flex
+			padding: 30px
+			border-radius: 5px
+			border: 1px solid $accent
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(md)
+				flex-direction: column
+			+media-breakpoint-down(xs)
+				padding: 30px 20px
+		&-item
+			position: relative
+			display: flex
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 100%
+				bottom: 0
+				border-right: 1px solid $border
+				+media-breakpoint-down(md)
+					top: 100%
+					left: 0
+					right: 0
+					border-right: 0
+					border-bottom: 1px solid $border
+			&:first-child
+				padding-right: 60px
+				+media-breakpoint-down(lg)
+					padding-right: 50px
+				+media-breakpoint-down(md)
+					padding-right: 0
+					padding-bottom: 20px
+			&:last-child
+				padding-left: 60px
+				+media-breakpoint-down(lg)
+					padding-left: 50px
+				+media-breakpoint-down(md)
+					padding-top: 20px
+					padding-left: 0
+				&::after
+					display: none
+			.icon-border
+				flex: 0 0 auto
+				font-size: 18px
+			.content
+				margin-left: 20px
+				+media-breakpoint-down(xs)
+					margin-left: 15px
+				.title
+					display: block
+					margin-bottom: 10px
+					line-height: 1
+				.text
+					display: block
+					color: #3d3a3f
+					line-height: 1.3
+
+	// Gallery & Video
+	&-gallery
+		overflow: hidden
+		margin-top: 20px
+		border-radius: 5px
+		.swiper-pagination
+			bottom: 20px
+		&-slide
+			background-color: rgba($border, 0.35)
+			img
+				width: 100%
+				height: 360px
+				margin-bottom: 0
+				object-fit: cover
+				+media-breakpoint-down(xs)
+					height: 260px
+				+media-breakpoint-down(xxs)
+					height: 200px
+	&-video
+		overflow: hidden
+		position: relative
+		margin-top: 20px
+		border-radius: 5px
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 1
+			border-radius: 5px
+			background-color: #474747
+			opacity: 0.25
+			transition: opacity .35s ease
+		&-play
+			position: absolute
+			z-index: 2
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			display: flex
+			align-items: center
+			justify-content: center
+			color: $white
+			font-size: 28px
+			&:hover
+				color: $white
+		&-preview
+			width: 100%
+			height: 360px
+			margin-bottom: 0
+			object-fit: cover
+			+media-breakpoint-down(xs)
+				height: 260px
+			+media-breakpoint-down(xxs)
+				height: 200px
+		&:hover
+			&::after
+				opacity: 0.6
+
+	// Description
+	&-descr
+		margin-top: 50px
+		p
+			&:not(:last-child)
+				margin-bottom: 15px
+
+	// Requisites
+	&-requisites
+		margin-top: 50px
+		ul
+			margin-top: 15px
+			li
+				color: $black
+				font-weight: 500
+				line-height: 1.3
+				&:not(:last-child)
+					margin-bottom: 10px

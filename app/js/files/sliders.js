@@ -374,4 +374,18 @@ jQuery(document).ready( function($) {
 		})
 	})
 
+
+	/**
+	 * Conctas Gallery slider
+	 */
+	var contactsGallerySlider = new Swiper('.contacts .contacts-gallery', {
+		loop: false,
+		speed: 650,
+		pagination: {
+			el: '.contacts .contacts-gallery .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	})
+
 })
