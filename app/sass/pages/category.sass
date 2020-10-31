@@ -1,0 +1,44 @@
+@import '../helpers/helpers'
+
+.s-category
+	// Subcategories
+	&-subcats
+		display: flex
+		flex-direction: column
+		justify-content: center
+		&-wrapper
+			position: relative
+			max-height: 340px
+			&::after
+				content: ''
+				user-select: none
+				position: absolute
+				left: 0
+				right: 0
+				z-index: 10
+				bottom: 0
+				height: 30px
+				background-image: linear-gradient(to top, rgba($bodycolor, 1) 0%,rgba($bodycolor, 0) 100%)
+			.title
+				padding: 25px 40px
+				box-shadow: $box-shadow
+				background-color: $white
+				color: $black
+				font-size: 18px
+				font-weight: 600
+				line-height: 1.2
+			.categories
+				margin-top: 10px
+				padding-left: 40px
+				> li > a
+					text-decoration: underline
+		.btn-more
+			margin-top: 20px
+			margin-left: auto
+			margin-right: auto
+
+	// Categories tabs
+	// &-tabs
+
+	// Filters & Products
+	// &-main

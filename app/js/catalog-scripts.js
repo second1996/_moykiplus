@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function() {
 	/**
 	 * Catalog Categories slider
 	 */
-	const catalogSliders = document.querySelectorAll('.catalog-category-slider');
+	const catalogSliders = document.querySelectorAll('.s-catalog-category-slider');
 	const breakpoint = window.matchMedia( '(min-width: 768.98px)' );
 
 	catalogSliders.forEach( (element, index) => {
 		let catalogSwiper;
 
 		// Add extra class for each slider
-		element.classList.add('catalog-category-slider-' + index);
+		element.classList.add('s-catalog-category-slider-' + index);
 
 		const breakpointChecker = function() {
 			// if larger viewport and multi-row layout needed
@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 
 		const enableSwiper = function() {
-			catalogSwiper = new Swiper('.catalog .catalog-category-slider-' + index, {
+			catalogSwiper = new Swiper('.s-catalog .s-catalog-category-slider-' + index, {
 				loop: false,
 				speed: 650,
 				spaceBetween: 10,
 				autoHeight: true,
 				pagination: {
-					el: '.catalog .catalog-category-slider-' + index + ' .swiper-pagination',
+					el: '.s-catalog .s-catalog-category-slider-' + index + ' .swiper-pagination',
 					type: 'bullets',
 					clickable: true,
 				}
@@ -52,17 +52,17 @@ document.addEventListener("DOMContentLoaded", function() {
 	var rowHeight = 20;
 
 	makeBrandsGrid = function() {
-		let items = document.querySelectorAll('.catalog-brands-item');
+		let items = document.querySelectorAll('.s-catalog-brands-item');
 		for (let i = 0, item; item = items[i]; i++) {
 			// вынимаем элемент из грида и измеряем
-			item.classList.remove('catalog-brands-item-ready');
+			item.classList.remove('s-catalog-brands-item-ready');
 			let height = item.offsetHeight;
 			// рассчитываем, сколько рядов он займет
 			let rowSpan = Math.ceil(height / rowHeight);
 			// задаем соответствующий span в grid-row-end
 			item.style.gridRowEnd = 'span ' + rowSpan;
 			// возвращаем элемент в грид
-			item.classList.add('catalog-brands-item-ready');
+			item.classList.add('s-catalog-brands-item-ready');
 		}
 	}
 

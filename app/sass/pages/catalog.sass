@@ -1,6 +1,6 @@
 @import '../helpers/helpers'
 
-.catalog
+.s-catalog
 	&-category
 		&:not(:first-child)
 			margin-top: 60px
@@ -34,8 +34,10 @@
 					position: static
 					margin-top: 30px
 			&-slide:not(.swiper-slide-active)
-				.catalog-card-subcategories
+				.s-catalog-card-subcategories
 					opacity: 0
+
+	// Catalog card
 	&-card
 		overflow: hidden
 		position: relative
@@ -47,6 +49,7 @@
 		::-webkit-scrollbar
 			width: 3px
 		::-webkit-scrollbar-track
+			border-radius: 3px
 			background-color: rgba($white, 0.5)
 		::-webkit-scrollbar-thumb
 			background-color: $white
@@ -144,14 +147,14 @@
 				order: 1
 				border-radius: 0 0 5px 5px
 		&:hover
-			.catalog-card-subcategories
+			.s-catalog-card-subcategories
 				visibility: visible
 				opacity: 1
 				transform: translate3d(0,0,0)
-			.catalog-card-photo
+			.s-catalog-card-photo
 				&::after
 					opacity: 1
-			.catalog-card-title
+			.s-catalog-card-title
 				background-color: #2c6e7d
 				color: $white
 				&:hover
@@ -166,6 +169,7 @@
 		::-webkit-scrollbar
 			width: 7px
 		::-webkit-scrollbar-track
+			border-radius: 7px
 			background-color: $border
 		::-webkit-scrollbar-thumb
 			background-color: $accent
@@ -212,7 +216,7 @@
 				margin-right: 0
 				&:last-child
 					border-bottom: 0
-			&.catalog-brands-item-ready
+			&.s-catalog-brands-item-ready
 				position: static
 				height: auto
 				width: auto

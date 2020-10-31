@@ -82,3 +82,28 @@ ol
 			background: url('../images/icons/phone-accent.svg')
 		&.email::after
 			background: url('../images/icons/mail-accent.svg')
+
+
+.ul-dots
+	> li
+		display: block
+		line-height: 1.2
+		> a
+			position: relative
+			display: inline-block
+			color: $black
+			padding: 5px 0 5px 14px
+			&::before
+				content: ''
+				position: absolute
+				top: 11px
+				left: 0
+				width: 5px
+				height: 5px
+				border-radius: 50%
+				background-color: $accent
+				transition: background-color .35s ease
+			&:hover
+				color: $orange
+				&::before
+					background-color: $orange

@@ -30,4 +30,41 @@ jQuery(document).ready( function($) {
 		})
 	})
 
+
+	/**
+	 * Sort a list alphabetically
+	 */
+	$.fn.sortList = function() {
+		var list = $(this)
+		var listItems = $('.form-checkbox', list).get()
+
+		listItems.sort(function(a, b) {
+				var compA = $(a).text().toUpperCase()
+				var compB = $(b).text().toUpperCase()
+				return (compA < compB) ? -1 : 1;
+		})
+
+		$.each(listItems, function(i, el) {
+				// list.append(itm);
+				var letter = $(el).text().charAt(0);
+
+				if (!$(this).parent().find('[data-letter="'+ letter +'"]').length) {
+					$(this).parent().append('<div data-letter="'+ letter+'"><span>'+ letter +'</span></div>')
+				}
+				$(this).parent().find('[data-letter="'+ letter +'"]').append(this)
+		})
+	}
+
+	$("#sort-brand-az").sortList()
+
+
+	// $('#sort-brand-az .form-checkbox').each(function () {
+	// 	var letter = $('.form-checkbox-label', this).text().charAt(0);
+		
+	// 	if (!$(this).parent().find('[data-letter="'+ letter +'"]').length) {
+	// 		$(this).parent().append('<div data-letter="'+ letter+'"><span>'+ letter +'</span></div>');
+	// 	}
+	// 	$(this).parent().find('[data-letter="'+ letter +'"]').append(this);
+
+	// });
 })

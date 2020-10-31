@@ -127,7 +127,7 @@ jQuery(document).ready( function($) {
 	/**
 	 * Mega menu
 	 */
-	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, .m-menu-contacts .toggle-box-header').on('click', function(e) {
+	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, .m-menu-contacts .toggle-box-header, [data-toggle="toggle-box"]').on('click', function(e) {
 		e.preventDefault()
 		$submenu = $(this)
 		//getting the next element
@@ -135,6 +135,15 @@ jQuery(document).ready( function($) {
 		//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
 		$submenu.toggleClass('_toggled')
 		$content.slideToggle(250)
+
+		if( $('[data-readmore="inline"]').length > 0 ) {
+			$('[data-readmore="inline"]').readmore({
+				embedCSS: false,
+				speed: 75,
+				moreLink: '<button type="button" class="read-more"><span>Показать ещё</span></button>',
+				lessLink: '<button type="button" class="read-more _toggled"><span>Скрыть</span></button>',
+			})
+		}
 	})
 
 
@@ -223,13 +232,13 @@ jQuery(document).ready( function($) {
 		embedCSS: false,
 		speed: 75,
 		moreLink: '<button type="button" class="read-more"><span>Читать все</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
-		lessLink: '<button type="button" class="read-more _toggled"><span>Спрятать</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
+		lessLink: '<button type="button" class="read-more _toggled"><span>Скрыть</span><svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg></button>',
 	})
 	$('[data-readmore="button"]').readmore({
 		embedCSS: false,
 		speed: 75,
 		moreLink: '<button type="button" class="btn btn-more btn-primary">Показать еще</button>',
-		lessLink: '<button type="button" class="btn btn-more btn-primary">Спрятать</button>',
+		lessLink: '<button type="button" class="btn btn-more btn-primary">Скрыть</button>',
 	})
 	$('.brands-card .brand-categories').readmore({
 		embedCSS: false,
