@@ -435,11 +435,11 @@
 	Shop filters
 	========================================================================== */
 .shop-filters
-	width: 270px
 	&-inner
 		position: sticky
 		top: 90px
-		padding: 0 25px 30px
+		width: 270px
+		padding: 0 25px
 		border-radius: 5px
 		box-shadow: $box-shadow
 		background-color: $white
@@ -449,6 +449,9 @@
 		&:not(:first-child)
 			.filter-toggle-header
 				border-top: 1px solid $border
+		&:last-of-type
+			.filter-toggle-inner
+				padding-bottom: 20px
 		&-header
 			display: flex
 			justify-content: space-between
@@ -457,9 +460,12 @@
 			text-align: left
 			line-height: 1
 			white-space: normal
-			&._toggled
+			&._toggled,
+			&._show
 				.icon
 					transform: rotate(-90deg)
+				~ ._opened
+					display: block
 			.title
 				color: $black
 				font-size: 14px
@@ -480,12 +486,20 @@
 		&-inner
 			position: relative
 			display: none
-			padding-top: 20px
-			padding-bottom: 30px
-			border-top: 1px solid $border
-			// Filter «Read more» button
-			.filter-show
-				max-height: 140px
+			margin: 0 -10px
+			min-height: 1px
+			padding: 20px 10px 30px
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 10px
+				right: 10px
+				height: 1px
+				background-color: $border
+			// Filter «Show more» button
+			.filter-show-less
+				max-height: 146px
 			// Filter Alphabet
 			.filter-alphabet
 				[data-letter]
@@ -498,6 +512,24 @@
 						color: $black
 						font-size: 14px
 						font-weight: 600
+			// Filter Slider
+			.filter-slider
+				&-handle
+					padding-left: 9px
+					padding-right: 9px
+				&-range
+					display: flex
+					align-items: center
+					margin-top: 18px
+					line-height: 1
+					.form-control
+						margin-bottom: 0
+						border: 1px solid $border
+						background-color: $white
+						height: 38px
+						line-height: 36px
+					> span
+						margin: 0 10px
 			// Filter Search
 			.filter-search
 				&-control
@@ -516,6 +548,11 @@
 				overflow-y: auto
 				max-height: 200px
 
+	// Filter Reset button
+	.filter-reset
+		width: 100%
+		margin-top: 10px
+		margin-bottom: 30px
 
 	// Filters Scrollbar
 	.shop-filters-scrollbar
@@ -540,13 +577,15 @@
 			&:not(:last-child)
 				margin-bottom: 8px
 			&-label
+				display: inline-flex
+				align-items: center
 				margin-bottom: 0
 				padding-left: 24px
 				color: rgba($black, 0.9)
 				font-weight: 500
 				&::before,
 				&::after
-					top: 2px
+					top: 2.5px
 					width: 15px
 					height: 15px
 				&::after
@@ -554,6 +593,12 @@
 					background-color: $accent
 					background-image: url('../images/icons/check-white.svg')
 					background-size: 8px
+				> .color
+					flex: 0 0 auto
+					width: 15px
+					height: 15px
+					margin-right: 8px
+					border-radius: 3px
 	
 
 /* ==========================================================================
@@ -568,6 +613,8 @@
 			padding-right: 5px
 		.card-product
 			width: 100%
+	.show-more
+		margin-top: 10px
 
 /* ==========================================================================
 	 Post SEO text

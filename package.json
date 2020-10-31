@@ -30,6 +30,7 @@
 		"gulp-uglify-es": "^2.0.0",
 		"jquery": "^3.5.1",
 		"jquery-mask-plugin": "^1.14.16",
+		"nouislider": "^14.6.2",
 		"npm-check-updates": "^9.1.0",
 		"swiper": "^6.3.3",
 		"vanilla-lazyload": "^17.1.3"

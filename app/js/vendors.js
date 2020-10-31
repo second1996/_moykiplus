@@ -11,3 +11,4 @@
 @@include('libs/jquery.mask.min.js') // jQuery Mask input
 @@include('libs/jquery.marquee.min.js') // Marquee Text
 @@include('libs/readmore.min.js') // ReadMore Plugin
+@@include('../../node_modules/nouislider/distribute/nouislider.min.js') // noUiSlider

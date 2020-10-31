@@ -127,7 +127,7 @@ jQuery(document).ready( function($) {
 	/**
 	 * Mega menu
 	 */
-	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, .m-menu-contacts .toggle-box-header, [data-toggle="toggle-box"]').on('click', function(e) {
+	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, [data-toggle="toggle-box"]').on('click', function(e) {
 		e.preventDefault()
 		$submenu = $(this)
 		//getting the next element
@@ -136,8 +136,9 @@ jQuery(document).ready( function($) {
 		$submenu.toggleClass('_toggled')
 		$content.slideToggle(250)
 
-		if( $('[data-readmore="inline"]').length > 0 ) {
-			$('[data-readmore="inline"]').readmore({
+		// Fix readmore when element isn't visible (display: none)
+		if( $('.filter-show-less').length || $('.filter-inner').is(':hidden') ) {
+			$('.filter-show-less').readmore({
 				embedCSS: false,
 				speed: 75,
 				moreLink: '<button type="button" class="read-more"><span>Показать ещё</span></button>',
