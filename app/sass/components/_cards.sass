@@ -38,6 +38,103 @@
 
 
 /* ==========================================================================
+	 Banner card
+	 ========================================================================== */
+.card-banner
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	width: 210px
+	padding: 20px 20px 25px
+	border-radius: 5px
+	box-shadow: 0 3px 24px 1px rgba(68, 68, 79, 0.08)
+	+media-breakpoint-down(lg)
+		width: 100%
+	+media-breakpoint-down(sm)
+		padding: 20px
+		border-bottom: 1px solid $white
+	+media-breakpoint-down(xs)
+		padding: 15px
+	+media-breakpoint-down(xxs)
+		padding: 20px
+	.card-photo
+		position: relative
+		flex: 1 1 100%
+		overflow: hidden
+		margin-bottom: 30px
+		background-color: $trsp
+		img
+			border-radius: 5px
+			height: auto
+			object-fit: none
+	.card-meta
+		.title
+			font-size: 15px
+			text-align: center
+			line-height: 1.2
+		.btn
+			margin-top: 20px
+			width: 100%
+
+
+/* ==========================================================================
+	 Show More card
+	 ========================================================================== */
+.card-show-more
+	display: block
+	width: 210px
+	padding: 20px 20px 25px
+	border-radius: 5px
+	box-shadow: 0 3px 24px 1px rgba(68, 68, 79, 0.08)
+	+media-breakpoint-down(lg)
+		width: 100%
+	+media-breakpoint-down(sm)
+		padding: 20px
+		border-bottom: 1px solid $white
+	+media-breakpoint-down(xs)
+		padding: 15px
+	+media-breakpoint-down(xxs)
+		padding: 20px
+	&-inner
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		height: 100%
+		border-radius: 5px
+		border: 1px solid $border
+		transition: background-color .35s ease
+	&-icon
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 96px
+		height: 96px
+		border-radius: 50%
+		background-color: $accent
+		color: $white
+		font-size: 50px
+		transform: scaleX(-1)
+		transition: $trs
+	&-title
+		margin-top: 40px
+		text-align: center
+		line-height: 1.2
+	&:hover
+		.card-show-more
+			&-inner
+				background-color: #f9f9f9
+			&-icon
+				background-color: #528f9b
+				color: $white
+	&:active
+		.card-show-more
+			&-inner
+				background-color: #f8f8f8
+			&-icon
+				background-color: darken(#528f9b, 5%)
+
+/* ==========================================================================
 	 Product card
 	 ========================================================================== */
 .card-product

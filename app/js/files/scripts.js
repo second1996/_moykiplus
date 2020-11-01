@@ -137,7 +137,7 @@ jQuery(document).ready( function($) {
 		$content.slideToggle(250)
 
 		// Fix readmore when element isn't visible (display: none)
-		if( $('.filter-show-less').length || $('.filter-inner').is(':hidden') ) {
+		if( $('.filter-show-less').length ) {
 			$('.filter-show-less').readmore({
 				embedCSS: false,
 				speed: 75,
