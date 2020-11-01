@@ -6,9 +6,23 @@
 		display: flex
 		flex-direction: column
 		justify-content: center
+		+media-breakpoint-down(sm)
+			> [aria-expanded="true"]
+				height: 100% !important
+				// margin-bottom: -30px
+				~ .btn-more
+					margin-bottom: -48px
+					opacity: 0
+					transform: translate3d(0, -24px, 0)
 		&-wrapper
 			position: relative
+			z-index: 2
 			max-height: 340px
+			+media-breakpoint-down(sm)
+				max-height: 270px
+				&.row-items > .col,
+				&.row-items > [class*=col]
+					margin-bottom: 10px
 			&::after
 				content: ''
 				user-select: none
@@ -20,16 +34,55 @@
 				height: 30px
 				background-image: linear-gradient(to top, rgba($bodycolor, 1) 0%,rgba($bodycolor, 0) 100%)
 			.title
-				padding: 25px 40px
+				pointer-events: none
+				display: flex
+				align-items: center
+				height: 64px
+				padding: 0 40px
 				box-shadow: $box-shadow
 				background-color: $white
-				color: $black
-				font-size: 18px
-				font-weight: 600
-				line-height: 1.2
+				line-height: 1
+				span
+					color: $black
+					font-size: 18px
+					font-weight: 600
+				.icon
+					display: none
+				+media-breakpoint-down(lg)
+					height: 56px
+					padding: 0 30px
+					span
+						font-size: 16px
+				+media-breakpoint-down(sm)
+					cursor: pointer
+					pointer-events: auto
+					display: flex
+					align-items: center
+					justify-content: space-between
+					margin-bottom: 0
+					border-radius: 5px
+					box-shadow: none
+					background-color: #f4f4f4
+					&:active,
+					&:focus
+						background-color: #f1f1f1
+					&._toggled
+						.icon
+							transform: rotate(-90deg)
+					.icon
+						display: block
+						color: $accent
+						font-size: 12px
+						transform: rotate(90deg)
+						transition: transform .3s ease
 			.categories
 				margin-top: 10px
 				padding-left: 40px
+				+media-breakpoint-down(lg)
+					padding-left: 30px
+				+media-breakpoint-down(sm)
+					display: none
+					padding-bottom: 10px
 				> li > a
 					text-decoration: underline
 		.btn-more
@@ -38,7 +91,70 @@
 			margin-right: auto
 
 	// Categories tabs
-	// &-tabs
+	&-tabs
+		margin-top: 50px
+		+media-breakpoint-down(md)
+			margin-top: 30px
 
 	// Filters & Products
 	// &-main
+
+	// Popular Brands
+	&-brands
+		.section-title
+			+media-breakpoint-down(xs)
+				margin-bottom: 20px
+				font-size: 18px
+				&::after
+					display: none
+		&-slider
+			position: relative
+			.swiper-pagination
+				position: static
+				margin-top: 20px
+			&-container
+				margin: -18px
+				padding: 18px
+				+media-breakpoint-down(xs)
+					margin: -18px -25px
+					padding: 18px 25px
+		&-slide
+			background-color: $white
+			a
+				display: flex
+				align-items: center
+				justify-content: center
+				height: 90px
+				text-align: center
+				filter: grayscale(1) opacity(0.35)
+				img
+					width: 60%
+					height: 60%
+					object-fit: scale-down
+				&:hover
+					filter: none
+			&.swiper-slide-visible
+				box-shadow: 0 3px 18px 1px rgba(68, 68, 79, 0.08)
+
+	// All Brands
+	&-all-brands
+		&-wrapper
+			display: flex
+			flex-direction: column
+			align-items: center
+			> ul
+				display: flex
+				flex-wrap: wrap
+				max-height: 160px
+				> li
+					flex: 0 0 16.66667%
+					+media-breakpoint-down(lg)
+						flex-basis: 20%
+					+media-breakpoint-down(md)
+						flex-basis: 25%
+					+media-breakpoint-down(sm)
+						flex-basis: 33.33333%
+					+media-breakpoint-down(xs)
+						flex-basis: 50%
+			.btn-more
+				margin-top: 30px

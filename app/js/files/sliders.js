@@ -376,7 +376,7 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Conctas Gallery slider
+	 * Contacts Gallery slider
 	 */
 	var contactsGallerySlider = new Swiper('.contacts .contacts-gallery', {
 		loop: false,
@@ -388,5 +388,41 @@ jQuery(document).ready( function($) {
 		},
 	})
 
+
+	/**
+	 * Shop category Popular Brands slider
+	 */
+	var categoryPopularBrands = new Swiper('.s-category-brands-slider-container', {
+		watchSlidesVisibility: true,
+		loop: false,
+		slidesPerView: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.s-category-brands-slider .swiper-button-next',
+			prevEl: '.s-category-brands-slider .swiper-button-prev',
+		},
+		pagination: {
+			el: '.s-category-brands-slider .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+				spaceBetween: 20,
+			},
+			768: {
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+				spaceBetween: 30,
+			},
+			992: {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+				spaceBetween: 30,
+			}
+		}
+	})
 
 })
