@@ -63,10 +63,11 @@
 		overflow: hidden
 		margin-bottom: 30px
 		background-color: $trsp
+		text-align: center
 		img
 			border-radius: 5px
+			width: auto
 			height: auto
-			object-fit: none
 	.card-meta
 		.title
 			font-size: 15px
@@ -75,6 +76,7 @@
 		.btn
 			margin-top: 20px
 			width: 100%
+			min-width: auto
 
 
 /* ==========================================================================
@@ -101,6 +103,7 @@
 		align-items: center
 		justify-content: center
 		height: 100%
+		padding: 20px 10px
 		border-radius: 5px
 		border: 1px solid $border
 		transition: background-color .35s ease
@@ -116,10 +119,29 @@
 		font-size: 50px
 		transform: scaleX(-1)
 		transition: $trs
+		+media-breakpoint-down(lg)
+			width: 72px
+			height: 72px
+			font-size: 36px
+		+media-breakpoint-down(md)
+			width: 86px
+			height: 86px
+			font-size: 42px
+		+media-breakpoint-down(sm)
+			width: 72px
+			height: 72px
+			font-size: 36px
+		+media-breakpoint-down(xs)
+			width: 58px
+			height: 58px
+			font-size: 30px
 	&-title
 		margin-top: 40px
 		text-align: center
-		line-height: 1.2
+		line-height: 1.4
+		+media-breakpoint-down(sm)
+			margin-top: 20px
+			font-size: 14px
 	&:hover
 		.card-show-more
 			&-inner

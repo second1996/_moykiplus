@@ -21,7 +21,9 @@ if( sessionStorage.getItem('promo-string') == 'hide' ) {
 jQuery(document).ready( function($) {
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Back to Top button
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	var back_to_top = $('#back-to-top');
 
@@ -40,7 +42,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * LazyLoad init
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	var lazyLoadInstance = new LazyLoad({
 		elements_selector: ".lazy",
@@ -53,7 +57,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Sticky header
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	if( window.matchMedia('(min-width: 1230px)').matches ) {
 		var stickyHeader = $('.header'),
@@ -70,7 +76,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Mobile header actions
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	if( window.matchMedia('(max-width: 1299.98px)').matches ) {
 		// Mobile Menu
@@ -106,8 +114,10 @@ jQuery(document).ready( function($) {
 
 
 	/**
- * Header Search form
- */
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Header Search form
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
 	if( window.matchMedia('(min-width: 1230px)').matches ) {
 		$('.header-bottom .navigation .search-form input').on('click', function() {
 			$(this).parents('.search-form').addClass('_shown')
@@ -125,7 +135,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Mega menu
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, [data-toggle="toggle-box"]').on('click', function(e) {
 		e.preventDefault()
@@ -137,19 +149,21 @@ jQuery(document).ready( function($) {
 		$content.slideToggle(250)
 
 		// Fix readmore when element isn't visible (display: none)
-		if( $('.filter-show-less').length ) {
-			$('.filter-show-less').readmore({
-				embedCSS: false,
-				speed: 75,
-				moreLink: '<button type="button" class="read-more"><span>Показать ещё</span></button>',
-				lessLink: '<button type="button" class="read-more _toggled"><span>Скрыть</span></button>',
-			})
-		}
+		// if( $('.filter-show-less').length ) {
+		// 	$('.filter-show-less').readmore({
+		// 		embedCSS: false,
+		// 		speed: 75,
+		// 		moreLink: '<button type="button" class="read-more"><span>Показать ещё</span></button>',
+		// 		lessLink: '<button type="button" class="read-more _toggled"><span>Скрыть</span></button>',
+		// 	})
+		// }
 	})
 
 
 	/**
-	 * Product card gallery
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Product card gallery slideshow on hover
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$(document).on('mouseenter', '.card-product .card-gallery-item', function() {
 		$(this).siblings().removeClass('_active')
@@ -158,7 +172,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Marquee Promo string
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Marquee Promo string (header)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.promo-content-marquee').marquee({
 		// duration: 12000,
@@ -171,7 +187,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Product card actions
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Product card actions (wishlist, compare & order buttons)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.card-product').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
 		e.preventDefault()
@@ -180,7 +198,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Stores contacts button
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Stores contacts button (fixed)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.btn-stores-button').on('click', function() {
 		$(document).on('click', function (e) {
@@ -193,7 +213,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Fix closing dropdown menu when selecting the text
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.dropdown-menu').on('click', function (e) {
 		e.stopPropagation()
@@ -201,12 +223,13 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Page navigation
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Page navigation (Bootstrap ScrollSpy)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	if( $('#page-navigation').length ) {
-		/**
-		 * Init Bootstrap ScrollSpy if #page-navigation id registered on the page
-		 */
+
+		// Init Bootstrap ScrollSpy if #page-navigation id registered on the page
 		if( window.matchMedia('(min-width: 768px)').matches ) {
 			$('body').scrollspy({
 				target: '#page-navigation',
@@ -214,9 +237,7 @@ jQuery(document).ready( function($) {
 			})
 		}
 
-		/**
-		 * Animated scroll
-		 */
+		// Animated scroll
 		$('.page-navigation-list > li > a').on('click', function(e) {
 			var section_id = $(this).attr('href')
 
@@ -227,7 +248,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
-	 * Read more button on mobile (xxs, xs, sm)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Read more button (readmore.js)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('[data-readmore="inline"]').readmore({
 		embedCSS: false,
@@ -250,7 +273,9 @@ jQuery(document).ready( function($) {
 
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Compare products
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('#compare-differences').on('click', function (e) {
 		e.preventDefault();
@@ -296,15 +321,6 @@ jQuery(document).ready( function($) {
 			}
 		})
 		$('#compare-differences').removeClass('_active')
-	})
-
-
-	/**
-	 * Choose Brand coutries
-	 */
-	$('#brands-countries-choose').on('click', function () {
-		$(this).toggleClass('_toggled')
-		$(this).next().slideToggle(250)
 	})
 
 })

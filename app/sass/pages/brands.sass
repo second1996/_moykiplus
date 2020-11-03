@@ -69,7 +69,12 @@
 			&._toggled
 				.icon
 					transform: rotate(-90deg)
+			&:hover
+				~ .brands-countries-list
+					border-color: $green
 		&-list
+			display: flex
+			flex-wrap: wrap
 			padding: 20px 16px
 			border-radius: 5px
 			box-shadow: $box-shadow
@@ -86,7 +91,7 @@
 		&-item
 			display: inline-flex
 			align-items: center
-			width: 170px
+			flex: 0 0 15.25%
 			height: 44px
 			margin: 5px 8px
 			padding-left: 15px
@@ -96,7 +101,9 @@
 			color: rgba($black, 0.7)
 			line-height: 1
 			+media-breakpoint-down(lg)
-				width: 160px
+				flex-basis: 18.2%
+			+media-breakpoint-down(md)
+				flex-basis: 22.5%
 			+media-breakpoint-down(sm)
 				width: 100%
 				margin: 0

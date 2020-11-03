@@ -1,0 +1,311 @@
+/* ==========================================================================
+	 Widget customize
+	 ========================================================================== */
+.page-widgets
+	position: sticky
+	top: 90px
+
+	// Widgets Scrollbar
+	*
+		scrollbar-width: thin
+		scrollbar-color: $accent $border
+	::-webkit-scrollbar
+		width: 4px
+		border-radius: 4px
+	::-webkit-scrollbar-track
+		border-radius: 4px
+		background-color: $border
+	::-webkit-scrollbar-thumb
+		background-color: $accent
+		border-radius: 20px
+		&:hover
+			background-color: $orange
+
+	// Default customize
+	.widget
+		width: 270px
+		padding: 15px 30px
+		border-radius: 5px
+		box-shadow: $box-shadow
+		background-color: $white
+		&:not(:first-child)
+			margin-top: 50px
+		+media-breakpoint-down(md)
+			display: none
+			width: 100%
+			margin: 0
+			margin-top: -10px
+			padding: 10px 0 30px
+			border-radius: 0 0 5px 5px
+			border: 1px solid $accent
+			border-top: 0
+			background-color: $bodycolor
+
+		// Widget head
+		&-header
+			display: flex
+			justify-content: space-between
+			width: 100%
+			padding: 15px 0
+			text-align: left
+			line-height: 1
+			white-space: normal
+			+media-breakpoint-down(md)
+				padding-left: 30px
+				padding-right: 20px
+			&._toggled,
+			&._show
+				.icon
+					transform: rotate(-90deg)
+				~ ._opened
+					display: block
+			.title
+				color: $black
+				font-size: 14px
+				font-weight: 600
+				transition: color .35s ease
+				span
+					font-weight: 500
+			.icon
+				flex: 0 0 auto
+				margin-left: 10px
+				font-size: 12px
+				color: $accent
+				transform: rotate(90deg)
+				transition: transform .3s ease
+			&:hover
+				cursor: pointer
+				.title
+					color: $accent
+
+		// Widget inner
+		&-inner
+			position: relative
+			display: none
+			margin: 0 -10px
+			padding: 20px 10px
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 10px
+				right: 10px
+				height: 1px
+				background-color: $border
+			> ul
+				> li
+					&:not(:last-child)
+						margin-bottom: 12px
+					> a
+						display: inline-block
+						line-height: 1.2
+						text-decoration: underline
+						&:hover
+							color: $accent
+
+
+/* ==========================================================================
+	 Widget: Filters
+	 ========================================================================== */
+.page-widgets
+	.widget-filters
+		padding-top: 0
+		padding-bottom: 0
+
+		// Title (toggle handle)
+		&-title
+			display: none
+			+media-breakpoint-down(md)
+				cursor: pointer
+				position: relative
+				z-index: 1
+				display: flex
+				align-items: center
+				justify-content: space-between
+				height: 46px
+				margin-bottom: 0
+				padding-left: 30px
+				padding-right: 20px
+				border-radius: 5px
+				background-color: $accent
+				transition: background-color .35s ease
+				&:active,
+				&:focus
+					background-color: darken($accent, 5%)
+				&._toggled
+					.icon
+						transform: rotate(-90deg)
+				span
+					color: $white
+					font-size: 12px
+					font-weight: 600
+					text-transform: uppercase
+				.icon
+					display: block
+					color: $white
+					font-size: 12px
+					transform: rotate(90deg)
+					transition: transform .3s ease
+
+		// Toggle boxes
+		.filter-toggle
+			&:not(:first-child)
+				.filter-toggle-header
+					border-top: 1px solid $border
+			&:last-of-type
+				border-bottom: 1px solid $border
+				.filter-toggle-inner
+					padding-bottom: 20px
+			&-header
+				display: flex
+				justify-content: space-between
+				width: 100%
+				padding: 20px 0
+				text-align: left
+				line-height: 1
+				white-space: normal
+				+media-breakpoint-down(md)
+					padding-left: 30px
+					padding-right: 20px
+				&._toggled
+					.icon
+						transform: rotate(-90deg)
+				.title
+					color: $black
+					font-size: 14px
+					font-weight: 600
+					transition: color .35s ease
+					span
+						font-weight: 500
+				.icon
+					flex: 0 0 auto
+					margin-left: 10px
+					font-size: 12px
+					color: $accent
+					transform: rotate(90deg)
+					transition: transform .3s ease
+				&:hover
+					.title
+						color: $accent
+			&-inner
+				position: relative
+				display: none
+				margin: 0 -10px
+				padding: 20px 10px 30px
+				+media-breakpoint-down(md)
+					padding: 20px 30px 20px 40px
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					left: 10px
+					right: 10px
+					height: 1px
+					background-color: $border
+
+		// Filters form
+		&-form
+			+media-breakpoint-down(md)
+				display: flex
+				flex-direction: column
+			.form-checkbox
+				line-height: 1
+				&:not(:last-child)
+					margin-bottom: 12px
+				&-label
+					display: inline-flex
+					// align-items: center
+					margin-bottom: 0
+					padding-left: 24px
+					color: rgba($black, 0.9)
+					font-weight: 500
+					line-height: 1.1
+					&::before,
+					&::after
+						top: 0
+						width: 15px
+						height: 15px
+					&::after
+						border-color: $accent
+						background-color: $accent
+						background-image: url('../images/icons/check-white.svg')
+						background-size: 8px
+					> .color
+						flex: 0 0 auto
+						width: 15px
+						height: 15px
+						margin-right: 8px
+						border-radius: 3px
+		// Filter «Show more» button
+		.filter-show-less
+			max-height: 146px
+		// Filter Alphabet
+		.filter-alphabet
+			.filter-scrolling
+				max-height: 270px
+			[data-letter]
+				&:not(:last-child)
+					margin-bottom: 15px
+				> span
+					display: block
+					margin-bottom: 4px
+					padding-left: 24px
+					color: $black
+					font-size: 14px
+					font-weight: 600
+		// Filter Slider
+		.filter-slider
+			&-handle
+				padding-left: 9px
+				padding-right: 9px
+			&-range
+				display: flex
+				align-items: center
+				margin-top: 18px
+				line-height: 1
+				.form-control
+					margin-bottom: 0
+					padding-left: 5px
+					padding-right: 5px
+					border: 1px solid $border
+					background-color: $white
+					height: 38px
+					line-height: 36px
+					text-align: center
+				> span
+					margin: 0 10px
+		// Filter Search
+		.filter-search
+			&-control
+				width: 100%
+				height: 48px
+				padding-right: 42px
+				border: 1px solid $accent
+				background: $white url('../images/icons/search.svg') no-repeat center right 16px/14px
+				line-height: 46px
+				&::placeholder
+					color: rgba($black, 0.7)
+					font-size: 13px
+					font-weight: 500
+		// Filter Scrolling
+		.filter-scrolling
+			overflow-y: auto
+			max-height: 136px
+		// Filter Reset button
+		.filter-reset
+			width: 100%
+			margin: 30px 0
+			+media-breakpoint-down(md)
+				align-self: center
+				max-width: 220px
+				margin: 30px auto 0
+			+media-breakpoint-down(xxs)
+				max-width: 180px
+
+
+/* ==========================================================================
+	 Widget: Categories
+	 ========================================================================== */
+.page-widgets
+	.w-categories
+		
