@@ -1,0 +1,351 @@
+@import '../helpers/helpers'
+
+.product-single
+
+	// Product box (helper class)
+	.product-box
+		padding: 25px 20px
+		border-radius: 5px
+		border: 1px solid $border
+		background-color: $white
+
+	// Product title
+	.product-title
+		margin-bottom: 18px
+
+	// Product image
+	.product-image
+		&-head
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+			line-height: 1
+			.product-sku,
+			.product-code
+				color: $black
+				font-weight: 600
+				> span
+					color: rgba($black, 0.8)
+		&-viewport
+			position: relative
+			height: 316px
+			margin-top: 18px
+			border-radius: 5px
+			border: 1px solid $border
+			background-color: $white
+			> img
+				width: 100%
+				height: 100%
+				padding: 45px
+				object-fit: scale-down
+
+	// Product Attributes
+	.product-attributes
+		margin-top: 50px
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+		&-table
+			font-size: 12px
+			.name,
+			.value
+				width: 25%
+				padding-left: 20px
+				padding-right: 20px
+				color: $black
+			.name
+				font-weight: 600
+
+	// Product Summary
+	.product-summary
+		&-section
+			position: relative
+			&:not(:last-child)
+				margin-bottom: 20px
+				padding-bottom: 20px
+				border-bottom: 1px solid $border
+		// Product brand
+		.product-brand
+			position: absolute
+			top: 0
+			right: 0
+			width: 80px
+			height: 40px
+			transition: opacity .35s ease
+			&:hover
+				opacity: 0.75
+			img
+				width: 100%
+				height: 100%
+				object-fit: scale-down
+				object-position: right top
+		// Product rating
+		.product-rating
+			display: flex
+			align-items: center
+			line-height: 1
+			.comments
+				display: inline-flex
+				align-items: center
+				margin-left: 14px
+				color: #8a868b
+				&-count
+					margin-left: 5px
+		// Product stock
+		.product-stock
+			display: flex
+			align-items: center
+			margin-top: 20px
+			line-height: 1
+			&::before
+				content: ''
+				display: inline-block
+				width: 7px
+				height: 7px
+				margin-right: 5px
+				border-radius: 50%
+				background-color: #a3a1a5
+		// Product price
+		.product-price
+			.discount
+				display: flex
+				align-items: center
+				margin-bottom: 20px
+				padding: 15px 20px
+				border-radius: 5px
+				border: 1px solid #e71836
+				background-color: #f8f8f8
+				line-height: 1.3
+				&:hover
+					border-color: #e71836
+					background-color: #e71836
+					.icon,
+					.text,
+					.text > strong, .text > b
+						color: $white
+				&:active
+					background-color: darken(#e71836, 7%)
+				.icon
+					flex: 0 0 auto
+					color: #e71836
+					font-size: 30px
+					transition: color .35s ease
+				.text
+					max-width: 200px
+					margin-left: 15px
+					transition: color .35s ease
+					> strong, > b
+						margin-left: 6px
+						font-weight: 600
+						transition: color .35s ease
+			.price
+				display: flex
+				align-items: flex-end
+				&-label
+					margin-right: 14px
+					color: rgba($black, 0.9)
+					font-weight: 500
+					line-height: 1
+				&-wrapper
+					display: flex
+					flex-wrap: wrap
+					align-items: flex-end
+					line-height: 1
+					> ins
+						color: $black
+						font-size: 26px
+						font-weight: 700
+						white-space: nowrap
+						text-decoration: none
+					> del
+						margin-left: 14px
+						color: rgba($black, 0.9)
+						font-size: 14px
+						font-weight: 600
+						white-space: nowrap
+		// Product actions (order, wishlist, compare)
+		.product-actions
+			display: flex
+			margin: 0 -5px
+			.btn
+				min-width: auto
+				margin: 0 5px
+			.wishlist-btn,
+			.compare-btn
+				width: 48px
+				height: 48px
+				line-height: 46px
+				border-color: #3e3c41
+				color: #78767a
+				&:hover
+					border-color: $accent
+					color: $accent
+				.icon
+					flex: 0 0 auto
+					font-size: 22px
+					+media-breakpoint-down(xs)
+						font-size: 18px
+				&._active
+					border-color: $accent
+					background-color: $accent
+					color: $white
+			.order-btn
+				flex: 0 1 100%
+				.icon
+					flex: 0 0 auto
+					display: none
+					margin-right: 10px
+				span
+					margin-left: 0
+				span.buy
+					display: block
+				span.added
+					display: none
+				&._active
+					background-color: $green
+					span.buy
+						display: none
+					span.added
+						display: block
+					.icon
+						display: block
+		// Product cheaper
+		.product-cheaper
+			margin-top: 10px
+			.btn
+				width: 100%
+				font-weight: 600
+		// Product quick order
+		.product-quick-order
+			margin-top: 26px
+			.quick-order
+				position: relative
+				&-field
+					display: flex
+					align-items: center
+				&-input
+					width: 100%
+					height: 46px
+					border-radius: 5px 0 0 5px
+					border: 1px solid #4a7c86
+					border-right: 0
+					background-color: $white
+					line-height: 44px
+					&:focus:required:invalid
+						border-color: $trsp
+						box-shadow: 0 0 0 1px red
+					&:required:valid
+						box-shadow: none
+				&-btn
+					height: 46px
+					border-radius: 0 5px 5px 0
+					line-height: 44px
+
+	// Product Variative
+	.product-variative
+		margin-top: 50px
+		// Scrollbar
+		*
+			scrollbar-width: thin
+			scrollbar-color: $accent $border
+		::-webkit-scrollbar
+			width: 4px
+		::-webkit-scrollbar-track
+			border-radius: 4px
+			background-color: $border
+		::-webkit-scrollbar-thumb
+			background-color: $accent
+			border-radius: 20px
+			&:hover
+				background-color: $orange
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+		&-wrapper
+			padding-left: 5px
+			padding-right: 5px
+		&-list
+			overflow-y: auto
+			max-height: 785px
+			padding-left: 15px
+			padding-right: 15px
+		&-item
+			display: flex
+			align-items: center
+			padding: 20px 0
+			&:first-child
+				padding-top: 0
+			&:last-child
+				padding-bottom: 0
+			&:not(:last-child)
+				border-bottom: 1px solid $border
+		&-photo
+			flex: 0 0 auto
+			position: relative
+			width: 48px
+			height: 48px
+			margin-right: 10px
+			img
+				width: 100%
+				height: 100%
+				border-radius: 5px
+				object-fit: cover
+		&-meta
+			flex: 1 1 auto
+			.title,
+			.sku,
+			.price
+				display: block
+				font-size: 12px
+				line-height: 1.2
+			.price
+				margin-top: 10px
+		&-order
+			flex: 0 0 100px
+			text-align: center
+			.not-available
+				display: block
+				font-size: 13px
+				line-height: 1.2
+			.btn
+				width: 100%
+				min-width: auto
+
+	// Product Info
+	.product-info
+		margin-top: 50px
+		&-list
+		&-item
+			display: flex
+			align-items: center
+			&:not(:last-child)
+				margin-bottom: 20px
+		&-icon
+			flex: 0 0 auto
+			margin-right: 10px
+			font-size: 15px
+		&-text
+			display: flex
+			align-items: center
+			line-height: 1.2
+			.print
+				color: $black
+				font-size: 14px
+				&:hover
+					color: $accent
+			.text
+				display: block
+				color: $black
+				> a
+					border-bottom: 1px dashed $accent
+					color: $accent
+					&:hover
+						color: $orange
+						border-bottom-color: $orange
+			.hint
+				cursor: help
+				flex: 0 0 auto
+				margin-left: 8px
+				color: $accent
+				font-size: 18px
+				line-height: 1

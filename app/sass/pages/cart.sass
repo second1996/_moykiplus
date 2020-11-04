@@ -1,0 +1,28 @@
+@import '../helpers/helpers'
+
+.s-cart
+	// Order Details table
+	&-order-details
+		margin-top: -30px
+		border-collapse: separate
+		border-spacing: 0 30px
+		tbody
+			> tr
+				box-shadow: $box-shadow
+				&:nth-child(odd),
+				&:nth-child(even)
+					background-color: $white
+
+	// Cart Guide
+	&-guide
+		padding: 30px
+		border-radius: 5px
+		border: 1px solid #d4d4d4
+		background-color: $white
+		.title
+			margin-bottom: 32px
+			color: $black
+			font-size: 16px
+			font-weight: 600
+		.article
+			margin-bottom: -32px

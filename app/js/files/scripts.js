@@ -191,9 +191,9 @@ jQuery(document).ready( function($) {
 	 * Product card actions (wishlist, compare & order buttons)
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	$('.card-product').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
+	$('.card-product, .product-single .product-actions').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
 		e.preventDefault()
-		$(this).toggleClass("_active")
+		$(this).toggleClass('_active')
 	})
 
 

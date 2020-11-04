@@ -4,6 +4,27 @@
 ::placeholder
 	color: rgba($black, 0.6)
 
+input, textarea
+	outline: none
+	font-family: $font
+	&:focus:required:invalid
+		box-shadow: 0 0 0 1px red
+	&:required:valid
+		box-shadow: 0 0 0 1px $accent
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+	display: none
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+	margin: 0
+input[type=number]
+	-moz-appearance: textfield
+
 .form
 	position: relative
 	&-light
