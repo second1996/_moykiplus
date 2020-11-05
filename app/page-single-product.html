@@ -49,7 +49,9 @@
 					</div><!-- /.col -->
 					<div class="col-12 col-md order-0 order-md-1">
 						<h1 class="product-title text-md w-semibold">Аксессуар Schock Доска разделочная передвижная универсальная (для моек шириной 480- 525мм кроме серии Venus), массив бамбука</h1>
-						<div class="row">
+						
+						<!-- Product Main-->
+						<div class="product-main row">
 							<div class="col-7">
 								<!-- Product Image Slider -->
 								<div class="product-image product-box">
@@ -143,11 +145,13 @@
 									</div>
 									<div class="product-summary-section">
 										<div class="product-actions">
-											<a href="#" class="order-btn btn btn-primary" title="Добавить товар в корзину">
-												<svg class="icon icon-shopping-cart"><use xlink:href="images/symbol-defs.svg#shopping-cart"></use></svg>
-												<span class="buy">Купить</span>
-												<span class="added">В корзине</span>
-											</a>
+											<form action="#" method="POST">
+												<button type="submit" class="order-btn btn btn-primary" title="Добавить товар в корзину">
+													<svg class="icon icon-shopping-cart"><use xlink:href="images/symbol-defs.svg#shopping-cart"></use></svg>
+													<span class="buy">Купить</span>
+													<span class="added">В корзине</span>
+												</button>
+											</form>
 											<a href="#" class="wishlist-btn btn btn-outline" title="Добавить товар в желаемое">
 												<svg class="icon icon-heart"><use xlink:href="images/symbol-defs.svg#heart"></use></svg>
 											</a>
@@ -178,7 +182,7 @@
 								<div class="product-variative">
 									<h3 class="product-variative-title c-black text-md w-semibold">Выберите вариант товара:</h3>
 									<div class="product-variative-wrapper product-box">
-										<div class="product-variative-list">
+										<form action="#" method="POST" class="product-variative-list">
 											<div class="product-variative-item">
 												<div class="product-variative-photo">
 													<img class="lazy" data-src="images/products/variative-color-1.jpg" alt="Alpina/07">
@@ -190,7 +194,7 @@
 													<span class="price c-accent w-semibold">12500 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -204,7 +208,7 @@
 													<span class="price c-accent w-semibold">9230 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -218,7 +222,7 @@
 													<span class="price c-accent w-semibold">12500 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -232,7 +236,7 @@
 													<span class="price c-accent w-semibold">9230 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -259,7 +263,7 @@
 													<span class="price c-accent w-semibold">12500 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -273,7 +277,7 @@
 													<span class="price c-accent w-semibold">9230 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -300,7 +304,7 @@
 													<span class="price c-accent w-semibold">12500 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -314,7 +318,7 @@
 													<span class="price c-accent w-semibold">9230 руб.</span>
 												</div>
 												<div class="product-variative-order">
-													<a href="#" class="btn btn-primary">Купить</a>
+													<button type="submit" class="btn btn-primary">Купить</button>
 												</div>
 											</div><!-- /.product-variative-item -->
 											<div class="product-variative-item">
@@ -330,7 +334,7 @@
 													<span class="not-available c-gray w-medium">Нет в наличии</span>
 												</div>
 											</div><!-- /.product-variative-item -->
-										</div><!-- /.product-variative-list -->
+										</form><!-- /.product-variative-list -->
 									</div><!-- /.product-variative-wrapper -->
 								</div><!-- /.product-variative -->
 								<!-- Product Info -->
@@ -378,6 +382,131 @@
 								</div><!-- /.product-info -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
+
+						<!-- Product Included -->
+						<div class="product-included">
+							<h3 class="product-included-title c-black text-md w-semibold">Что входит в комлект:</h3>
+							<div class="product-included-wrapper">
+								<div class="product-included-item">
+									<div class="photo">
+										<img class="lazy" data-src="https://st45.stblizko.ru/images/product/300/678/980_original.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="title c-black text-sm w-medium">Выпуск 3.5</div>
+								</div><!-- /.product-included-item -->
+								<div class="product-included-item">
+									<div class="photo">
+										<img class="lazy" data-src="https://st45.stblizko.ru/images/product/300/678/980_original.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="title c-black text-sm w-medium">Перелив</div>
+								</div><!-- /.product-included-item -->
+								<div class="product-included-item">
+									<div class="photo">
+										<img class="lazy" data-src="https://st45.stblizko.ru/images/product/300/678/980_original.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="title c-black text-sm w-medium">Сифон ПВХ</div>
+								</div><!-- /.product-included-item -->
+								<div class="product-included-item">
+									<div class="photo">
+										<img class="lazy" data-src="https://st45.stblizko.ru/images/product/300/678/980_original.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="title c-black text-sm w-medium">Крепёж</div>
+								</div><!-- /.product-included-item -->
+								<div class="product-included-item">
+									<div class="photo">
+										<img class="lazy" data-src="https://st45.stblizko.ru/images/product/300/678/980_original.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="title c-black text-sm w-medium">Гарантия</div>
+								</div><!-- /.product-included-item -->
+								<div class="product-included-item">
+									<div class="photo">
+										<img class="lazy" data-src="https://st45.stblizko.ru/images/product/300/678/980_original.jpg" alt="">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="title c-black text-sm w-medium">Коробка</div>
+								</div><!-- /.product-included-item -->
+							</div><!-- /.row -->
+						</div><!-- /.product-included -->
+
+						<!-- Product Description -->
+						<div class="product-description">
+							<h2 class="product-description-title c-black text-md w-semibold">Описание товара:</h2>
+							<article class="article">
+								<p>Раковины должны быть не только функциональными, но и эстетичными. Мойка Longran Ultra Uls 780.500 воплощает все лучшие качества, которыми должна обладать современная сантехника. Изделие производится на крупнейшем европейском заводе, который соответствует всем международным требованиям.</p>
+								<p>Минималистичный дизайн в сочетании со стилем хай-тек позволяет подчеркнуть все достоинства интерьера кухни. Кроме того, линейка включает модели, выполненные в деревенских традициях или других стилистических направлениях. Раковина стойко выдерживает высокие температуры и механические воздействия.</p>
+							</article>
+						</div><!-- /.product-description -->
+
+						<!-- Product Advantages -->
+						<div class="product-advantages">
+							<h2 class="product-advantages-title c-black text-md w-semibold">Преимущества мойки Longran Ultra Uls 780.500</h2>
+							<article class="article">
+								<ul class="ul-check">
+									<li>В качестве материала используется собственная разработка Lonstone, которая по прочности превосходит гранит.</li>
+									<li>Полимерная составляющая не дает образоваться порам и трещинам.</li>
+									<li>Использование европейских пигментов не дает сантехнике потерять насыщенность цвета из-за частого контакта с водой и моющими средствами.</li>
+									<li>Материал не требует специального ухода и отличается износостойкостью.</li>
+								</ul>
+								<p>Купить раковину предлагает интернет-магазин MoykiPlus. Компания предлагает качественные европейские изделия по доступной цене. Доставка осуществляется по всей территории России. Связаться с менеджером можно по телефону +7-(495)-642-26-05, указанному на сайте.</p>
+							</article>
+						</div><!-- /.product-description -->
+
+						<!-- Product Complectation -->
+						<div class="product-complect">
+							<h2 class="product-complect-title c-black text-md w-semibold">В комплекте</h2>
+							<form action="#" method="POST" class="product-complect-wrapper">
+								<div class="product-complect-head">
+									<div class="title c-black text-sm w-medium">Комплект сожержит: <span class="c-accent w-semibold">4 позиции</span></div>
+									<div class="order">
+										<button type="submit" class="order-btn btn btn-primary" title="Добавить комплект в корзину">
+											<svg class="icon icon-shopping-cart"><use xlink:href="images/symbol-defs.svg#shopping-cart"></use></svg>
+											<span class="buy">В корзину</span>
+											<span class="added">В корзине</span>
+										</button>
+									</div>
+								</div><!-- /.product-complect-head -->
+								<div class="product-complect-body">
+									<div class="product-complect-list">
+										<div class="product-complect-item">
+											<button type="submit" class="btn btn-remove">
+												<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+											</button>
+											<img class="lazy" data-src="images/products/product-4.png" alt="">
+											<div class="lazy-preloader"></div>
+										</div><!-- /.product-complect-item -->
+										<div class="product-complect-item">
+											<button type="submit" class="btn btn-remove">
+												<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+											</button>
+											<img class="lazy" data-src="images/products/product-4.png" alt="">
+											<div class="lazy-preloader"></div>
+										</div><!-- /.product-complect-item -->
+										<div class="product-complect-item">
+											<button type="submit" class="btn btn-remove">
+												<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+											</button>
+											<img class="lazy" data-src="images/products/product-4.png" alt="">
+											<div class="lazy-preloader"></div>
+										</div><!-- /.product-complect-item -->
+										<div class="product-complect-item">
+											<button type="submit" class="btn btn-remove">
+												<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+											</button>
+											<img class="lazy" data-src="images/products/product-4.png" alt="">
+											<div class="lazy-preloader"></div>
+										</div><!-- /.product-complect-item -->
+									</div><!-- /.product-complect-list -->
+									<div class="product-complect-summary">
+										<span class="value">8 120</span> <span class="currency">Руб.</span>
+									</div><!-- /.product-complect-summary -->
+								</div><!-- /.product-complect-body -->
+							</form><!-- /.product-complect-wrapper -->
+						</div><!-- /.product-complect -->
+
 					</div><!-- /.col -->
 				</div><!-- /.row -->
 			</div>
