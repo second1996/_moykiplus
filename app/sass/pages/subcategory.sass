@@ -9,8 +9,9 @@
 		display: none
 
 .s-subcategory
-	.shop-filters
-		margin-top: 0
+	.page-widgets
+		+media-breakpoint-down(md)
+			margin-bottom: 30px
 	.promo-banner
 		width: 870px
 		margin-bottom: 0
@@ -36,6 +37,7 @@
 				max-width: 33.33333%
 		+media-breakpoint-up(md)
 			&-wrapper
+				width: auto
 				box-sizing: border-box
 				flex-wrap: wrap
 				margin: -10px
@@ -98,7 +100,9 @@
 						background-color: darken(#2c6e7d, 6%)
 
 	// Quick Search
-	// .quick-search
+	.quick-search
+		+media-breakpoint-down(md)
+			margin-bottom: 10px
 
 	// Subcategory Description
 	&-descr

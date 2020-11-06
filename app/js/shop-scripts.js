@@ -188,23 +188,51 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 	})
 
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Single Product: Sticky Product Complectation
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+
 })
 
 
 jQuery(document).ready( function($) {
 
 	/**
-	 * Read more init
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Move widgets (shop filters) into .clone-widgets wrapper
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	// $('.filter-toggle-inner .filter-show-less').readmore({
-	// 	embedCSS: false,
-	// 	speed: 75,
-	// 	moreLink: '<button type="button" class="read-more"><span>Показать ещё</span></button>',
-	// 	lessLink: '<button type="button" class="read-more _toggled"><span>Скрыть</span></button>',
-	// })
+	if( $('.clone-widgets').length && window.matchMedia('(max-width: 991.98px)').matches ) {
+		$('.page-widgets').appendTo('.clone-widgets')
+	}
+
 
 	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Single Product: Sticky Product Complectation
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	if( $('.product-complect').length && window.matchMedia('(min-width: 768px)').matches ) {
+		var stickyComplect = $('.product-complect'),
+				stickyComplectOffset = stickyComplect.offset().top - 100;
+
+		$(window).on('scroll load', function() {
+			if( $(window).scrollTop() >= stickyComplectOffset ) {
+				stickyComplect.addClass('_sticky')
+			} else {
+				stickyComplect.removeClass('_sticky')
+			}
+		})
+	}
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Add display:block for hide container widget (widget title must has class '_toggled')
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.filter-toggle-header._toggled, .widget-header._toggled').next().css('display', 'block')
 
