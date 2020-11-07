@@ -212,8 +212,6 @@
 	padding: 80px 45px
 	border-radius: 10px
 	background: $accent url('../images/form-bg.png') no-repeat center/cover
-	&--secondary
-		background: #4a7c86 url('../images/form-secondary-bg.png') no-repeat center/cover
 	+media-breakpoint-down(sm)
 		padding: 50px 30px
 	+media-breakpoint-down(xs)
@@ -227,7 +225,12 @@
 			right: -25px
 			bottom: 0
 			display: block
-			background: $accent url('../images/form-bg.jpg') no-repeat center/cover
+			background: $accent url('../images/form-bg.png') no-repeat center/cover
+	&--secondary
+		background: #4a7c86 url('../images/form-secondary-bg.png') no-repeat center/cover
+		+media-breakpoint-down(xs)
+			&::before
+				background-image: url('../images/form-secondary-bg.png')
 	&-title
 		position: relative
 		margin-bottom: 40px

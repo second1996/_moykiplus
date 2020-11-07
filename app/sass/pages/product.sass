@@ -67,11 +67,6 @@
 		&-viewport
 			position: relative
 			margin-top: 18px
-			> img
-				width: 100%
-				height: 100%
-				padding: 45px
-				object-fit: scale-down
 		&-badge
 			pointer-events: none
 			user-select: none
@@ -80,6 +75,8 @@
 			right: 5px
 			z-index: 3
 			display: flex
+			+media-breakpoint-down(xs)
+				display: none
 			.badge
 				position: relative
 				width: 130px
@@ -124,7 +121,12 @@
 				align-items: center
 				justify-content: center
 				height: 316px
-				> img
+				padding: 45px
+				box-sizing: border-box
+				+media-breakpoint-down(xs)
+					height: 240px
+					padding: 20px
+				img
 					width: 100%
 					height: 100%
 					object-fit: scale-down
@@ -145,37 +147,58 @@
 						font-size: 13px
 		&-thumbs
 			margin-top: 30px
+			+media-breakpoint-down(md)
+				margin-top: 25px
 			&-slider
 				width: 520px
 				+media-breakpoint-down(lg)
 					width: 100%
+				+media-breakpoint-down(xs)
+					.swiper-pagination
+						position: static
+						margin-top: 15px
 				.swiper-wrapper
 					display: flex
 					flex-wrap: wrap
 					margin-left: -4px
 					+media-breakpoint-down(lg)
 						margin-left: 0
+					+media-breakpoint-down(xs)
+						flex-wrap: nowrap
 			&-slide
-				flex: 0 0 48px
 				position: relative
-				height: 40px
-				margin: 4px
-				padding: 8px
+				height: 60px
+				box-sizing: border-box
 				border-radius: 5px
 				border: 1px solid $border
 				transition: border .35s ease
-				+media-breakpoint-down(lg)
-					flex-basis: 43.7px
-				+media-breakpoint-down(md)
-					flex-basis: 46px
+				+media-breakpoint-up(xl)
+					flex-basis: 66.25px
+				+media-breakpoint-up(lg)
+					flex-basis: 61px
+				+media-breakpoint-up(md)
+					flex-basis: 84.5px
+				+media-breakpoint-up(sm)
+					flex: 0 0 58.5px
+					margin: 4px
+				+media-breakpoint-down(xs)
+					flex: 0 0 auto
+					width: 100%
+					height: 46px
+					padding: 0
+					margin: 0
 				&:hover
 					cursor: pointer
 					border-color: rgba($accent, 0.35)
 				&.swiper-slide-thumb-active
 					border-color: $accent
 				> img
-					width: 100%
-					height: 100%
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					width: 85%
+					height: 85%
 					object-fit: scale-down
 
 	// Product Attributes
@@ -186,14 +209,30 @@
 			line-height: 1.3
 		&-table
 			font-size: 12px
+			+media-breakpoint-down(xs)
+				overflow-y: auto
+				max-height: 308px
+				border: 1px solid $border
+				tbody
+					tr
+						background-color: $white
+					td
+						border-right: 0
+						border-bottom: 1px solid $border
 			.name,
 			.value
 				width: 25%
 				padding-left: 20px
 				padding-right: 20px
 				color: $black
+				+media-breakpoint-down(xs)
+					display: block
+					width: 100%
+					padding: 10px 20px
 			.name
 				font-weight: 600
+				+media-breakpoint-down(xs)
+					padding-bottom: 0
 			.hint
 				width: 14px
 				height: 14px
@@ -280,14 +319,19 @@
 					color: #e71836
 					font-size: 30px
 					transition: color .35s ease
+					+media-breakpoint-down(xs)
+						font-size: 24px
 				.text
 					max-width: 200px
 					margin-left: 15px
 					transition: color .35s ease
-					> strong, > b
+					> strong,
+					> b
 						margin-left: 6px
 						font-weight: 600
 						transition: color .35s ease
+					+media-breakpoint-down(xs)
+						font-size: 13px
 			.price
 				display: flex
 				align-items: flex-end
@@ -307,6 +351,8 @@
 						font-weight: 700
 						white-space: nowrap
 						text-decoration: none
+						+media-breakpoint-down(xs)
+							font-size: 20px
 					> del
 						margin-left: 14px
 						color: rgba($black, 0.9)
@@ -384,15 +430,28 @@
 					border-right: 0
 					background-color: $white
 					line-height: 44px
+					+media-breakpoint-down(xs)
+						padding-left: 15px
+						padding-right: 15px
 					&:focus:required:invalid
 						border-color: $trsp
 						box-shadow: 0 0 0 1px red
 					&:required:valid
 						box-shadow: none
 				&-btn
+					min-width: auto
 					height: 46px
 					border-radius: 0 5px 5px 0
-					line-height: 44px
+					line-height: 1
+					+media-breakpoint-down(xs)
+						width: 160px
+						padding-left: 10px
+						padding-right: 10px
+						white-space: normal
+					+media-breakpoint-down(xxs)
+						width: 120px
+						padding-left: 6px
+						padding-right: 6px
 
 	// Product Variative
 	.product-variative
@@ -417,6 +476,9 @@
 		&-wrapper
 			padding-left: 5px
 			padding-right: 5px
+			+media-breakpoint-down(xs)
+				padding-top: 20px
+				padding-bottom: 20px
 		&-list
 			overflow-y: auto
 			max-height: 785px
@@ -488,6 +550,8 @@
 				font-size: 14px
 				&:hover
 					color: $accent
+				+media-breakpoint-down(xs)
+					font-size: 13px
 			.text
 				display: block
 				color: $black
@@ -497,6 +561,8 @@
 					&:hover
 						color: $orange
 						border-bottom-color: $orange
+				+media-breakpoint-down(xs)
+					font-size: 13px
 			.hint
 				flex: 0 0 auto
 				margin-left: 8px
@@ -507,6 +573,8 @@
 				&:hover
 					cursor: help
 					color: $orange
+				+media-breakpoint-down(xs)
+					font-size: 14px
 
 	// Product Included
 	.product-included
@@ -531,11 +599,18 @@
 				padding: 10px
 			+media-breakpoint-down(sm)
 				flex-basis: 33.33333%
+			+media-breakpoint-down(xs)
+				flex-basis: 50%
+			+media-breakpoint-down(xxs)
+				flex-basis: 100%
 			.photo
 				position: relative
 				height: 105px
 				border-radius: 5px
 				border: 1px solid $border
+				+media-breakpoint-down(xs)
+					width: 125px
+					margin: 0 auto
 				> img
 					width: 100%
 					height: 100%
@@ -594,15 +669,20 @@
 			transition: border .35s ease
 			+media-breakpoint-down(md)
 				padding: 20px 20px 30px
+			+media-breakpoint-down(xs)
+				padding-bottom: 20px
 		&-head
 			display: flex
 			align-items: center
 			justify-content: space-between
 			.title
 				line-height: 1.2
+				+media-breakpoint-down(sm)
+					font-size: 14px
 			.order
 				&-btn
 					width: 100%
+					min-width: auto
 					.icon
 						flex: 0 0 auto
 						display: none
@@ -626,8 +706,9 @@
 			justify-content: center
 			align-items: center
 			margin-top: 16px
+			+media-breakpoint-down(xs)
+				display: block
 		&-list
-			// display: flex
 			max-width: 720px
 			overflow-x: auto
 			white-space: nowrap
@@ -640,6 +721,10 @@
 			border-radius: 5px
 			border: 1px solid $border
 			transition: border .35s ease
+			+media-breakpoint-down(sm)
+				width: 60px
+				height: 60px
+				margin-left: 64px
 			.btn-remove
 				position: absolute
 				top: 6px
@@ -666,6 +751,8 @@
 				height: 100%
 				padding: 16px
 				object-fit: scale-down
+				+media-breakpoint-down(sm)
+					padding: 8px
 			&:hover
 				border-color: darken($border, 10%)
 				.btn-remove
@@ -696,9 +783,15 @@
 				color: $accent
 				font-size: 30px
 				font-weight: 500
+				+media-breakpoint-down(sm)
+					height: 40px
+					width: 40px
+					margin-top: -20px
+					font-size: 22px
 		&-summary
 			flex: 0 0 auto
 			position: relative
+			top: -4px
 			display: inline-flex
 			justify-content: center
 			align-items: center
@@ -714,6 +807,13 @@
 			font-weight: 600
 			text-align: center
 			line-height: 1
+			+media-breakpoint-down(sm)
+				height: 40px
+				margin-left: 68px
+				font-size: 15px
+			+media-breakpoint-down(xs)
+				margin-top: 20px
+				margin-left: 54px
 			&::before
 				content: '='
 				position: absolute
@@ -733,6 +833,11 @@
 				color: $accent
 				font-size: 30px
 				font-weight: 500
+				+media-breakpoint-down(sm)
+					height: 40px
+					width: 40px
+					margin-top: -20px
+					font-size: 22px
 			.value
 				display: inline-block
 			.currency
@@ -791,6 +896,10 @@
 			background-color: $white
 			+media-breakpoint-down(md)
 				padding: 12px 20px
+			+media-breakpoint-down(xs)
+				flex-direction: column
+				align-items: flex-start
+				padding-left: 66px
 			.product-checkbox
 				position: absolute
 				top: 50%
@@ -821,6 +930,10 @@
 				border: 1px solid $border
 				+media-breakpoint-down(sm)
 					margin-left: 44px
+				+media-breakpoint-down(xs)
+					margin-left: 0
+					width: 60px
+					height: 60px
 				> img
 					width: 100%
 					height: 100%
@@ -831,6 +944,9 @@
 				margin-right: 20px
 				+media-breakpoint-down(md)
 					margin-left: 20px
+				+media-breakpoint-down(xs)
+					margin-top: 15px
+					margin-left: 0
 				.title
 					display: block
 					line-height: 1.2
@@ -840,11 +956,16 @@
 					display: inline-flex
 					margin-top: 20px
 					line-height: 1.2
-					+media-breakpoint-down(md)
-						font-size: 12px
 					> div
 						&:not(:last-child)
 							margin-right: 30px
+					+media-breakpoint-down(md)
+						font-size: 12px
+					+media-breakpoint-down(xs)
+						margin-top: 10px
+						> div
+							&:not(:last-child)
+								margin-right: 10px
 			.product-price
 				flex: 0 0 auto
 				margin-left: auto
@@ -852,6 +973,11 @@
 				+media-breakpoint-down(sm)
 					span
 						display: block
+				+media-breakpoint-down(xs)
+					margin-top: 10px
+					margin-left: 0
+					span
+						display: inline-block
 
 	// Product Delivery & Payments
 	.product-delivery
@@ -875,22 +1001,26 @@
 			margin-bottom: 18px
 			line-height: 1.3
 		&-table
-			overflow: hidden
+			overflow-x: auto
+			max-width: 100%
 			border-radius: 5px
-			.delivery-order-to,
-			.delivery-order-from
-				font-size: 14px
-				font-weight: 400
+			table
 				+media-breakpoint-down(xs)
-					font-size: 12px
-			thead
-				th
-					padding: 14px 18px
-					background-color: $accent
-					text-align: center
-			tbody
-				th, td
-					color: $black
+					width: 700px
+				.delivery-order-to,
+				.delivery-order-from
+					font-size: 14px
+					font-weight: 400
+					+media-breakpoint-down(xs)
+						font-size: 12px
+				thead
+					th
+						padding: 14px 18px
+						background-color: $accent
+						text-align: center
+				tbody
+					th, td
+						color: $black
 
 	// Product Additional information
 	.product-additional
@@ -903,6 +1033,8 @@
 			> [class*="col"],
 			.col
 				padding-bottom: 20px
+				+media-breakpoint-down(xs)
+					padding-bottom: 15px
 		&-file
 			display: flex
 			align-items: center
@@ -912,6 +1044,8 @@
 			background-color: $white
 			+media-breakpoint-down(md)
 				padding: 20px
+			+media-breakpoint-down(xs)
+				padding: 15px
 			.file-type
 				flex: 0 0 auto
 				position: relative
@@ -920,6 +1054,9 @@
 				+media-breakpoint-down(sm)
 					height: 40px
 					height: 40px
+				+media-breakpoint-down(xs)
+					width: 36px
+					height: 36px
 				img
 					width: 100%
 					height: 100%
@@ -931,8 +1068,11 @@
 				font-size: 16px
 				font-weight: 500
 				line-height: 1.2
+				word-break: break-word
 				+media-breakpoint-down(md)
 					font-size: 14px
+				+media-breakpoint-down(xs)
+					padding-left: 15px
 			.file-link
 				margin-left: auto
 				.btn
@@ -947,6 +1087,10 @@
 						min-width: 52px
 						span
 							display: none
+					+media-breakpoint-down(xs)
+						width: 36px
+						min-width: auto
+						height: 36px
 
 	// Product Schemes
 	.product-schemes
@@ -1059,6 +1203,8 @@
 					height: 200px
 				+media-breakpoint-down(sm)
 					height: 140px
+				+media-breakpoint-down(xs)
+					height: 180px
 				> img
 					width: 100%
 					height: 100%
@@ -1116,6 +1262,8 @@
 	.product-return
 		&-wrapper
 			display: flex
+			+media-breakpoint-down(xs)
+				flex-direction: column
 		&-image
 			flex: 0 0 auto
 			display: flex
@@ -1135,12 +1283,16 @@
 				padding: 20px
 				border-radius: 5px
 				border: 1px solid $border
+				+media-breakpoint-down(xs)
+					height: 140px
 				> img
 					width: 100%
 					height: 100%
 					object-fit: scale-down
 		&-content
 			margin-left: 30px
+			+media-breakpoint-down(xs)
+				margin-left: 0
 			.article
 				max-height: 245px
 				+media-breakpoint-down(md)

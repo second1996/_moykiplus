@@ -237,10 +237,23 @@ jQuery(document).ready( function($) {
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	var productPreviewThumbsSlider = new Swiper('.product-single .product-preview-thumbs-slider', {
-		allowTouchMove: false,
+		allowTouchMove: true,
 		loop: false,
-		// slidesPerView: 7,
-		// slidesPerColumn: 2,
+		slidesPerView: 5,
+		spaceBetween: 6,
+		pagination: {
+			el: '.product-preview-thumbs-slider .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		breakpoints: {
+			576: {
+				allowTouchMove: false,
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				pagination: false,
+			},
+		}
 	})
 
 	var productPreviewSlider = new Swiper('.product-single .product-preview-photo-slider', {
