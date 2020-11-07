@@ -238,11 +238,21 @@
 						background-image: url('../images/icons/check-white.svg')
 						background-size: 8px
 					> .color
+						overflow: hidden
+						position: relative
 						flex: 0 0 auto
 						width: 15px
 						height: 15px
 						margin-right: 8px
 						border-radius: 3px
+						> img
+							position: absolute
+							top: 50%
+							left: 50%
+							width: 100%
+							height: 100%
+							transform: translate(-50%, -50%)
+							object-fit: cover
 		// Filter «Show more» button
 		.filter-show-less
 			max-height: 146px

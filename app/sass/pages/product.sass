@@ -1,11 +1,28 @@
 @import '../helpers/helpers'
 
 .product-single
+	&-left
+		+media-breakpoint-down(lg)
+			margin-bottom: 30px
+	&-right
 
 	article, .article
 		blockquote, img, ul, ol, table, p
 			margin-top: 20px
 			margin-bottom: 0
+
+	// Page navigation
+	.page-navigation
+		&-list > li > a
+			padding-top: 18px
+			padding-bottom: 18px
+		+media-breakpoint-down(lg)
+			width: 100%
+			&-list
+				display: none
+				overflow: hidden
+				margin-top: 10px
+				border-radius: 5px
 
 	// Product box (helper class)
 	.product-box
@@ -18,8 +35,24 @@
 	.product-title
 		margin-bottom: 18px
 
+	// Product Main wrapper (2 columns)
+	.product-main
+		&-left,
+		&-right
+			margin-bottom: 50px
+		// &-left
+		// 	position: sticky
+		// 	top: 92px
+		// 	height: 100%
+		&-right
+			+media-breakpoint-down(md)
+				margin-top: 50px
+				padding-left: 0
+				padding-right: 0
+
 	// Product image
-	.product-image
+	.product-preview
+		padding-bottom: 30px
 		&-head
 			display: flex
 			align-items: flex-end
@@ -33,16 +66,117 @@
 					color: rgba($black, 0.8)
 		&-viewport
 			position: relative
-			height: 316px
 			margin-top: 18px
-			border-radius: 5px
-			border: 1px solid $border
-			background-color: $white
 			> img
 				width: 100%
 				height: 100%
 				padding: 45px
 				object-fit: scale-down
+		&-badge
+			pointer-events: none
+			user-select: none
+			position: absolute
+			top: -5px
+			right: 5px
+			z-index: 3
+			display: flex
+			.badge
+				position: relative
+				width: 130px
+				height: 36px
+				margin-right: 10px
+				color: $white
+				font-size: 9px
+				font-weight: 400
+				line-height: 36px
+				text-align: center
+				text-transform: uppercase
+				letter-spacing: 0.2px
+				&::before
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					z-index: -1
+					mask: url('../../images/product-single-badge.svg') no-repeat 100% 100%
+					mask-size: cover
+				&--green::before
+					background-image: linear-gradient(-248deg, #29b153 0%, #36a358 100%)
+				&--orange::before
+					background-image: linear-gradient(-248deg, #f98221 0%, #e8780c 100%)
+				&--red::before
+					background-image: linear-gradient(-248deg, #e53237 0%, #df2134 100%)
+				&--blue::before
+					background-image: linear-gradient(-248deg, #00bbdf 0%, #069cb9 100%)
+		&-photo
+			&-slider
+				width: 520px
+				border-radius: 5px
+				border: 1px solid $border
+				background-color: $white
+				+media-breakpoint-down(lg)
+					width: 100%
+			&-slide
+				position: relative
+				display: flex
+				align-items: center
+				justify-content: center
+				height: 316px
+				> img
+					width: 100%
+					height: 100%
+					object-fit: scale-down
+			&-zoom
+				margin-top: 30px
+				> a
+					display: flex
+					align-items: center
+					justify-content: center
+					color: $accent
+					font-weight: 600
+					&:hover
+						color: $orange
+					.icon
+						font-size: 16px
+						margin-right: 12px
+					span
+						font-size: 13px
+		&-thumbs
+			margin-top: 30px
+			&-slider
+				width: 520px
+				+media-breakpoint-down(lg)
+					width: 100%
+				.swiper-wrapper
+					display: flex
+					flex-wrap: wrap
+					margin-left: -4px
+					+media-breakpoint-down(lg)
+						margin-left: 0
+			&-slide
+				flex: 0 0 48px
+				position: relative
+				height: 40px
+				margin: 4px
+				padding: 8px
+				border-radius: 5px
+				border: 1px solid $border
+				transition: border .35s ease
+				+media-breakpoint-down(lg)
+					flex-basis: 43.7px
+				+media-breakpoint-down(md)
+					flex-basis: 46px
+				&:hover
+					cursor: pointer
+					border-color: rgba($accent, 0.35)
+				&.swiper-slide-thumb-active
+					border-color: $accent
+				> img
+					width: 100%
+					height: 100%
+					object-fit: scale-down
 
 	// Product Attributes
 	.product-attributes
@@ -60,6 +194,17 @@
 				color: $black
 			.name
 				font-weight: 600
+			.hint
+				width: 14px
+				height: 14px
+				margin-left: 8px
+				color: $accent
+				font-size: 14px
+				line-height: 1
+				transition: color .35s ease
+				&:hover
+					cursor: help
+					color: $orange
 
 	// Product Summary
 	.product-summary
@@ -277,6 +422,8 @@
 			max-height: 785px
 			padding-left: 15px
 			padding-right: 15px
+			+media-breakpoint-down(md)
+				max-height: 320px
 		&-item
 			display: flex
 			align-items: center
@@ -351,16 +498,18 @@
 						color: $orange
 						border-bottom-color: $orange
 			.hint
-				cursor: help
 				flex: 0 0 auto
 				margin-left: 8px
 				color: $accent
 				font-size: 18px
 				line-height: 1
+				transition: color .35s ease
+				&:hover
+					cursor: help
+					color: $orange
 
 	// Product Included
 	.product-included
-		margin-top: 50px
 		&-title
 			margin-bottom: 18px
 			line-height: 1.3
@@ -371,11 +520,17 @@
 			border-radius: 5px
 			box-shadow: $box-shadow
 			background-color: $white
+			+media-breakpoint-down(md)
+				padding: 15px 10px
 		&-item
 			flex: 0 0 16.66667%
 			display: flex
 			flex-direction: column
 			padding: 10px 17px
+			+media-breakpoint-down(md)
+				padding: 10px
+			+media-breakpoint-down(sm)
+				flex-basis: 33.33333%
 			.photo
 				position: relative
 				height: 105px
@@ -390,6 +545,9 @@
 				margin-top: 20px
 				text-align: center
 				line-height: 1.2
+				+media-breakpoint-down(md)
+					margin-top: 12px
+					font-size: 14px
 
 	// Product Description & Advantages
 	.product-description,
@@ -434,6 +592,8 @@
 			box-shadow: $box-shadow
 			background-color: $white
 			transition: border .35s ease
+			+media-breakpoint-down(md)
+				padding: 20px 20px 30px
 		&-head
 			display: flex
 			align-items: center
@@ -605,11 +765,16 @@
 			border-radius: 5px
 			box-shadow: $box-shadow
 			background-color: $white
+			+media-breakpoint-down(md)
+				padding: 30px 20px
 		&-section
 			&:not(:last-child)
 				margin-bottom: 30px
 				padding-bottom: 30px
 				border-bottom: 1px solid $border
+				+media-breakpoint-down(sm)
+					margin-bottom: 20px
+					padding-bottom: 20px
 		&-category
 			margin-bottom: 0
 		&-list
@@ -624,12 +789,18 @@
 			border-radius: 5px
 			border: 1px solid $border
 			background-color: $white
+			+media-breakpoint-down(md)
+				padding: 12px 20px
 			.product-checkbox
 				position: absolute
 				top: 50%
 				left: 30px
 				z-index: 2
 				margin-top: -16px
+				+media-breakpoint-down(md)
+					left: 25px
+				+media-breakpoint-down(sm)
+					left: 20px
 				.form-checkbox
 					&-label
 						margin: 0
@@ -638,6 +809,9 @@
 							width: 32px
 							height: 32px
 							background-color: $white
+							+media-breakpoint-down(sm)
+								width: 24px
+								height: 24px
 			.product-photo
 				position: relative
 				width: 100px
@@ -645,6 +819,8 @@
 				margin-left: 62px
 				border-radius: 5px
 				border: 1px solid $border
+				+media-breakpoint-down(sm)
+					margin-left: 44px
 				> img
 					width: 100%
 					height: 100%
@@ -652,22 +828,30 @@
 					object-fit: scale-down
 			.product-meta
 				margin-left: 40px
-				margin-right: 40px
+				margin-right: 20px
+				+media-breakpoint-down(md)
+					margin-left: 20px
 				.title
 					display: block
 					line-height: 1.2
+					+media-breakpoint-down(md)
+						font-size: 14px
 				.sku
 					display: inline-flex
 					margin-top: 20px
-					line-height: 1
+					line-height: 1.2
+					+media-breakpoint-down(md)
+						font-size: 12px
 					> div
-						> span
-							padding-left: 4px
 						&:not(:last-child)
 							margin-right: 30px
 			.product-price
+				flex: 0 0 auto
 				margin-left: auto
 				color: #a3a1a5
+				+media-breakpoint-down(sm)
+					span
+						display: block
 
 	// Product Delivery & Payments
 	.product-delivery
@@ -715,9 +899,10 @@
 			margin-bottom: 18px
 			line-height: 1.3
 		&-list
+			margin-bottom: -20px
 			> [class*="col"],
 			.col
-				margin-bottom: 20px
+				padding-bottom: 20px
 		&-file
 			display: flex
 			align-items: center
@@ -725,10 +910,16 @@
 			border-radius: 5px
 			box-shadow: $box-shadow
 			background-color: $white
+			+media-breakpoint-down(md)
+				padding: 20px
 			.file-type
+				flex: 0 0 auto
 				position: relative
 				width: 48px
 				height: 48px
+				+media-breakpoint-down(sm)
+					height: 40px
+					height: 40px
 				img
 					width: 100%
 					height: 100%
@@ -740,29 +931,239 @@
 				font-size: 16px
 				font-weight: 500
 				line-height: 1.2
+				+media-breakpoint-down(md)
+					font-size: 14px
 			.file-link
 				margin-left: auto
 				.btn
 					min-width: 140px
+					padding-left: 0
+					padding-right: 0
+					height: 46px
+					line-height: 44px
 					.icon
 						font-size: 12px
+					+media-breakpoint-down(md)
+						min-width: 52px
+						span
+							display: none
 
+	// Product Schemes
+	.product-schemes
+		margin-top: 50px
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+		&-list
+			margin-bottom: -30px
+			> [class*="col"],
+			.col
+				padding-bottom: 30px
+		&-item
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			padding: 25px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(sm)
+				padding: 0
+			&::after
+				content: '+'
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				display: flex
+				align-items: center
+				justify-content: center
+				border-radius: 5px
+				background-color: rgba(#4a7c86, 0.85)
+				color: $white
+				font-size: 32px
+				font-weight: 400
+				visibility: hidden
+				opacity: 0
+				transition: $trs
+			.scheme-photo
+				height: 150px
+				padding: 14px
+				border-radius: 5px
+				border: 1px solid $border
+				transition: border .35s ease
+				+media-breakpoint-down(sm)
+					height: 120px
+					padding: 15px
+					border: none
+				> img
+					width: 100%
+					height: 100%
+					object-fit: scale-down
+					transform: scale(1.01)
+					transition: transform .35s ease
+			&:hover
+				.scheme-photo
+					border-color: $trsp
+				&::after
+					visibility: visible
+					opacity: 1
 
+	// Product Certificates
+	.product-certificates
+		margin-top: 50px
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+		&-list
+			margin-bottom: -30px
+			> [class*="col"],
+			.col
+				padding-bottom: 30px
+		&-item
+			overflow: hidden
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			&::after
+				content: '+'
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				display: flex
+				align-items: center
+				justify-content: center
+				border-radius: 5px
+				background-color: rgba(#4a7c86, 0.85)
+				color: $white
+				font-size: 32px
+				font-weight: 400
+				visibility: hidden
+				opacity: 0
+				transition: $trs
+			&:hover
+				&::after
+					visibility: visible
+					opacity: 1
+			.scheme-photo
+				height: 310px
+				+media-breakpoint-down(md)
+					height: 200px
+				+media-breakpoint-down(sm)
+					height: 140px
+				> img
+					width: 100%
+					height: 100%
+					object-fit: cover
+					transition: border .35s ease
 
+	// Product Testimonials
+	.product-testimonials
+		// Customize card
+		.testimonials-card
+			position: relative
+			margin-bottom: 30px
+			padding: 30px 40px 40px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(sm)
+				padding: 30px
+			+media-breakpoint-down(xs)
+				padding: 30px 20px
+			&-header
+				display: flex
+				align-items: center
+				justify-content: space-between
+				+media-breakpoint-down(lg)
+					flex-direction: column
+					align-items: flex-start
+				.author
+					.name
+						margin-bottom: 8px
+						line-height: 1.3
+					.date
+						display: flex
+						align-items: center
+						line-height: 1
+						&-icon
+							margin-right: 10px
+							font-size: 12px
+			&-body
+				overflow: hidden
+				max-height: 90px
+				margin-top: 25px
+				color: $black
+				+media-breakpoint-down(xs)
+					margin-top: 15px
+				> p:last-child
+					margin-bottom: 0
+		// Customize section
+		&-wrapper
+			display: flex
+			flex-direction: column
+			align-items: center
 
+	// Product Return
+	.product-return
+		&-wrapper
+			display: flex
+		&-image
+			flex: 0 0 auto
+			display: flex
+			align-items: center
+			justify-content: center
+			height: 100%
+			padding: 30px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			+media-breakpoint-down(md)
+				padding: 20px
+			.photo
+				position: relative
+				width: 160px
+				height: 220px
+				padding: 20px
+				border-radius: 5px
+				border: 1px solid $border
+				> img
+					width: 100%
+					height: 100%
+					object-fit: scale-down
+		&-content
+			margin-left: 30px
+			.article
+				max-height: 245px
+				+media-breakpoint-down(md)
+					max-height: 220px
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				
+	// Popular Products slider
+	.products-slider
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+		&-inner
+			position: relative
+			.swiper-pagination
+				position: static
+				margin-top: 30px
+		&-container
+			margin: -25px 0
+			padding: 25px 0
+		.card-product
+			width: 100%
+			border: 1px solid $border
+			.card-attributes
+				display: none
+			&:hover
+				border-radius: 5px
+				border-color: $accent

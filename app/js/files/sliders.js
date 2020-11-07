@@ -425,4 +425,45 @@ jQuery(document).ready( function($) {
 		}
 	})
 
+	/**
+	 * Single Product: Products slider
+	 */
+	$('.product-single .products-slider-inner').each(function(index, element){
+		$(element).addClass('products-slider-inner-' + index)
+		var pickupSlider = new Swiper('.products-slider-inner-' + index + ' .products-slider-container', {
+			grabCursor: true,
+			loop: false,
+			speed: 750,
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.products-slider-inner-' + index +' .swiper-button-next',
+				prevEl: '.products-slider-inner-' + index +' .swiper-button-prev',
+			},
+			pagination: {
+				el: '.products-slider-inner-' + index +' .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+			breakpoints: {
+				375: {
+					slidesPerView: 2,
+					slidesPerGroup: 2,
+					spaceBetween: 15,
+				},
+				768: {
+					slidesPerView: 3,
+					slidesPerGroup: 3,
+					spaceBetween: 30,
+				},
+				992: {
+					slidesPerView: 4,
+					slidesPerGroup: 4,
+					spaceBetween: 30,
+				}
+			}
+		})
+	})
+
 })

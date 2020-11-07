@@ -189,12 +189,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 
 
-	/**
-	 *-------------------------------------------------------------------------------------------------------------------------------------------
-	 * Single Product: Sticky Product Complectation
-	 *-------------------------------------------------------------------------------------------------------------------------------------------
-	 */
-
 })
 
 
@@ -236,5 +230,48 @@ jQuery(document).ready( function($) {
 	 */
 	$('.filter-toggle-header._toggled, .widget-header._toggled').next().css('display', 'block')
 
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Single Product: Product Preview slider
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	var productPreviewThumbsSlider = new Swiper('.product-single .product-preview-thumbs-slider', {
+		allowTouchMove: false,
+		loop: false,
+		// slidesPerView: 7,
+		// slidesPerColumn: 2,
+	})
+
+	var productPreviewSlider = new Swiper('.product-single .product-preview-photo-slider', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true
+		},
+		grabCursor: true,
+		loop: false,
+		slidesPerView: 1,
+		// spaceBetween: 10,
+		thumbs: {
+			swiper: productPreviewThumbsSlider,
+		}
+	})
+
+	// Zoom preview photo
+	$('.product-preview-photo-zoom > a').on('click', function () {
+		var fullPreviewSrc = $('.product-preview-photo-slider .swiper-slide-active').data('product-full-preview')
+
+		$(this).attr('href', fullPreviewSrc)
+	})
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Move widgets (shop filters) into .clone-widgets wrapper
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	if( $('.clone-product-summary').length && window.matchMedia('(max-width: 991.98px)').matches ) {
+		$('.product-main-right').appendTo('.clone-product-summary')
+	}
 
 })
