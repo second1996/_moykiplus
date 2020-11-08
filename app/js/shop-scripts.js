@@ -189,6 +189,49 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 
 
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Single Product: Discount Modal (noUiSlider)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	var discountSlider = document.querySelector('#m-discount-slider');
+
+	if( typeof(discountSlider) != 'undefined' && discountSlider != null ) {
+		var discountSliderMin = parseInt( discountSlider.dataset.slidermin );
+		var discountSliderMax = parseInt( discountSlider.dataset.slidermax );
+		var discountSliderInputValue = document.querySelector('.discount-modal-slider-value');
+
+		// Create noUiSlide
+		noUiSlider.create(discountSlider, {
+			start: discountSliderMin + 1,
+			step: 1,
+			connect: [true, false],
+			range: {
+					'min': discountSliderMin,
+					'max': discountSliderMax
+			}
+		})
+
+		// Set default value
+		discountSliderInputValue.value = Math.round(discountSlider.noUiSlider.get()) + '%';
+
+		// Change value on toggle slider
+		discountSlider.noUiSlider.on('update', function (value) {
+			discountSliderInputValue.value = Math.round(value) + '%';
+			discountNewPrice(value);
+		})
+
+		// Write new price
+		function discountNewPrice(value) {
+			var productPriceEl = document.querySelector('.product-single .product-price .price-wrapper > ins').innerHTML;
+			var productPriceValue = parseInt(productPriceEl.replace(/\s+/g, ''), 10 );
+			var discountNewPriceInput = document.querySelector('.discount-modal-new-price');
+			var discountNewPriceValue = productPriceValue * Math.round(value) / 100;
+
+			discountNewPriceInput.value = Math.round(productPriceValue - discountNewPriceValue).toLocaleString('ru') + ' Руб.';
+		}
+	}
+
 })
 
 

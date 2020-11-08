@@ -1,17 +1,491 @@
 @import '../helpers/helpers'
 
 .s-cart
-	// Order Details table
-	&-order-details
-		margin-top: -30px
-		border-collapse: separate
-		border-spacing: 0 30px
-		tbody
-			> tr
-				box-shadow: $box-shadow
-				&:nth-child(odd),
-				&:nth-child(even)
+	// Order Details
+	&-order
+		&-head
+			display: flex
+			background-color: $accent
+			padding: 30px
+			border-radius: 5px
+			color: $white
+			font-size: 16px
+			font-weight: 500
+			line-height: 1.2
+			.order-product
+				flex: 0 0 420px
+				padding-right: 35px
+			.order-quantity
+				flex: 0 0 185px
+				padding: 0 35px
+			.order-price
+				flex: 1 1 25%
+				padding: 0 35px
+			.order-total
+				flex: 1 1 25%
+				padding-left: 35px
+		&-body
+		&-item
+			display: flex
+			margin-top: 30px
+			padding: 20px 30px
+			border-radius: 5px
+			border: 1px solid $white
+			box-shadow: $box-shadow
+			background-color: $white
+			transition: $trs
+			&:hover
+				border-color: $border
+				box-shadow: none
+			.order-item
+				position: relative
+				width: auto
+				max-width: 100%
+				> div
+					display: flex
+					align-items: center
+					height: 100%
+				&:not(:last-child)
+					&::after
+						content: ''
+						position: absolute
+						top: 0
+						left: 100%
+						width: 1px
+						height: 125px
+						border-right: 1px solid $border
+				&-product
+					flex: 0 0 420px
+				&-quantity
+					flex: 0 0 185px
+				&-price
+					flex: 1 1 25%
+				&-total
+					flex: 1 1 25%
+			// Product
+			.order-product
+				padding-right: 35px
+				&-inner
+					display: flex
+					align-items: center
+				&-photo
+					position: relative
+					width: 130px
+					height: 125px
+					border-radius: 5px
+					border: 1px solid $border
+					> img
+						width: 100%
+						height: 100%
+						padding: 10px
+						object-fit: scale-down
+				&-meta
+					margin-left: 30px
+					.title
+						display: block
+						color: $black
+						font-size: 16px
+						font-weight: 600
+						line-height: 1.3
+						text-decoration: none
+						&:hover
+							color: $orange
+					.stock
+						display: flex
+						align-items: center
+						margin-top: 12px
+						font-size: 13px
+						line-height: 1
+						color: #a3a1a5
+						&::before
+							content: ''
+							display: inline-block
+							width: 7px
+							height: 7px
+							margin-right: 5px
+							border-radius: 50%
+							background-color: #a3a1a5
+					.variation
+						display: flex
+						align-items: center
+						margin-top: 20px
+						&-color
+							overflow: hidden
+							width: 28px
+							height: 28px
+							border-radius: 2px
+							> img
+								width: 100%
+								height: 100%
+								object-fit: cover
+						&-meta
+							margin-left: 10px
+							.title
+								display: block
+								margin-bottom: 4px
+								color: $black
+								font-size: 13px
+								line-height: 1
+							.sku
+								display: block
+								color: #a3a1a5
+								font-size: 13px
+								line-height: 1
+			// Quantity
+			.order-quantity
+				padding: 0 35px
+				.quantity
+					display: flex
+					align-items: center
+					&-value
+						position: relative
+						z-index: 1
+						width: 56px
+						height: 30px
+						margin-bottom: 0
+						padding-left: 4px
+						padding-right: 4px
+						border-radius: 0
+						background-color: $white
+						border-top: 1px solid $border
+						border-bottom: 1px solid $border
+						color: $black
+						font-weight: 400
+						line-height: 1
+						text-align: center
+					&-minus,
+					&-plus
+						width: 30px
+						height: 30px
+						border: 1px solid $border
+						color: #8e8992
+						font-size: 18px
+						font-weight: 500
+						line-height: 1
+						&:hover
+							border-color: $accent
+							background-color: $accent
+							color: $white
+						&:active
+							background-color: lighten($accent, 10%)
+					&-minus
+						border-radius: 5px 0 0 5px
+					&-plus
+						border-radius: 0 5px 5px 0
+			// Price
+			.order-price
+				padding: 0 35px
+				.price
+					display: flex
+					flex-wrap: wrap
+					align-items: flex-end
+					line-height: 1
+					margin-top: -4px
+					> ins
+						margin-top: 4px
+						margin-right: 8px
+						color: $black
+						font-size: 18px
+						font-weight: 700
+						text-decoration: none
+					> del
+						margin-top: 4px
+						margin-bottom: 2px
+						color: #a3a1a4
+						font-size: 14px
+						font-weight: 500
+			// Total
+			.order-total
+				position: relative
+				padding-left: 35px
+				// button remove space
+				padding-right: 42px
+				.price
+					> ins
+						color: $black
+						font-size: 18px
+						font-weight: 700
+						text-decoration: none
+			// Remove button
+			.order-remove
+				position: absolute
+				top: 50%
+				right: 0
+				margin-top: -16px
+				.btn
+					width: 32px
+					min-width: auto
+					height: 32px
+					padding-left: 0
+					padding-right: 0
+					border: none
+					background-color: #d5d3d5
+					color: $white
+					line-height: 1
+					&:hover
+						background-color: #e71836
+						color: $white
+					&:active
+						background-color: darken(#e71836, 8%)
+						color: $white
+					.icon
+						font-size: 14px
+		// Remove all button
+		&-remove-all
+			margin-top: 30px
+			text-align: right
+			.remove-all
+				padding-bottom: 2px
+				border-bottom: 1px solid #e71836
+				color: #e71836
+				font-size: 16px
+				font-weight: 500
+				line-height: 1
+				&:hover
+					border-bottom-color: $accent
+					color: $accent
+		// Order Details bottom (Coupon & Summary)
+		&-bottom
+			display: flex
+			margin-top: 30px
+
+	// Order Coupon
+	&-coupon
+		flex: 1 1 auto
+		.form-coupon
+			width: 100%
+			&-wrapper
+				display: flex
+				align-items: center
+			&-label
+				margin-right: 14px
+				margin-bottom: 0
+				color: $black
+				font-size: 14px
+				font-weight: 600
+				line-height: 1.2
+			&-input
+				width: 250px
+				height: 48px
+				padding-right: 46px
+				margin-bottom: 0
+				border: 1px solid $border
+				background-color: $white
+				line-height: 46px
+				&:focus:required:invalid
+					border-color: #e71836
+					box-shadow: none
+				&:required:valid
+					box-shadow: none
+				&:focus
+					border-color: $accent
+				&--succes
+					border-color: $accent
+					background: $white url('../../images/icons/check.svg') no-repeat right 16px center/14px
+				&--error
+					border-color: #e71836
+					background: $white url('../../images/icons/error.svg') no-repeat right 16px center/14px
+					&:focus
+						border-color: #e71836
+			&-btn
+				height: 48px
+				margin: 0 20px
+				line-height: 1.2
+			&-discount
+				display: inline-flex
+				align-items: center
+				height: 48px
+				padding: 0 20px
+				border-radius: 5px
+				background-color: #e5f2e9
+				color: #2eac55
+				font-size: 14px
+				font-weight: 600
+				line-height: 1.2
+
+	// Order Summary
+	&-summary
+		flex: 0 0 auto
+		text-align: right
+		.summary-total
+			color: $black
+			font-size: 16px
+			font-weight: 500
+			line-height: 1.2
+			> span
+				padding-left: 4px
+				color: $accent
+				font-size: 24px
+				font-weight: 700
+		.summary-discount
+			margin-top: 10px
+			color: $black
+			font-size: 18px
+			font-weight: 500
+			line-height: 1.2
+			> span
+				padding-left: 4px
+				color: #2eac55
+
+	// Order Checkout
+	&-checkout
+		&-form
+		// Step
+		.checkout-step
+				&:not(:first-child)
+					margin-top: 40px
+				&-head
+					display: flex
+					align-items: center
+					.step-number
+						position: relative
+						display: inline-flex
+						align-items: center
+						justify-content: center
+						width: 24px
+						height: 24px
+						margin-right: 12px
+						border-radius: 50%
+						background-color: $accent
+						color: $white
+						font-size: 12px
+						font-weight: 600
+						line-height: 22px
+					.step-title
+						color: $black
+						font-size: 18px
+						font-weight: 600
+						line-height: 1.2
+				&-body
+					margin-top: 20px
+		// Regions
+		.checkout-region
+			display: flex
+			flex-wrap: wrap
+			margin: -3px
+			&-item
+				position: relative
+				margin: 3px
+				input[type="radio"]
+					overflow: hidden
+					position: absolute
+					clip: rect(1px, 1px, 1px, 1px)
+					clip-path: inset(50%)
+					width: 1px
+					height: 1px
+					margin: -1px
+					padding: 0
+					border: 0
+					word-wrap: normal
+				label
+					cursor: pointer
+					overflow: hidden
+					position: relative
+					display: inline-flex
+					align-items: center
+					margin-bottom: 0
+					border-radius: 6px
+					border: 1px solid $trsp
+					padding: 10px 20px
+					color: $black
+					font-size: 14px
+					font-weight: 500
+					line-height: 1.2
+					text-decoration: underline
+					transition: $trs
+					&:hover
+						color: $accent
+				input:checked + label
+					border-color: $border
 					background-color: $white
+					color: $accent
+					text-decoration: none
+		// Contacts
+		.checkout-contacts
+			padding: 40px 30px
+			border-radius: 5px
+			border: 1px solid $border
+			background-color: $white
+			.row-items
+				> [class*="col"],
+				> .col
+					margin-bottom: 20px
+			.switch-input-mask label,
+			.form-textarea
+				margin-bottom: 0
+		// List customize
+		.checkout-list
+			> li
+				display: flex
+				align-items: center
+				padding-top: 20px
+				padding-bottom: 20px
+				border-top: 1px solid $border
+				line-height: 1.2
+				&:last-child
+					border-bottom: 1px solid $border
+			&-checkbox
+				flex: 0 0 25%
+				padding-right: 10px
+				input:checked + label::after
+					box-shadow: none
+				label
+					margin-bottom: 0
+					color: $black
+					font-weight: 500
+			&-note
+				flex: 0 0 42%
+				padding-right: 10px
+			&-date
+				flex: 0 0 24%
+				display: flex
+				align-items: center
+				padding-right: 10px
+				> span
+					color: $black
+				&-picker
+					margin-left: auto
+					display: inline-flex
+					align-items: center
+					justify-content: center
+					min-width: 130px
+					height: 38px
+					padding-left: 18px
+					padding-right: 18px
+					border-radius: 5px
+					border: 1px solid $border
+					background-color: $white
+					line-height: 1.2
+					span
+						margin-right: 8px
+						color: $black
+						font-weight: 500
+					.icon
+						margin-left: auto
+						color: $accent
+						font-size: 15px
+			&-cost
+				flex: 0 0 9%
+				font-size: 16px
+				color: $accent
+				font-weight: 600
+				text-align: right
+		// Additional Information
+		.checkout-additional
+			margin-top: 60px
+			.row-items
+				> [class*="col"],
+				> .col
+					margin-bottom: 20px
+			.form-control
+				border: 1px solid $accent
+				&:focus:required:invalid
+					border-color: #e71836
+					box-shadow: none
+				&:required:valid
+					box-shadow: none
+				&:focus
+					border-color: $accent
 
 	// Cart Guide
 	&-guide

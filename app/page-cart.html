@@ -38,38 +38,422 @@
 			<!-- Shop Cart -->
 			<div class="s-cart">
 
-				<!-- Shop Cart General form -->
-				<form action="#" method="POST" class="s-cart-form">
-					<!-- Order details -->
-					<table class="s-cart-order-details">
-						<thead>
-							<tr>
-								<th>Товар</th>
-								<th>Количество</th>
-								<th>Цена за шт, Руб.</th>
-								<th>Стоимость, Руб.</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="order-product" width="40%">
-									<div class="order-checkbox">checkbox</div>
-									Product
-								</td>
-								<td class="order-quantity">
-									Quantity
-								</td>
-								<td class="order-price">
-									Price for peace
-								</td>
-								<td class="order-total">
-									Total price
-								<div class="order-remove">Remove button</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</form>
+				<!-- Order Summary -->
+				<div class="s-cart-order">
+					<div class="s-cart-order-head">
+						<div class="order-product">Товар</div>
+						<div class="order-quantity">Количество</div>
+						<div class="order-price">Цена за шт, Руб.</div>
+						<div class="order-total">Стоимость, Руб.</div>
+					</div><!-- /.s-cart-order-head -->
+					<div class="s-cart-order-body">
+						<form action="#" method="POST" class="s-cart-order-item">
+							<div class="order-item order-item-product">
+								<div class="order-product" width="40%">
+									<div class="order-product-inner">
+										<div class="order-product-photo">
+											<img class="lazy" data-src="images/products/product-2.jpg" alt="Кухонная мойка Blanco Zia 40S">
+											<div class="lazy-preloader"></div>
+										</div>
+										<div class="order-product-meta">
+											<a href="page-single-product.html" class="title">Кухонная мойка Blanco Zia 40S</a>
+											<span class="stock in-stock">В наличии</span>
+											<div class="variation">
+												<div class="variation-color">
+													<img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет">
+												</div>
+												<div class="variation-meta">
+													<span class="title">Классик</span>
+													<span class="sku">Арт: 7602</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.order-product -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-quantity">
+								<div class="order-quantity">
+									<div class="quantity">
+										<button type="button" class="quantity-minus">-</button>
+										<input type="text" class="quantity-value form-control" name="quantity" value="1 шт." data-quantity-value="1" step="1" min="1" max="99" title="Количество" readonly>
+										<button type="button" class="quantity-plus">+</button>
+									</div>
+								</div><!-- /.order-quantity -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-price">
+								<div class="order-price">
+									<div class="price">
+										<ins>35 500 Руб.</ins>
+										<del>36 500 Руб.</del>
+									</div>
+								</div><!-- /.order-price -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-total">
+								<div class="order-total">
+									<div class="price">
+										<ins>35 500 Руб.</ins>
+									</div>
+									<div class="order-remove">
+										<button type="button" class="btn btn-remove">
+											<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+										</button>
+									</div>
+								</div><!-- /.order-total -->
+							</div><!-- /.order-item -->
+						</form><!-- /.s-cart-order-item -->
+						<form action="#" method="POST" class="s-cart-order-item">
+							<div class="order-item order-item-product">
+								<div class="order-product" width="40%">
+									<div class="order-product-inner">
+										<div class="order-product-photo">
+											<img class="lazy" data-src="images/products/product-3.jpg" alt="Кухонная мойка Blanco Zia 40S">
+											<div class="lazy-preloader"></div>
+										</div>
+										<div class="order-product-meta">
+											<a href="page-single-product.html" class="title">Кухонная мойка Blanco Zia 40S</a>
+											<span class="stock in-stock">В наличии</span>
+											<div class="variation">
+												<div class="variation-color">
+													<img class="lazy" data-src="images/products/filter-color-green.jpg" alt="Красный цвет">
+												</div>
+												<div class="variation-meta">
+													<span class="title">Классик</span>
+													<span class="sku">Арт: SKD80794-U</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.order-product -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-quantity">
+								<div class="order-quantity">
+									<div class="quantity">
+										<button type="button" class="quantity-minus">-</button>
+										<input type="text" class="quantity-value form-control" name="quantity" value="1 шт." data-quantity-value="1" step="1" min="1" max="99" title="Количество" readonly>
+										<button type="button" class="quantity-plus">+</button>
+									</div>
+								</div><!-- /.order-quantity -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-price">
+								<div class="order-price">
+									<div class="price">
+										<ins>126 000 Руб.</ins>
+									</div>
+								</div><!-- /.order-price -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-total">
+								<div class="order-total">
+									<div class="price">
+										<ins>126 000 Руб.</ins>
+									</div>
+									<div class="order-remove">
+										<button type="button" class="btn btn-remove">
+											<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+										</button>
+									</div>
+								</div><!-- /.order-total -->
+							</div><!-- /.order-item -->
+						</form><!-- /.s-cart-order-item -->
+						<form action="#" method="POST" class="s-cart-order-item">
+							<div class="order-item order-item-product">
+								<div class="order-product" width="40%">
+									<div class="order-product-inner">
+										<div class="order-product-photo">
+											<img class="lazy" data-src="images/products/product-2.jpg" alt="Кухонная мойка Blanco Zia 40S">
+											<div class="lazy-preloader"></div>
+										</div>
+										<div class="order-product-meta">
+											<a href="page-single-product.html" class="title">Кухонная мойка Blanco Zia 40S</a>
+											<span class="stock in-stock">В наличии</span>
+											<div class="variation">
+												<div class="variation-color">
+													<img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет">
+												</div>
+												<div class="variation-meta">
+													<span class="title">Классик</span>
+													<span class="sku">Арт: 7602</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.order-product -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-quantity">
+								<div class="order-quantity">
+									<div class="quantity">
+										<button type="button" class="quantity-minus">-</button>
+										<input type="text" class="quantity-value form-control" name="quantity" value="1 шт." data-quantity-value="1" step="1" min="1" max="99" title="Количество" readonly>
+										<button type="button" class="quantity-plus">+</button>
+									</div>
+								</div><!-- /.order-quantity -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-price">
+								<div class="order-price">
+									<div class="price">
+										<ins>9 600 Руб.</ins>
+										<del>12 300 Руб.</del>
+									</div>
+								</div><!-- /.order-price -->
+							</div><!-- /.order-item -->
+							<div class="order-item order-item-total">
+								<div class="order-total">
+									<div class="price">
+										<ins>9 600 Руб.</ins>
+									</div>
+									<div class="order-remove">
+										<button type="button" class="btn btn-remove">
+											<svg class="icon icon-close"><use xlink:href="images/symbol-defs.svg#close"></use></svg>
+										</button>
+									</div>
+								</div><!-- /.order-total -->
+							</div><!-- /.order-item -->
+						</form><!-- /.s-cart-order-item -->
+						<div class="s-cart-order-remove-all">
+							<button type="button" class="remove-all">Удалить всё</button>
+						</div>
+					</div><!-- /.s-cart-order-body -->
+					<div class="s-cart-order-bottom">
+						<!-- Coupon -->
+						<div class="s-cart-coupon">
+							<form action="#" method="POST" class="s-cart-coupon-form form form-coupon">
+								<div class="form-coupon-wrapper">
+									<label for="order-coupon" class="form-coupon-label">Купон для скидки</label>
+									<input type="text" class="form-control form-coupon-input form-coupon-input--succes" value="5A24Z8Q" id="order-coupon" name="order-coupon" required autocomplete="off">
+									<!-- <input type="text" class="form-control form-coupon-input form-coupon-input--error" value="5A24Z8Q" id="order-coupon" name="order-coupon" required autocomplete="off"> -->
+									<button type="submit" class="form-coupon-btn btn btn-primary">Применить</button>
+									<div class="form-coupon-discount">Скидка: -15%</div>
+								</div>
+							</form>
+						</div><!-- /.s-cart-coupon -->
+						<!-- Summary -->
+						<div class="s-cart-summary">
+							<div class="summary-total">Итого: <span>85 900 Руб.</span>
+							</div>
+							<div class="summary-discount">Ваша выгода: <span>2 300 Руб.</span>
+							</div>
+						</div><!-- /.s-cart-summary -->
+					</div><!-- /.s-cart-order-bottom -->
+				</div><!-- /.s-cart-order -->
+
+				<!-- Order Checkout -->
+				<div class="s-cart-checkout">
+					<!-- Tabs -->
+
+					<!-- Tabs content -->
+					<form action="#" method="POST" class="s-cart-checkout-form form">
+						<div class="checkout-step">
+							<div class="checkout-step-head">
+								<span class="step-number">1</span>
+								<span class="step-title">Регион доставки:</span>
+							</div>
+							<div class="checkout-step-body">
+								<div class="checkout-region">
+									<div class="checkout-region-item">
+										<input type="radio" id="checkout-region-1" name="checkout-region[]" checked>
+										<label for="checkout-region-1">Москва</label>
+									</div>
+									<div class="checkout-region-item">
+										<input type="radio" id="checkout-region-2" name="checkout-region[]">
+										<label for="checkout-region-2">Московская область</label>
+									</div>
+									<div class="checkout-region-item">
+										<input type="radio" id="checkout-region-3" name="checkout-region[]">
+										<label for="checkout-region-3">Другой регион России</label>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.checkout-step -->
+						<div class="checkout-step">
+							<div class="checkout-step-head">
+								<span class="step-number">2</span>
+								<span class="step-title">Контактнаяя информация:</span>
+							</div>
+							<div class="checkout-step-body">
+								<div class="checkout-contacts">
+									<div class="row row-items">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-contacts-name" class="form-label">Ваше имя</label>
+												<input type="text" class="form-control" id="checkout-contacts-name" required>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-contacts-email" class="form-label"> Ваш Email</label>
+												<input type="email" class="form-control" id="checkout-contacts-email" required>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-contacts-phone" class="form-label">Ваш телефон</label>
+												<input type="tel" class="form-control" id="checkout-contacts-phone" placeholder="+7 (___) ___-__-__" minlength="11" required autocomplete="off">
+												<div class="form-checkbox switch-input-mask">
+													<input type="checkbox" name="checkout-contacts-phone-mask" id="checkout-contacts-phone-mask" checked>
+													<label for="checkout-contacts-phone-mask" class="form-checkbox-label">Отобразить маску ввода номера телефона</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-contacts-adress" class="form-label"> Ваш Адрес</label>
+												<input type="text" class="form-control" id="checkout-contacts-adress" required>
+											</div>
+										</div>
+									</div><!-- /.row -->
+									<div class="form-group">
+										<label for="checkout-contacts-message" class="form-label">Комментарий</label>
+										<textarea class="form-textarea" id="checkout-contacts-message"></textarea>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.checkout-step -->
+						<div class="checkout-step">
+							<div class="checkout-step-head">
+								<span class="step-number">3</span>
+								<span class="step-title">Доставка:</span>
+							</div>
+							<div class="checkout-step-body">
+								<ul class="checkout-list">
+									<li>
+										<div class="checkout-list-checkbox form-radio">
+											<input type="radio" name="checkout-shipping[]" id="checkout-shipping-1" checked>
+											<label for="checkout-shipping-1" class="form-checkbox-label">Курьерская служба по Москве</label>
+										</div>
+										<div class="checkout-list-note">Доставка курьером для Москвы и Московской области</div>
+										<div class="checkout-list-date">
+											<span>Дата доставки:</span>
+											<div class="checkout-list-date-picker">
+												<span>15 ноября</span>
+												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
+											</div>
+										</div>
+										<div class="checkout-list-cost">300 Руб.</div>
+									</li>
+									<li>
+										<div class="checkout-list-checkbox form-radio">
+											<input type="radio" name="checkout-shipping[]" id="checkout-shipping-2">
+											<label for="checkout-shipping-2" class="form-checkbox-label">Транспортной компанией</label>
+										</div>
+										<div class="checkout-list-note">Доставка транспортной компанией</div>
+										<div class="checkout-list-date">
+											<span>Дата доставки:</span>
+											<div class="checkout-list-date-picker">
+												<span>23 ноября</span>
+												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
+											</div>
+										</div>
+										<div class="checkout-list-cost">500 Руб.</div>
+									</li>
+									<li>
+										<div class="checkout-list-checkbox form-radio">
+											<input type="radio" name="checkout-shipping[]" id="checkout-shipping-3">
+											<label for="checkout-shipping-3" class="form-checkbox-label">Самовывоз</label>
+										</div>
+										<div class="checkout-list-note">Самовывоз из склада, по адесу ул. Дорожная 3стр. 3А</div>
+										<div class="checkout-list-date">
+											<span>Дата самовывоза:</span>
+											<div class="checkout-list-date-picker">
+												<span>25 ноября</span>
+												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
+											</div>
+										</div>
+										<div class="checkout-list-cost">Бесплатно</div>
+									</li>
+								</ul>
+							</div>
+						</div><!-- /.checkout-step -->
+						<div class="checkout-step">
+							<div class="checkout-step-head">
+								<span class="step-number">4</span>
+								<span class="step-title">Оплата:</span>
+							</div>
+							<div class="checkout-step-body">
+								<ul class="checkout-list">
+									<li>
+										<div class="checkout-list-checkbox form-radio">
+											<input type="radio" name="checkout-payment[]" id="checkout-payment-1" checked>
+											<label for="checkout-payment-1" class="form-checkbox-label">Наличными при получении</label>
+										</div>
+										<div class="checkout-list-note">Наличными при получении товара</div>
+									</li>
+									<li>
+										<div class="checkout-list-checkbox form-radio">
+											<input type="radio" name="checkout-payment[]" id="checkout-payment-2">
+											<label for="checkout-payment-2" class="form-checkbox-label">Оплата online</label>
+										</div>
+										<div class="checkout-list-note">Оплата online при оформлении заказа</div>
+									</li>
+									<li>
+										<div class="checkout-list-checkbox form-radio">
+											<input type="radio" name="checkout-payment[]" id="checkout-payment-3">
+											<label for="checkout-payment-3" class="form-checkbox-label">Безналичный расчет </label>
+										</div>
+										<div class="checkout-list-note">Безналичный расчет </div>
+									</li>
+								</ul>
+							</div>
+						</div><!-- /.checkout-step -->
+						<!-- Additional Information-->
+						<div class="checkout-additional">
+							<div class="row row-items">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-ip" class="form-label">Компания/ ИП</label>
+										<input type="text" class="form-control" id="checkout-additional-ip" placeholder="Компания/ ИП" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-ogrn" class="form-label">ОГРН/ ОГРНИП</label>
+										<input type="text" class="form-control" id="checkout-additional-ogrn" placeholder="ОГРН/ ОГРНИП" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-inn" class="form-label">ИНН</label>
+										<input type="text" class="form-control" id="checkout-additional-inn" placeholder="ИНН" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-rs" class="form-label">Р/С</label>
+										<input type="text" class="form-control" id="checkout-additional-rs" placeholder="Р/С" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-bank" class="form-label">Банк получателя</label>
+										<input type="text" class="form-control" id="checkout-additional-bank" placeholder="Банк получателя" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-bik" class="form-label">БИК</label>
+										<input type="text" class="form-control" id="checkout-additional-bik" placeholder="БИК" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-ks" class="form-label">К/С</label>
+										<input type="text" class="form-control" id="checkout-additional-ks" placeholder="К/С" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-inn-bank" class="form-label">ИНН (банка)</label>
+										<input type="text" class="form-control" id="checkout-additional-inn-bank" placeholder="ИНН (банка)" required>
+									</div>
+								</div><!-- /.col -->
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label for="checkout-additional-kpp-bank" class="form-label">КПП (банка)</label>
+										<input type="text" class="form-control" id="checkout-additional-kpp-bank" placeholder="КПП (банка)" required>
+									</div>
+								</div><!-- /.col -->
+							</div><!-- /.row -->
+						</div><!-- /.checkout-additional -->
+					</form>
+				</div><!-- /.s-cart-checkout -->
 
 				<!-- Shop Cart Guide -->
 				<div class="s-cart-guide mt-60">

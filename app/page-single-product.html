@@ -305,7 +305,7 @@
 									</div>
 									<div class="product-summary-section">
 										<div class="product-price">
-											<a href="#" class="discount" data-toggle="modal">
+											<a href="#productDiscount" class="discount" data-toggle="modal">
 												<svg class="icon icon-percent"><use xlink:href="images/symbol-defs.svg#percent"></use></svg>
 												<span class="text c-black w-medium">Запрос на уменьшение цены, это легко! <strong class="c-red">Скидка до 15%</strong></span>
 											</a>
@@ -335,7 +335,7 @@
 											</a>
 										</div>
 										<div class="product-cheaper">
-											<button type="button" class="btn btn-primary-outline" data-target="#" data-toggle="modal">Нашли дешевле?</button>
+											<button type="button" class="btn btn-primary-outline" data-target="#productCheaper" data-toggle="modal">Нашли дешевле?</button>
 										</div>
 										<div class="product-quick-order">
 											<form action="#" method="POST" class="form quick-order">
@@ -2133,5 +2133,133 @@
 
 		</div><!-- /.container -->
 	</main>
+
+	<!-- Modal: Запрос на уменьшение цены -->
+	<div class="modal discount-modal fade" id="productDiscount" tabindex="-1" aria-labelledby="productDiscountLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="productDiscountLabel">Запрос на уменьшение цены</h5>
+					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="POST" class="form">
+						<div class="form-group">
+							<label for="m-discount-product" class="form-label">Товар</label>
+							<input type="text" class="form-control" id="m-discount-product" name="m-discount-product" value="Мойка для кухни Longran" readonly required>
+						</div>
+						<div class="form-group">
+							<label for="m-discount-variation" class="form-label">Модификации</label>
+							<select class="form-select" id="m-discount-variation" required>
+								<option value="" selected>Выберите модификацию</option>
+								<option value="Песочный">Песочный</option>
+								<option value="Черный">Черный</option>
+								<option value="Грей">Грей</option>
+								<option value="Жасмин">Жасмин</option>
+								<option value="Шампань">Шампань</option>
+								<option value="Мокко">Мокко</option>
+							</select>
+						</div>
+						<div class="form-group form-group-slider">
+							<label for="m-discount-value" class="form-label">Запрос на скидку</label>
+							<div id="m-discount-slider" data-slidermin="10" data-slidermax="15"></div>
+						</div>
+						<div class="form-group">
+							<label for="m-discount-value" class="form-label">Величина скидки</label>
+							<input type="text" class="form-control discount-modal-slider-value" id="m-discount-value" name="m-discount-value" required readonly>
+						</div>
+						<div class="form-group">
+							<label for="m-discount-new-price" class="form-label">Новая цена</label>
+							<input type="text" class="form-control discount-modal-new-price" id="m-discount-new-price" name="m-discount-new-price" required readonly>
+						</div>
+						<div class="form-group">
+							<label for="m-discount-name" class="form-label">Ваше имя</label>
+							<input type="text" class="form-control" id="m-discount-name" name="m-discount-name" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="m-discount-phone" class="form-label">Ваш телефон</label>
+							<input type="tel" class="form-control" id="m-discount-phone" placeholder="+7 (___) ___-__-__" minlength="11" required autocomplete="off">
+							<div class="form-checkbox switch-input-mask">
+								<input type="checkbox" name="m-discount-phone-mask" id="m-discount-phone-mask" checked>
+								<label for="m-discount-phone-mask" class="form-checkbox-label">Отобразить маску ввода номера телефона</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="m-discount-email" class="form-label">Ваш E-mail</label>
+							<input type="email" class="form-control" id="m-discount-email" name="m-discount-email" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="m-discount-message" class="form-label">Комментарий</label>
+							<textarea class="form-textarea" id="m-discount-message"></textarea>
+						</div>
+						<div class="form-group form-checkbox">
+							<input type="checkbox" name="m-discount-policy" id="m-discount-policy" required>
+							<label for="m-discount-policy" class="form-checkbox-label">Я подтверждаю, что ознакомлен и согласен с условиями предоставления даных</label>
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn btn-primary">Заказать</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal: Нашли дешевле? -->
+	<div class="modal discount-modal fade" id="productCheaper" tabindex="-1" aria-labelledby="productCheaperLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="productCheaperLabel">Предложите свою цену</h5>
+					<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true"></span>
+						<span aria-hidden="true"></span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form action="#" method="POST" class="form">
+						<div class="form-group">
+							<label for="m-cheaper-product" class="form-label">Товар</label>
+							<input type="text" class="form-control" id="m-cheaper-product" value="Мойка для кухни Longran" readonly required>
+						</div>
+						<div class="form-group">
+							<label for="m-cheaper-name" class="form-label">Ваше имя</label>
+							<input type="text" class="form-control" id="m-cheaper-name" name="m-cheaper-name" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="m-cheaper-phone" class="form-label">Ваш телефон</label>
+							<input type="tel" class="form-control" id="m-cheaper-phone" placeholder="+7 (___) ___-__-__" minlength="11" required autocomplete="off">
+							<div class="form-checkbox switch-input-mask">
+								<input type="checkbox" name="m-cheaper-phone-mask" id="m-cheaper-phone-mask" checked>
+								<label for="m-cheaper-phone-mask" class="form-checkbox-label">Отобразить маску ввода номера телефона</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="m-cheaper-email" class="form-label">Ваш E-mail</label>
+							<input type="email" class="form-control" id="m-cheaper-email" name="m-cheaper-email" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="m-cheaper-new-price" class="form-label">Ваша цена</label>
+							<input type="text" class="form-control" id="m-cheaper-new-price" name="m-cheaper-new-price" data-mask="000000" required autocomplete="off">
+						</div>
+						<div class="form-group">
+							<label for="m-cheaper-message" class="form-label">Комментарий</label>
+							<textarea class="form-textarea" id="m-cheaper-message"></textarea>
+						</div>
+						<div class="form-group form-checkbox">
+							<input type="checkbox" name="m-cheaper-policy" id="m-cheaper-policy" required>
+							<label for="m-cheaper-policy" class="form-checkbox-label">Я подтверждаю, что ознакомлен и согласен с условиями предоставления даных</label>
+						</div>
+						<div class="form-submit">
+							<button type="submit" class="btn btn-primary">Заказать</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	@@include('_footer.html')
