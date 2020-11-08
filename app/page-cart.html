@@ -38,7 +38,7 @@
 			<!-- Shop Cart -->
 			<div class="s-cart">
 
-				<!-- Order Summary -->
+				<!-- Order -->
 				<div class="s-cart-order">
 					<div class="s-cart-order-head">
 						<div class="order-product">Товар</div>
@@ -227,10 +227,8 @@
 						</div><!-- /.s-cart-coupon -->
 						<!-- Summary -->
 						<div class="s-cart-summary">
-							<div class="summary-total">Итого: <span>85 900 Руб.</span>
-							</div>
-							<div class="summary-discount">Ваша выгода: <span>2 300 Руб.</span>
-							</div>
+							<div class="summary-total">Итого: <span>85 900 Руб.</span></div>
+							<div class="summary-discount">Ваша выгода: <span>2 300 Руб.</span></div>
 						</div><!-- /.s-cart-summary -->
 					</div><!-- /.s-cart-order-bottom -->
 				</div><!-- /.s-cart-order -->
@@ -238,221 +236,307 @@
 				<!-- Order Checkout -->
 				<div class="s-cart-checkout">
 					<!-- Tabs -->
-
+					<nav class="tabs">
+						<div class="nav nav-tabs" role="tablist">
+							<a class="nav-link active" id="checkout-quick-order-tab" data-toggle="tab" href="#checkout-quick-order" role="tab" aria-controls="checkout-quick-order" aria-selected="false">Быстрое оформление заказа</a>
+							<a class="nav-link" id="checkout-full-order-tab" data-toggle="tab" href="#checkout-full-order" role="tab" aria-controls="checkout-full-order" aria-selected="true">Полное оформление заказа</a>
+						</div>
+					</nav><!-- /.tabs-nav -->
 					<!-- Tabs content -->
-					<form action="#" method="POST" class="s-cart-checkout-form form">
-						<div class="checkout-step">
-							<div class="checkout-step-head">
-								<span class="step-number">1</span>
-								<span class="step-title">Регион доставки:</span>
-							</div>
-							<div class="checkout-step-body">
-								<div class="checkout-region">
-									<div class="checkout-region-item">
-										<input type="radio" id="checkout-region-1" name="checkout-region[]" checked>
-										<label for="checkout-region-1">Москва</label>
+					<div class="tab-content">
+						<!-- Quick order -->
+						<div class="tab-pane fade show active" id="checkout-quick-order" role="tabpanel" aria-labelledby="checkout-quick-order-tab">
+							<form action="#" method="POST" class="s-cart-checkout-form form">
+								<div class="row row-items">
+									<div class="col-md-6">
+										<div class="checkout-summary-box">
+											<h4 class="checkout-summary-box-title c-black text-md w-bold">Заполните данные</h4>
+											<div class="checkout-summary">
+												<div class="form-group">
+													<label for="checkout-quick-name" class="form-label">Ваше имя</label>
+													<input type="text" class="form-control" id="checkout-quick-name" required>
+												</div>
+												<div class="form-group">
+													<label for="checkout-quick-phone" class="form-label">Ваш телефон</label>
+													<input type="tel" class="form-control" id="checkout-quick-phone" placeholder="+7 (___) ___-__-__" minlength="11" required autocomplete="off">
+													<div class="form-checkbox switch-input-mask">
+														<input type="checkbox" name="checkout-quick-phone-mask" id="checkout-quick-phone-mask" checked>
+														<label for="checkout-quick-phone-mask" class="form-checkbox-label">Отобразить маску ввода номера телефона</label>
+													</div>
+												</div>
+											</div>
+										</div><!-- /.checkout-summary-box -->
+									</div><!-- /.col -->
+									<div class="col-md-6">
+										<div class="checkout-summary-box">
+											<h4 class="checkout-summary-box-title c-black text-md w-bold">Наши гарантии</h4>
+											<div class="checkout-summary-warranty">
+												<div class="warranty-icon">
+													<img class="lazy" data-src="images/icons/warranty.svg" alt="14 дней на возврат">
+												</div>
+												<p class="warranty-text"><span>14 дней на возврат</span> денег без вопросов если товар не подошел</p>
+											</div>
+										</div><!-- /.checkout-summary-box -->
+									</div><!-- /.col -->
+								</div><!-- /.row -->
+							</form><!-- /.s-cart-checkout-form -->
+						</div><!-- /.tab-pane -->
+						<!-- Full order -->
+						<div class="tab-pane fade" id="checkout-full-order" role="tabpanel" aria-labelledby="checkout-full-order-tab">
+							<form action="#" method="POST" class="s-cart-checkout-form form">
+								<div class="checkout-step">
+									<div class="checkout-step-head">
+										<span class="step-number">1</span>
+										<span class="step-title">Регион доставки:</span>
 									</div>
-									<div class="checkout-region-item">
-										<input type="radio" id="checkout-region-2" name="checkout-region[]">
-										<label for="checkout-region-2">Московская область</label>
+									<div class="checkout-step-body">
+										<div class="checkout-region">
+											<div class="checkout-region-item">
+												<input type="radio" id="checkout-region-1" name="checkout-region[]" checked>
+												<label for="checkout-region-1">Москва</label>
+											</div>
+											<div class="checkout-region-item">
+												<input type="radio" id="checkout-region-2" name="checkout-region[]">
+												<label for="checkout-region-2">Московская область</label>
+											</div>
+											<div class="checkout-region-item">
+												<input type="radio" id="checkout-region-3" name="checkout-region[]">
+												<label for="checkout-region-3">Другой регион России</label>
+											</div>
+										</div>
 									</div>
-									<div class="checkout-region-item">
-										<input type="radio" id="checkout-region-3" name="checkout-region[]">
-										<label for="checkout-region-3">Другой регион России</label>
+								</div><!-- /.checkout-step -->
+								<div class="checkout-step">
+									<div class="checkout-step-head">
+										<span class="step-number">2</span>
+										<span class="step-title">Контактнаяя информация:</span>
 									</div>
-								</div>
-							</div>
-						</div><!-- /.checkout-step -->
-						<div class="checkout-step">
-							<div class="checkout-step-head">
-								<span class="step-number">2</span>
-								<span class="step-title">Контактнаяя информация:</span>
-							</div>
-							<div class="checkout-step-body">
-								<div class="checkout-contacts">
+									<div class="checkout-step-body">
+										<div class="checkout-contacts">
+											<div class="row row-items">
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="checkout-contacts-name" class="form-label">Ваше имя</label>
+														<input type="text" class="form-control" id="checkout-contacts-name" required>
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="checkout-contacts-email" class="form-label"> Ваш Email</label>
+														<input type="email" class="form-control" id="checkout-contacts-email" required>
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="checkout-contacts-phone" class="form-label">Ваш телефон</label>
+														<input type="tel" class="form-control" id="checkout-contacts-phone" placeholder="+7 (___) ___-__-__" minlength="11" required autocomplete="off">
+														<div class="form-checkbox switch-input-mask">
+															<input type="checkbox" name="checkout-contacts-phone-mask" id="checkout-contacts-phone-mask" checked>
+															<label for="checkout-contacts-phone-mask" class="form-checkbox-label">Отобразить маску ввода номера телефона</label>
+														</div>
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group">
+														<label for="checkout-contacts-adress" class="form-label"> Ваш Адрес</label>
+														<input type="text" class="form-control" id="checkout-contacts-adress" required>
+													</div>
+												</div>
+											</div><!-- /.row -->
+											<div class="form-group">
+												<label for="checkout-contacts-message" class="form-label">Комментарий</label>
+												<textarea class="form-textarea" id="checkout-contacts-message"></textarea>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.checkout-step -->
+								<div class="checkout-step">
+									<div class="checkout-step-head">
+										<span class="step-number">3</span>
+										<span class="step-title">Доставка:</span>
+									</div>
+									<div class="checkout-step-body">
+										<ul class="checkout-list">
+											<li>
+												<div class="checkout-list-checkbox form-radio">
+													<input type="radio" name="checkout-shipping[]" id="checkout-shipping-1" checked>
+													<label for="checkout-shipping-1" class="form-checkbox-label">Курьерская служба по Москве</label>
+												</div>
+												<div class="checkout-list-note">Доставка курьером для Москвы и Московской области</div>
+												<div class="checkout-list-date">
+													<span>Дата доставки:</span>
+													<div class="checkout-list-date-picker">
+														<span>15 ноября</span>
+														<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
+													</div>
+												</div>
+												<div class="checkout-list-cost">300 Руб.</div>
+											</li>
+											<li>
+												<div class="checkout-list-checkbox form-radio">
+													<input type="radio" name="checkout-shipping[]" id="checkout-shipping-2">
+													<label for="checkout-shipping-2" class="form-checkbox-label">Транспортной компанией</label>
+												</div>
+												<div class="checkout-list-note">Доставка транспортной компанией</div>
+												<div class="checkout-list-date">
+													<span>Дата доставки:</span>
+													<div class="checkout-list-date-picker">
+														<span>23 ноября</span>
+														<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
+													</div>
+												</div>
+												<div class="checkout-list-cost">500 Руб.</div>
+											</li>
+											<li>
+												<div class="checkout-list-checkbox form-radio">
+													<input type="radio" name="checkout-shipping[]" id="checkout-shipping-3">
+													<label for="checkout-shipping-3" class="form-checkbox-label">Самовывоз</label>
+												</div>
+												<div class="checkout-list-note">Самовывоз из склада, по адесу ул. Дорожная 3стр. 3А</div>
+												<div class="checkout-list-date">
+													<span>Дата самовывоза:</span>
+													<div class="checkout-list-date-picker">
+														<span>25 ноября</span>
+														<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
+													</div>
+												</div>
+												<div class="checkout-list-cost">Бесплатно</div>
+											</li>
+										</ul>
+									</div>
+								</div><!-- /.checkout-step -->
+								<div class="checkout-step">
+									<div class="checkout-step-head">
+										<span class="step-number">4</span>
+										<span class="step-title">Оплата:</span>
+									</div>
+									<div class="checkout-step-body">
+										<ul class="checkout-list">
+											<li>
+												<div class="checkout-list-checkbox form-radio">
+													<input type="radio" name="checkout-payment[]" id="checkout-payment-1" checked>
+													<label for="checkout-payment-1" class="form-checkbox-label">Наличными при получении</label>
+												</div>
+												<div class="checkout-list-note">Наличными при получении товара</div>
+											</li>
+											<li>
+												<div class="checkout-list-checkbox form-radio">
+													<input type="radio" name="checkout-payment[]" id="checkout-payment-2">
+													<label for="checkout-payment-2" class="form-checkbox-label">Оплата online</label>
+												</div>
+												<div class="checkout-list-note">Оплата online при оформлении заказа</div>
+											</li>
+											<li>
+												<div class="checkout-list-checkbox form-radio">
+													<input type="radio" name="checkout-payment[]" id="checkout-payment-3">
+													<label for="checkout-payment-3" class="form-checkbox-label">Безналичный расчет</label>
+												</div>
+												<div class="checkout-list-note">Безналичный расчет</div>
+												<div class="checkout-list-button">
+													<a href="#" class="btn btn-primary" download>Загрузить реквизиты</a>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div><!-- /.checkout-step -->
+								<!-- Additional Information-->
+								<div class="checkout-additional">
 									<div class="row row-items">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="checkout-contacts-name" class="form-label">Ваше имя</label>
-												<input type="text" class="form-control" id="checkout-contacts-name" required>
+												<label for="checkout-additional-ip" class="form-label">Компания/ ИП</label>
+												<input type="text" class="form-control" id="checkout-additional-ip" placeholder="Компания/ ИП" required>
 											</div>
-										</div>
+										</div><!-- /.col -->
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="checkout-contacts-email" class="form-label"> Ваш Email</label>
-												<input type="email" class="form-control" id="checkout-contacts-email" required>
+												<label for="checkout-additional-ogrn" class="form-label">ОГРН/ ОГРНИП</label>
+												<input type="text" class="form-control" id="checkout-additional-ogrn" placeholder="ОГРН/ ОГРНИП" required>
 											</div>
-										</div>
+										</div><!-- /.col -->
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="checkout-contacts-phone" class="form-label">Ваш телефон</label>
-												<input type="tel" class="form-control" id="checkout-contacts-phone" placeholder="+7 (___) ___-__-__" minlength="11" required autocomplete="off">
-												<div class="form-checkbox switch-input-mask">
-													<input type="checkbox" name="checkout-contacts-phone-mask" id="checkout-contacts-phone-mask" checked>
-													<label for="checkout-contacts-phone-mask" class="form-checkbox-label">Отобразить маску ввода номера телефона</label>
-												</div>
+												<label for="checkout-additional-inn" class="form-label">ИНН</label>
+												<input type="text" class="form-control" id="checkout-additional-inn" placeholder="ИНН" required>
 											</div>
-										</div>
+										</div><!-- /.col -->
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="checkout-contacts-adress" class="form-label"> Ваш Адрес</label>
-												<input type="text" class="form-control" id="checkout-contacts-adress" required>
+												<label for="checkout-additional-rs" class="form-label">Р/С</label>
+												<input type="text" class="form-control" id="checkout-additional-rs" placeholder="Р/С" required>
 											</div>
-										</div>
+										</div><!-- /.col -->
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-additional-bank" class="form-label">Банк получателя</label>
+												<input type="text" class="form-control" id="checkout-additional-bank" placeholder="Банк получателя" required>
+											</div>
+										</div><!-- /.col -->
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-additional-bik" class="form-label">БИК</label>
+												<input type="text" class="form-control" id="checkout-additional-bik" placeholder="БИК" required>
+											</div>
+										</div><!-- /.col -->
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-additional-ks" class="form-label">К/С</label>
+												<input type="text" class="form-control" id="checkout-additional-ks" placeholder="К/С" required>
+											</div>
+										</div><!-- /.col -->
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-additional-inn-bank" class="form-label">ИНН (банка)</label>
+												<input type="text" class="form-control" id="checkout-additional-inn-bank" placeholder="ИНН (банка)" required>
+											</div>
+										</div><!-- /.col -->
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="checkout-additional-kpp-bank" class="form-label">КПП (банка)</label>
+												<input type="text" class="form-control" id="checkout-additional-kpp-bank" placeholder="КПП (банка)" required>
+											</div>
+										</div><!-- /.col -->
 									</div><!-- /.row -->
-									<div class="form-group">
-										<label for="checkout-contacts-message" class="form-label">Комментарий</label>
-										<textarea class="form-textarea" id="checkout-contacts-message"></textarea>
-									</div>
-								</div>
-							</div>
-						</div><!-- /.checkout-step -->
-						<div class="checkout-step">
-							<div class="checkout-step-head">
-								<span class="step-number">3</span>
-								<span class="step-title">Доставка:</span>
-							</div>
-							<div class="checkout-step-body">
-								<ul class="checkout-list">
-									<li>
-										<div class="checkout-list-checkbox form-radio">
-											<input type="radio" name="checkout-shipping[]" id="checkout-shipping-1" checked>
-											<label for="checkout-shipping-1" class="form-checkbox-label">Курьерская служба по Москве</label>
-										</div>
-										<div class="checkout-list-note">Доставка курьером для Москвы и Московской области</div>
-										<div class="checkout-list-date">
-											<span>Дата доставки:</span>
-											<div class="checkout-list-date-picker">
-												<span>15 ноября</span>
-												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
-											</div>
-										</div>
-										<div class="checkout-list-cost">300 Руб.</div>
-									</li>
-									<li>
-										<div class="checkout-list-checkbox form-radio">
-											<input type="radio" name="checkout-shipping[]" id="checkout-shipping-2">
-											<label for="checkout-shipping-2" class="form-checkbox-label">Транспортной компанией</label>
-										</div>
-										<div class="checkout-list-note">Доставка транспортной компанией</div>
-										<div class="checkout-list-date">
-											<span>Дата доставки:</span>
-											<div class="checkout-list-date-picker">
-												<span>23 ноября</span>
-												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
-											</div>
-										</div>
-										<div class="checkout-list-cost">500 Руб.</div>
-									</li>
-									<li>
-										<div class="checkout-list-checkbox form-radio">
-											<input type="radio" name="checkout-shipping[]" id="checkout-shipping-3">
-											<label for="checkout-shipping-3" class="form-checkbox-label">Самовывоз</label>
-										</div>
-										<div class="checkout-list-note">Самовывоз из склада, по адесу ул. Дорожная 3стр. 3А</div>
-										<div class="checkout-list-date">
-											<span>Дата самовывоза:</span>
-											<div class="checkout-list-date-picker">
-												<span>25 ноября</span>
-												<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
-											</div>
-										</div>
-										<div class="checkout-list-cost">Бесплатно</div>
-									</li>
-								</ul>
-							</div>
-						</div><!-- /.checkout-step -->
-						<div class="checkout-step">
-							<div class="checkout-step-head">
-								<span class="step-number">4</span>
-								<span class="step-title">Оплата:</span>
-							</div>
-							<div class="checkout-step-body">
-								<ul class="checkout-list">
-									<li>
-										<div class="checkout-list-checkbox form-radio">
-											<input type="radio" name="checkout-payment[]" id="checkout-payment-1" checked>
-											<label for="checkout-payment-1" class="form-checkbox-label">Наличными при получении</label>
-										</div>
-										<div class="checkout-list-note">Наличными при получении товара</div>
-									</li>
-									<li>
-										<div class="checkout-list-checkbox form-radio">
-											<input type="radio" name="checkout-payment[]" id="checkout-payment-2">
-											<label for="checkout-payment-2" class="form-checkbox-label">Оплата online</label>
-										</div>
-										<div class="checkout-list-note">Оплата online при оформлении заказа</div>
-									</li>
-									<li>
-										<div class="checkout-list-checkbox form-radio">
-											<input type="radio" name="checkout-payment[]" id="checkout-payment-3">
-											<label for="checkout-payment-3" class="form-checkbox-label">Безналичный расчет </label>
-										</div>
-										<div class="checkout-list-note">Безналичный расчет </div>
-									</li>
-								</ul>
-							</div>
-						</div><!-- /.checkout-step -->
-						<!-- Additional Information-->
-						<div class="checkout-additional">
-							<div class="row row-items">
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-ip" class="form-label">Компания/ ИП</label>
-										<input type="text" class="form-control" id="checkout-additional-ip" placeholder="Компания/ ИП" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-ogrn" class="form-label">ОГРН/ ОГРНИП</label>
-										<input type="text" class="form-control" id="checkout-additional-ogrn" placeholder="ОГРН/ ОГРНИП" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-inn" class="form-label">ИНН</label>
-										<input type="text" class="form-control" id="checkout-additional-inn" placeholder="ИНН" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-rs" class="form-label">Р/С</label>
-										<input type="text" class="form-control" id="checkout-additional-rs" placeholder="Р/С" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-bank" class="form-label">Банк получателя</label>
-										<input type="text" class="form-control" id="checkout-additional-bank" placeholder="Банк получателя" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-bik" class="form-label">БИК</label>
-										<input type="text" class="form-control" id="checkout-additional-bik" placeholder="БИК" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-ks" class="form-label">К/С</label>
-										<input type="text" class="form-control" id="checkout-additional-ks" placeholder="К/С" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-inn-bank" class="form-label">ИНН (банка)</label>
-										<input type="text" class="form-control" id="checkout-additional-inn-bank" placeholder="ИНН (банка)" required>
-									</div>
-								</div><!-- /.col -->
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="checkout-additional-kpp-bank" class="form-label">КПП (банка)</label>
-										<input type="text" class="form-control" id="checkout-additional-kpp-bank" placeholder="КПП (банка)" required>
-									</div>
-								</div><!-- /.col -->
-							</div><!-- /.row -->
-						</div><!-- /.checkout-additional -->
-					</form>
+								</div><!-- /.checkout-additional -->
+								<!-- Summary -->
+								<div class="checkout-summary">
+									<div class="row row-items">
+										<div class="col-md-6">
+											<div class="checkout-summary-box">
+												<div class="checkout-summary-total">
+													<div class="discount"><span>Скидка:</span> <em>-754 Руб.</em></div>
+													<div class="total"><span>Итого:</span> <em>85 900 Руб.</em></div>
+												</div>
+												<div class="checkout-summary-check">
+													<div class="form-checkbox">
+														<input type="checkbox" name="checkout-summary-register" id="checkout-summary-register">
+														<label for="checkout-summary-register" class="form-checkbox-label">Зарегистрироваться на сайте</label>
+													</div>
+													<div class="form-checkbox">
+														<input type="checkbox" name="checkout-summary-policy" id="checkout-summary-policy">
+														<label for="checkout-summary-policy" class="form-checkbox-label">Я подтверждаю, что ознакомлен и согласен с условиями <a href="#">предоставления даных</a></label>
+													</div>
+												</div>
+												<div class="checkout-summary-complete">
+													<button type="submit" class="btn btn-primary">Оформить заказ</button>
+												</div>
+											</div><!-- /.checkout-summary-box -->
+										</div><!-- /.col -->
+										<div class="col-md-6">
+											<div class="checkout-summary-box">
+												<div class="checkout-summary-warranty">
+													<div class="warranty-icon">
+														<img class="lazy" data-src="images/icons/warranty.svg" alt="14 дней на возврат">
+													</div>
+													<p class="warranty-text"><span>14 дней на возврат</span> денег без вопросов если товар не подошел</p>
+												</div>
+											</div><!-- /.checkout-summary-box -->
+										</div><!-- /.col -->
+									</div><!-- /.row -->
+								</div><!-- /.checkout-summary -->
+							</form><!-- /.s-cart-checkout-form -->
+						</div><!-- /.tab-pane -->
+					</div><!-- /.tab-content -->
 				</div><!-- /.s-cart-checkout -->
 
 				<!-- Shop Cart Guide -->
