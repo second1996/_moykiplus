@@ -13,6 +13,8 @@
 
 	// Page navigation
 	.page-navigation
+		+media-breakpoint-down(sm)
+			margin-top: 0
 		&-list > li > a
 			padding-top: 18px
 			padding-bottom: 18px
@@ -126,6 +128,19 @@
 				+media-breakpoint-down(xs)
 					height: 240px
 					padding: 20px
+				&.has-video
+					img:hover
+						opacity: 0.75
+					&::after
+						content: ''
+						pointer-events: none
+						position: absolute
+						top: 0
+						left: 0
+						right: 0
+						bottom: 0
+						border-radius: 5px
+						background: url('../../images/icons/play.svg') no-repeat center/26px
 				img
 					width: 100%
 					height: 100%
@@ -192,6 +207,17 @@
 					border-color: rgba($accent, 0.35)
 				&.swiper-slide-thumb-active
 					border-color: $accent
+				&.has-video
+					&::after
+						content: ''
+						pointer-events: none
+						position: absolute
+						top: 0
+						left: 0
+						right: 0
+						bottom: 0
+						border-radius: 5px
+						background: url('../../images/icons/play.svg') no-repeat center/12px
 				> img
 					position: absolute
 					top: 50%
@@ -208,17 +234,19 @@
 			margin-bottom: 18px
 			line-height: 1.3
 		&-table
-			font-size: 12px
 			+media-breakpoint-down(xs)
 				overflow-y: auto
 				max-height: 308px
 				border: 1px solid $border
-				tbody
-					tr
-						background-color: $white
-					td
-						border-right: 0
-						border-bottom: 1px solid $border
+			table
+				font-size: 12px
+				+media-breakpoint-down(xs)
+					tbody
+						tr
+							background-color: $white
+						td
+							border-right: 0
+							border-bottom: 1px solid $border
 			.name,
 			.value
 				width: 25%
@@ -234,6 +262,8 @@
 				+media-breakpoint-down(xs)
 					padding-bottom: 0
 			.hint
+				position: relative
+				top: -1px
 				width: 14px
 				height: 14px
 				margin-left: 8px
@@ -423,6 +453,7 @@
 					display: flex
 					align-items: center
 				&-input
+					flex: 1 1 auto
 					width: 100%
 					height: 46px
 					border-radius: 5px 0 0 5px
@@ -439,8 +470,12 @@
 					&:required:valid
 						box-shadow: none
 				&-btn
+					flex: 1 1 auto
+					width: 100%
 					min-width: auto
 					height: 46px
+					padding-left: 10px
+					padding-right: 10px
 					border-radius: 0 5px 5px 0
 					line-height: 1
 					+media-breakpoint-down(xs)
@@ -452,6 +487,108 @@
 						width: 120px
 						padding-left: 6px
 						padding-right: 6px
+
+	// Product Max discount
+	.product-max-discount
+		display: flex
+		align-items: center
+		margin-top: 30px
+		padding: 25px 20px
+		border-radius: 5px
+		border: 1px solid #e71836
+		background-color: $white
+		line-height: 1.3
+		+media-breakpoint-down(xs)
+			padding: 15px 20px
+		.icon-border
+			flex: 0 0 auto
+			.icon
+				color: #e71836
+				font-size: 16px
+				transition: color .35s ease
+		.text
+			margin-left: 15px
+			transition: color .35s ease
+			+media-breakpoint-down(xs)
+				margin-left: 10px
+				font-size: 13px
+			> strong,
+			> b
+				margin-left: 6px
+				font-weight: 600
+				transition: color .35s ease
+
+	// Product analog
+	.product-analog
+		margin-top: 50px
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+		&-wrapper
+			padding: 30px 20px
+			border-radius: 5px
+			border: 1px solid $border
+			background-color: $white
+		&-item
+			display: flex
+			align-items: center
+			&:not(:last-child)
+				margin-bottom: 20px
+			.analog-photo
+				flex: 0 0 auto
+				position: relative
+				width: 96px
+				height: 110px
+				border-radius: 5px
+				border: 1px solid $border
+				+media-breakpoint-down(xs)
+					width: 76px
+					height: 80px
+				img
+					width: 100%
+					height: 100%
+					padding: 10px
+					object-fit: scale-down
+			.analog-meta
+				margin-left: 20px
+				+media-breakpoint-down(xs)
+					margin-left: 15px
+				.title
+					display: block
+					margin-bottom: 6px
+					line-height: 1.2	
+				.price
+					display: flex
+					flex-direction: column
+					&-label
+						margin-bottom: 6px
+						color: rgba($black, 0.9)
+						font-size: 13px
+						font-weight: 500
+						line-height: 1
+					&-wrapper
+						display: flex
+						flex-wrap: wrap
+						align-items: flex-end
+						line-height: 1
+						> ins
+							margin-right: 8px
+							color: $black
+							font-size: 18px
+							font-weight: 700
+							white-space: nowrap
+							text-decoration: none
+							+media-breakpoint-down(xs)
+								font-size: 16px
+						> del
+							color: rgba($black, 0.9)
+							font-size: 14px
+							font-weight: 600
+							white-space: nowrap
+							+media-breakpoint-down(xs)
+								font-size: 12px
+				.read-more
+					margin-top: 12px
 
 	// Product Variative
 	.product-variative
@@ -487,21 +624,38 @@
 			+media-breakpoint-down(md)
 				max-height: 320px
 		&-item
+			position: relative
 			display: flex
 			align-items: center
-			padding: 20px 0
+			margin-top: 20px
+			padding-bottom: 20px
 			&:first-child
-				padding-top: 0
+				margin-top: 0
 			&:last-child
 				padding-bottom: 0
 			&:not(:last-child)
 				border-bottom: 1px solid $border
+		// Tooltip HTML
+		&-comment,
+		&-info
+			display: none
 		&-photo
 			flex: 0 0 auto
 			position: relative
 			width: 48px
 			height: 48px
-			margin-right: 10px
+			&[data-toggle="variative-comment"]:hover
+				cursor: help
+			&._added
+				&::after
+					content: ''
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					border-radius: 5px
+					background: #686868 url('../../images/icons/done-green.svg') no-repeat center/25px
 			img
 				width: 100%
 				height: 100%
@@ -509,6 +663,7 @@
 				object-fit: cover
 		&-meta
 			flex: 1 1 auto
+			margin-left: 10px
 			.title,
 			.sku,
 			.price

@@ -7,6 +7,7 @@
 @@include('../../node_modules/bootstrap/js/dist/dropdown.js') // Bootstrap Dropdown
 @@include('../../node_modules/bootstrap/js/dist/tab.js') // Bootstrap Tab
 @@include('../../node_modules/bootstrap/js/dist/scrollspy.js') // Bootstrap ScrollSpy
+@@include('../../node_modules/bootstrap/js/dist/tooltip.js') // Bootstrap Tooltip
 @@include('../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js') // Fancybox Plugin
 @@include('libs/jquery.mask.min.js') // jQuery Mask input
 @@include('libs/jquery.marquee.min.js') // Marquee Text

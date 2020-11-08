@@ -129,7 +129,6 @@ jQuery(document).ready( function($) {
 
 			// Trigger change event
 			$qty.trigger('change');
-
 		})
 	}
 	productQuantity()

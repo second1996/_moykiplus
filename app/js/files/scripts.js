@@ -1,24 +1,63 @@
 /**
  * Run scripts before loaded page
  */
-// Hide Promo string & setup «key -> hide-promo-string» into sessionStorage
-$('.promo .btn-close').on('click', function () {
-	$('.promo').hide()
-	sessionStorage.setItem('promo-string', 'hide')
-})
-// Check if «hide-promo-string» set «true» in sessionStorage...
-if( sessionStorage.getItem('promo-string') == 'hide' ) {
-	// ... and then hide this.
-	$('.promo').hide()
-} else {
-	$('.promo').removeClass('d-none')
-}
+$(function () {
 
+	// Hide Promo string & setup «key -> hide-promo-string» into sessionStorage
+	$('.promo .btn-close').on('click', function () {
+		$('.promo').hide()
+		sessionStorage.setItem('promo-string', 'hide')
+	})
+	// Check if «hide-promo-string» set «true» in sessionStorage...
+	if( sessionStorage.getItem('promo-string') == 'hide' ) {
+		// ... and then hide this.
+		$('.promo').hide()
+	} else {
+		$('.promo').removeClass('d-none')
+	}
+
+})
 
 /**
  * Run scripts when loaded page
  */
 jQuery(document).ready( function($) {
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Bootstrap Tooltip
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	$('[data-toggle="tooltip"]').tooltip({
+		// trigger: 'click',
+		template: '<div class="tooltip base-tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
+	})
+
+	if( window.matchMedia('(min-width: 992px)').matches ) {
+		$('[data-toggle="variative-product"]').tooltip({
+			html: true,
+			// trigger: 'click',
+			placement: 'left',
+			template: '<div class="tooltip variative-tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
+			title: function (e) {
+				var ttHtml = $(this).find('.product-variative-info').clone();
+
+				return ttHtml;
+			}
+		})
+		$('[data-toggle="variative-comment"]').tooltip({
+			html: true,
+			// trigger: 'click',
+			placement: 'top',
+			template: '<div class="tooltip variative-tooltip-comment"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
+			title: function (e) {
+				var ttCommentHtml = $(this).parent().find('.product-variative-comment').clone();
+
+				return ttCommentHtml;
+			}
+		})
+	}
+
 
 	/**
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
