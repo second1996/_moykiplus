@@ -629,15 +629,20 @@
 				border: 1px solid $border
 				background-color: $white
 				line-height: 1.2
+				transition: border .35s ease
+				&:hover
+					cursor: pointer
+					border-color: $accent
 				+media-breakpoint-down(xs)
 					width: 100%
 				span
-					margin-right: 8px
+					margin-right: 18px
 					color: $black
 					font-weight: 500
 					+media-breakpoint-down(sm)
 						font-size: 13px
 				.icon
+					flex: 0 0 auto
 					margin-left: auto
 					color: $accent
 					font-size: 15px
@@ -658,6 +663,9 @@
 				background-position-x: calc(100% - 18px)
 				font-weight: 500
 				line-height: 36px
+				&:hover
+					cursor: pointer
+					border-color: $accent
 				+media-breakpoint-down(sm)
 					font-size: 13px
 				+media-breakpoint-down(xs)
@@ -809,31 +817,47 @@
 						flex-basis: 70%
 					+media-breakpoint-down(xs)
 						flex-basis: 100%
+						flex-wrap: wrap
+						margin-top: 20px
+						> span
+							flex: 0 0 100%
 					> span
 						color: $black
-					&-picker
+				&-datepicker
+					margin-left: auto
+					display: inline-flex
+					align-items: center
+					justify-content: center
+					width: 140px
+					height: 38px
+					padding-left: 18px
+					padding-right: 18px
+					border-radius: 5px
+					border: 1px solid $border
+					background-color: $white
+					line-height: 1.2
+					transition: border .35s ease
+					&:hover
+						cursor: pointer
+						border-color: $accent
+					+media-breakpoint-down(sm)
+						margin-left: 20px
+					+media-breakpoint-down(xs)
+						width: 100%
+						margin-top: 10px
+						margin-left: 0
+					span
+						overflow-x: hidden
+						margin-right: 8px
+						color: $black
+						font-weight: 500
+						white-space: nowrap
+						text-overflow: ellipsis
+					.icon
+						flex: 0 0 auto
 						margin-left: auto
-						display: inline-flex
-						align-items: center
-						justify-content: center
-						min-width: 130px
-						height: 38px
-						padding-left: 18px
-						padding-right: 18px
-						border-radius: 5px
-						border: 1px solid $border
-						background-color: $white
-						line-height: 1.2
-						+media-breakpoint-down(sm)
-							margin-left: 20px
-						span
-							margin-right: 8px
-							color: $black
-							font-weight: 500
-						.icon
-							margin-left: auto
-							color: $accent
-							font-size: 15px
+						color: $accent
+						font-size: 15px
 				&-cost
 					flex: 0 0 9%
 					font-size: 16px
@@ -849,6 +873,7 @@
 						flex-basis: 30%
 					+media-breakpoint-down(xs)
 						flex-basis: 100%
+						margin-top: 20px
 						padding-left: 28px
 				&-button
 					margin-left: auto

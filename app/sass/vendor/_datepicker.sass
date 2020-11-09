@@ -1,0 +1,29 @@
+/* ==========================================================================
+	 Import Datepicker
+	 ========================================================================== */
+@import '../../js/libs/datepicker/daterangepicker.min'
+
+
+/* ==========================================================================
+	 Datepicker customize
+	 ========================================================================== */
+.date-picker-wrapper
+	border-radius: 5px
+	box-shadow: $box-shadow
+	+media-breakpoint-down(xs)
+		left: 10px !important
+		right: 10px !important
+		.drp_top-bar
+			padding-right: 0
+		.month-wrapper table
+			width: 100%
+			tbody
+				td
+					width: 14%
+	.footer
+		display: none
+
+.date-picker-wrapper .month-wrapper table td,
+.date-picker-wrapper .month-wrapper table th
+	font-weight: 400
+	font-size: 12px

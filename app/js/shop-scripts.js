@@ -223,10 +223,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		// Write new price
 		function discountNewPrice(value) {
-			var productPriceEl = document.querySelector('.product-single .product-price .price-wrapper > ins').innerHTML;
-			var productPriceValue = parseInt(productPriceEl.replace(/\s+/g, ''), 10 );
+			var productPriceEl = document.querySelector('.product-single .product-price .price-wrapper ins').dataset.finalPrice;
+			var productPriceValue = parseInt(productPriceEl);
 			var discountNewPriceInput = document.querySelector('.discount-modal-new-price');
 			var discountNewPriceValue = productPriceValue * Math.round(value) / 100;
+
+			console.log(productPriceEl);
+			console.log(productPriceValue);
 
 			discountNewPriceInput.value = Math.round(productPriceValue - discountNewPriceValue).toLocaleString('ru') + ' Руб.';
 		}
@@ -328,6 +331,48 @@ jQuery(document).ready( function($) {
 	 */
 	if( $('.clone-product-summary').length && window.matchMedia('(max-width: 991.98px)').matches ) {
 		$('.product-main-right').appendTo('.clone-product-summary')
+	}
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Cart page: Datepicker for delivery
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	if( $('[data-toggle="delivery-datepicker"]').length ) {
+		moment.locale('ru')
+
+		$('[data-toggle="delivery-datepicker"]').each(function (index, element) {
+			$(element).dateRangePicker({
+				language: 'ru',
+				autoClose: true,
+				startDate: new Date(),
+				selectForward: true,
+				startOfWeek: 'monday',
+				minDays: 1,
+				maxDays: 30,
+				setValue: function(range, from, to) {
+					var dateFrom = $(this).find('input.delivery-from')
+					var dateTo = $(this).find('input.delivery-to')
+					var dateOutput = $(this).find('.delivery-output')
+					var dateFormatOuputFrom = moment(from)
+					var dateFormatOuputTo = moment(to)
+
+					// Set values
+					dateFrom.val(from)
+					dateTo.val(to)
+
+					// Output Date format
+					dateOutput.text('От ' + dateFormatOuputFrom.format('D MMMM') + ' до ' + dateFormatOuputTo.format('D MMMM'))
+				},
+				customOpenAnimation: function(cb) {
+					$(this).fadeIn(200, cb);
+				},
+				customCloseAnimation: function(cb) {
+					$(this).fadeOut(200, cb);
+				}
+			})
+		})
 	}
 
 })

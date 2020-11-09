@@ -290,8 +290,10 @@
 										<span class="step-title">Дата доставки:</span>
 									</div>
 									<div class="checkout-step-body">
-										<div class="checkout-datepicker">
-											<span>15 ноября</span>
+										<div class="checkout-datepicker" data-toggle="delivery-datepicker">
+											<input type="hidden" class="delivery-from" name="c-quick-time-delivery-from" readonly>
+											<input type="hidden" class="delivery-to" name="c-quick-time-delivery-to" readonly>
+											<span class="delivery-output">15 ноября</span>
 											<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
 										</div>
 									</div>
@@ -451,10 +453,12 @@
 													<label for="checkout-shipping-1" class="form-checkbox-label">Курьерская служба по Москве</label>
 												</div>
 												<div class="checkout-list-note">Доставка курьером для Москвы и Московской области</div>
-												<div class="checkout-list-date">
+												<div class="checkout-list-date" data-toggle="delivery-datepicker">
+													<input type="hidden" class="delivery-from" name="checkout-shipping-1-from" readonly>
+													<input type="hidden" class="delivery-to" name="checkout-shipping-1-to" readonly>
 													<span>Дата доставки:</span>
-													<div class="checkout-list-date-picker">
-														<span>15 ноября</span>
+													<div class="checkout-list-datepicker">
+														<span class="delivery-output">15 ноября</span>
 														<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
 													</div>
 												</div>
@@ -466,10 +470,12 @@
 													<label for="checkout-shipping-2" class="form-checkbox-label">Транспортной компанией</label>
 												</div>
 												<div class="checkout-list-note">Доставка транспортной компанией</div>
-												<div class="checkout-list-date">
+												<div class="checkout-list-date" data-toggle="delivery-datepicker">
+													<input type="hidden" class="delivery-from" name="checkout-shipping-2-from" readonly>
+													<input type="hidden" class="delivery-to" name="checkout-shipping-2-to" readonly>
 													<span>Дата доставки:</span>
-													<div class="checkout-list-date-picker">
-														<span>23 ноября</span>
+													<div class="checkout-list-datepicker">
+														<span class="delivery-output">23 ноября</span>
 														<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
 													</div>
 												</div>
@@ -481,10 +487,12 @@
 													<label for="checkout-shipping-3" class="form-checkbox-label">Самовывоз</label>
 												</div>
 												<div class="checkout-list-note">Самовывоз из склада, по адесу ул. Дорожная 3стр. 3А</div>
-												<div class="checkout-list-date">
+												<div class="checkout-list-date" data-toggle="delivery-datepicker">
+													<input type="hidden" class="delivery-from" name="checkout-shipping-3-from" readonly>
+													<input type="hidden" class="delivery-to" name="checkout-shipping-3-to" readonly>
 													<span>Дата самовывоза:</span>
-													<div class="checkout-list-date-picker">
-														<span>25 ноября</span>
+													<div class="checkout-list-datepicker">
+														<span class="delivery-output">25 ноября</span>
 														<svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg>
 													</div>
 												</div>

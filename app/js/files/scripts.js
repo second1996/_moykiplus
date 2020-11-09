@@ -25,6 +25,41 @@ jQuery(document).ready( function($) {
 
 	/**
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * LazyLoad init
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	var lazyLoadInstance = new LazyLoad({
+		elements_selector: ".lazy",
+		load_delay: 250,
+		callback_loaded: function(element) {
+			// console.log("👍 LOADED", element);
+			$(element).siblings('.lazy-preloader').remove();
+		},
+	})
+	// Callback function for AJAX dynamic content
+	reinitLazyLoad = function () {
+		lazyLoadInstance.update();
+	}
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Bootstrap Modal (fix scroll when change modal, etc.)
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	$('body').on('show.bs.modal', '.modal', function () {
+		$('.modal:visible').removeClass('fade').modal('hide').addClass('fade');
+	});
+	$('a[href="#userLoginModal"]').on('click', function () {
+		$('#userLoginModal').modal('show')
+	})
+	$('a[href="#userRegisterModal"]').on('click', function () {
+		$('#userRegisterModal').modal('show')
+	})
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Bootstrap Tooltip
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
@@ -78,21 +113,6 @@ jQuery(document).ready( function($) {
 		e.preventDefault();
 		$('html, body').animate({scrollTop:0}, 1000);
 	});
-
-
-	/**
-	 *-------------------------------------------------------------------------------------------------------------------------------------------
-	 * LazyLoad init
-	 *-------------------------------------------------------------------------------------------------------------------------------------------
-	 */
-	var lazyLoadInstance = new LazyLoad({
-		elements_selector: ".lazy",
-		load_delay: 250,
-		callback_loaded: function(element) {
-			// console.log("👍 LOADED", element);
-			$(element).siblings('.lazy-preloader').remove();
-		},
-	})
 
 
 	/**
@@ -230,10 +250,10 @@ jQuery(document).ready( function($) {
 	 * Product card actions (wishlist, compare & order buttons)
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	$('.card-product, .product-single .product-actions').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
-		e.preventDefault()
-		$(this).toggleClass('_active')
-	})
+	// $('.card-product, .product-single .product-actions').on('click', '.wishlist-btn, .compare-btn, .order-btn', function(e) {
+	// 	e.preventDefault()
+	// 	$(this).toggleClass('_active')
+	// })
 
 
 	/**

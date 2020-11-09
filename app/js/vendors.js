@@ -8,8 +8,10 @@
 @@include('../../node_modules/bootstrap/js/dist/tab.js') // Bootstrap Tab
 @@include('../../node_modules/bootstrap/js/dist/scrollspy.js') // Bootstrap ScrollSpy
 @@include('../../node_modules/bootstrap/js/dist/tooltip.js') // Bootstrap Tooltip
-@@include('../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js') // Fancybox Plugin
+@@include('../../node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js') // Fancybox
+@@include('../../node_modules/nouislider/distribute/nouislider.min.js') // noUiSlider
 @@include('libs/jquery.mask.min.js') // jQuery Mask input
 @@include('libs/jquery.marquee.min.js') // Marquee Text
-@@include('libs/readmore.min.js') // ReadMore Plugin
-@@include('../../node_modules/nouislider/distribute/nouislider.min.js') // noUiSlider
+@@include('libs/readmore.min.js') // ReadMore
+@@include('libs/datepicker/moment.min.js') // Moment lib
+@@include('libs/datepicker/jquery.daterangepicker.min.js') // Datepicker
