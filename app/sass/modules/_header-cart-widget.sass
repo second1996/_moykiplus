@@ -65,15 +65,21 @@
 				line-height: 1
 				+media-breakpoint-down(xs)
 					margin-top: 10px
-				.count
-					margin-right: 5px
+				&-value
+					width: 46px
+					height: 20px
+					margin-bottom: 0
+					padding-left: 0
+					padding-right: 0
+					border-radius: 0
+					background-color: $white
 					color: $black
 					font-size: 15px
 					font-weight: 500
-					> em, > i
-						font-style: normal
-				.minus,
-				.plus
+					&:focus
+						box-shadow: none
+				&-minus,
+				&-plus
 					display: flex
 					align-items: center
 					justify-content: center
