@@ -335,6 +335,8 @@
 				border: 1px solid #e71836
 				background-color: #f8f8f8
 				line-height: 1.3
+				+media-breakpoint-down(xs)
+					padding: 15px
 				&:hover
 					border-color: #e71836
 					background-color: #e71836
@@ -360,6 +362,8 @@
 						margin-left: 6px
 						font-weight: 600
 						transition: color .35s ease
+					+media-breakpoint-down(md)
+						max-width: 100%
 					+media-breakpoint-down(xs)
 						font-size: 13px
 			.price

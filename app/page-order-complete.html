@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/vendor/bootstrap.css">
 	<link rel="stylesheet" href="css/vendor/swiper.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/pages/order.css">
 
 </head>
 
@@ -27,17 +28,225 @@
 			<div class="breadcrumbs">
 				<ul class="breadcrumbs-list">
 					<li><a href="page-home.html">Главная</a></li>
+					<li><a href="page-cart.html">Корзина</a></li>
 					<li><span>Спасибо за заказ</span></li>
 				</ul>
 			</div>
 
-			<!-- Page title -->
-			<h1 class="page-title text-xl w-bold text-center">Спасибо за заказ № 156</h1>
+			<!-- Order -->
+			<div class="s-order">
 
-			<!-- Content -->
-			<div class="content">
-				Content here...
-			</div>
+				<!-- Thanks for your order -->
+				<div class="s-order-thanks">
+					<div class="s-order-thanks-icon">
+						<svg class="icon icon-done"><use xlink:href="images/symbol-defs.svg#done"></use></svg>
+					</div>
+					<h1 class="s-order-thanks-title page-title text-xl w-bold text-center">Спасибо за заказ № 156</h1>
+					<p class="s-order-thanks-text">Наш менеджер с вам свяжется в ближайшее время</p>
+				</div><!-- /.s-order-thanks -->
+
+				<!-- Contacts -->
+				<div class="s-order-contacts">
+					<div class="s-order-contacts-list">
+						<div class="s-order-contacts-item">
+							<div class="contact">
+								<div class="contact-icon">
+									<svg class="icon icon-phone"><use xlink:href="images/symbol-defs.svg#phone"></use></svg>
+								</div>
+								<div class="contact-info">
+									<span class="title c-gray text-xxs w-medium">Телефон</span>
+									<div class="dropdown">
+										<button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="text text-xxs w-semibold">+7 (495) 642-26-05</span>
+											<svg class="icon icon-arrow"><use xlink:href="images/symbol-defs.svg#arrow"></use></svg>
+										</button>
+										<div class="dropdown-menu dropdown-phone-list">
+											<ul class="dropdown-menu-list">
+												<li class="dropdown-menu-item">
+													<div class="dropdown-menu-info">
+														<span class="title c-gray text-xxs">Справочная служба:</span>
+														<a href="tel:+79850175099" class="dropdown-menu-link text text-xxs w-bold">+7 (985) 017-50-99</a>
+													</div>
+												</li>
+												<li class="dropdown-menu-item">
+													<div class="dropdown-menu-info">
+														<span class="title c-gray text-xxs">Магазин:</span>
+														<a href="tel:+74955094160" class="dropdown-menu-link text text-xxs w-bold">+7 (495) 509-41-60</a>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.s-order-contacts-item -->
+						<div class="s-order-contacts-item">
+							<div class="contact">
+								<div class="contact-icon">
+									<svg class="icon icon-mail"><use xlink:href="images/symbol-defs.svg#mail"></use></svg>
+								</div>
+								<div class="contact-info">
+									<span class="title c-gray text-xxs w-medium">E-mail</span>
+									<a href="mailto:info@moykiplus.ru" class="text text-xxs w-semibold">info@moykiplus.ru</a>
+								</div>
+							</div>
+						</div><!-- /.s-order-contacts-item -->
+					</div><!-- /.s-order-contacts-list -->
+					<div class="s-order-contacts-buttons">
+						<a href="page-stores.html" class="btn btn-primary">
+							<svg class="icon icon-store"><use xlink:href="images/symbol-defs.svg#store"></use></svg>
+							<span>Магазин</span>
+						</a>
+						<a href="page-pickup.html" class="btn btn-primary">
+							<svg class="icon icon-box-2"><use xlink:href="images/symbol-defs.svg#box-2"></use></svg>
+							<span>Самовывоз</span>
+						</a>
+					</div>
+				</div><!-- /.s-order-contacts -->
+
+				<!-- Order details -->
+				<div class="s-order-details">
+					<h2 class="s-order-details-title c-black text-md w-semibold">Ваш заказ № 156</h2>
+					<div class="row row-items">
+						<!-- Products list -->
+						<div class="col-md-6">
+							<div class="s-order-details-products">
+								<div class="product-item">
+									<div class="product-item-photo">
+										<img class="lazy" data-src="images/products/product-4.png" alt="Кухонная мойка Blanco Zia 40S">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="product-item-meta">
+										<a href="page-single-product.html" class="title">Кухонная мойка Blanco Zia 40S</a>
+										<div class="variation">
+											<div class="variation-color">
+												<img class="lazy" data-src="images/products/variative-color-1.jpg" alt="Красный цвет">
+											</div>
+											<div class="variation-meta">
+												<span class="title">Классик</span>
+												<span class="sku">Арт: 7602</span>
+											</div>
+										</div>
+									</div>
+									<div class="product-item-total">
+										<div class="product-item-total-price">
+											<ins>127 980 Руб.</ins>
+										</div>
+										<span class="product-item-total-quantity">3 шт.</span>
+									</div>
+								</div><!-- /.product-item -->
+								<div class="product-item">
+									<div class="product-item-photo">
+										<img class="lazy" data-src="images/products/product-3.jpg" alt="Кухонная мойка Blanco Zia 40S">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="product-item-meta">
+										<a href="page-single-product.html" class="title">Кухонная мойка Blanco Zia 40S</a>
+										<div class="variation">
+											<div class="variation-color">
+												<img class="lazy" data-src="images/products/variative-color-2.jpg" alt="Красный цвет">
+											</div>
+											<div class="variation-meta">
+												<span class="title">Классик</span>
+												<span class="sku">Арт: 7602</span>
+											</div>
+										</div>
+									</div>
+									<div class="product-item-total">
+										<div class="product-item-total-price">
+											<ins>4 712 Руб.</ins>
+										</div>
+										<span class="product-item-total-quantity">2 шт.</span>
+									</div>
+								</div><!-- /.product-item -->
+								<div class="product-item">
+									<div class="product-item-photo">
+										<img class="lazy" data-src="images/products/product-2.jpg" alt="Кухонная мойка Blanco Zia 40S">
+										<div class="lazy-preloader"></div>
+									</div>
+									<div class="product-item-meta">
+										<a href="page-single-product.html" class="title">Кухонная мойка Blanco Zia 40S</a>
+									</div>
+									<div class="product-item-total">
+										<div class="product-item-total-price">
+											<ins>51 600 Руб.</ins>
+										</div>
+										<span class="product-item-total-quantity">1 шт.</span>
+									</div>
+								</div><!-- /.product-item -->
+							</div><!-- /.s-order-details-products -->
+						</div><!-- /.col -->
+						<!-- Order information -->
+						<div class="col-md-6">
+							<div class="s-order-details-info">
+								<div class="info-item">
+									<div class="info-item-head">Контактная информация</div>
+									<div class="info-item-body">
+										<ul class="info-list">
+											<li>
+												<span class="info-key">Ваше имя</span>
+												<span class="info-value">Веселов Евгений Владимирович</span>
+											</li>
+											<li>
+												<span class="info-key">Ваше E-mail</span>
+												<span class="info-value">eugenebur@yandex.ru</span>
+											</li>
+											<li>
+												<span class="info-key">Ваш телефон</span>
+												<span class="info-value">+7 (495) 543-23-75</span>
+											</li>
+											<li>
+												<span class="info-key">Индекс</span>
+												<span class="info-value">62345173</span>
+											</li>
+											<li>
+												<span class="info-key">Адрес</span>
+												<span class="info-value">г. Москва, ул. Пушкинска 26, корпус 2, кв.157</span>
+											</li>
+										</ul>
+									</div>
+								</div><!-- /.info-item -->
+								<div class="info-item">
+									<div class="info-item-head">Доставка</div>
+									<div class="info-item-body">
+										<div class="info-delivery">
+											<span class="info-delivery-method">Транспортной компанией</span>
+											<div class="info-delivery-date">
+												<span class="label">Дата доставки:</span>
+												<span class="value">15 ноября <svg class="icon icon-calendar"><use xlink:href="images/symbol-defs.svg#calendar"></use></svg></span>
+											</div>
+										</div>
+									</div>
+								</div><!-- /.info-item -->
+								<div class="info-item">
+									<div class="info-item-head">Оплата</div>
+									<div class="info-item-body">
+										<div class="info-payment">
+											<span class="info-payment-method">Безналичный расчет</span>
+										</div>
+									</div>
+								</div><!-- /.info-item -->
+							</div><!-- /.s-order-details-info -->
+						</div><!-- /.col -->
+						<!-- Order summary -->
+						<div class="col-12">
+							<div class="s-order-details-summary">
+								<span class="label c-black text-sm w-medium">Итого: </span>
+								<span class="value c-accent text-lg w-bold">85 900 Руб.</span>
+							</div>
+						</div>
+					</div><!-- /.row -->
+					<div class="s-order-details-home">
+						<a href="page-home.html" class="btn btn-primary">На главную</a>
+					</div>
+				</div><!-- /.s-order-details -->
+
+				<div class="s-order-cross-sells">
+					<h2 class="s-order-cross-sells-title c-black text-md w-semibold">Подходящие товары</h2>
+					@@include('_promo-products.html')
+				</div>
+
+			</div><!-- /.s-order -->
 
 		</div><!-- /.container -->
 	</main>

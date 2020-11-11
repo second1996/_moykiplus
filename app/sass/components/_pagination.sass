@@ -6,83 +6,102 @@
 		margin-top: 30px
 
 .pagination
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
-	align-items: center
+	position: relative
 	margin-top: 50px
-	padding: 12px 40px
+	padding: 12px 150px
 	border-radius: 5px
 	box-shadow: $box-shadow
 	background-color: $white
 	+media-breakpoint-down(md)
-		padding: 12px 30px
+		padding: 12px 80px
 	+media-breakpoint-down(xs)
 		margin-top: 30px
-		padding: 4px
-	&-button
-		display: inline-flex
-		align-items: center
-		color: $accent
-		font-weight: 600
-		line-height: 1
-		.icon
-			font-size: 8px
-		&:hover
-			color: $orange
-		+media-breakpoint-down(xs)
-			justify-content: center
-			width: 40px
-			height: 40px
-			border-radius: 5px
-			background-color: $accent
-			color: $white
-			.icon
-				margin: 0
-			span
-				display: none
-			&:hover
-				background-color: $orange
-				color: $white
-		&-prev
-			.icon
-				margin-right: 10px
-				transform: scaleX(-1)
-		&-next
-			.icon
-				margin-left: 10px
-		&--disabled
-			cursor: not-allowed
-			opacity: 0.2
-			&:hover
-				color: inherit
-	&-inner
+		padding: 10px 50px
+	&-wrapper
 		display: flex
 		flex-wrap: wrap
 		align-items: center
 		justify-content: center
+		margin: -2px 0
+	&-button
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		> a
+			display: inline-flex
+			align-items: center
+			color: $accent
+			font-weight: 600
+			line-height: 1
+			.icon
+				font-size: 8px
+			&:hover
+				color: $orange
+			+media-breakpoint-down(md)
+				justify-content: center
+				width: 40px
+				height: 40px
+				border-radius: 5px
+				background-color: $accent
+				color: $white
+				.icon
+					margin: 0
+				span
+					display: none
+				&:hover
+					background-color: $orange
+					color: $white
+			+media-breakpoint-down(md)
+				width: 36px
+				height: 36px
+			+media-breakpoint-down(xs)
+				width: 30px
+				height: 30px
+		&-prev
+			left: 30px
+			+media-breakpoint-down(md)
+				left: 10px
+			.icon
+				margin-right: 6px
+				transform: scaleX(-1)
+		&-next
+			right: 30px
+			+media-breakpoint-down(md)
+				right: 10px
+			.icon
+				margin-left: 6px
+		&--disabled
+			cursor: not-allowed
+			opacity: 0.2
+			> a
+				user-select: none
+				pointer-events: none
+			&:hover
+				color: inherit
 	&-item
 		display: flex
 		justify-content: center
 		align-items: center
 		width: 24px
 		height: 24px
-		margin: 0 2px
+		margin: 2px
 		border-radius: 50%
-		color: $accent
-		font-size: 14px
-		font-weight: 600
-		line-height: 1
-		&:hover:not(.pagination-item--dots)
-			color: $orange
+		> a
+			color: $accent
+			font-size: 14px
+			font-weight: 600
+			line-height: 1
+			&:hover
+				color: $orange
 		+media-breakpoint-down(xs)
 			width: 22px
 			height: 22px
 		&--current
 			pointer-events: none
 			background-color: $accent
-			color: $white
-			font-weight: 500
+			a, span
+				color: $white
+				font-weight: 500
 		&--dots
 			+media-breakpoint-down(xs)
 				width: auto

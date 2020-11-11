@@ -1,0 +1,396 @@
+@import '../helpers/helpers'
+
+.s-order
+	// Thanks for your order
+	&-thanks
+		&-icon
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 140px
+			height: 140px
+			margin: 0 auto
+			border-radius: 50%
+			border: 2px solid #32c42a
+			color: #32c42a
+			font-size: 40px
+			+media-breakpoint-down(sm)
+				width: 100px
+				height: 100px
+				font-size: 30px
+		&-title
+		&-text
+			color: $black
+			text-align: center
+
+	// Contacts
+	&-contacts
+		max-width: 500px
+		margin: 40px auto 0
+		padding: 30px
+		border-radius: 5px
+		box-shadow: $box-shadow
+		background-color: $white
+		+media-breakpoint-down(xs)
+			padding: 20px
+		&-list
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			justify-content: center
+			margin: -15px -15px
+			+media-breakpoint-down(xs)
+				justify-content: flex-start
+		&-item
+			margin: 15px
+			.contact
+				display: flex
+				align-items: center
+				&-icon
+					flex: 0 0 auto
+					display: flex
+					align-items: center
+					justify-content: center
+					width: 34px
+					height: 34px
+					border-radius: 5px
+					border: 1px solid #ededed
+					background-color: $white
+					color: $accent
+					font-size: 14px
+				&-info
+					margin-left: 10px
+					.title
+						display: block
+						margin-bottom: 4px
+						line-height: 1
+					.text
+						display: block
+						line-height: 1
+					.dropdown
+						line-height: 1
+						&-toggle
+							.text
+								position: relative
+								display: inline-block
+								margin-right: 5px
+								&::after
+									content: ''
+									position: absolute
+									bottom: -2px
+									left: 0
+									right: 0
+									border-bottom: 1px dashed $accent
+									opacity: 0
+									transition: $trs
+							.icon-arrow
+								color: #a6a5a6
+								font-size: 8px
+								transform: rotate(90deg)
+							&:hover
+								.text
+									color: $accent
+									&::after
+										opacity: 1
+						&-menu
+							&-item
+								padding: 15px 0
+								.title
+									white-space: nowrap
+									margin-bottom: 6px
+							&-link
+								white-space: nowrap
+		&-buttons
+			display: flex
+			flex-wrap: wrap
+			align-items: center
+			justify-content: center
+			margin: 20px -15px 0
+			.btn
+				margin: 10px 15px
+			+media-breakpoint-down(xs)
+				justify-content: flex-start
+				.btn
+					width: 100%
+
+	// Order details
+	&-details
+		margin-top: 60px
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3
+
+		// Products
+		&-products
+			.product-item
+				display: flex
+				padding: 20px 20px 20px 30px
+				border-radius: 5px
+				box-shadow: $box-shadow
+				background-color: $white
+				&:not(:last-child)
+					margin-bottom: 30px
+					+media-breakpoint-down(sm)
+						margin-bottom: 20px
+				+media-breakpoint-down(lg)
+					padding: 15px 15px 15px 20px
+				+media-breakpoint-down(md)
+					padding: 12px
+				+media-breakpoint-down(xs)
+					flex-wrap: wrap
+					padding: 20px
+				&-photo
+					flex: 0 0 auto
+					position: relative
+					width: 130px
+					height: 125px
+					border-radius: 5px
+					border: 1px solid $border
+					background-color: $white
+					+media-breakpoint-down(lg)
+						width: 95px
+						height: 95px
+					+media-breakpoint-down(md)
+						width: 60px
+						height: 60px
+					+media-breakpoint-down(xs)
+						width: 80px
+						height: 80px
+					> img
+						width: 100%
+						height: 100%
+						padding: 10px
+						object-fit: scale-down
+						+media-breakpoint-down(md)
+							padding: 6px
+				&-meta
+					flex: 1 1
+					align-self: center
+					padding-left: 30px
+					padding-right: 30px
+					+media-breakpoint-down(lg)
+						padding-left: 20px
+						padding-right: 20px
+					+media-breakpoint-down(md)
+						padding-left: 15px
+					+media-breakpoint-down(xs)
+						padding-right: 0
+					.title
+						display: block
+						color: $black
+						font-size: 16px
+						font-weight: 600
+						line-height: 1.3
+						text-decoration: none
+						word-break: break-word
+						+media-breakpoint-down(lg)
+							font-size: 14px
+						&:hover
+							color: $orange
+					.variation
+						display: flex
+						align-items: center
+						margin-top: 20px
+						+media-breakpoint-down(md)
+							margin-top: 10px
+						&-color
+							flex: 0 0 auto
+							overflow: hidden
+							width: 28px
+							height: 28px
+							border-radius: 2px
+							> img
+								width: 100%
+								height: 100%
+								object-fit: cover
+						&-meta
+							margin-left: 10px
+							.title
+								display: block
+								margin-bottom: 4px
+								color: $black
+								font-size: 13px
+								line-height: 1
+							.sku
+								display: block
+								color: #a3a1a5
+								font-size: 13px
+								line-height: 1
+				&-total
+					flex: 0 0 26%
+					display: flex
+					flex-direction: column
+					justify-content: center
+					margin-left: auto
+					padding-left: 20px
+					border-left: 1px solid $border
+					+media-breakpoint-down(lg)
+						flex-basis: 30%
+					+media-breakpoint-down(xs)
+						flex-basis: 100%
+						flex-direction: row
+						justify-content: space-between
+						margin-top: 20px
+						border-top: 1px solid $border
+						border-left: 0
+						padding-left: 0
+					&-price
+						display: flex
+						flex-wrap: wrap
+						align-items: flex-end
+						line-height: 1
+						> ins
+							margin-right: 8px
+							color: $black
+							font-size: 18px
+							font-weight: 700
+							text-decoration: none
+							+media-breakpoint-down(lg)
+								font-size: 16px
+							+media-breakpoint-down(md)
+								font-size: 14px
+						> del
+							margin-top: 4px
+							margin-bottom: 2px
+							color: #a3a1a4
+							font-size: 14px
+							font-weight: 500
+							+media-breakpoint-down(lg)
+								font-size: 13px
+							+media-breakpoint-down(md)
+								font-size: 12px
+							+media-breakpoint-down(sm)
+								margin-bottom: 0
+					&-quantity
+						margin-top: 20px
+						display: block
+						color: #a3a1a5
+						font-weight: 500
+						line-height: 1
+
+		// Info
+		&-info
+			.info-item
+				&:not(:first-child)
+					margin-top: 30px
+				&-head
+					padding: 15px 20px
+					border-radius: 5px
+					background-color: $accent
+					color: $white
+					font-size: 16px
+					font-weight: 500
+					line-height: 1.2
+					+media-breakpoint-down(lg)
+						font-size: 14px
+				&-body
+					padding: 15px 20px 0
+					// List
+					.info-list
+						display: flex
+						flex-wrap: wrap
+						margin: -15px
+						+media-breakpoint-down(xs)
+							margin: -10px 0
+						li
+							flex: 1 0 50%
+							padding: 15px
+							+media-breakpoint-down(xs)
+								flex: 0 0 100%
+								padding: 10px 0
+							.info-key
+							.info-value,
+								display: block
+								line-height: 1.2
+							.info-key
+								font-size: 13px
+								font-weight: 500
+							.info-value
+								margin-top: 6px
+								color: $black
+								font-size: 15px
+								font-weight: 500
+								word-break: break-word
+								+media-breakpoint-down(lg)
+									font-size: 14px
+					// Delivery
+					.info-delivery
+						display: flex
+						align-items: center
+						justify-content: space-between
+						+media-breakpoint-down(xs)
+							flex-wrap: wrap
+						&-method
+							padding-right: 30px
+							color: $black
+							font-size: 15px
+							font-weight: 500
+							line-height: 1.2
+							+media-breakpoint-down(lg)
+								font-size: 14px
+							+media-breakpoint-down(xs)
+								flex: 0 0 100%
+								margin-bottom: 10px
+								padding-right: 0
+						&-date
+							display: inline-flex
+							flex-wrap: wrap
+							align-items: center
+							+media-breakpoint-down(xs)
+								flex: 0 0 100%
+							.label
+								padding-right: 10px
+								color: $black
+								font-size: 15px
+								line-height: 1.2
+								+media-breakpoint-down(lg)
+									font-size: 14px
+							.value
+								display: inline-flex
+								align-items: center
+								color: $black
+								font-size: 15px
+								font-weight: 500
+								line-height: 1.2
+								.icon
+									margin-left: 10px
+									flex: 0 0 auto
+									color: $accent
+					// Payment
+					.info-payment
+						&-method
+							display: block
+							color: $black
+							font-size: 15px
+							font-weight: 500
+							line-height: 1.2
+							+media-breakpoint-down(lg)
+								font-size: 14px
+
+		// Summary
+		&-summary
+			display: flex
+			align-items: flex-end
+			justify-content: flex-end
+			margin-top: 30px
+			line-height: 1
+			+media-breakpoint-down(md)
+				justify-content: center
+			.label
+				padding-bottom: 3px
+			.value
+				padding-left: 10px
+
+		// Back to home
+		&-home
+			margin-top: 30px
+			text-align: center
+			+media-breakpoint-down(sm)
+				margin-top: 0
+
+	// Cross Sells
+	&-cross-sells
+		margin-top: 60px
+		&-title
+			margin-bottom: 18px
+			line-height: 1.3

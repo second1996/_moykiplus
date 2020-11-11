@@ -63,6 +63,10 @@
 .bs-tooltip-top .arrow::before
 	border-width: 7px 7px 0
 	border-top-color: $accent
+// Arrow top
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before
+	border-bottom-color: $accent
 
 .tooltip
 	&.show

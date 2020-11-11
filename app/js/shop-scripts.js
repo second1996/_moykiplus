@@ -228,9 +228,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			var discountNewPriceInput = document.querySelector('.discount-modal-new-price');
 			var discountNewPriceValue = productPriceValue * Math.round(value) / 100;
 
-			console.log(productPriceEl);
-			console.log(productPriceValue);
-
 			discountNewPriceInput.value = Math.round(productPriceValue - discountNewPriceValue).toLocaleString('ru') + ' Руб.';
 		}
 	}

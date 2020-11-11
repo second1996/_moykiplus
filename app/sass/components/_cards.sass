@@ -169,6 +169,12 @@
 	border: 1px solid $white
 	border-bottom: 0
 	box-shadow: 0 3px 24px 1px rgba(68, 68, 79, 0.08)
+	&.no-attributes
+		border-bottom: 1px solid $white
+		&:hover
+			border-radius: 5px
+		.card-attributes
+			display: none
 	+media-breakpoint-down(lg)
 		width: 100%
 	+media-breakpoint-down(sm)
@@ -225,6 +231,8 @@
 		visibility: hidden
 		opacity: 0
 		transition: .2s ease
+		+media-breakpoint-down(xs)
+			display: none
 		.btn
 			min-width: auto
 			width: 82px
@@ -441,6 +449,7 @@
 		.order-btn
 			width: 100%
 			margin-top: 10px
+			white-space: normal
 			.icon
 				flex: 0 0 auto
 				display: none
@@ -451,12 +460,21 @@
 				display: block
 			span.added
 				display: none
+				> a
+					color: $white
+					border-bottom: 1px solid $white
+					&:hover
+						border-bottom-style: dashed
 			&._active
 				background-color: $green
 				span.buy
 					display: none
 				span.added
 					display: block
+					+media-breakpoint-down(xs)
+						font-size: 12px
+						padding-left: 10px
+						padding-right: 10px
 				.icon
 					display: block
 	.card-attributes
