@@ -13,5 +13,5 @@
 @@include('libs/jquery.mask.min.js') // jQuery Mask input
 @@include('libs/jquery.marquee.min.js') // Marquee Text
 @@include('libs/readmore.min.js') // ReadMore
-@@include('libs/datepicker/moment.min.js') // Moment lib
+@@include('libs/datepicker/moment.js') // Moment lib
 @@include('libs/datepicker/jquery.daterangepicker.min.js') // Datepicker
