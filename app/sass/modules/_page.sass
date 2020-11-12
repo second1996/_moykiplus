@@ -461,6 +461,36 @@
 			margin-bottom: 20px
 		.card-product
 			width: 100%
+	.products-grid-more
+		margin-top: -20px
+		margin-left: -6px
+		margin-right: -6px
+		> .col,
+		> [class*="col"]
+			margin-bottom: 20px
+			padding-left: 6px
+			padding-right: 6px
+		&-brand
+			position: relative
+			width: 180px
+			height: 70px
+			border-radius: 5px
+			border: 1px solid $white
+			box-shadow: $box-shadow
+			background-color: $white
+			transition: border .35s ease
+			margin-top: 20px
+			+media-breakpoint-down(xxs)
+				width: 100%
+			&:hover
+				border-color: $border
+			img
+				width: 100%
+				height: 100%
+				padding: 20px
+				object-fit: scale-down
+		.card-product
+			width: 100%
 	.show-more
 		margin-top: 10px
 
