@@ -80,60 +80,60 @@ jQuery(document).ready( function($) {
 	 * Product Quantity
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	if (!String.prototype.getDecimals) {
-		String.prototype.getDecimals = function () {
-			var num = this,
-				match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
-			if (!match) {
-				return 0;
-			}
-			return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
-		}
-	}
+	// if (!String.prototype.getDecimals) {
+	// 	String.prototype.getDecimals = function () {
+	// 		var num = this,
+	// 			match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+	// 		if (!match) {
+	// 			return 0;
+	// 		}
+	// 		return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
+	// 	}
+	// }
 
-	productQuantity = function() {
-		$(document).on('click', '.quantity-minus, .quantity-plus', function () {
-			// Get values
-			var $qty = $(this).closest('.quantity').find('.quantity-value'),
-					currentVal = parseFloat( $qty.attr('data-quantity-value') ),
-					max = parseFloat( $qty.attr('max') ),
-					min = parseFloat( $qty.attr('min') ),
-					step = $qty.attr('step');
+	// productQuantity = function() {
+	// 	$('body').on('click', '.quantity-minus, .quantity-plus', function () {
+	// 		// Get values
+	// 		var $qty = $(this).closest('.quantity').find('.quantity-value'),
+	// 				currentVal = parseFloat( $qty.attr('data-quantity-value') ),
+	// 				max = parseFloat( $qty.attr('max') ),
+	// 				min = parseFloat( $qty.attr('min') ),
+	// 				step = $qty.attr('step');
 
-			// Format values
-			if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
-			if (max === '' || max === 'NaN') max = '';
-			if (min === '' || min === 'NaN') min = 0;
-			if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = '1';
+	// 		// Format values
+	// 		if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
+	// 		if (max === '' || max === 'NaN') max = '';
+	// 		if (min === '' || min === 'NaN') min = 0;
+	// 		if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = '1';
 
-			// Change the value
-			if ($(this).is('.quantity-plus')) {
-				if (max && (currentVal >= max)) {
-					$qty.val(max + ' шт.');
-					$qty.attr('data-quantity-value', max);
-				} else {
-					var maxValue = (currentVal + parseFloat(step)).toFixed(step.getDecimals())
-					$qty.val(maxValue + ' шт.');
-					$qty.attr('data-quantity-value', maxValue);
-				}
-			} else {
-				if (min && (currentVal <= min)) {
-					$qty.val(min + ' шт.');
-					$qty.attr('data-quantity-value', min);
-				} else if (currentVal > 0) {
-					var minValue = (currentVal - parseFloat(step)).toFixed(step.getDecimals());
+	// 		// Change the value
+	// 		if ($(this).is('.quantity-plus')) {
+	// 			if (max && (currentVal >= max)) {
+	// 				$qty.val(max + ' шт.');
+	// 				$qty.attr('data-quantity-value', max);
+	// 			} else {
+	// 				var maxValue = (currentVal + parseFloat(step)).toFixed(step.getDecimals())
+	// 				$qty.val(maxValue + ' шт.');
+	// 				$qty.attr('data-quantity-value', maxValue);
+	// 			}
+	// 		} else {
+	// 			if (min && (currentVal <= min)) {
+	// 				$qty.val(min + ' шт.');
+	// 				$qty.attr('data-quantity-value', min);
+	// 			} else if (currentVal > 0) {
+	// 				var minValue = (currentVal - parseFloat(step)).toFixed(step.getDecimals());
 
-					$qty.val(minValue + ' шт.');
-					$qty.attr('data-quantity-value', minValue);
-				}
-			}
-			// console.log($qty.attr('data-quantity-value'));
-			$qty.attr('data-quantity-value', parseInt( $qty.val() ));
+	// 				$qty.val(minValue + ' шт.');
+	// 				$qty.attr('data-quantity-value', minValue);
+	// 			}
+	// 		}
+	// 		// console.log($qty.attr('data-quantity-value'));
+	// 		$qty.attr('data-quantity-value', parseInt( $qty.val() ));
 
-			// Trigger change event
-			$qty.trigger('change');
-		})
-	}
-	productQuantity()
+	// 		// Trigger change event
+	// 		$qty.trigger('change');
+	// 	})
+	// }
+	// productQuantity()
 
 })
