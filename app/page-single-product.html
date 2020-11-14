@@ -7,7 +7,15 @@
 	<meta name="description" content="➢ Большой ассортимент сантехники и бытовой техники для дома в Москве в интернет-магазине MoykiPlus ➢ Заказать по ☎ 8-(495)-642-26-05.">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="icon" href="images/favicon.png">
-	<meta property="og:image" content="images/dest/preview.jpg">
+
+	<!-- OG Graph -->
+	<meta property="og:title" content="Кухонная мойка Blanco Zia 40S"/>
+	<meta property="og:description" content="&#127775 Купить кухонную мойку Blanco Zia 40S по цене 35 500 Руб. в интернет-магазине МойкиПлюс онлайн! &#10026 Характеристики товара, &#10026 фото. &#9989 Гарантия и сертификаты. Мы предлагаем надёжную доставку по всей России &#9992 и удобные способы оплаты покупок."/>
+	<meta property="og:image" content="https://second1996.github.io/moyki-plus/images/products/product-single-photo.png"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://second1996.github.io/moyki-plus/page-single-product.html"/>
+	<meta property="og:locale" content="ru_RU"/>
+	<meta property="og:site_name" content="second1996.github.io"/>
 
 	<!-- Load CSS -->
 	<link rel="stylesheet" href="css/vendor/bootstrap.css">
@@ -26,11 +34,18 @@
 
 			<!-- Breadcrumbs -->
 			<div class="breadcrumbs">
-				<ul class="breadcrumbs-list">
-					<li><a href="page-home.html">Главная</a></li>
-					<li><a href="page-catalog.html">Каталог товаров</a></li>
-					<li>
-						<a href="page-category.html" class="has-dropmenu">Сантехника</a>
+				<ul class="breadcrumbs-list" itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="page-home.html" itemprop="item">Главная</a>
+						<meta itemprop="position" content="0" />
+					</li>
+					<li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="page-catalog.html" itemprop="item">Каталог товаров</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="page-category.html" class="has-dropmenu" itemprop="item">Сантехника</a>
+						<meta itemprop="position" content="2" />
 						<ul>
 							<li><a href="page-category.html">Из нержавеющей стали</a></li>
 							<li><a href="page-category.html">Гранитные</a></li>
@@ -39,8 +54,9 @@
 							<li><a href="page-category.html">Мраморные</a></li>
 						</ul>
 					</li>
-					<li>
-						<a href="page-subcategory.html" class="has-dropmenu">Мойки для кухни</a>
+					<li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+						<a href="page-subcategory.html" class="has-dropmenu" itemprop="item">Мойки для кухни</a>
+						<meta itemprop="position" content="3" />
 						<ul>
 							<li><a href="page-category.html">Из нержавеющей стали</a></li>
 							<li><a href="page-category.html">Гранитные</a></li>
@@ -54,7 +70,8 @@
 			</div>
 
 			<!-- START Product Single page -->
-			<div class="product-single">
+			<div class="product-single" itemscope itemtype="http://schema.org/Product">
+
 
 				<div class="row">
 					<div class="product-single-left col-12 col-xl-auto">
@@ -80,7 +97,8 @@
 						</div>
 					</div><!-- /.col -->
 					<div class="product-single-right col-12 col-xl">
-						<h1 class="product-title text-md w-semibold">Аксессуар Schock Доска разделочная передвижная универсальная (для моек шириной 480- 525мм кроме серии Venus), массив бамбука</h1>
+						<h1 class="product-title text-md w-semibold" itemprop="name">Кухонная мойка Blanco Zia 40S</h1>
+						<meta itemProp="image" content="images/products/product-single-photo.png"/>
 
 						<!-- Product Main-->
 						<div class="product-main row">
@@ -365,9 +383,11 @@
 											</a>
 											<div class="price">
 												<span class="price-label text-xs">Цена:</span>
-												<span class="price-wrapper">
+												<span class="price-wrapper" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 													<ins data-final-price="35500">35 500 Руб.</ins>
 													<del>36 500 Руб.</del>
+													<meta itemProp="price" content="35500"/>
+													<meta itemProp="priceCurrency" content="RUB"/>
 												</span>
 											</div>
 										</div>
@@ -787,7 +807,7 @@
 						<!-- Product Description -->
 						<div class="product-description">
 							<h2 class="product-description-title c-black text-md w-semibold">Описание товара:</h2>
-							<article class="article" data-readmore="inline">
+							<article class="article" data-readmore="inline" itemprop="description">
 								<p>Раковины должны быть не только функциональными, но и эстетичными. Мойка Longran Ultra Uls 780.500 воплощает все лучшие качества, которыми должна обладать современная сантехника. Изделие производится на крупнейшем европейском заводе, который соответствует всем международным требованиям.</p>
 								<p>Минималистичный дизайн в сочетании со стилем хай-тек позволяет подчеркнуть все достоинства интерьера кухни. Кроме того, линейка включает модели, выполненные в деревенских традициях или других стилистических направлениях. Раковина стойко выдерживает высокие температуры и механические воздействия.</p>
 							</article>
