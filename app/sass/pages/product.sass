@@ -129,18 +129,24 @@
 					height: 240px
 					padding: 20px
 				&.has-video
-					img:hover
-						opacity: 0.75
-					&::after
-						content: ''
-						pointer-events: none
-						position: absolute
-						top: 0
-						left: 0
-						right: 0
-						bottom: 0
-						border-radius: 5px
-						background: url('../../images/icons/play.svg') no-repeat center/26px
+					a
+						position: relative
+						display: block
+						width: 100%
+						height: 100%
+						&::after
+							content: ''
+							pointer-events: none
+							position: absolute
+							top: 0
+							left: 0
+							right: 0
+							bottom: 0
+							border-radius: 5px
+							background: url('../../images/icons/play.svg') no-repeat center/26px
+					img
+						&:hover
+							opacity: 0.75
 				img
 					width: 100%
 					height: 100%

@@ -466,4 +466,51 @@ jQuery(document).ready( function($) {
 		})
 	})
 
+
+	/**
+	 * Quickview Product Modal slider
+	 */
+	var quickviewNavSlider = new Swiper('.quickview-modal .quickview-nav-slider', {
+		observer: true,
+		observeParents: true,
+		allowTouchMove: false,
+		loop: false,
+		slidesPerView: 'auto'
+	})
+	var quickviewBodySlider = new Swiper('.quickview-modal .quickview-body-slider', {
+		observer: true,
+		observeParents: true,
+		allowTouchMove: false,
+		loop: false,
+		speed: 450,
+		slidesPerView: 1,
+		// slideToClickedSlide: true,
+		spaceBetween: 30,
+		thumbs: {
+			swiper: quickviewNavSlider
+		}
+	})
+	var quickviewPhotoThumbsSlider = new Swiper('.quickview-modal .quickview-photo-thumbs-slider', {
+		observer: true,
+		observeParents: true,
+		allowTouchMove: false,
+		loop: false,
+		slidesPerView: 'auto',
+		spaceBetween: 8
+	})
+	var quickviewPhotoSlider = new Swiper('.quickview-modal .quickview-photo-slider', {
+		observer: true,
+		observeParents: true,
+		loop: false,
+		speed: 450,
+		slidesPerView: 1,
+		navigation: {
+			nextEl: '.quickview-photo-slider .swiper-button-next',
+			prevEl: '.quickview-photo-slider .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: quickviewPhotoThumbsSlider
+		}
+	})
+
 })

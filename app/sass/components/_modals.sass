@@ -116,6 +116,354 @@ body.modal-open
 
 
 /* ==========================================================================
+	 Quickview Product Modal
+	 ========================================================================== */
+.quickview-modal
+	+media-breakpoint-down(sm)
+		display: none !important
+	.modal-dialog
+		max-width: 800px
+		+media-breakpoint-down(md)
+			max-width: 700px
+	.modal-content
+		overflow: hidden
+		padding: 0
+	.modal-header
+		justify-content: flex-start
+		padding: 30px 30px 20px
+	.modal-title
+		padding-right: 50px
+		text-align: left
+	.quickview
+		// Price & Actions
+		&-head
+			display: flex
+			justify-content: space-between
+			padding: 0 30px 30px
+			.price
+				&-label
+					display: block
+					margin-bottom: 6px
+					color: #4b484c
+					font-weight: 500
+					line-height: 1
+				&-wrapper
+					display: flex
+					flex-wrap: wrap
+					align-items: flex-end
+					line-height: 1
+					> ins
+						margin-right: 5px
+						color: $black
+						font-size: 20px
+						font-weight: 700
+						white-space: nowrap
+						text-decoration: none
+					> del
+						margin-top: 2px
+						padding-bottom: 2px
+						color: #a3a1a4
+						font-size: 14px
+						font-weight: 500
+						white-space: nowrap
+			// Wishlist, Compare, Add to cart
+			.actions
+				display: flex
+				align-items: center
+				justify-content: space-between
+				background-color: $white
+				> form
+					width: 100%
+				.btn
+					min-width: auto
+					margin-left: 5px
+				.wishlist-btn,
+				.compare-btn
+					width: 40px
+					.icon
+						flex: 0 0 auto
+						font-size: 20px
+						+media-breakpoint-down(xs)
+							font-size: 18px
+					&._active
+						border-color: $accent
+						background-color: $accent
+						color: $white
+				.order-btn
+					width: 100%
+					min-width: 140px
+					padding-left: 12px
+					padding-right: 12px
+					white-space: normal
+					.icon
+						flex: 0 0 auto
+						display: none
+						margin-right: 10px
+					span
+						margin-left: 0
+					span.buy
+						display: block
+					span.added
+						display: none
+						> a
+							color: $white
+							border-bottom: 1px solid $white
+							&:hover
+								border-bottom-style: dashed
+					&._active
+						background-color: $green
+						span.buy
+							display: none
+						span.added
+							display: block
+							+media-breakpoint-down(xs)
+								font-size: 12px
+								padding-left: 10px
+								padding-right: 10px
+						.icon
+							display: block
+
+		// Quickview tabs/nav
+		&-nav
+			padding-left: 30px
+			padding-right: 30px
+			border-top: 1px dashed $border
+			&-wrapper
+				justify-content: space-between
+			&-slide
+				flex: 0 0 auto
+				width: auto
+				&.swiper-slide-thumb-active
+					pointer-events: none
+					> a
+						color: $accent
+						&::after
+							background-color: $accent
+				> a
+					position: relative
+					display: block
+					padding: 15px 0
+					color: $black
+					font-size: 16px
+					font-weight: 500
+					line-height: 1
+					&:hover
+						&::after
+							background-color: $border
+					&::after
+						content: ''
+						position: absolute
+						left: 0
+						right: 0
+						bottom: 0
+						height: 2px
+						background-color: $trsp
+						transition: $trs
+					&.product-link
+						color: #42656c
+						font-weight: 600
+						&:hover
+							color: $accent
+
+		// Quickview body
+		&-body
+			padding: 30px
+			background-color: #f2f2f2
+			&-slide
+				width: 90%
+				box-sizing: border-box
+				&:last-child
+					margin-right: calc(100% - 90%)
+				&:not(.swiper-slide-active)
+					visibility: hidden
+					opacity: 0
+					transition: $trs
+			&-inner
+				// height: 340px
+
+		// Product photo
+		&-photo
+			position: relative
+			width: 100%
+			height: 380px
+			&-slider
+				height: 100%
+				overflow: hidden
+				border-radius: 5px
+				box-shadow: $box-shadow
+				background-color: $white
+				.swiper-slide
+					position: relative
+					display: flex
+					align-items: center
+					justify-content: center
+					height: 360px
+					padding: 20px 20px 75px
+					box-sizing: border-box
+					+media-breakpoint-down(xs)
+						height: 240px
+						padding: 20px
+					&.has-video
+						a
+							position: relative
+							display: block
+							width: 100%
+							height: 100%
+							&::after
+								content: ''
+								pointer-events: none
+								position: absolute
+								top: 0
+								left: 0
+								right: 0
+								bottom: 0
+								border-radius: 5px
+								background: url('../../images/icons/play.svg') no-repeat center/26px
+						img:hover
+							opacity: 0.75
+					img
+						width: 100%
+						height: 100%
+						object-fit: scale-down
+			&-thumbs-slider
+				position: absolute
+				bottom: 20px
+				left: 0
+				right: 0
+				.swiper-wrapper
+					justify-content: center
+				.swiper-slide
+					position: relative
+					display: flex
+					align-items: center
+					justify-content: center
+					width: 50px
+					height: 50px
+					border-radius: 3px
+					border: 1px solid $border
+					box-sizing: border-box
+					transition: border .35s ease
+					&.swiper-slide-thumb-active
+						border-color: $accent
+					&:hover
+						border-color: $accent
+						cursor: pointer
+					&.has-video
+						img:hover
+							opacity: 0.75
+						&::after
+							content: ''
+							pointer-events: none
+							position: absolute
+							top: 0
+							left: 0
+							right: 0
+							bottom: 0
+							border-radius: 5px
+							background: url('../../images/icons/play.svg') no-repeat center/16px
+					img
+						width: 90%
+						height: 90%
+						object-fit: scale-down
+
+		// Product attributes
+		&-attributes
+			overflow-y: auto
+			height: 380px
+			table
+				overflow: hidden
+				border-radius: 5px
+				font-size: 12px
+				+media-breakpoint-down(xs)
+					tbody
+						tr
+							background-color: $white
+						td
+							border-right: 0
+							border-bottom: 1px solid $border
+			.name,
+			.value
+				width: 25%
+				padding: 20px
+				color: $black
+				+media-breakpoint-down(xs)
+					display: block
+					width: 100%
+					padding: 10px 20px
+			.name
+				font-weight: 600
+				+media-breakpoint-down(xs)
+					padding-bottom: 0
+			.hint
+				position: relative
+				top: -1px
+				width: 14px
+				height: 14px
+				margin-left: 8px
+				color: $accent
+				font-size: 14px
+				line-height: 1
+				transition: color .35s ease
+				&:hover
+					cursor: help
+					color: $orange
+
+		// Product testimonials
+		&-testimonials
+			overflow-y: auto
+			height: 380px
+			padding: 0 25px
+			border-radius: 5px
+			box-shadow: $box-shadow
+			background-color: $white
+			&::after
+				content: ''
+				position: absolute
+				user-select: none
+				pointer-events: none
+				left: 0
+				right: 0
+				z-index: 10
+				bottom: 0
+				height: 30px
+				background-image: linear-gradient(to top, rgba($bodycolor, 1) 0%, rgba($bodycolor, 0.25) 100%)
+			.testimonials-card
+				position: relative
+				margin-bottom: 10px
+				padding: 25px 0 15px
+				&:not(:last-child)
+					border-bottom: 1px solid $border
+				&-header
+					display: flex
+					align-items: center
+					justify-content: space-between
+					+media-breakpoint-down(lg)
+						flex-direction: column
+						align-items: flex-start
+					.author
+						.name
+							margin-bottom: 8px
+							line-height: 1.3
+						.date
+							display: flex
+							align-items: center
+							line-height: 1
+							&-icon
+								flex: 0 0 auto
+								width: 30px
+								height: 30px
+								margin-right: 12px
+								font-size: 12px
+				&-body
+					margin-top: 10px
+					color: $black
+					+media-breakpoint-down(xs)
+						margin-top: 15px
+					> p:last-child
+						margin-bottom: 0
+
+
+/* ==========================================================================
 	 Authorization Modal
 	 ========================================================================== */
 .authorization-modal

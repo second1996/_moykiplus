@@ -22,7 +22,7 @@ let path = {
 		html: [sourceDir + '/*.html', '!' + sourceDir + '/_*.html'],
 		css: sourceDir + '/' + preprocessor +'/**/*.' + preprocessor,
 		// js: [sourceDir + '/js/app.js', sourceDir + '/js/vendors.js'],
-		js: [sourceDir + '/js/**/*.js'],
+		js: sourceDir + '/js/*.js',
 		img: sourceDir + '/images/**/*.{' + imageswatch + '}',
 		fonts: sourceDir + '/fonts/*.ttf'
 	},
@@ -107,6 +107,12 @@ function styles() {
 function scripts() {
 	return src(path.src.js)
 		.pipe(fileinclude())
+		.pipe(dest(path.build.js))
+		.pipe(browsersync.stream())
+}
+function scriptsMinify() {
+	return src(path.src.js)
+		.pipe(fileinclude())
 		.pipe(rename({ extname: '.min.js'}))
 		.pipe(uglify())
 		.pipe(dest(path.build.js))
@@ -177,15 +183,16 @@ function watchFiles() {
 	gulp.watch([path.watch.svgIcons], { usePolling: true }, svgSprite)
 }
 
-const build = gulp.series(clean, gulp.parallel(scripts, styles, html, images, svgSprite));
+const build = gulp.series(clean, gulp.parallel(scripts, scriptsMinify, styles, html, images, svgSprite));
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
-exports.svgSprite  = svgSprite;
-exports.images     = images;
-exports.clean      = clean;
-exports.scripts    = scripts;
-exports.styles     = styles;
-exports.html       = html;
-exports.build      = build;
-exports.watch      = watch;
-exports.default    = watch;
+exports.svgSprite     = svgSprite;
+exports.images        = images;
+exports.clean         = clean;
+exports.scripts       = scripts;
+exports.scriptsMinify = scriptsMinify;
+exports.styles        = styles;
+exports.html          = html;
+exports.build         = build;
+exports.watch         = watch;
+exports.default       = watch;

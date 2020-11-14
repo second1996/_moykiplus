@@ -12,85 +12,89 @@ document.addEventListener("DOMContentLoaded", function() {
 	/**
 	 * Shop Categories page slider
 	 */
-	categoriesSlider.forEach( (element, index) => {
-		let categoriesSwiper;
+	if( categoriesSlider.length ) {
+		categoriesSlider.forEach( (element, index) => {
+			let categoriesSwiper;
 
-		// Add extra class for each slider
-		element.classList.add('s-catalog-category-slider-' + index);
+			// Add extra class for each slider
+			element.classList.add('s-catalog-category-slider-' + index);
 
-		var breakpointChecker = function() {
-			// if larger viewport and multi-row layout needed
-			if ( breakpoint.matches === true ) {
-					// clean up old instances and inline styles when available
-					if ( categoriesSwiper !== undefined ) categoriesSwiper.destroy( true, true );
-					// or/and do nothing
-					return;
-			// else if a small viewport and single column layout needed
-			} else if ( breakpoint.matches === false ) {
-					// fire small viewport version of swiper
-					return enableSwiper();
-			}
-		}
-
-		var enableSwiper = function() {
-			categoriesSwiper = new Swiper('.s-catalog .s-catalog-category-slider-' + index, {
-				loop: false,
-				speed: 650,
-				spaceBetween: 10,
-				autoHeight: true,
-				pagination: {
-					el: '.s-catalog .s-catalog-category-slider-' + index + ' .swiper-pagination',
-					type: 'bullets',
-					clickable: true,
+			var breakpointChecker = function() {
+				// if larger viewport and multi-row layout needed
+				if ( breakpoint.matches === true ) {
+						// clean up old instances and inline styles when available
+						if ( categoriesSwiper !== undefined ) categoriesSwiper.destroy( true, true );
+						// or/and do nothing
+						return;
+				// else if a small viewport and single column layout needed
+				} else if ( breakpoint.matches === false ) {
+						// fire small viewport version of swiper
+						return enableSwiper();
 				}
-			})
-		}
+			}
 
-		// keep an eye on viewport size changes
-		breakpoint.addListener(breakpointChecker);
-		// kickstart
-		breakpointChecker();
-	})
+			var enableSwiper = function() {
+				categoriesSwiper = new Swiper('.s-catalog .s-catalog-category-slider-' + index, {
+					loop: false,
+					speed: 650,
+					spaceBetween: 10,
+					autoHeight: true,
+					pagination: {
+						el: '.s-catalog .s-catalog-category-slider-' + index + ' .swiper-pagination',
+						type: 'bullets',
+						clickable: true,
+					}
+				})
+			}
+
+			// keep an eye on viewport size changes
+			breakpoint.addListener(breakpointChecker)
+			// kickstart
+			breakpointChecker()
+		})
+	}
 
 	/**
 	 * Shop Subcategories page slider
 	 */
-	subcategoriesSlider.forEach( (element, index) => {
-		let subcategoriesSwiper;
+	if( subcategoriesSlider.length ) {
+		subcategoriesSlider.forEach( (element, index) => {
+			let subcategoriesSwiper;
 
-		var breakpointChecker = function() {
-			// if larger viewport and multi-row layout needed
-			if ( breakpoint.matches === true ) {
-					// clean up old instances and inline styles when available
-					if ( subcategoriesSwiper !== undefined ) subcategoriesSwiper.destroy( true, true );
-					// or/and do nothing
-					return;
-			// else if a small viewport and single column layout needed
-			} else if ( breakpoint.matches === false ) {
-					// fire small viewport version of swiper
-					return enableSwiper();
-			}
-		}
-
-		var enableSwiper = function() {
-			subcategoriesSwiper = new Swiper('.s-subcategory .s-subcategory-list-slider', {
-				loop: false,
-				speed: 650,
-				spaceBetween: 10,
-				autoHeight: true,
-				pagination: {
-					el: '.s-subcategory .s-subcategory-list-slider .swiper-pagination',
-					type: 'bullets',
-					clickable: true,
+			var breakpointChecker = function() {
+				// if larger viewport and multi-row layout needed
+				if ( breakpoint.matches === true ) {
+						// clean up old instances and inline styles when available
+						if ( subcategoriesSwiper !== undefined ) subcategoriesSwiper.destroy( true, true );
+						// or/and do nothing
+						return;
+				// else if a small viewport and single column layout needed
+				} else if ( breakpoint.matches === false ) {
+						// fire small viewport version of swiper
+						return enableSwiper();
 				}
-			})
-		}
+			}
 
-		// keep an eye on viewport size changes
-		breakpoint.addListener(breakpointChecker);
-		// kickstart
-		breakpointChecker();
-	})
+			var enableSwiper = function() {
+				subcategoriesSwiper = new Swiper('.s-subcategory .s-subcategory-list-slider', {
+					loop: false,
+					speed: 650,
+					spaceBetween: 10,
+					autoHeight: true,
+					pagination: {
+						el: '.s-subcategory .s-subcategory-list-slider .swiper-pagination',
+						type: 'bullets',
+						clickable: true,
+					}
+				})
+			}
+
+			// keep an eye on viewport size changes
+			breakpoint.addListener(breakpointChecker);
+			// kickstart
+			breakpointChecker();
+		})
+	}
 
 
 	/**
@@ -128,66 +132,89 @@ document.addEventListener("DOMContentLoaded", function() {
 	 */
 	var filterSlider = document.querySelectorAll('.filter-slider-handle');
 
-	filterSlider.forEach(slider => {
-		let filterMinPrice = parseInt( slider.dataset.slidermin );
-		let filterMaxPrice = parseInt( slider.dataset.slidermax );
+	if( filterSlider.length ) {
+		initFilterSlider = function() {
+			filterSlider.forEach(slider => {
+				let filterMinPrice = parseInt( slider.dataset.slidermin );
+				let filterMaxPrice = parseInt( slider.dataset.slidermax );
+				let priceFrom      = slider.nextElementSibling.querySelector('.filter-slider-from');
+				let priceTo        = slider.nextElementSibling.querySelector('.filter-slider-to');
+				let inputMinPrice  = parseInt( priceFrom.value );
+				let inputMaxPrice  = parseInt( priceTo.value );
 
-		// Create noUiSlide
-		noUiSlider.create(slider, {
-			start: [filterMinPrice, filterMaxPrice],
-			connect: true,
-			range: {
-					'min': filterMinPrice,
-					'max': filterMaxPrice
-			}
-		})
+				// Create noUiSlide
+				noUiSlider.create(slider, {
+					start: [inputMinPrice, inputMaxPrice],
+					connect: true,
+					range: {
+							'min': filterMinPrice,
+							'max': filterMaxPrice
+					}
+				})
 
-		// Change/Update noUiSlide values
-		var priceFrom = slider.nextElementSibling.querySelector('.filter-slider-from'),
-				priceTo = slider.nextElementSibling.querySelector('.filter-slider-to');
+				// Change/Update noUiSlide values
+				priceFrom.addEventListener('change', priceUpdateValues);
+				priceTo.addEventListener('change', priceUpdateValues);
 
-		priceFrom.addEventListener('change', priceUpdateValues);
-		priceTo.addEventListener('change', priceUpdateValues);
+				slider.noUiSlider.on('update', function (values, handle) {
+					var value = values[handle];
 
-		slider.noUiSlider.on('update', function (values, handle) {
-			var value = values[handle];
+					// Set «from» value
+					if (handle == 0) {
+						priceFrom.value = Math.round(value);
+					}
 
-			// Set «from» value
-			if (handle == 0) {
-				priceFrom.value = Math.round(value);
-			}
+					// Set «to» value
+					if( handle == 1) {
+						priceTo.value = Math.round(value);
+					}
+				})
 
-			// Set «to» value
-			if( handle == 1) {
-				priceTo.value = Math.round(value);
-			}
-		})
+				slider.noUiSlider.on('end', function (values, handle) {
+					// Trigger «from» input value
+					if (handle == 0) {
+						$(priceFrom).change()
+					}
 
-		function priceUpdateValues() {
-			var priceFromValue, priceToValue;
+					// Trigger «to» input value
+					if( handle == 1) {
+						$(priceTo).change()
+					}
+				})
 
-			// Check if value isn't empty...
-			if (priceFrom.value != '') {
-				priceFromValue = priceFrom.value;
-			}
-			if (priceTo.value != '') {
-				priceToValue = priceTo.value;
-			}
+				function priceUpdateValues() {
+					var priceFromValue, priceToValue;
 
-			// ... and change values
-			slider.noUiSlider.set([priceFromValue, priceToValue]);
+					// Check if value isn't empty...
+					if (priceFrom.value != '') {
+						priceFromValue = priceFrom.value;
+					}
+					if (priceTo.value != '') {
+						priceToValue = priceTo.value;
+					}
+
+					// ... and change values
+					slider.noUiSlider.set([priceFromValue, priceToValue]);
+				}
+
+				// Set default values when form is reset
+				document.querySelector('.filter-reset').addEventListener('click', function () {
+					slider.noUiSlider.set([parseInt(slider.dataset.slidermin), parseInt(slider.dataset.slidermax)]);
+					priceFrom.setAttribute('value', parseInt(slider.dataset.slidermin));
+					priceTo.setAttribute('value', parseInt(slider.dataset.slidermax));
+				})
+			})
 		}
+		initFilterSlider()
+	}
 
-		// Set default values when form is reset
-		var resetFilters = document.querySelector('button[type="reset"]');
+	// Reinit filter
+	reinitFilterSlider = function() {
+		$('.filter-toggle-header._toggled, .widget-header._toggled').next().css('display', 'block');
 
-		resetFilters.addEventListener('click', function () {
-			slider.noUiSlider.set([parseInt(slider.dataset.slidermin), parseInt(slider.dataset.slidermax)]);
-			priceFrom.setAttribute('value', parseInt(slider.dataset.slidermin));
-			priceTo.setAttribute('value', parseInt(slider.dataset.slidermax));
-		})
-	})
-
+		filterSlider = document.querySelectorAll('.filter-slider-handle');
+		initFilterSlider()
+	}
 
 	/**
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
