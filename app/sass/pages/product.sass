@@ -52,7 +52,7 @@
 				padding-left: 0
 				padding-right: 0
 
-	// Product image
+	// Product Image
 	.product-preview
 		padding-bottom: 30px
 		&-head
@@ -232,6 +232,53 @@
 					width: 85%
 					height: 85%
 					object-fit: scale-down
+
+	// Product Share
+	.product-share
+		display: flex
+		align-items: center
+		margin-top: 20px
+		&-label
+			margin-right: 12px
+			color: $black
+			font-size: 14px
+			font-weight: 500
+			line-height: 1
+		&-list
+			display: inline-flex
+			align-items: center
+		&-button
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			width: 36px
+			height: 36px
+			border-radius: 3px
+			background-color: $orange
+			color: $white
+			font-size: 15px
+			&:not(:last-child)
+				margin-right: 6px
+			&:hover
+				background-color: darken($orange, 7%)
+				color: $white
+			&.vkontakte
+				background-color: #547bcf
+				&:hover
+					background-color: darken(#547bcf, 7%)
+			&.facebook
+				background-color: #3b5998
+				&:hover
+					background-color: darken(#3b5998, 7%)
+			&.odnoklassniki
+				background-color: #orange
+				&:hover
+					background-color: darken($orange, 7%)
+			&.twitter
+				background-color: #4285f4
+				&:hover
+					background-color: darken(#4285f4, 7%)
+
 
 	// Product Attributes
 	.product-attributes

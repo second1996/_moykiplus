@@ -8,6 +8,9 @@
 			</div>
 			<div class="widget-filters-inner">
 				<form action="#" method="POST" class="widget-filters-form form">
+					<div class="filter-preloader">
+						<div class="lazy-preloader"></div>
+					</div>
 					<div class="filter-toggle">
 						<button type="button" class="filter-toggle-header _toggled" data-toggle="toggle-box">
 							<div class="title">Цена <span>(Рубли)</span></div>
@@ -57,10 +60,10 @@
 						</button>
 						<div class="filter-toggle-inner">
 							<div class="filter-scrolling">
-								<div class="form-checkbox"><input type="checkbox" id="p-material-1"><label for="p-material-1" class="form-checkbox-label">Гранит</label></div>
+								<div class="form-checkbox"><input disabled type="checkbox" id="p-material-1"><label for="p-material-1" class="form-checkbox-label">Гранит</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-material-2"><label for="p-material-2" class="form-checkbox-label">Латунь</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-material-3"><label for="p-material-3" class="form-checkbox-label">Керамика</label></div>
-								<div class="form-checkbox"><input type="checkbox" id="p-material-4"><label for="p-material-4" class="form-checkbox-label">Хром</label></div>
+								<div class="form-checkbox"><input disabled type="checkbox" id="p-material-4"><label for="p-material-4" class="form-checkbox-label">Хром</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-material-5"><label for="p-material-5" class="form-checkbox-label">Бронза</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-material-6"><label for="p-material-6" class="form-checkbox-label">Медь</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-material-7"><label for="p-material-7" class="form-checkbox-label">Сталь</label></div>
@@ -93,15 +96,18 @@
 								<div class="form-checkbox"><input type="checkbox" id="p-color-1"><label for="p-color-1" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет"></span> Красный</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-color-2"><label for="p-color-2" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-green.jpg" alt="Зелёный цвет"></span> Зеленый</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-color-3"><label for="p-color-3" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет"></span> Черный</label></div>
-								<div class="form-checkbox"><input type="checkbox" id="p-color-4"><label for="p-color-4" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-green.jpg" alt="Зелёный цвет"></span> Серый</label></div>
+								<div class="form-checkbox"><input disabled type="checkbox" id="p-color-4"><label for="p-color-4" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-green.jpg" alt="Зелёный цвет"></span> Серый</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-color-5"><label for="p-color-5" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет"></span> Синий</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-color-6"><label for="p-color-6" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-green.jpg" alt="Зелёный цвет"></span> Желтый</label></div>
-								<div class="form-checkbox"><input type="checkbox" id="p-color-7"><label for="p-color-7" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет"></span> Фиолетовый</label></div>
+								<div class="form-checkbox"><input disabled type="checkbox" id="p-color-7"><label for="p-color-7" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-red.jpg" alt="Красный цвет"></span> Фиолетовый</label></div>
 								<div class="form-checkbox"><input type="checkbox" id="p-color-8"><label for="p-color-8" class="form-checkbox-label"><span class="color"><img class="lazy" data-src="images/products/filter-color-green.jpg" alt="Зелёный цвет"></span> Розовый</label></div>
 							</div>
 						</div>
 					</div><!-- /.filter-toggle -->
-					<button type="reset" class="filter-reset btn btn-primary">Очистить фильтр</button>
+					<div class="filter-triggers">
+						<button type="button" class="filter-show btn btn-primary">Показать 144</button>
+						<button type="button" class="filter-reset btn btn-primary-outline">Очистить фильтр</button>
+					</div>
 				</form><!-- /.w-filters-form -->
 			</div><!-- /.w-filters-inner -->
 		</div><!-- /.w-filters -->

@@ -484,7 +484,6 @@ jQuery(document).ready( function($) {
 		loop: false,
 		speed: 450,
 		slidesPerView: 1,
-		// slideToClickedSlide: true,
 		spaceBetween: 30,
 		thumbs: {
 			swiper: quickviewNavSlider

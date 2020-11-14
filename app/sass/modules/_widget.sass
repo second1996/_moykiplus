@@ -2,8 +2,8 @@
 	 Widget customize
 	 ========================================================================== */
 .page-widgets
-	position: sticky
-	top: 90px
+	// position: sticky
+	// top: 90px
 
 	// Widgets Scrollbar
 	*
@@ -106,6 +106,28 @@
 	.widget-filters
 		padding-top: 0
 		padding-bottom: 0
+
+		// Filter preloader
+		.filter-preloader
+			position: absolute
+			top: 0
+			left: -30px
+			right: -30px
+			bottom: 0
+			z-index: 29
+			display: none
+			padding: 100px 0
+			background-color: rgba($bodycolor, 0.75)
+			&._active
+				display: block
+			.lazy-preloader
+				position: sticky
+				width: 40px
+				height: 40px
+				left: 0
+				margin: 0 auto
+				border-top-color: $accent
+				border-width: 3px
 
 		// Title (toggle handle)
 		&-title
@@ -220,7 +242,7 @@
 				&:not(:last-child)
 					margin-bottom: 12px
 				&-label
-					display: inline-flex
+					display: flex
 					// align-items: center
 					margin-bottom: 0
 					padding-left: 24px
@@ -308,10 +330,32 @@
 		.filter-scrolling
 			overflow-y: auto
 			max-height: 136px
+
+		// Filter triggers
+		.filter-triggers
+			display: none
+			position: sticky
+			bottom: 0
+			z-index: 9
+			// width: 270px
+			margin-left: -30px
+			margin-right: -30px
+			padding: 15px 15px
+			border-top: 1px solid $border
+			background-color: $white
+		// Filter Show button
+		.filter-show
+			width: 100%
+			margin-bottom: 10px
+			+media-breakpoint-down(md)
+				align-self: center
+				max-width: 220px
+				margin: 30px auto 0
+			+media-breakpoint-down(xxs)
+				max-width: 180px
 		// Filter Reset button
 		.filter-reset
 			width: 100%
-			margin: 30px 0
 			+media-breakpoint-down(md)
 				align-self: center
 				max-width: 220px

@@ -25,6 +25,12 @@ input::-webkit-inner-spin-button
 input[type=number]
 	-moz-appearance: textfield
 
+input:disabled
+	opacity: 0.5
+	~ label
+		cursor: default
+		opacity: 0.5
+
 .form
 	position: relative
 	&-light

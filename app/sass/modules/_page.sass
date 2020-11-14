@@ -443,7 +443,25 @@
 /* ==========================================================================
 	Shop products
 	========================================================================== */
+.shop-products-preloader
+	position: absolute
+	top: -5px
+	left: -30px
+	right: -30px
+	bottom: 0
+	z-index: 29
+	padding: 100px 0
+	background-color: rgba($bodycolor, 0.75)
+	.lazy-preloader
+		position: sticky
+		width: 40px
+		height: 40px
+		margin: 0 auto
+		border-top-color: $accent
+		border-width: 3px
+
 .shop-products
+	position: relative
 	margin-top: 50px
 	+media-breakpoint-down(md)
 		margin-top: 30px
