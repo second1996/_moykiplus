@@ -341,13 +341,16 @@
 	// Brand Categories & Collections
 	.brand-categories,
 	.brand-collections
+		&::before,
+		&::after
+			content: ''
+			display: table
+			clear: both
 		&-list
 			position: relative
 			max-height: 160px
 			margin-left: -10px
 			margin-right: -10px
-			display: flex
-			flex-wrap: wrap
 			+media-breakpoint-down(sm)
 				max-height: 140px
 			&::after
@@ -363,12 +366,14 @@
 				background-image: linear-gradient(to top, rgba($bodycolor, 1) 0%, rgba($bodycolor, 0.25) 100%)
 			> li
 				position: relative
-				flex: 0 0 20%
+				float: left
+				display: inline-block
+				width: 16.66667%
 				margin-bottom: 15px
 				padding: 0 10px 0 22px
 				line-height: 1.2
 				+media-breakpoint-down(md)
-					flex: 0 0 25%
+					width: 25%
 				&::before
 					content: ''
 					position: absolute
@@ -391,16 +396,17 @@
 
 	.brand-categories
 		&-list
+			width: 100%
 			> li
 				+media-breakpoint-down(xs)
-					flex: 0 0 50%
+					width: 50%
 				+media-breakpoint-down(xxs)
-					flex: 0 0 100%
+					width: 100%
 	.brand-collections
 		&-list
 			> li
 				+media-breakpoint-down(xs)
-					flex: 0 0 50%
+					width: 50%
 
 	// Brabd products
 	.products-list

@@ -1545,3 +1545,134 @@
 			&:hover
 				border-radius: 5px
 				border-color: $accent
+
+
+/* ==========================================================================
+   Print media queries
+   ========================================================================== */
+@media print
+	.row
+		margin-left: 0
+		margin-right: 0
+		[class*="col-"],
+		.col
+			padding-left: 0
+			padding-right: 0
+	.site-main
+		padding: 0
+	.article, article
+		height: 100% !important
+	.ul-check > li
+		padding-left: 0
+	.product-single .product-main-left,
+	.product-single .product-main-right
+		margin-bottom: 20px
+	.product-single .product-main-right
+		margin-top: 0
+	.header,
+	.footer,
+	.promo,
+	.breadcrumbs,
+	.read-more,
+	.product-single .product-single-left,
+	.product-single .product-preview-photo-zoom,
+	.product-single .product-preview-thumbs,
+	.product-single .product-share,
+	.product-single .product-summary-section:nth-child(1),
+	.product-single .product-summary-section:nth-child(3),
+	.product-single .product-summary .product-price .discount,
+	.product-single .product-analog-item .analog-meta .read-more,
+	.product-single .product-info,
+	.product-single .product-variative-order,
+	.product-single .complectation,
+	.product-single .product-additional,
+	.product-single .product-certificates,
+	.product-single .product-testimonials,
+	.product-single .page-form,
+	.product-single .faq,
+	.product-single .product-return-image,
+	.product-single .products-slider
+		display: none
+	.product-single .product-box,
+	.product-single .product-preview-photo-slider,
+	.product-single .product-summary-section,
+	.product-single .product-analog-wrapper
+		padding: 0 !important
+		border-radius: 0 !important
+		border: 0 !important
+	.product-single .product-preview-photo-slide
+		align-items: flex-start
+		justify-content: flex-start
+		padding: 0 !important
+	.product-single .product-preview-photo-slide img
+		width: auto
+		max-width: 100%
+		height: auto
+		object-fit: none
+	.product-single .product-attributes-table
+		overflow: visible
+		max-height: 100%
+		margin-top: 0
+		border: 0
+	.product-single .product-attributes-table .name,
+	.product-single .product-attributes-table .value
+		display: inline-block
+		width: 25%
+		padding: 0
+		.hint
+			display: none
+	.product-single .product-attributes-table table tbody td
+		border: 0
+	.product-single .product-variative-list 
+		display: flex
+		flex-wrap: wrap
+	.product-single .product-max-discount
+		page-break-after: always
+	.product-single .product-variative-item
+		flex: 0 0 33.33333%
+	.product-single .product-variative-item:not(:last-child)
+		padding-bottom: 0
+		border-bottom: 0
+	.product-single .product-included
+		page-break-after: always
+		margin-top: 20px
+	.product-single .product-included-wrapper
+		padding: 0
+		border-radius: 0
+		box-shadow: none
+	.product-single .product-included-item
+		flex: 0 0 16.66667%
+		padding-left: 0
+		padding-right: 0
+	.product-single .product-included-item .photo
+		width: 75px
+		height: 75px
+		border-radius: 0
+		border: 0
+		> img
+			padding: 0
+	.product-single .product-advantages,
+	.product-single .product-delivery,
+	.product-single .product-schemes
+		page-break-after: always
+	.product-single .product-delivery-table
+		overflow: visible
+		table
+			// width: auto !important
+	.product-single .product-delivery-table table thead th,
+	.product-single .product-delivery-table table tbody td, .product-single .product-delivery-table table tbody th
+		border: 1px solid $black
+		color: $black
+	.product-single .product-schemes-item
+		padding: 0
+		border-radius: 0
+		box-shadow: none
+		.scheme-photo
+			max-width: 100%
+			width: auto
+			height: auto
+	.product-single .product-return
+		page-break-before: always
+		margin-top: 40px
+	.product-single .product-included-title
+		margin-bottom: 0
