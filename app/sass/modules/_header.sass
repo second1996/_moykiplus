@@ -357,6 +357,10 @@
 					> li
 						position: relative
 						line-height: 60px
+						&._active
+							&::after
+								opacity: 1
+								background-color: $accent
 						&::after
 							content: ''
 							position: absolute

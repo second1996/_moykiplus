@@ -170,7 +170,6 @@
 				display: none
 				margin-top: -10px
 				padding-top: 10px
-				padding-bottom: 30px
 				border-radius: 0 0 5px 5px
 				border: 1px solid $accent
 				border-top: 0
@@ -249,6 +248,8 @@
 					color: rgba($black, 0.9)
 					font-weight: 500
 					line-height: 1.1
+					+media-breakpoint-down(md)
+						display: inline-flex
 					&::before,
 					&::after
 						top: 0
@@ -341,8 +342,14 @@
 			margin-left: -30px
 			margin-right: -30px
 			padding: 15px 15px
+			border-radius: 0 0 5px 5px
 			border-top: 1px solid $border
 			background-color: $white
+			+media-breakpoint-down(lg)
+				text-align: center
+				margin-left: 0
+				margin-right: 0
+				padding-top: 0
 		// Filter Show button
 		.filter-show
 			width: 100%
@@ -350,18 +357,18 @@
 			+media-breakpoint-down(md)
 				align-self: center
 				max-width: 220px
-				margin: 30px auto 0
+				margin: 15px auto 0
 			+media-breakpoint-down(xxs)
-				max-width: 180px
+				max-width: 100%
 		// Filter Reset button
 		.filter-reset
 			width: 100%
 			+media-breakpoint-down(md)
 				align-self: center
 				max-width: 220px
-				margin: 30px auto 0
+				margin: 15px auto 0
 			+media-breakpoint-down(xxs)
-				max-width: 180px
+				max-width: 100%
 
 
 /* ==========================================================================

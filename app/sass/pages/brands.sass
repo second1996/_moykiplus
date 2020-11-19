@@ -100,6 +100,11 @@
 			border: 1px solid $border
 			color: rgba($black, 0.7)
 			line-height: 1
+			&._active
+				border-color: $accent
+				span
+					color: $accent
+					font-weight: 500
 			+media-breakpoint-down(lg)
 				flex-basis: 18.2%
 			+media-breakpoint-down(md)

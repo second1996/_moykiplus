@@ -279,9 +279,7 @@ jQuery(document).ready( function($) {
 	var compareProductsSlider = new Swiper('.compare .products-slider-container', {
 		watchSlidesVisibility: true,
 		allowTouchMove: true,
-		mousewheel: {
-			invert: true,
-		},
+		grabCursor: true,
 		keyboard: {
 			enabled: true,
 			onlyInViewport: false,
@@ -308,9 +306,7 @@ jQuery(document).ready( function($) {
 	})
 	var compareTableSlider = new Swiper('.compare .compare-table-values', {
 		allowTouchMove: true,
-		mousewheel: {
-			invert: true,
-		},
+		grabCursor: true,
 		keyboard: {
 			enabled: true,
 			onlyInViewport: false,
