@@ -698,35 +698,60 @@
 			position: relative
 			display: flex
 			align-items: center
-			margin-top: 20px
-			padding-bottom: 20px
-			&:first-child
-				margin-top: 0
-			&:last-child
-				padding-bottom: 0
+			&:not(:first-child)
+				padding-top: 20px
 			&:not(:last-child)
-				border-bottom: 1px solid $border
+				padding-bottom: 20px
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					right: 0
+					bottom: 0
+					border-bottom: 1px solid $border
 		// Tooltip HTML
 		&-comment,
 		&-info
 			display: none
+
+		// Checkbox
+		&-checkbox
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 1
+			width: 100%
+			height: 100%
+			opacity: 0
+			&:hover
+				cursor: pointer
+			&:checked ~ .product-variative-photo::after
+				opacity: 1
+
 		&-photo
 			flex: 0 0 auto
 			position: relative
 			width: 48px
 			height: 48px
-			&[data-toggle="variative-comment"]:hover
+			+media-breakpoint-down(xxs)
+				width: 36px
+				height: 36px
+			&[data-toggle="variative-comment"]
+				z-index: 2
 				cursor: help
-			&._added
-				&::after
-					content: ''
-					position: absolute
-					top: 0
-					left: 0
-					right: 0
-					bottom: 0
-					border-radius: 5px
-					background: #686868 url('../../images/icons/done-green.svg') no-repeat center/25px
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				border-radius: 5px
+				background: rgba($black, 0.5) url('../../images/icons/done-green.svg') no-repeat center/25px
+				opacity: 0
+				transition: opacity .35s ease
 			img
 				width: 100%
 				height: 100%
@@ -735,6 +760,7 @@
 		&-meta
 			flex: 1 1 auto
 			margin-left: 10px
+			padding-right: 10px
 			.title,
 			.sku,
 			.price
@@ -744,15 +770,47 @@
 			.price
 				margin-top: 10px
 		&-order
+			position: relative
+			z-index: 2
 			flex: 0 0 100px
 			text-align: center
+			+media-breakpoint-down(xxs)
+				flex: 0 0 70px
 			.not-available
 				display: block
 				font-size: 13px
 				line-height: 1.2
 			.btn
-				width: 100%
+				width: 100px
 				min-width: auto
+				white-space: normal
+				padding: 5px
+				+media-breakpoint-down(xxs)
+					width: 70px
+				.icon
+					flex: 0 0 auto
+					display: none
+					margin-right: 10px
+				span
+					margin-left: 0
+				span.buy
+					display: block
+				span.added
+					display: none
+					> a
+						color: $white
+						border-bottom: 1px solid $white
+						&:hover
+							border-bottom-style: dashed
+				&._active
+					background-color: $green
+					span.buy
+						display: none
+					span.added
+						display: block
+						font-size: 12px
+					.icon
+						display: block
 
 	// Product Info
 	.product-info
