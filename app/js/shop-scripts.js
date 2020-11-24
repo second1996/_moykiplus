@@ -307,28 +307,28 @@ jQuery(document).ready( function($) {
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
 	$('.widget-filters-form').on('change', function(e) {
-		var formOffset = $(this).offset().top
-		var tooltip = $(this).find('.filter-results')
-
 		$(this).find('.filter-triggers').show();
 
-		filterResults = function () {
-			var target = $(e.target)
-			var tagetOffsetTop = target.offset().top - formOffset
+		// var formOffset = $(this).offset().top
+		// var tooltip = $(this).find('.filter-results')
 
-			if( ! target.hasClass('filter-search-control') ) {
-				$(tooltip).addClass('_active')
-				$(tooltip).attr('style', 'top: ' + tagetOffsetTop + 'px')
-			} else {
-				$(tooltip).removeClass('_active')
-			}
-
-			// Remove tooltip on search typing
-			$('.filter-search-control').on('keyup', function() {
-				$(tooltip).removeClass('_active')
-			})
-		}
-		filterResults()
+		// filterResults = function () {
+		// 	var target = $(e.target)
+		// 	var tagetOffsetTop = target.offset().top - formOffset
+	
+		// 	if( ! target.hasClass('filter-search-control') ) {
+		// 		$(tooltip).addClass('_active')
+		// 		$(tooltip).attr('style', 'top: ' + tagetOffsetTop + 'px')
+		// 	} else {
+		// 		$(tooltip).removeClass('_active')
+		// 	}
+	
+		// 	// Remove tooltip on search typing
+		// 	$('.filter-search-control').on('keyup', function() {
+		// 		$(tooltip).removeClass('_active')
+		// 	})
+		// }
+		// filterResults()
 	})
 
 

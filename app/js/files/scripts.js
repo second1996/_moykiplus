@@ -135,7 +135,7 @@ jQuery(document).ready( function($) {
 	if( window.matchMedia('(min-width: 992px)').matches ) {
 		$('[data-toggle="variative-product"]').tooltip({
 			html: true,
-			// trigger: 'click',
+			trigger: 'hover',
 			placement: 'left',
 			template: '<div class="tooltip variative-tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
 			title: function (e) {
@@ -146,7 +146,7 @@ jQuery(document).ready( function($) {
 		})
 		$('[data-toggle="variative-comment"]').tooltip({
 			html: true,
-			// trigger: 'click',
+			trigger: 'hover',
 			placement: 'top',
 			template: '<div class="tooltip variative-tooltip-comment"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
 			title: function (e) {
