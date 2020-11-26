@@ -13,8 +13,6 @@
 
 	// Page navigation
 	.page-navigation
-		+media-breakpoint-down(sm)
-			margin-top: 0
 		&-list > li > a
 			padding-top: 18px
 			padding-bottom: 18px
@@ -25,6 +23,8 @@
 				overflow: hidden
 				margin-top: 10px
 				border-radius: 5px
+		+media-breakpoint-down(sm)
+			margin-bottom: 0
 
 	// Product box (helper class)
 	.product-box

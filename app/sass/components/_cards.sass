@@ -297,6 +297,9 @@
 		&-item
 			flex-grow: 1
 			height: 154px
+			+media-breakpoint-down(md)
+				&:not(:first-child)
+					display: none
 			&:not(:last-child)
 				.card-gallery-item-nav
 					margin-right: 4px
@@ -304,6 +307,8 @@
 				display: block
 				position: relative
 				height: 100%
+				+media-breakpoint-down(md)
+					display: none
 				&::before
 					content: ''
 					cursor: pointer

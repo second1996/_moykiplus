@@ -209,6 +209,11 @@ jQuery(document).ready( function($) {
 			$(this).toggleClass('_toggled')
 			$('.m-menu').toggleClass('_shown')
 			$('.header-bottom').toggleClass('m-menu-toggled')
+
+			// Close search if open
+			$('.header-bottom').removeClass('search-toggled')
+			$('.header-bottom .m-actions-item .search-btn').removeClass('_toggled')
+			$('.header-bottom .navigation .search-form').removeClass('_shown')
 		})
 
 		// Slide submenu
@@ -223,6 +228,12 @@ jQuery(document).ready( function($) {
 		// Mobile Search
 		$('.header-bottom .m-actions-item .search-btn').on('click', function() {
 			$(this).toggleClass('_toggled')
+
+			// Close mobile menu if open
+			$('.header-bottom').removeClass('m-menu-toggled')
+			$('.header-bottom .m-actions-item .menu-btn').removeClass('_toggled')
+			$('.m-menu').removeClass('_shown')
+
 			$('.header-bottom').toggleClass('search-toggled')
 			$('.header-bottom .navigation .search-form').toggleClass('_shown')
 			$(document).on('click', function (e) {
@@ -259,15 +270,40 @@ jQuery(document).ready( function($) {
 
 	/**
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
-	 * Mega menu
+	 * Toggle Dropdown menu
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu, [data-toggle="toggle-box"]').on('click', function(e) {
+	$('[data-toggle="toggle-box"]').on('click', function(e) {
 		e.preventDefault()
+
 		$submenu = $(this)
-		//getting the next element
+		// Getting the next element
 		$content = $submenu.next()
-		//open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+		// Open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+		$submenu.toggleClass('_toggled')
+		$content.slideToggle(250)
+	})
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Mobile menu dropdown submenus
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	$('.mega-menu-sections .nav-item .has-submenu, .m-menu-nav > ul > li .has-dropmenu').on('click', function(e) {
+		e.preventDefault()
+
+		$submenu = $(this)
+
+		// Open page when clicked twice on span element
+		$submenu.find('span').unbind().click(function () {
+			var pageLink = $submenu.attr('href')
+			window.location.href = pageLink
+		})
+
+		// Getting the next element
+		$content = $submenu.next()
+		// Open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
 		$submenu.toggleClass('_toggled')
 		$content.slideToggle(250)
 	})
@@ -280,10 +316,12 @@ jQuery(document).ready( function($) {
 	 * Product card gallery slideshow on hover
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	$(document).on('mouseenter', '.card-product .card-gallery-item', function() {
-		$(this).siblings().removeClass('_active')
-		$(this).addClass('_active')
-	})
+	if( window.matchMedia('(min-width: 992px)').matches ) {
+		$(document).on('mouseenter', '.card-product .card-gallery-item', function() {
+			$(this).siblings().removeClass('_active')
+			$(this).addClass('_active')
+		})
+	}
 
 
 	/**
