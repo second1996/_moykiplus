@@ -95,6 +95,20 @@ jQuery(document).ready( function($) {
 
 	/**
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 * Fancybox for product
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
+	 */
+	$('[data-fancybox]').fancybox({
+		toolbar : false,
+		smallBtn : true,
+		iframe : {
+			preload : false
+		}
+	})
+
+
+	/**
+	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 * Bootstrap Modal (fix scroll when change modal, etc.)
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
@@ -135,7 +149,7 @@ jQuery(document).ready( function($) {
 	if( window.matchMedia('(min-width: 992px)').matches ) {
 		$('[data-toggle="variative-product"]').tooltip({
 			html: true,
-			trigger: 'hover',
+			trigger: 'manual',
 			placement: 'left',
 			template: '<div class="tooltip variative-tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
 			title: function (e) {
@@ -143,7 +157,20 @@ jQuery(document).ready( function($) {
 
 				return ttHtml;
 			}
-		})
+		}).on('mouseenter', function () {
+			var _this = this;
+			$(this).tooltip('show');
+			$('.tooltip').on('mouseleave', function () {
+				$(_this).tooltip('hide');
+			});
+		}).on('mouseleave', function () {
+			var _this = this;
+			setTimeout(function () {
+				if (!$('.tooltip:hover').length) {
+					$(_this).tooltip('hide');
+				}
+			}, 200);
+		});
 		$('[data-toggle="variative-comment"]').tooltip({
 			html: true,
 			trigger: 'hover',

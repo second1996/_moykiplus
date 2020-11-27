@@ -372,10 +372,17 @@ jQuery(document).ready( function($) {
 	})
 
 	// Zoom preview photo
-	$('.product-preview-photo-zoom > a').on('click', function () {
-		var fullPreviewSrc = $('.product-preview-photo-slider .swiper-slide-active').data('product-full-preview')
+	$('.product-preview-photo-zoom > a').on('click', function (e) {
+		var _this = $(this),
+				fullPreviewSrc = $('.product-preview-photo-slider .swiper-slide-active').data('product-full-preview');
 
-		$(this).attr('href', fullPreviewSrc)
+		e.preventDefault()
+		_this.attr('href', fullPreviewSrc)
+
+		$.fancybox.open({
+			src : fullPreviewSrc,
+			smallBtn: true
+		})
 	})
 
 
