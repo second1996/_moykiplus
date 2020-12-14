@@ -66,13 +66,16 @@ jQuery(document).ready( function($) {
 	 * Search items in alphabet
 	 *-------------------------------------------------------------------------------------------------------------------------------------------
 	 */
-	$('.filter-alphabet .filter-search-control').on('keyup', function() {
-		var value = this.value.toLowerCase().trim();
-
-		$('.filter-alphabet-list div').show().filter(function() {
-			return $(this).text().toLowerCase().trim().indexOf(value) == -1;
-		}).hide();
-	});
+	sortListSearch = function() {
+		$('.filter-alphabet .filter-search-control').on('keyup', function() {
+			var value = this.value.toLowerCase().trim();
+	
+			$('.filter-alphabet-list div').show().filter(function() {
+				return $(this).text().toLowerCase().trim().indexOf(value) == -1;
+			}).hide();
+		});
+	}
+	sortListSearch();
 
 
 	/**
