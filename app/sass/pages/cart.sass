@@ -283,6 +283,14 @@
 					align-items: flex-end
 					line-height: 1
 					margin-top: -4px
+					> ins,
+					> del
+						position: relative
+						&::after
+							content: '₽'
+						> span
+							position: absolute
+							visibility: hidden
 					> ins
 						margin-top: 4px
 						margin-right: 8px
@@ -326,6 +334,14 @@
 					align-items: flex-end
 					line-height: 1
 					margin-top: -4px
+					> ins,
+					> del
+						position: relative
+						&::after
+							content: '₽'
+						> span
+							position: absolute
+							visibility: hidden
 					> ins
 						margin-top: 4px
 						color: $black

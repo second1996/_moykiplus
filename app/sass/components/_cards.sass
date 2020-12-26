@@ -417,6 +417,14 @@
 				flex-wrap: wrap
 				align-items: flex-end
 				line-height: 1
+				> ins,
+				> del
+					position: relative
+					&::after
+						content: '₽'
+					> span
+						position: absolute
+						visibility: hidden
 				> ins
 					margin-right: 5px
 					color: $black
@@ -571,6 +579,14 @@
 					color: #a3a1a5
 					font-weight: 400
 				&-wrapper
+					ins,
+					del
+						position: relative
+						&::after
+							content: '₽'
+						> span
+							position: absolute
+							visibility: hidden
 					ins
 						font-size: 18px
 						+media-breakpoint-down(xs)

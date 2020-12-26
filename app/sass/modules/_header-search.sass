@@ -144,6 +144,12 @@
 						line-height: 1.2
 						transition: color .35s ease
 					.price
+						position: relative
 						margin-top: 10px
 						line-height: 1
+						&::after
+							content: '₽'
+						> span
+							position: absolute
+							visibility: hidden
 

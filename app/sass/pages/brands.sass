@@ -274,6 +274,14 @@
 									flex-wrap: wrap
 									align-items: flex-end
 									line-height: 1
+									> ins,
+									> del
+										position: relative
+										&::after
+											content: '₽'
+										> span
+											position: absolute
+											visibility: hidden
 									> ins
 										margin-right: 5px
 										color: $black

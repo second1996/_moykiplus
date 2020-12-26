@@ -159,8 +159,14 @@
 		.variative-photo
 			margin-top: 25px
 			img
+				position: relative
+				z-index: 2
 				max-width: 180px
 				max-height: 130px
+				transition: transform .25s ease
+				&:hover
+					cursor: zoom-in
+					transform: scale(3)
 		.variative-link
 			margin-top: 25px
 			.btn

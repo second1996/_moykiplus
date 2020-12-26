@@ -437,6 +437,14 @@
 					flex-wrap: wrap
 					align-items: flex-end
 					line-height: 1
+					> ins,
+					> del
+						position: relative
+						&::after
+							content: '₽'
+						> span
+							position: absolute
+							visibility: hidden
 					> ins
 						margin-bottom: -2px
 						color: $black
@@ -647,6 +655,14 @@
 						flex-wrap: wrap
 						align-items: flex-end
 						line-height: 1
+						> ins,
+						> del
+							position: relative
+							&::after
+								content: '₽'
+							> span
+								position: absolute
+								visibility: hidden
 						> ins
 							margin-right: 8px
 							color: $black
@@ -773,7 +789,13 @@
 				font-size: 12px
 				line-height: 1.2
 			.price
+				position: relative
 				margin-top: 10px
+				&::after
+					content: '₽'
+				> span
+					position: absolute
+					visibility: hidden
 		&-order
 			position: relative
 			z-index: 2
@@ -1259,6 +1281,7 @@
 				flex: 0 0 auto
 				margin-left: auto
 				color: #a3a1a5
+				position: relative
 				+media-breakpoint-down(sm)
 					span
 						display: block
