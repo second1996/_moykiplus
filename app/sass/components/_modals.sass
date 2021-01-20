@@ -113,6 +113,43 @@ body.modal-open
 		background-color: $white
 		text-align: center
 		letter-spacing: 1px
+	.price
+		display: flex
+		align-items: flex-end
+		margin-top: 10px
+		&-label
+			margin-right: 6px
+			color: rgba($black, 0.9)
+			font-weight: 500
+			line-height: 1
+		&-wrapper
+			display: flex
+			flex-wrap: wrap
+			align-items: flex-end
+			line-height: 1
+			> ins,
+			> del
+				position: relative
+				&::after
+					content: '₽'
+				> em
+					position: absolute
+					visibility: hidden
+			> ins
+				margin-bottom: -1px
+				color: $black
+				font-size: 20px
+				font-weight: 700
+				white-space: nowrap
+				text-decoration: none
+			> del
+				margin-left: 10px
+				color: red
+				font-size: 14px
+				font-weight: 600
+				white-space: nowrap
+				+media-breakpoint-down(xxs)
+					margin-left: 8px
 
 
 /* ==========================================================================
