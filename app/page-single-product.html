@@ -296,7 +296,7 @@
 										<div class="product-price">
 											<a href="#productDiscount" class="discount" data-toggle="modal">
 												<svg class="icon icon-percent"><use xlink:href="images/symbol-defs.svg#percent"></use></svg>
-												<span class="text c-black w-medium">Запрос на уменьшение цены, это легко! <strong class="c-red">Скидка до 15%</strong></span>
+												<span class="text c-black w-medium">Запрос на уменьшение цены, это легко! <strong class="c-red">Скидка до 10%</strong></span>
 											</a>
 											<div class="price">
 												<span class="price-label text-xs">Цена:</span>
@@ -2359,13 +2359,6 @@
 						<div class="form-group">
 							<label for="m-discount-product" class="form-label">Товар</label>
 							<input type="text" class="form-control" id="m-discount-product" name="m-discount-product" value="Мойка для кухни Longran" readonly required>
-							<div class="price">
-								<span class="price-label text-xs">Цена:</span>
-								<span class="price-wrapper">
-									<ins data-final-price="35500">35 500 <em>Руб.</em></ins>
-									<del>36 500 <em>Руб.</em></del>
-								</span>
-							</div>
 						</div>
 						<div class="form-group">
 							<label for="m-discount-variation" class="form-label">Модификации</label>
@@ -2381,11 +2374,15 @@
 						</div>
 						<div class="form-group form-group-slider">
 							<label for="m-discount-value" class="form-label">Запрос на скидку</label>
-							<div id="m-discount-slider" data-slidermin="10" data-slidermax="15"></div>
+							<div id="m-discount-slider" data-slidermin="1" data-slidermax="10" data-sliderstart="3"></div>
 						</div>
 						<div class="form-group">
 							<label for="m-discount-value" class="form-label">Величина скидки</label>
 							<input type="text" class="form-control discount-modal-slider-value" id="m-discount-value" name="m-discount-value" required readonly>
+						</div>
+						<div class="form-group">
+							<label for="m-discount-old-price" class="form-label">Старая цена</label>
+							<input type="text" class="form-control discount-modal-old-price" id="m-discount-old-price" name="m-discount-old-price" value="36 500 Руб." required readonly>
 						</div>
 						<div class="form-group">
 							<label for="m-discount-new-price" class="form-label">Новая цена</label>

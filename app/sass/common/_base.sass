@@ -95,8 +95,8 @@ svg.icon
 	 ========================================================================== */
 .back-to-top
 	position: fixed
-	right: 15px
-	bottom: 15px
+	right: 30px
+	bottom: 60px
 	z-index: 29
 	display: flex
 	width: 40px
@@ -108,6 +108,10 @@ svg.icon
 	visibility: hidden
 	opacity: 0
 	transform: translate3d(0, 6px, 0)
+	+media-breakpoint-down(md)
+		left: 15px
+		right: auto
+		bottom: 20px
 	.icon
 		transform: rotate(-90deg)
 	&._shown

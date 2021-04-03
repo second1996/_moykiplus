@@ -226,11 +226,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	if( typeof(discountSlider) != 'undefined' && discountSlider != null ) {
 		var discountSliderMin = parseInt( discountSlider.dataset.slidermin );
 		var discountSliderMax = parseInt( discountSlider.dataset.slidermax );
+		var discountSliderStart = parseInt( discountSlider.dataset.sliderstart );
 		var discountSliderInputValue = document.querySelector('.discount-modal-slider-value');
 
 		// Create noUiSlide
 		noUiSlider.create(discountSlider, {
-			start: discountSliderMin + 1,
+			start: discountSliderStart,
 			step: 1,
 			connect: [true, false],
 			range: {
